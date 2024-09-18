@@ -1,0 +1,57 @@
+Buildlink starting
+
+Checking if assets.txt is newer than any of the build folder files....
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/quickguide/assets.txt...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/quickguide\build\linkfile.bin...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/quickguide\build\romassets.inc...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/quickguide\build\romassets.h...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/quickguide\build\ramassets.inc...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/quickguide\build\build.log...
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+        Processing assets\gfx\bug.bmp
+        Converting BMP internally into gfxdata/clut...
+        File is 16 pixels wide, 16 pixels high and is 16 bits/pixel
+        Adding in RAM...
+    Reading assets.txt line
+        Processing assets\gfx\bug2.bmp
+        Converting BMP internally into gfxdata/clut...
+        File is 16 pixels wide, 16 pixels high and is 16 bits/pixel
+        Adding in RAM...
+    Reading assets.txt line
+        Processing assets\sfx\explosion.wav
+        Converting sound file into raw file (using sox)...
+        Command run: sox.exe /home/tbone/Programming/jagstudio/projects/basic/quickguide\assets\sfx\explosion.wav--channels 1 --bits 8 --encoding signed-integer "/home/tbone/Programming/jagstudio/projects/basic/quickguide\build\explosion.wav.raw" --show-progress rate -v 8000
+        Adding in RAM...
+Buildlink finished - everything went fine!

@@ -1,0 +1,254 @@
+#NO_APP
+	.text
+.LC0:
+	.ascii "Please Wait: Calculating Sine values\0"
+.LC1:
+	.ascii "Blitlist Basic\0"
+	.even
+	.globl	__Z9basicmainv
+__Z9basicmainv:
+	link.w %fp,#-8
+	movem.l #16188,-(%sp)
+	clr.l __ZL9particles
+	moveq #1,%d0
+	move.l %d0,__ZL9canvasSpr
+	move.l sprite,%a0
+	move.l 236(%a0),__ZL9gfxcanvas
+	moveq #110,%d4
+	move.l %d4,__ZL1x
+	move.b #2,%d0
+	move.l %d0,__ZL4xmod
+	clr.l __ZL1y
+	move.l #200,__ZL10linecolour
+	move.b #100,%d4
+	move.l %d4,__ZL5width
+	move.l #0x40490fdb,__ZL3pie
+	move.l #0x3c8efa36,__ZL4rads
+	clr.l __ZL8sineloop
+	move.b #1,%d0
+	move.l %d0,_jsfFontIndx
+	move.l %d0,_jsfFontSize
+	pea 18.w
+	pea 16.w
+	lea rapLocate,%a4
+	jsr (%a4)
+	move.l #.LC0,_js_r_textbuffer
+	addq.l #8,%sp
+	lea _rapPrint,%a3
+	jsr (%a3)
+	move.l __ZL4rads,-4(%fp)
+	lea __ZL4sins,%a2
+	move.l %a2,%a0
+	moveq #0,%d2
+	lea ___extendsfdf2,%a5
+	move.l #___muldf3,%d7
+	move.l #___truncdfsf2,%d6
+	move.l #_floor,%d5
+	move.l #___fixdfsi,%d4
+.L2:
+	move.l %d2,-(%sp)
+	move.l %a0,-8(%fp)
+	jsr ___floatsisf
+	move.l -4(%fp),(%sp)
+	move.l %d0,-(%sp)
+	jsr ___mulsf3
+	addq.l #4,%sp
+	move.l %d0,(%sp)
+	jsr (%a5)
+	move.l %d1,(%sp)
+	move.l %d0,-(%sp)
+	jsr _sin
+	addq.l #4,%sp
+	clr.l (%sp)
+	move.l #1078984704,-(%sp)
+	move.l %d1,-(%sp)
+	move.l %d0,-(%sp)
+	move.l %d7,%a1
+	jsr (%a1)
+	lea (12,%sp),%sp
+	move.l %d1,(%sp)
+	move.l %d0,-(%sp)
+	move.l %d6,%a1
+	jsr (%a1)
+	addq.l #8,%sp
+	move.l %d0,%d3
+	move.l %d0,-(%sp)
+	jsr (%a5)
+	move.l %d1,(%sp)
+	move.l %d0,-(%sp)
+	move.l %d5,%a1
+	jsr (%a1)
+	addq.l #4,%sp
+	move.l %d1,(%sp)
+	move.l %d0,-(%sp)
+	move.l %d4,%a1
+	jsr (%a1)
+	addq.l #8,%sp
+	move.l -8(%fp),%a0
+	move.l %d0,(%a0)+
+	addq.l #1,%d2
+	cmp.l #360,%d2
+	jne .L2
+	move.l %d3,__ZL4sinz
+	move.l %d2,__ZL1y
+	jsr _cls
+	moveq #1,%d0
+	move.l %d0,_jsfFontIndx
+	move.l %d0,_jsfFontSize
+	pea 170.w
+	pea 110.w
+	jsr (%a4)
+	move.l #.LC1,_js_r_textbuffer
+	addq.l #8,%sp
+	jsr (%a3)
+	move.l __ZL9gfxcanvas,%d1
+	move.l __ZL1x,%a4
+	move.l __ZL10linecolour,%a3
+	move.l __ZL5width,%a1
+	add.l #65536,%a1
+	lea __ZL8blitlist,%a0
+	moveq #0,%d0
+.L3:
+	move.l %d1,(%a0)
+	move.l #82464,4(%a0)
+	clr.l 8(%a0)
+	move.l %d0,%d2
+	swap %d2
+	clr.w %d2
+	add.l %a4,%d2
+	move.l %d2,12(%a0)
+	clr.l 16(%a0)
+	clr.l 20(%a0)
+	clr.l 24(%a0)
+	clr.l 28(%a0)
+	clr.l 32(%a0)
+	clr.l 36(%a0)
+	clr.l 40(%a0)
+	lea (%a3,%d0.l),%a5
+	move.l %a5,44(%a0)
+	clr.l 48(%a0)
+	clr.l 52(%a0)
+	move.l %a1,56(%a0)
+	move.l #65536,60(%a0)
+	addq.l #1,%d0
+	lea (64,%a0),%a0
+	cmp.l #131,%d0
+	jne .L3
+	move.l %d0,__ZL1y
+	moveq #-1,%d0
+	move.l %d0,__ZL8blitlist+8320
+	move.l %d1,__ZL8blitlist
+	move.l #16928,__ZL8blitlist+4
+	clr.l __ZL8blitlist+8
+	clr.l __ZL8blitlist+12
+	clr.l __ZL8blitlist+16
+	clr.l __ZL8blitlist+20
+	clr.l __ZL8blitlist+24
+	clr.l __ZL8blitlist+28
+	clr.l __ZL8blitlist+32
+	clr.l __ZL8blitlist+36
+	clr.l __ZL8blitlist+40
+	clr.l __ZL8blitlist+44
+	clr.l __ZL8blitlist+48
+	clr.l __ZL8blitlist+52
+	move.l #8520000,__ZL8blitlist+56
+	clr.l __ZL8blitlist+60
+	move.l #_jsfVsync,%d5
+	lea rapBlitlist,%a5
+	clr.l -(%sp)
+	move.l %d5,%a0
+	jsr (%a0)
+	move.l #__ZL8blitlist,(%sp)
+	jsr (%a5)
+	move.l __ZL10linecolour,%a1
+	lea (12,%a1),%a0
+	move.l %a0,__ZL10linecolour
+	move.l __ZL9gfxcanvas,%a4
+	move.l __ZL1x,%d6
+	move.l __ZL5width,%d3
+	add.l #65536,%d3
+	move.l __ZL8sineloop,%d2
+	lea __ZL8blitlist+64,%a0
+	lea (15,%a1),%a1
+	addq.l #4,%sp
+	moveq #1,%d0
+.L6:
+	move.l %a4,(%a0)
+	move.l %d0,%d7
+	swap %d7
+	clr.w %d7
+	move.l %d2,%d1
+	asr.l #2,%d1
+	moveq #-4,%d4
+	and.l %d4,%d1
+	move.l %d6,%a3
+	add.l (%a2,%d1.l),%a3
+	add.l %a3,%d7
+	move.l %d7,12(%a0)
+	move.l %d3,56(%a0)
+	move.l %a1,44(%a0)
+	addq.l #1,%d2
+	cmp.l #5759,%d2
+	jle .L4
+	moveq #0,%d1
+	move.l %d1,%d2
+	addq.l #1,%d0
+	lea (64,%a0),%a0
+	addq.l #3,%a1
+	cmp.l #131,%d0
+	jne .L6
+.L12:
+	move.l %d0,__ZL1y
+	move.l %d1,__ZL8sineloop
+	moveq #-1,%d0
+	move.l %d0,__ZL8blitlist+8320
+	clr.l -(%sp)
+	move.l %d5,%a0
+	jsr (%a0)
+	move.l #__ZL8blitlist,(%sp)
+	jsr (%a5)
+	move.l __ZL10linecolour,%a1
+	lea (12,%a1),%a0
+	move.l %a0,__ZL10linecolour
+	move.l __ZL9gfxcanvas,%a4
+	move.l __ZL1x,%d6
+	move.l __ZL5width,%d3
+	add.l #65536,%d3
+	move.l __ZL8sineloop,%d2
+	lea __ZL8blitlist+64,%a0
+	lea (15,%a1),%a1
+	addq.l #4,%sp
+	moveq #1,%d0
+	jra .L6
+.L4:
+	move.l %d2,%d1
+	move.l %d1,%d2
+	addq.l #1,%d0
+	lea (64,%a0),%a0
+	addq.l #3,%a1
+	cmp.l #131,%d0
+	jne .L6
+	jra .L12
+	.globl	colliders
+	.data
+	.even
+colliders:
+	.long	raptor_collisionlist
+	.globl	sprite
+	.even
+sprite:
+	.long	RAPTOR_sprite_table
+.lcomm __ZL9particles,4
+.lcomm __ZL9canvasSpr,4
+.lcomm __ZL9gfxcanvas,4
+.lcomm __ZL1x,4
+.lcomm __ZL4xmod,4
+.lcomm __ZL1y,4
+.lcomm __ZL10linecolour,4
+.lcomm __ZL5width,4
+.lcomm __ZL3pie,4
+.lcomm __ZL4rads,4
+.lcomm __ZL8sineloop,4
+.lcomm __ZL4sinz,4
+.lcomm __ZL4sins,1440
+.lcomm __ZL8blitlist,8384

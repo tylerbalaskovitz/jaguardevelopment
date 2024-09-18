@@ -1,0 +1,5 @@
+abs,BMP_PLAYER,gfx_clut,ASSETS\GFX\_nyancat.bmp
+abs,BMP_ENEMY,gfx_clut,ASSETS\GFX\_ufo.bmp
+abs,Module1,modfile1,ASSETS\sfx\mod\Module1.mod
+abs,Module2,modfile2,ASSETS\sfx\mod\alf.mod
+abs,explode_sam,explodesfx,ASSETS\SFX\SND\EXPLODE.RAW

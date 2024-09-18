@@ -1,0 +1,4071 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/"><title>JagStudio - Reference Manual</title>
+
+<style type="text/css">
+div.clearer {
+clear: both;
+}
+div.related {
+width: 100%;
+font-size: 90%;
+}
+div.related h3 {
+display: none;
+}
+div.related ul {
+margin: 0;
+padding: 0 0 0 10px;
+list-style-type: none;
+list-style-image: none;
+list-style-position: outside;
+}
+div.related li {
+display: inline;
+}
+div.related li.right {
+float: right;
+margin-right: 5px;
+}
+div.sphinxsidebarwrapper {
+padding: 10px 5px 0 10px;
+}
+div.sphinxsidebar {
+float: left;
+width: 230px;
+margin-left: -100%;
+font-size: 90%;
+}
+div.sphinxsidebar ul {
+list-style-type: none;
+list-style-image: none;
+list-style-position: outside;
+}
+div.sphinxsidebar ul ul, div.sphinxsidebar ul.want-points {
+margin-left: 20px;
+list-style-type: square;
+list-style-image: none;
+list-style-position: outside;
+}
+div.sphinxsidebar ul ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+div.sphinxsidebar form {
+margin-top: 10px;
+}
+div.sphinxsidebar input {
+border: 1px solid #98dbcc;
+font-family: sans-serif;
+font-size: 1em;
+}
+img {
+border: none;
+}
+ul.search {
+margin: 10px 0 0 20px;
+padding: 0;
+}
+ul.search li {
+padding: 5px 0 5px 20px;
+background-image: url(file.png);
+background-repeat: no-repeat;
+background-position: 0 7px;
+}
+ul.search li a {
+font-weight: bold;
+}
+ul.search li div.context {
+margin: 2px 0 0 30px;
+color: #888888;
+text-align: left;
+}
+ul.keywordmatches li.goodmatch a {
+font-weight: bold;
+}
+table.contentstable {
+width: 90%;
+}
+table.contentstable p.biglink {
+line-height: 150%;
+}
+a.biglink {
+font-size: 1.3em;
+}
+span.linkdescr {
+font-style: italic;
+padding-top: 5px;
+font-size: 90%;
+}
+table.indextable {
+width: 100%;
+}
+table.indextable td {
+text-align: left;
+vertical-align: top;
+}
+table.indextable dl, table.indextable dd {
+margin-top: 0;
+margin-bottom: 0;
+}
+table.indextable tr.pcap {
+height: 10px;
+}
+table.indextable tr.cap {
+margin-top: 10px;
+background-color: #f2f2f2;
+}
+img.toggler {
+margin-right: 3px;
+margin-top: 3px;
+cursor: pointer;
+}
+div.modindex-jumpbox {
+border-top: 1px solid #dddddd;
+border-bottom: 1px solid #dddddd;
+margin: 1em 0;
+padding: 0.4em;
+}
+div.genindex-jumpbox {
+border-top: 1px solid #dddddd;
+border-bottom: 1px solid #dddddd;
+margin: 1em 0;
+padding: 0.4em;
+}
+a.headerlink {
+visibility: hidden;
+}
+h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, h4:hover > a.headerlink, h5:hover > a.headerlink, h6:hover > a.headerlink, dt:hover > a.headerlink {
+visibility: visible;
+}
+div.body p.caption {
+text-align: inherit;
+}
+div.body td {
+text-align: left;
+}
+.field-list ul {
+padding-left: 1em;
+}
+.first {
+margin-top: 0 ! important;
+}
+p.rubric {
+margin-top: 30px;
+font-weight: bold;
+}
+.align-left {
+text-align: left;
+}
+.align-center {
+clear: both;
+text-align: center;
+}
+.align-right {
+text-align: right;
+}
+div.sidebar {
+border: 1px solid #ddddbb;
+margin: 0 0 0.5em 1em;
+padding: 7px 7px 0;
+background-color: #ffffee;
+width: 40%;
+float: right;
+}
+p.sidebar-title {
+font-weight: bold;
+}
+div.topic {
+border: 1px solid #cccccc;
+margin: 10px 0;
+padding: 7px 7px 0;
+}
+p.topic-title {
+font-size: 1.1em;
+font-weight: bold;
+margin-top: 10px;
+}
+div.admonition {
+padding: 7px;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+div.admonition dt {
+font-weight: bold;
+}
+div.admonition dl {
+margin-bottom: 0;
+}
+p.admonition-title {
+margin: 0px 10px 5px 0px;
+font-weight: bold;
+}
+div.body p.centered {
+text-align: center;
+margin-top: 25px;
+}
+table.docutils {
+border: none;
+border-collapse: collapse;
+width: 100%;
+}
+table.docutils td, table.docutils th {
+border-style: none none solid;
+border-color: -moz-use-text-color -moz-use-text-color #aaaaaa;
+border-width: 0 0 1px;
+padding: 1px 8px 1px 5px;
+}
+table.field-list td, table.field-list th {
+border: none;
+}
+table.footnote td, table.footnote th {
+border: none;
+}
+th {
+text-align: left;
+padding-right: 5px;
+}
+table.citation {
+border-left: 1px solid gray;
+margin-left: 1px;
+}
+table.citation td {
+border-bottom: medium none;
+}
+ol.arabic {
+list-style-type: decimal;
+list-style-image: none;
+list-style-position: outside;
+}
+ol.loweralpha {
+list-style-type: lower-alpha;
+list-style-image: none;
+list-style-position: outside;
+}
+ol.upperalpha {
+list-style-type: upper-alpha;
+list-style-image: none;
+list-style-position: outside;
+}
+ol.lowerroman {
+list-style-type: lower-roman;
+list-style-image: none;
+list-style-position: outside;
+}
+ol.upperroman {
+list-style-type: upper-roman;
+list-style-image: none;
+list-style-position: outside;
+}
+dl {
+margin-bottom: 15px;
+}
+dd p {
+margin-top: 0px;
+}
+dd ul, dd table {
+margin-bottom: 10px;
+}
+dd {
+margin-top: 3px;
+margin-bottom: 10px;
+margin-left: 30px;
+}
+dt:target, .highlighted {
+background-color: #fbe54e;
+}
+dl.glossary dt {
+font-weight: bold;
+font-size: 1.1em;
+}
+.field-list ul {
+margin: 0;
+padding-left: 1em;
+}
+.field-list p {
+margin: 0;
+}
+.refcount {
+color: #006600;
+}
+.optional {
+font-size: 1.3em;
+}
+.versionmodified {
+font-style: italic;
+}
+.system-message {
+border: 3px solid red;
+padding: 5px;
+background-color: #ffddaa;
+}
+.footnote:target {
+background-color: #ffffaa;
+}
+.line-block {
+display: block;
+margin-top: 1em;
+margin-bottom: 1em;
+}
+.line-block .line-block {
+margin-top: 0;
+margin-bottom: 0;
+margin-left: 1.5em;
+}
+.guilabel, .menuselection {
+font-family: sans-serif;
+}
+.accelerator {
+text-decoration: underline;
+}
+.classifier {
+font-style: oblique;
+}
+pre {
+overflow: auto;
+}
+td.linenos pre {
+border: none;
+padding: 5px 0px;
+background-color: transparent;
+color: #aaaaaa;
+}
+table.highlighttable {
+margin-left: 0.5em;
+}
+table.highlighttable td {
+padding: 0 0.5em;
+}
+tt.descname {
+background-color: transparent;
+font-weight: bold;
+font-size: 1.2em;
+}
+tt.descclassname {
+background-color: transparent;
+}
+tt.xref, a tt {
+background-color: transparent;
+font-weight: bold;
+}
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+background-color: transparent;
+}
+.viewcode-link {
+float: right;
+}
+.viewcode-back {
+float: right;
+font-family: sans-serif;
+}
+div.viewcode-block:target {
+margin: -1px -10px;
+padding: 0 10px;
+}
+img.math {
+vertical-align: middle;
+}
+div.body div.math p {
+text-align: center;
+}
+span.eqno {
+float: right;
+}
+@media print {
+div.document, div.documentwrapper, div.bodywrapper { margin: 0 ! important;
+width: 100%;
+}
+div.sphinxsidebar, div.related, div.footer, #top-link { display: none;
+}
+}
+table.docutils td.cell1, table.docutils th.cell1 {
+width: 40%;
+}
+table.docutils td.cell2, table.docutils th.cell2 {
+width: 60%;
+}
+</style>
+<style type="text/css">
+/*
+* nature.css_t
+* ~~~~~~~~~~~~
+*
+* Sphinx stylesheet -- nature theme.
+*
+* :copyright: Copyright 2007-2010 by the Sphinx team, see AUTHORS.
+* :license: BSD, see LICENSE for details.
+*
+*/
+/* -- page layout ----------------------------------------------------------- */
+body {
+font-family: Arial, sans-serif;
+font-size: 100%;
+/*background-color: #111;*/
+color: #555;
+margin: 0;
+padding: 0;
+}
+div.documentwrapper {
+float: left;
+width: 100%;
+}
+div.bodywrapper {
+margin: 0 0 0 230px;
+}
+hr {
+border: 1px solid #B1B4B6;
+}
+div.document {
+background-color: #eee;
+}
+div.body {
+background-color: #ffffff;
+color: #3E4349;
+padding: 0 30px 30px 30px;
+font-size: 0.9em;
+}
+div.footer {
+color: #555;
+width: 100%;
+padding: 13px 0;
+text-align: center;
+font-size: 75%;
+}
+div.footer a {
+color: #444;
+text-decoration: underline;
+}
+div.related {
+background-color: #6BA81E;
+line-height: 32px;
+color: #fff;
+text-shadow: 0px 1px 0 #444;
+font-size: 0.9em;
+}
+div.related a {
+color: #E2F3CC;
+}
+div.sphinxsidebar {
+font-size: 0.75em;
+line-height: 1.5em;
+}
+div.sphinxsidebarwrapper{
+padding: 20px 0;
+}
+div.sphinxsidebar h3,
+div.sphinxsidebar h4 {
+font-family: Arial, sans-serif;
+color: #222;
+font-size: 1.2em;
+font-weight: normal;
+margin: 0;
+padding: 5px 10px;
+background-color: #ddd;
+text-shadow: 1px 1px 0 white
+}
+div.sphinxsidebar h4{
+font-size: 1.1em;
+}
+div.sphinxsidebar h3 a {
+color: #444;
+}
+div.sphinxsidebar p {
+color: #888;
+padding: 5px 20px;
+}
+div.sphinxsidebar p.topless {
+}
+div.sphinxsidebar ul {
+margin: 10px 20px;
+padding: 0;
+color: #000;
+}
+div.sphinxsidebar a {
+color: #444;
+}
+div.sphinxsidebar input {
+border: 1px solid #ccc;
+font-family: sans-serif;
+font-size: 1em;
+}
+div.sphinxsidebar input[type=text]{
+margin-left: 20px;
+}
+/* -- body styles ----------------------------------------------------------- */
+a {
+color: #005B81;
+text-decoration: none;
+}
+a:hover {
+color: #E32E00;
+text-decoration: underline;
+}
+div.body h1,
+div.body h2,
+div.body h3,
+div.body h4,
+div.body h5,
+div.body h6 {
+font-family: Arial, sans-serif;
+background-color: #BED4EB;
+font-weight: normal;
+color: #212224;
+margin: 30px 0px 10px 0px;
+padding: 5px 0 5px 10px;
+text-shadow: 0px 1px 0 white
+}
+div.body h1 { border-top: 20px solid white; margin-top: 0; font-size: 200%; }
+div.body h2 { font-size: 150%; background-color: #C8D5E3; }
+div.body h3 { font-size: 120%; background-color: #D8DEE3; }
+div.body h4 { font-size: 110%; background-color: #D8DEE3; }
+div.body h5 { font-size: 100%; background-color: #D8DEE3; }
+div.body h6 { font-size: 100%; background-color: #D8DEE3; }
+a.headerlink {
+color: #c60f0f;
+font-size: 0.8em;
+padding: 0 4px 0 4px;
+text-decoration: none;
+}
+a.headerlink:hover {
+background-color: #c60f0f;
+color: white;
+}
+div.body p, div.body dd, div.body li {
+line-height: 1.5em;
+}
+div.admonition p.admonition-title + p {
+display: inline;
+}
+div.highlight{
+background-color: white;
+}
+div.note {
+background-color: #eee;
+border: 1px solid #ccc;
+}
+div.seealso {
+background-color: #ffc;
+border: 1px solid #ff6;
+}
+div.topic {
+background-color: #eee;
+}
+div.warning {
+background-color: #ffe4e4;
+border: 1px solid #f66;
+}
+p.admonition-title {
+display: inline;
+}
+p.admonition-title:after {
+content: ":";
+}
+pre {
+padding: 10px;
+background-color: White;
+color: #222;
+line-height: 1.2em;
+border: 1px solid #C6C9CB;
+font-size: 1.1em;
+margin: 1.5em 0 1.5em 0;
+-webkit-box-shadow: 1px 1px 1px #d8d8d8;
+-moz-box-shadow: 1px 1px 1px #d8d8d8;
+}
+tt {
+background-color: #ecf0f3;
+color: #222;
+/* padding: 1px 2px; */
+font-size: 1.1em;
+font-family: monospace;
+}
+.viewcode-back {
+font-family: Arial, sans-serif;
+}
+div.viewcode-block:target {
+background-color: #f4debf;
+border-top: 1px solid #ac9;
+border-bottom: 1px solid #ac9;
+}
+p {
+margin: 0;
+}
+ul li dd {
+margin-top: 0;
+}
+ul li dl {
+margin-bottom: 0;
+}
+li dl dd {
+margin-bottom: 0;
+}
+dd ul {
+padding-left: 0;
+}
+li dd ul {
+margin-bottom: 0;
+}
+</style>
+</head>
+<body>
+<div class="document">
+<div class="body">
+<pre class="literal-block"><img src="jstudio.png" alt=""><br>A complete Assembler, BASIC and 'C' Development Suite for the Atari Jaguar<br><br>Reference Manual - Updated: Nov 18th, 2021 - v1.11</pre>
+<p style="font-weight: bold; text-decoration: underline;">Reference
+Manual</p>
+<p><span>Please refer to the Quickstart Guide for a brief
+walkthrough on setting up a BASIC project.</span></p>
+<p></p>
+<p><br>
+JagStudio
+supports BASIC, C and Assembler languages. &nbsp;This reference
+manual
+is written aiming towards BASIC, however, the same functions are
+available to C and ASM too. &nbsp;The syntax for those will be
+different when calling JagStudio functions. If you are unsure the
+syntax required for calling a JagStudio function in C; build an example
+BASIC project with what you require and then look at the
+"projectname".c source file in the build folder.</p>
+<p></p>
+<p><br>
+This is not designed to be a comprehensive guide - it only
+covers the
+commands, functions and variables introduced in <span style="font-weight: bold;">JagStudio</span>.<br>
+</p>
+<p>It does not cover BCX functions, commands and
+syntax. For that you are
+kindly referred to read the bcx help file, "BCXHelp.chm" or browse the
+example projects.</p>
+<p></p>
+<p>For further information please visit the official site at <a href="https://jagstudio.reboot-games.com" target="_blank">jagstudio.reboot-games.com</a>
+or the forums over at <a href="https://atariage.com/forums/forum/370-jagstudio/" target="_blank">AtariAge</a>.</p>
+<p style="font-weight: bold; text-decoration: underline;"><br>
+Index</p>
+<ul>
+<li><a href="#building">Building</a></li><li><a href="#Building_on_Linux">Building on Linux</a></li>
+<li><a href="#assets-txt">Assets.txt</a></li>
+<li><a href="#assetloading">Asset Addressing</a></li>
+<li><a href="#general">General</a></li>
+<li><a href="#sprites">Sprites</a></li>
+<li><a href="ReferenceManual.html#object-manipulation">Sprite
+Manipulation</a></li>
+<li><a href="#spritecollision">Sprite Collision</a></li>
+<li><a href="#calcangle">Angle Calculations and
+direction lookup</a></li>
+<li><a href="#pixel">Pixel</a></li>
+<li><a href="#sync">Sync</a></li>
+<li><a href="#memory">Memory</a></li>
+<li><a href="#packing">Packing (unpacking)</a></li>
+<li><a href="#timer">Clock / Timer</a></li>
+<li><a href="#blitter">Blitter</a></li>
+<li><a href="#particles">Particles</a></li>
+<li><a href="#map-module">Tile Map module</a></li>
+<li><a href="#colours">Colours / Fading</a></li>
+<li><a href="#strings">Strings (Print commands)</a></li>
+<li><a href="#scores">Highscores and data
+persistence</a></li>
+<li><a href="#debugging">Debugging</a></li>
+<li><a href="#sound-input-engines">Sound and Input</a></li>
+<ul>
+<li><a href="#universalpad">Universal Joypad
+Input</a></li>
+<li><a href="#u-235">U-235SE</a></li>
+<li><a href="#zerosquare">Zerosquare player</a></li>
+<li><a href="#procontroller">Pro Controller
+Support</a></li>
+<li><a href="#teamtap">Team Tap</a></li>
+</ul>
+<li><a href="#table-a">Sprite Property Table</a></li>
+<li><a href="#JagGD">JagGD / GameDrive API</a></li>
+<li><a href="#RB_to_JagStudio_Manual_Migration_Guide_">RB+
+to JagStudio Migration Guide</a></li>
+<li><a href="#oldandnewcommands">Old RB+ Commands
+and their
+new Jagstudio equivalents</a></li>
+<li><a href="#oldandnewjoypadconstants">Old and
+new JoyPad constant values</a></li>
+<li><a href="#furtherreading">Further Reading</a></li>
+</ul>
+<div class="section" id="building">
+<h1>Building</h1>
+To create a new project and get going, open a command prompt
+in the JagStudio folder and type either '<big><span style="font-family: monospace;">build projectname newbasic</span></big>'
+,
+'<big><span style="font-family: monospace;">build
+projectname newc</span></big>' or '<big><span style="font-family: monospace;">build projectname newasm</span></big>'
+(without quotes) where projectname is a unique
+name for your project. <br>
+<p>The project files will be created in
+the relevant <big><span style="font-family: monospace;">\projects\<span style="font-style: italic;">language</span>\</span></big>
+folder ready for editing. &nbsp;To run your
+project from that same command prompt type '<big><span style="font-family: monospace;">build projectname</span></big>'
+and it'll
+run in VJ.</p>
+<p><span style="font-weight: bold;">Linux users; <a href="#Building_on_Linux">see
+below</a>.<br>
+</span></p>
+<p>General notes about build.bat:</p>
+<ul class="simple">
+<li>Automatically switches to ROM building if there is even one
+ROM asset in assets.txt. You can still use build BUILD PROJECT ROM
+though.</li>
+<li>Will abort build to RAM if the resulting binary is too
+large.</li>
+<li>When building a ROM, it will be padded up to 1, 2, 4 or 6mb
+depending on size. &nbsp;Regardless of size, the Skunk will be
+forced into 6mb mode so only bank 1 can be used.</li>
+</ul>
+<table class="docutils" border="1">
+<colgroup><col width="27%"><col width="73%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>build (no parameters)</td>
+<td>Lists all projects in the "projects" folder</td>
+</tr>
+<tr>
+<td>build projectname newbasic</td>
+<td>Creates a new BASIC language project in the
+\projects\basic\ folder.</td>
+</tr>
+<tr>
+<td>build projectname newc</td>
+<td>Creates a new C language project in the \projects\c\
+folder.</td>
+</tr>
+<tr>
+<td>build projectname newasm</td>
+<td>Creates a new ASM language project in the
+\projects\asm\ folder.</td>
+</tr>
+<tr>
+<td>build projectname</td>
+<td>Builds project and runs it in the Virtual Jaguar
+emulator
+(VJ)</td>
+</tr>
+<tr>
+<td>build projectname bigp</td>
+<td>Builds project and runs it in the BigP Jaguar Emulator
+(best used for when testing EEPROM)</td>
+</tr>
+<tr>
+<td>build projectname skunk</td>
+<td>Builds project and uploads it to a Skunkboard</td>
+</tr>
+<tr>
+<td>build projectname skunkabs</td>
+<td>Builds and performs a quick upload of the ABS portion
+of the build while leaving the previous ROM&nbsp;on the Skunk.<br>
+<span style="font-weight: bold;">Beware</span>:
+only run this if you haven't changed any ROM assets.<br>
+Useful
+and faster to upload to the Skunk if you are using a ROM file but have
+not changed any assets within it. &nbsp;This will just upload the
+code
+and any ABS assets.</td>
+</tr>
+<tr>
+<td>build projectname jaggd</td>
+<td>Builds project and uploads it to JagGD</td>
+</tr>
+<tr>
+<td>build projectname ROM</td>
+<td>Builds project as a ROM file. Assets in RAM are packed
+with the
+program code and depacked into RAM during boot. Assets in ROM simply
+are mapped inside ROM space.</td>
+</tr>
+<tr>
+<td>build projectname ROM skunk</td>
+<td>Builds project as a ROM file and uploads it to
+skunkboard. NOTE:
+THIS WILL OVERWRITE ANY ROM YOU HAVE ON BANK 1 OF YOUR SKUNKBOARD
+WITHOUT WARNING!</td>
+</tr>
+<tr>
+<td>build projectname ROM jaggd</td>
+<td>Builds project as a ROM file and uploads it to
+JagGD.</td>
+</tr>
+<tr>
+<td>build projectname skunk bjl</td>
+<td>Uploads built binary using bjl transfer (note: you
+might need to edit the upload settings). Will not work for ROM builds.</td>
+</tr>
+<tr>
+<td>build projectname mrq&nbsp;Developername
+PublisherName Year</td>
+<td>Create a JagGD MRQ file. &nbsp;This uses the screen
+and box images from <big><span style="font-family: monospace;">\projectname\assets\jaggd\</span></big><span style="font-style: italic;"><br>
+</span><span style="font-weight: bold;">Example</span><span style="font-style: italic;">: build projectname
+mrq&nbsp;Devname&nbsp;Pubname 2021</span></td>
+</tr>
+<tr>
+<td>build projectname ROM split</td>
+<td>Build the ROM and split the output to HI and LO files</td>
+</tr>
+</tbody>
+</table><h2><a name="Building_on_Linux"></a>Building on Linux</h2>We
+have included a bash script&nbsp;for Linux users called build.sh.
+&nbsp;Please see the steps below to set up your environment.<br><br><ol><li>Install Wine (distro-specific, on debian/ubuntu sudo apt install wine).</li><li>Make
+the bash script, jaggd, and jcp executable (chmod +x build.sh ; chmod
++x buildfiles/bin/jaggd/jaggd-x64 ; chmod +x buildfiles/bin/jcp).</li><li>./build.sh PROJECTNAME and enjoy!</li></ol><span style="font-weight: bold;">NOTE</span>: jcp may depend on libusb, most distributions have a libusb package.<br>
+</div>
+<div class="section" id="assets-txt">
+<h1>assets.txt</h1>
+<p><big>This is the file where you declare all the main
+assets to be
+loaded for your project. Items such as graphics, sounds and music.</big><br>
+See the instructions in the assets.txt file on formatting
+those commands. &nbsp;Please also refer to example projects.</p>
+<p></p>
+<p>For graphics, you typically&nbsp;want to&nbsp;create <span style="font-style: italic;">BMP</span> images.
+&nbsp;The JS build process will recognise these and convert them to
+the&nbsp;format required on the Jaguar.</p>
+<p>&nbsp;</p>
+<table class="docutils" border="1">
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>
+<p>Assets can be packed.
+Suffix field C with "_pack" in assets.txt</p>
+</td>
+<td>
+<p>See file assets.txt<br>
+<span style="font-weight: bold;">Example project</span>:
+pack</p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: bold;">Examples</span></td>
+<td></td>
+</tr>
+<tr>
+<td>ABS,SPRITE_PLAYER,gfx_clut16,assets\gfx\sprite.bmp</td>
+<td>In memory (<span style="font-style: italic;">ABS</span>)
+create a new asset called <span style="font-style: italic;">SPRITE_PLAYER</span>.
+&nbsp;It is a 16 bit graphic and the path to the asset is <span style="font-style: italic;">assets\gfx\sprite.bmp</span></td>
+</tr>
+<tr>
+<td>ROM,SPRITE_PLAYER,gfx_clut16,assets\gfx\sprite.bmp</td>
+<td>On cart (<span style="font-style: italic;">ROM</span>)
+create a new asset called <span style="font-style: italic;">SPRITE_PLAYER</span>.
+&nbsp;It is a 16 bit graphic and the path to the asset is <span style="font-style: italic;">assets\gfx\sprite.bmp</span></td>
+</tr>
+<tr>
+<td>ABS,SPRITE_ENEMY,gfx_clut,assets\gfx\sprite2.bmp</td>
+<td>In memory (<span style="font-style: italic;">ABS</span>)
+create a new asset called <span style="font-style: italic;">SPRITE_ENEMY</span>.
+&nbsp;It is a CLUT (<span style="font-style: italic;">indexed</span>)
+based graphic and the path to the asset is <span style="font-style: italic;">assets\gfx\sprite2.bmp</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="assetloading">
+<h1>Asset Addressing</h1>
+In some cases where you load or reference
+Assets, you need to address them differently depending if they are
+loaded from RAM (abs) or ROM.
+<p>&nbsp;</p>
+<table class="docutils" border="1">
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>
+<p>RAM &nbsp;(abs)<br>
+</p>
+</td>
+<td>
+<p>strptr(explode_sam)<br>
+</p>
+</td>
+</tr>
+<tr>
+<td>ROM</td>
+<td>(void *)(explode_sam)</td>
+</tr>
+<tr>
+<td><span style="font-weight: bold;"><br>
+</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: bold;">Examples;</span><br>
+</td>
+<td><span style="font-style: italic;"><br>
+</span></td>
+</tr>
+<tr>
+<td>Play a sample from RAM (using Zero Player)<br>
+</td>
+<td><span style="font-style: italic;">zeroPlay(1,
+strptr(explode_sam), strptr(explode_sam_end), (46168/8000),
+Zero_Audio_8bit_Signed)<br>
+</span></td>
+</tr>
+<tr>
+<td>Play a sample from ROM (using Zero Player)<br>
+</td>
+<td><span style="font-style: italic;">zeroPlay(4,
+(void *)(gamemusic0), (void *)(gamemusic0_end), (46168/23084),
+Zero_Audio_Looping|Zero_Audio_8bit_muLaw)<br>
+</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Load a CLUT from a RAM Asset</td>
+<td>jsfLoadClut(strptr(back1_clut),0,16)</td>
+</tr>
+<tr>
+<td>Load a CLUT from a ROM Asset</td>
+<td>jsfLoadClut((void *)(back1_clut),0,16)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="general">
+<h1>General</h1>
+<table class="docutils" border="1">
+<colgroup><col width="26%"><col width="74%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>Binary bitfields in basic</td>
+<td>
+<dl class="first docutils">
+<dt>Just use</dt>
+<dd>
+<ul class="first last simple">
+<li>B8(binary byte) for bytes,</li>
+<li>B16(binary byte,binary byte) words and</li>
+<li>B32(binary byte,binary byte,binary byte,binary
+byte) for longwords.</li>
+</ul>
+</dd>
+</dl>
+<p class="last">Example: B8(11110000) is 240 in
+decimal.</p>
+</td>
+</tr>
+<tr>
+<td>rapNTSCFlag</td>
+<td>is &gt; 0 if machine is ntsc, otherwise it is PAL.</td>
+</tr>
+<tr>
+<td>jsfSort(table,no_of_indices)</td>
+<td>
+<p class="first">sorts an array of longwords from
+smallest to largest.</p>
+<p class="last">Only longwords (4 byte integers) for
+now.</p>
+</td>
+</tr>
+<tr>
+<td>value = rapRND()</td>
+<td>Get a random 24bit number. &nbsp;This is more
+efficient than the BCX Basic RND. However, if used in critical code
+points it could impact performance.<br>
+Examples:<br>
+rapRND() &amp; 255 &nbsp; (get a number between 0 and 255)<br>
+rapRND() &amp; 63 &nbsp; (get a number between 0 and 63)<br>
+rapRND() &amp; 1 &nbsp; (get a&nbsp;0 or 1)<br>
+See
+example&nbsp;project 'rndtest'.</td>
+</tr>
+<tr>
+<td>jsfClearBuffer(int sizeInBytes, char *bufferAddress)</td>
+<td>Clear a buffer in memory. &nbsp;Not designed for
+performance, just function.<br>
+Example: <br>
+DIM gfxBuffer[352*240*2] AS CHAR<br>
+jsfClearBuffer(352*240*2, strptr(gfxBuffer))<br>
+See example project <span style="font-style: italic;">'jaguargd'</span></td>
+</tr>
+<tr>
+<td>value = rapFlashCheck()</td>
+<td>This will query the type of flash cart the game is
+running on. &nbsp;<span style="font-style: italic;">value</span>
+will contain FLASH_NONE, FLASH_SKUNK or FLASH_JAGGD. &nbsp;You can
+then run specific code depending on the type returned.<br>
+NOTE: This will only work for a ROM &nbsp;(not abs).<br>
+<span style="font-weight: bold;">See example: </span><span style="font-style: italic; font-weight: bold;">flashcheck</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: bold;">Faster
+Multiply and Divide helpers</span></td>
+<td>These are typically faster than the built in BCX
+commands, providing you are dealing with the appropriate size numbers.
+&nbsp;<br>
+NOTE: Some inputs must be shorts.</td>
+</tr>
+<tr>
+<td>short = xdivs(int divid, short divis)</td>
+<td>Divide <span style="font-style: italic;">divid</span>
+by <span style="font-style: italic;">divis</span>
+and return the answer as a short.</td>
+</tr>
+<tr>
+<td>unsigned short = xdivu(unsigned int divid, unsigned
+short divis)</td>
+<td>Divide unsigned&nbsp;<span style="font-style: italic;">divid</span> by <span style="font-style: italic;">divis</span> and return
+the answer as an unsigned short.</td>
+</tr>
+<tr>
+<td>int = xmuls(int multid, short mults)</td>
+<td>Multiply <span style="font-style: italic;">multid</span>
+by <span style="font-style: italic;">mults</span>
+and return an integer.</td>
+</tr>
+<tr>
+<td>unsigned int = xmulu(unsigned int multid, unsigned
+short mults)</td>
+<td>Multiply unsigned <span style="font-style: italic;">multid</span>
+by <span style="font-style: italic;">mults</span>
+and return an unsigned integer.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sprites">
+<h1>Sprites</h1>
+<h3>See the section <a href="ReferenceManual.html#colours">Colours
+/ Fading</a> if you are using&nbsp;sprites with a CLUT
+(graphics have less than 16 bit colours).</h3>
+<table class="docutils" border="1">
+<colgroup><col width="26%"><col width="74%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>sprite[spr_index].property = value</td>
+<td>
+<p class="first">Sets the <em>property</em>
+of object <em>spr_index</em> to <em>value</em>
+.
+</p>
+<p>
+See <a class="reference internal" href="ReferenceManual.html#table-a">Table
+A</a> for properties, their descriptions and user friendly names.
+</p>
+<p style="font-weight: bold;" class="last">Example:
+sprite[1].x = 10&lt;&lt;16</p>
+</td>
+</tr>
+<tr>
+<td>value = sprite[spr_index].property</td>
+<td>
+<p class="first">Gets the <em>property</em>
+of
+object <em>spr_index</em> and saves it to <em>value</em>.</p>
+<p>
+See <a class="reference internal" href="ReferenceManual.html#table-a">Table
+A</a> for properties, their descriptions and user friendly names.
+</p>
+<p style="font-weight: bold;" class="last">Example:
+xposition = sprite[1].x</p>
+</td>
+</tr>
+<tr>
+<td>sprite[spr_index].x_ = 50</td>
+<td>Set the X position of the sprite to 50 pixels from the
+left. &nbsp;(NOTE: The x_ property means you don't need to
+&lt;&lt;16 shift the values)</td>
+</tr>
+<tr>
+<td>sprite[spr_index].y_ = 30</td>
+<td>Set the Y position of the sprite to 30 pixels from the
+top.&nbsp; (NOTE: The y_ property means you don't need to
+&lt;&lt;16 shift the values)</td>
+</tr>
+<tr>
+<td>sprite[spr_index].x = 50&lt;&lt;16</td>
+<td>Set the X position of the sprite to 50 pixels from the
+left.<br>
+Note:
+The X and Y position are actually stored as 16.16 fixed point numbers.
+&nbsp;Therefore you can specify subpixel accuracy if required.</td>
+</tr>
+<tr>
+<td>sprite[spr_index].xadd_ = 2</td>
+<td>Automatically move 2 pixels to the right every refresh.
+&nbsp;Also available as yadd_</td>
+</tr>
+<tr>
+<td>sprite[spr_index].xadd = 2&lt;&lt;16</td>
+<td>Automatically move 2 pixels to the right every
+refresh.&nbsp;&nbsp;Also available as yadd.&nbsp;<br>
+Note: The X and Y ADD properties are actually stored as 16.16 fixed
+point
+numbers. &nbsp;Therefore you can specify subpixel accuracy if
+required.</td>
+</tr>
+<tr>
+<td>Other sprite properties are available. &nbsp;<a href="#table-a">Please see the list below</a>.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="object-manipulation">
+<h1>Sprite manipulation</h1>
+<table class="docutils" border="1">
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>rapSetActiveList(listnum)</td>
+<td>Set the active object list as defined in rapinit.s
+where listnum is zero based. &nbsp;You only need to use this
+command if working with more than one list. &nbsp;NOTE: If you use
+multiple lists, the sprites in the 2nd list will not have 0 based
+indexes. &nbsp;The indexes continue from the previous lists.</td>
+</tr>
+<tr>
+<td>address = rapSpriteTableStarts[16]<br>
+<source first="" object=""><source last="" object=""><target first="" object=""><target last="" object=""></target></target></source></source></td>
+<td>If using multiple lists, this array will contain the
+start address of each list.<br>
+</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>jsfSprlistFieldSet(spr_index, property, no_of_times,
+array_of_values)</td>
+<td>Will write integer values from address
+<em>array_of_values</em>,
+<em>no_of_times</em> times in raptor table <em>property</em>,
+starting with index
+<em>spr_index</em>.</td>
+</tr>
+<tr>
+<td>jsfSprlistFieldMod(spr_index, property, no_of_times,
+array_of_values)</td>
+<td>Will add&nbsp;integer values from address <em>array_of_values</em>,
+<em>no_of_times</em>
+times in raptor table <em>property</em>, starting with
+index <em>spr_index</em>.</td>
+</tr>
+<tr>
+<td>jsfSprlistFieldSetval(spr_index, property, no_of_times,
+value)</td>
+<td>Will write&nbsp;integer <em>value</em>
+<em>no_of_times</em>
+times
+in raptor table <em>property</em>, starting with index <em>spr_index</em>.</td>
+</tr>
+<tr>
+<td>jsfSprlistFieldSetOffset(spr_index, property,
+no_of_times, array_of_values, skip_offset)</td>
+<td>Exactly the same as jsfSprlistFieldSet but you can
+specify the number of sprites to skip between each.</td>
+</tr>
+<tr>
+<td>jsfSprlistFieldModOffset(spr_index, property,
+no_of_times, array_of_values, skip_offset)</td>
+<td>Exactly the same as jsfSprlistFieldMod but you
+can&nbsp;specify the number of sprites to skip between each.</td>
+</tr>
+<tr>
+<td>jsfSprlistFieldSetvalOffset(spr_index, property,
+no_of_times, value, skip_offset)</td>
+<td>Exactly the same as jsfSprlistFieldSetval but you
+can&nbsp;specify the number of sprites to skip between each.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>rapSpriteShift(xshift, yshift, sprBug1, numOfSprites)</td>
+<td>Move a consecutive list of sprites by <span style="font-style: italic;">xshift</span> and <span style="font-style: italic;">yshift</span> pixel
+amounts. &nbsp; &nbsp;An efficient way to move multiple sprites
+at once (by the same amount).<br>
+Starting from sprite named 'sprBug'. &nbsp;<span style="font-style: italic;">numOfSprites</span> is the
+total number of sprites you want to update including the first one
+(sprBug1).<br>
+<br>
+See example project '<span style="font-style: italic;">spriteshift</span>'</td>
+</tr>
+<tr>
+<td>rapSortSprites(spriteIndex, sortProperty, totalSprites,
+sortDirection)</td>
+<td>Sort
+a list of sprites for z ordering. &nbsp;The sprites must be
+consecutive
+in the object list and MUST always have an active sprite before and
+after them.<br>
+This must be called every frame and could have a minor impact on
+performance with a large sort list.<br>
+Start sorting from sprite <span style="font-style: italic;">spriteIndex</span>
+using the property <span style="font-style: italic;">sortProperty</span>.
+&nbsp;There are <span style="font-style: italic;">totalSprites</span>
+to sort and we want to sort in <span style="font-style: italic;">sortDirection</span>.<br>
+<br>
+Possible sort directions are;<br>
+SPRSORT_HIGH &nbsp; &nbsp; &nbsp; - &nbsp; &nbsp;
+&nbsp; (highest values at the back)<br>
+SPRSORT_LOW &nbsp; &nbsp; &nbsp; - &nbsp; &nbsp;
+&nbsp; (lowest values at the back)<br>
+<br>
+<span style="font-weight: bold;">Example:</span>
+&nbsp;rapSortSprites(sprite1,R_sprite_y,8,SPRSORT_HIGH)<br>
+This will start from <span style="font-style: italic;">sprite1</span>,
+use the sprite Y positions to sort on. There are 8 sprites to sort
+and the highest Y values will be further back in the z-order.<br>
+<br>
+Please see the BASIC example project <span style="font-style: italic;">zsort</span>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="spritecollision">
+<h1>Sprite Collision</h1>
+<table class="docutils" border="1">
+<colgroup><col width="26%"><col width="74%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>value = rapCollide&nbsp;(startSprite, endSprite<source first="" object=""><source last="" object=""><target first="" object="">. startOtherSprite, endOtherSprite<target last="" object="">)</target></target></source></source></td>
+<td>Check collision between two lists of sprites.<br>
+<br>
+1st list:&nbsp; startSprite , endSprite<br>
+2nd list: startOtherSprite , endOtherSprite<br>
+<span style="font-style: italic;"><br>
+Value</span> will be greater than -1&nbsp;if anything within
+the
+specified
+range has collided. This is only a general indication of a collision
+and further interrogation is required.<br>
+<br>
+You
+can either do this by looping all sprites and checking the 'was_hit'
+flag or by checking the collision list. &nbsp;The collision list is
+generally more efficient for larger numbers of sprites.<br>
+<br>
+NOTE: When collision happens, the
+values of damage variables of the source sprites are deducted from the
+target sprites automatically.<br>
+Raptor can be set to automatically kill an object when
+its hitpoint variable reaches -1 (dead) by setting the sprite variable
+'remhit' to 'cd_remove'.<br>
+The collision check will only work on sprites that have their 'colchk'
+variable set to 'can_hit', sprites
+that are set to 'cant_hit' will be skipped.<br>
+<br>
+See BASIC example projects '<span style="font-style: italic;">collisionlist</span>',
+'<span style="font-style: italic;">shootbang</span>'
+or 'doger'</td>
+</tr>
+<tr>
+<td>Checking the <span style="font-style: italic;">was_hit</span>
+flag<br>
+</td>
+<td>After calling <span style="font-style: italic;">rapCollide</span>,
+you can loop over all sprites in the collision range and check if their
+<span style="font-style: italic;">was_hit</span>
+flag&nbsp;is greater than -1. &nbsp;If so, that sprite
+was hit.<br>
+If you want this sprite to keep colliding, remember to reset the<span style="font-style: italic;"> was_hit</span> flag back
+to -1.<br>
+<br>
+See BASIC projects '<span style="font-style: italic;">shootbang</span>'
+or 'doger' as examples.<br>
+</td>
+</tr>
+<tr>
+<td>Collision List<br>
+</td>
+<td>Alternatively after calling <span style="font-style: italic;">rapCollide</span>,
+the collision list will be populated with all sprites that collided.
+&nbsp;The list contains the object addresses of the sprite that was
+hit
+and the sprite that hit it.<br>
+<br>
+This is generally more efficient than using the <span style="font-style: italic;">was_hit</span> logic
+because
+you only need to loop over the collided sprites (not all of them).<br>
+<br>
+The collision list is accessed via the <span style="font-style: italic;">colliders </span>array.
+&nbsp;You can iterate over this list to get the sprite addresses;<br>
+spriteWasHit = colliders[i].objectHitAddr<br>
+spriteThatHit = colliders[i].objectSourceHitAddr<br>
+<br>
+You
+can then use the helper function to look up the sprite index from the
+address so that you can manipulate the sprite as needed.<br>
+<br>
+See BASIC example project '<span style="font-style: italic;">collisionlist</span>'<br>
+</td>
+</tr>
+<tr>
+<td>spriteIndex = jsfGetSpriteIndex(collisionSprAddr)<br>
+</td>
+<td>Get the list index of the sprite from its collision
+address (for use with the Collision List function).<br>
+<br>
+Example: <br>
+collisionSprIndex = jsfGetSpriteIndex(colliders[i].objectHitAddr) <br>
+sprite[collisionSprIndex].active = R_is_inactive<br>
+<br>
+See BASIC example project '<span style="font-style: italic;">collisionlist</span>'<br>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="calcangle">
+<h1><a name="Angle_Calculations_and_direction_lookup"></a>Angle
+Calculations and direction lookup</h1>
+<h3>The built in angle calculation and direction vector lookups
+can be used to look up a 0-511 'angle' between two points. &nbsp;If
+required, you can then pass that angle into the helper function to
+retrieve the direction vector for that angle.</h3>
+<table class="docutils" border="1">
+<colgroup><col width="26%"><col width="74%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>rapInitCalcAngle(calcAngleBuffer)</td>
+<td>If you wish to use the angle lookup, you MUST call this
+function to initialise it. &nbsp;<span style="font-weight: bold;">You
+should only do this once.</span><br>
+You must pass it a buffer of suitable size (65540 bytes) that it can
+populate with
+the relevant values.<br>
+Eg. &nbsp; <br>
+DIM calcAngleBuffer[65540] as char<br>
+rapInitCalcAngle(calcAngleBuffer)<br>
+<br>
+See example project '<span style="font-style: italic;">calcangle</span>'</td>
+</tr>
+<tr>
+<td>angle = rapCalcAngle(x1, y1, x2, y2)</td>
+<td>Look up the 0-511 'angle' between the&nbsp;pair of
+coordinates.<br>
+0 = East<br>
+128 = South<br>
+256 = West<br>
+384 = North<br>
+NOTE: You must pass the integer portions of the positions such as 50 or
+120. &nbsp; NOT the sprite 16.16 x or y positions.<br>
+<br>
+See example project '<span style="font-style: italic;">calcangle</span>'</td>
+</tr>
+<tr>
+<td>rapAngleVector(angle)</td>
+<td>If you wish to know the direction vector for the angle
+result
+from the previous rapCalcAngle, pass the angle into this function.<br>
+It will populate the two variables; rapAngle_xAdd and rapAngle_yAdd
+with the direction vector in 16.16 format.<br>
+You can then scale these values as required for your purposes.<br>
+<br>
+Example:<br>
+sprite[sprBug2].xadd = rapAngle_xAdd<br>
+sprite[sprBug2].yadd = rapAngle_yAdd<br>
+<br>
+See example project '<span style="font-style: italic;">calcangle</span>'.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="pixel">
+<h1>Pixel</h1>
+<table class="docutils" border="1">
+<colgroup><col width="12%"><col width="88%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>jsfColour&nbsp;x</td>
+<td>Set plot colour (0 - 15)</td>
+</tr>
+<tr>
+<td style="background-color: white;">jsfPlot(x,y)</td>
+<td>Plot pixel in coordinates x,y with the colour set using
+"<span style="font-style: italic;">jsfColour</span>"</td>
+</tr>
+<tr>
+<td>cls</td>
+<td>Clears the pixel/print text buffer. &nbsp;It calls
+the Raptor function rapParticleClear()</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sync">
+<h1>Sync</h1>
+<table class="docutils" border="1">
+<colgroup><col width="12%"><col width="88%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>vsync</td>
+<td>Waits till the next vertical blank (This is a BASIC
+convenience command for&nbsp;jsfVsync(0) )</td>
+</tr>
+<tr>
+<td>jsfVsync(0)</td>
+<td>Waits till the next vertical blank</td>
+</tr>
+<tr>
+<td>jsfDelay(x)</td>
+<td>Waits for x vertical blanks.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="memory">
+<h1>Memory</h1>
+<table class="docutils" border="1">
+<colgroup><col width="12%"><col width="88%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>poke x,y</td>
+<td>writes byte y to address x</td>
+</tr>
+<tr>
+<td>peek(x)</td>
+<td>returns byte from address x</td>
+</tr>
+<tr>
+<td>dpoke x,y</td>
+<td>writes word y to address x</td>
+</tr>
+<tr>
+<td>dpeek(x)</td>
+<td>returns word from address x</td>
+</tr>
+<tr>
+<td>lpoke x,y</td>
+<td>writes longword y to address x</td>
+</tr>
+<tr>
+<td>lpeek(x)</td>
+<td>returns longword from address x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="packing">
+<h1>Packing</h1>
+<table class="docutils" border="1">
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>rapUnpack(source_address,destination_address)</td>
+<td>Unpacks data using the GPU from <span style="font-style: italic;">source_address</span>
+to <span style="font-style: italic;">destination_address</span>.
+Note that it's your responsibility to reserve enough RAM for unpacking.
+Also, no checking to see if a packed asset exists at the source address
+- <span style="text-decoration: underline;">again it's
+your responsibility!</span>
+<p><span style="font-style: italic;">This is
+the default and fastest unpack routine. If any assets have issues, use
+jsfUnpack68k instead.</span></p>
+<p style="font-weight: bold;">Example:</p>
+<p><span>dim buffer[352*250*2/4] as integer</span><span>
+' Define a buffer in memory to hold a 352x250 16bit image.</span></p>
+<p><span class="last">rapUnpack((int)strptr(source_image),(int)(int
+*)buffer)</span><span> ' Unpack the packed image into the
+buffer.</span></p>
+</td>
+</tr>
+<tr>
+<td>jsfUnpack68k(source_address,destination_address)</td>
+<td>Unpacks data using the 68000 from <span style="font-style: italic;">source_address</span>
+to <span style="font-style: italic;">destination_address</span>.
+Note that it's your responsibility to reserve enough RAM for unpacking.
+Also, no checking to see if a packed asset exists at the source address
+- <span style="text-decoration: underline;">again it's
+your responsibility!</span>
+<p><span style="font-style: italic;">This is
+slower than the default unpacker but in some edge cases can be more
+compatible.</span></p>
+<p style="font-weight: bold;">Example:</p>
+<p><span>dim buffer[352*250*2/4] as integer</span><span>
+' Define a buffer in memory to hold a 352x250 16bit image.</span></p>
+<p><span class="last">jsfUnpack68k((int)strptr(source_image),(int)(int
+*)buffer)</span><span> ' Unpack the packed image into the
+buffer.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="timer">
+<h1>Clock / Timer &nbsp;<small><small>(See
+project 'clocktest' for an example)</small></small></h1>
+<table class="docutils" border="1">
+<colgroup><col width="37%"><col width="63%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>rapSetClock(x)</td>
+<td>Set the clock value to <span style="font-style: italic;">x</span> seconds.<br>
+<span style="font-weight: bold;">Example:</span><br>
+rapSetClock(0)<br>
+</td>
+</tr>
+<tr>
+<td>rapClockMode = <span style="font-style: italic;">mode</span></td>
+<td>Set the current clock <span style="font-style: italic;">mode</span>.
+&nbsp;Values can be; &nbsp;Clock_Freeze, Clock_Countdown,
+Clock_Countup<br>
+<span style="font-weight: bold;">Example:</span><br>
+rapClockMode = Clock_Countdown</td>
+</tr>
+<tr>
+<td>rapAddClock(value)</td>
+<td>Add <span style="font-style: italic;">value</span>
+seconds to the clock value.<br>
+<span style="font-weight: bold;">Example:</span><br>
+rapAddClock(10)</td>
+</tr>
+<tr>
+<td>rapSubClock(value)</td>
+<td>Subtract <span style="font-style: italic;">value</span>
+seconds from the clock value.</td>
+</tr>
+<tr>
+<td>rapClockValue</td>
+<td>The text representation of the current clock value;<br>
+<span style="font-weight: bold;">Example:</span><br>
+rapPrint rapClockValue</td>
+</tr>
+<tr>
+<td>rapClockHex</td>
+<td>The numerical value of the current seconds.<br>
+<span style="font-weight: bold;">Example:</span><br>
+jsfPrintInt rapClockHex</td>
+</tr>
+<tr>
+<td>rapTicks</td>
+<td>Number of ticks passed. Can also be set to a value or
+back to 0.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="blitter">
+<h1>Blitter</h1>
+<table class="docutils" border="1">
+<colgroup><col width="37%"><col width="63%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>rapBlitlist(pointer_to_blitlist).</td>
+<td>
+<p class="first">Passes a list of blitting commands
+to raptor so they
+can be processed fast. pointer_to_blitlist contains an array of ints
+that have A1_BASE, A1_FLAGS, A1_CLIP, A1_PIXEL, A1_STEP_INT,
+A1_STEP_FRAC, A1_PIXEL_POINTER, A1_INC_INT, A1_INC_FRACT, A2_BASE,
+A2_FLAGS, B_PATD, A2_PIXEL, A2_STEP, B_COUNT, B_CMD. End the list with
+-1.</p>
+<p class="last">Example project: <span style="font-style: italic;">blitline</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="particles">
+<h1>Particles</h1>
+<table class="docutils" border="1">
+<colgroup><col width="26%"><col width="74%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>rapParticleInject(address_of_particle_struct)</td>
+<td>
+<p><em>address_of_particle_struct</em> points
+to a 6
+column by user
+definable rows table of longwords. First row must have
+(0,0,0,x,y,no_particles) and the other the particle definitions (angle,
+speed, angular speed, initial colour, colour decay (per frame), pixel
+life (in frames))
+</p>
+<p>See example projects: <span style="font-style: italic;">particles, spiral, starfield,
+starfield2</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="map-module">
+<h1>Tile Map module</h1>
+<h6><span style="font-weight: bold;">NOTE: rapapp.s
+contains a group of
+equates that must be set up for Tile Maps to work correctly. &nbsp;
+Look in
+rapapp.s for the section titled 'MAP MODULE SETUP EQUATES'.<br>
+<br>
+See example project 'tilemap'</span></h6>
+<br>
+<span style="font-weight: bold;"></span>
+<table style="width: 100%;" class="docutils" border="1">
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>rapSetMapLoc(x,y)</td>
+<td>
+<p>Set map position to x,y. Where x and y are
+x&lt;&lt;16 and y&lt;&lt;16 </p>
+<p>Eg.
+rapSetMapLoc(10&lt;&lt;16,200&lt;&lt;16)</p>
+<p>See example project: <span style="font-style: italic;">tilemap</span></p>
+</td>
+</tr>
+<tr>
+<td>raptor_maptop_obj</td>
+<td>Pointer to the first object in the map define</td>
+</tr>
+<tr>
+<td>raptor_gmap_startx</td>
+<td>32 bit screen position (in pixels) for where the left
+edge of the map will be drawn</td>
+</tr>
+<tr>
+<td>raptor_gmap_starty</td>
+<td>32 bit screen position (in pixels) for where the top
+edge of the map will be drawn</td>
+</tr>
+<tr>
+<td>raptor_map_position_x</td>
+<td>16.16 map co-ordinate (x). &nbsp; NOTE: When using
+rapSetMapLoc(x,y), you don't need to set this variable directly.</td>
+</tr>
+<tr>
+<td>raptor_map_position_y</td>
+<td>16.16 map co-ordinate (y) &nbsp; NOTE: When using
+rapSetMapLoc(x,y), you don't need to set this variable directly.</td>
+</tr>
+<tr>
+<td>raptor_map_bitdepth</td>
+<td>The bit depth of the tileset.&nbsp; (Can be
+1,2,4,8,16). &nbsp;The default is 4 bit. &nbsp;This is set in
+rapapp.s.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Creating Tile Maps for use in JagStudio.</td>
+<td>We recommend <a href="http://www.tilemap.co.uk/mappy.php" target="_blank">Mappy</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="colours">
+<h1>Colours / Fading</h1>
+<table class="docutils" border="1">
+<colgroup><col width="40%"><col width="60%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>jsfLoadClut(palette_address,target_clut,number_of_indices)</td>
+<td>
+Takes the palette values at address "palette_address" and copies them
+to CLUT "target_clut_number" (0 to 15). <em>clut_number_of_indices</em>
+tells the routine how many to copy. This routine can be used to set up
+anything from 2 to 256 palette indices at once.
+<p><span>Eg. jsfLoadClut(strptr(STARS_clut),10,16)</span><span>
+' Loads the palette from the STARS asset into CLUT 10 where there are
+16 colours.</span></p>
+<p>See example project: <span style="font-style: italic;">shootbang</span></p>
+</td>
+</tr>
+<tr>
+<td>rapFadeClut(int clut_no,int fade_cols,int *palette)</td>
+<td>
+Fades CLUT <em>clut_no</em> (0-15) to CLUT values address <em>palette</em>
+. <em>fade_cols</em> is the number of CLUT entries to
+process. Note that fade_cols is 0 based, so to fade 16 cols pass 15.<br>
+<br>
+See example BASIC project <span style="font-style: italic;">fader.</span>
+</td>
+</tr>
+<tr>
+<td>rapFadeSingle(index_to_fade,desired_colour_in_16_bit_BBG)</td>
+<td>
+Fades CLUT index <em>index_to_fade</em> to <em>desired_colour_in_16_bit_BBG</em>
+.
+</td>
+</tr>
+<tr>
+<td>rapFadeDelay = x</td>
+<td>Where <span style="font-style: italic;">x</span>
+is the delay (in function calls) between steps</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="font-weight: bold;">Font and Particle
+Palette Loading</td>
+<td><span style="font-weight: bold;">See
+example project </span><span style="font-style: italic; font-weight: bold;">fontpalettes</span></td>
+</tr>
+<tr>
+<td>rapUseParticlePalette(clutToPopulate)</td>
+<td>Tell Raptor to load the 4 bit palette from the
+assets/partipal.bmp file into CLUT number <span style="font-style: italic;">clutToPopulate</span>.</td>
+</tr>
+<tr>
+<td>rapUse8x8fontPalette(clutToPopulate)</td>
+<td>Tell Raptor to load the 4 bit palette from the
+assets/fonts/f_8x8.bmp file into CLUT number <span style="font-style: italic;">clutToPopulate</span>.<br>
+<span style="font-weight: bold;">Example</span>:
+rapUse8x8fontPalette(15) &nbsp;- &nbsp;This will load the 8x8
+font palette into CLUT 15.</td>
+</tr>
+<tr>
+<td>rapUse8x16fontPalette(clutToPopulate)</td>
+<td>Tell Raptor to load the 4 bit palette from the
+assets/fonts/f_8x16.bmp file into CLUT number <span style="font-style: italic;">clutToPopulate</span>.</td>
+</tr>
+<tr>
+<td>rapUse16x16fontPalette(clutToPopulate)</td>
+<td>Tell Raptor to load the 4 bit palette from the
+assets/fonts/f_16x16.bmp file into CLUT number <span style="font-style: italic;">clutToPopulate</span>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="strings">
+<h1>Strings</h1>
+<table class="docutils" border="1">
+<colgroup><col width="29%"><col width="71%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>rapPrint "text here"</td>
+<td>prints a static string to screen at coordinates set
+by&nbsp;rapLocate. No fancy formatting allowed (i.e. it'll only
+work
+with something like&nbsp;rapPrint "hello".&nbsp;rapPrint
+"hello"&amp;"world" will fail). Font is set
+via&nbsp;jsfFontIndx and
+size from&nbsp;jsfFontSize.</td>
+</tr>
+<tr>
+<td>rapPrintCont "more text here"</td>
+<td>Continues printing from where previous rapPrint command
+ended. You can use font commands before this to change text style or
+colour mid sentence. No need to use rapLocate before this.</td>
+</tr>
+<tr>
+<td>jsfPrintInt 64</td>
+<td>Print an integer value.</td>
+</tr>
+<tr>
+<td>rapNumToStr(number, digits, string$)</td>
+<td>
+<p class="first">converts number with (digits+1)
+digits very fast and render it to string$.</p>
+<p>Note that the number has to be an integer.</p>
+<p class="last"><span style="font-weight: bold;">Example:
+rapNumToStr(987,2,out$) will convert number 987 to string using 3
+digits
+and place it into out$.</span> If we used 3 instead of 2 we'd get
+"0987"</p>
+</td>
+</tr>
+<tr>
+<td>print&nbsp;"text here"</td>
+<td>
+<p>Print text at location rapLocate and allow concatenation.</p>
+<p>Example: print "hiya! ",variablename," hello
+",123.237462376</p>
+</td>
+</tr>
+<tr>
+<td>rapLocate&nbsp;x,y</td>
+<td>Locates the cursor at coordinates x,y. Notice that
+those are pixel
+coordinates, not cursor coordinates.</td>
+</tr>
+<tr>
+<td>jsfFontSize(index)</td>
+<td>Changes Font Size - This is a zero based index that
+tells Raptor which font file to use from the Assets/Fonts folder.</td>
+</tr>
+<tr>
+<td>jsfFontIndx(index)</td>
+<td>Changes Font Color - This is a zero based index that
+tells Raptor which font to use from within the relevant font.bmp as
+picked by jsfFontSize. &nbsp; <span style="font-weight: bold;">NOTE</span><span style="font-style: italic;">: </span>See the section
+above <span style="font-style: italic;">"Font and
+Particle Palette Loading" </span>to see how to load different
+font palettes.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="scores">
+<h1>Highscores and data persistence</h1>
+<h3>JagStudio can store up to 5 scoreboards and additional adhoc
+user
+data.
+&nbsp;For Carts (ROMS) only a 2K eeprom will be supported - not any
+smaller. &nbsp;
+See example projects <span style="font-style: italic;">eeprom,
+scores</span>
+and <span style="font-style: italic;">scoresadvanced</span>.</h3>
+<h3 style="font-weight: bold;"><small>BigP Emulator
+supports 2K EEPROM saves - so we recommend using BigP instead of VJ
+when testing EEPROM.<br>
+To run your project in BigP use the command; &nbsp; <span style="font-style: italic;">build projectname bigp</span><br>
+<span style="font-weight: normal;">To set up BigP to use
+EEPROM in development mode; &nbsp;1. When BigP Opens from the
+JagStudio command line, press ESC to access the main options menu.
+&nbsp;2. Scroll down to "Developer" and then Enable "Local EEPROM".
+&nbsp;This will ensure the .bigpeep EEPROM file is created
+alongside your .ROM / .ABS and also that the eeprom will work between
+different builds of your game (the ROM HASH will be ignored).</span></small></h3>
+<table class="docutils" border="1">
+<colgroup><col width="22%"><col width="78%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>rapHighscoresScore</td>
+<td>Points to the first
+highscore table (10 entries, one integer each)</td>
+</tr>
+<tr>
+<td>rapHighscoresName</td>
+<td>Points to the
+first highscore names table (10 entries, 8 characters each, not null
+terminated)</td>
+</tr>
+<tr>
+<td>rapHiscoreCheck(score,name)</td>
+<td>Checks if score
+is a high score. (name is 8 characters)<br>
+Example;<br>
+if rapHiscoreCheck(432,name$,0) &gt; 0
+then&nbsp;&nbsp;&nbsp;&nbsp;'check for highscore in
+board 0 and
+inject score + name<br>
+&nbsp;&nbsp;&nbsp; call
+rapHiscoreSort(0,name$)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'if
+we have a highscore, then sort the score table 0<br>
+endif</td>
+</tr>
+<tr>
+<td>rapHiscoreSort(tableNumber,name)</td>
+<td>Re-sorts the
+highscores as well as the names. &nbsp;Will only sort&nbsp;<span style="font-style: italic;">tableNumber</span>.</td>
+</tr>
+<tr>
+<td>rapHighscores1Score &amp; rapHighscores1Name</td>
+<td>Point to individual highscore tables. &nbsp;5 are
+available. &nbsp;rapHighscores1Score
+to&nbsp;rapHighscores5Score
+and&nbsp;rapHighscores1Name to&nbsp;rapHighscores5Name<br>
+See example projects <span style="font-style: italic;">EEPROM</span>
+and <span style="font-style: italic;">scoresadvanced</span>.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: bold;">EEPROM
+(Cart persistent memory support)</span></td>
+<td></td>
+</tr>
+<tr>
+<td>eeprom_result =
+jsfEEPROMFullRead()</td>
+<td>Read ALL 5 of the highscore tables from EEPROM into
+memory.
+&nbsp;Stores the values in the rapHighscores1Score
+&amp;&nbsp;rapHighscores1Name tables (all 5 tables).
+&nbsp;This will read a checksum at the end of the scoreboards in
+the EEPROM,&nbsp;<span style="font-style: italic;">eeprom_result</span>
+will be greater than 0 if the checksum failed. NOTE: If you also use
+the separate single scoreboard&nbsp;writes then this checksum is
+NOT updated and would be incorrect.</td>
+</tr>
+<tr>
+<td>eeprom_result =
+jsfEEPROMFullWrite()</td>
+<td>Save ALL 5 of the highscore tables to
+EEPROM.&nbsp;This
+will write a checksum at the end of the scoreboards in the
+EEPROM,&nbsp;eeprom_result
+will be greater than 0 if the checksum failed. NOTE: If you also use
+the separate single scoreboard&nbsp;writes then this checksum is
+NOT updated and will not be correct when you next perform a
+jsfEEPROMFullRead()</td>
+</tr>
+<tr>
+<td>jsfEEPROMBoardRead(boardnumber)</td>
+<td>Read a single scoreboard stored in position <span style="font-style: italic;">boardNumber</span>.&nbsp;<span style="font-style: italic;">boardnumber</span> should
+be between 0 to 4</td>
+</tr>
+<tr>
+<td>jsfEEPROMBoardWrite(boardnumber)</td>
+<td>Save a single scoreboard.&nbsp;<span style="font-style: italic;">boardnumber</span> should
+be between 0 to 4</td>
+</tr>
+<tr>
+<td>jsfEEPROMWordRead(eepromAddress)</td>
+<td>We recommend using rapUserSaveData instead of this
+function for general use. <br>
+Read a single WORD (short int) value from EEPROM.
+&nbsp;The value is
+stored at <span style="font-style: italic;">eepromAddress</span>
+on the EEPROM.<br>
+<span style="font-weight: bold;">Example</span>:
+&nbsp;value =&nbsp;jsfEEPROMWordRead(512) &nbsp; .
+<span style="font-style: italic;">Value</span>
+would contain the value stored at position 512.<span style="font-style: italic;"></span></td>
+</tr>
+<tr>
+<td>jsfEEPROMWordWrite(eepromAddress,&nbsp;value)</td>
+<td><span style="font-style: italic;">Advanced
+(be careful!)</span> - We recommend using rapUserSaveData instead
+of this function for general use. <br>
+Save a single <span style="font-style: italic;">value</span>
+&nbsp;WORD (short int) to EEPROM at
+address&nbsp;<span style="font-style: italic;">eepromAddress</span>.
+&nbsp;<span style="font-style: italic;">eepromAddress
+should be between 511 and 1023.</span><br>
+<span style="font-weight: bold;">Example</span>:&nbsp;jsfEEPROMWordWrite(512,123)
+- This will save the
+value 123 in the
+EEPROM (after the 5 scoreboards). &nbsp;512 onwards should be free.<br>
+<span style="font-weight: bold;">NOTE</span>:rapUserSaveData
+also stores values at 512 onwards.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>jsfEEPROMUserDataRead()</td>
+<td>Reads all 128 entries into the rapUserSaveData[] array.</td>
+</tr>
+<tr>
+<td>jsfEEPROMUserDataWrite()</td>
+<td>Writes all 128 entries contained in the
+rapUserSaveData[] array to EEPROM.</td>
+</tr>
+<tr>
+<td>rapUserSaveData[128]</td>
+<td>Array that points to 128 integers (long words) for
+storing user data. &nbsp;These can be used to save game options,
+game progress or any other values you might want to persist between
+game boots.<br>
+<span style="font-weight: bold;">Example</span>:
+See project <span style="font-style: italic;">eeprom</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: bold;">Original
+EEPROM Functions (left in for compatability). &nbsp;Use the above
+functions instead of these.</span></td>
+<td></td>
+</tr>
+<tr>
+<td>jsfEEPROM(1,rapHighscoresScore)</td>
+<td>Read ALL the highscore tables from EEPROM into memory.
+&nbsp;Stores the values in the rapHighscores1Score
+&amp;&nbsp;rapHighscores1Name tables (all 5 tables)</td>
+</tr>
+<tr>
+<td>jsfEEPROM(0,rapHighscoresScore)</td>
+<td>Save ALL the highscore tables to EEPROM.</td>
+</tr>
+<tr>
+<td>eeprom_result =
+jsfEEPROMBoard(0,highscoreBoard,boardNumber)&nbsp;&nbsp;&nbsp;
+</td>
+<td>Save a single scoreboard stored in the array <span style="font-style: italic;">highscoreBoard</span> in
+scoreboard position&nbsp;<span style="font-style: italic;">boardNumber</span>.
+&nbsp;<span style="font-style: italic;">eeprom_result</span>
+will be 0 is scores saved successfully.</td>
+</tr>
+<tr>
+<td>eeprom_result =
+jsfEEPROMBoard(1,highscoreBoard,boardNumber)&nbsp;&nbsp;&nbsp;</td>
+<td>Read a single scoreboard stored in position <span style="font-style: italic;">boardNumber</span> and
+store the values in memory in array <span style="font-style: italic;">highscoreBoard</span>.</td>
+</tr>
+<tr>
+<td>jsfEEPROMWord(0,eepromAddress,value)</td>
+<td><span style="font-style: italic;">Advanced
+(be careful!)</span> - Save a single <span style="font-style: italic;">value</span> to EEPROM as
+address&nbsp;<span style="font-style: italic;">eepromAddress</span>.<br>
+Example: jsfEEPROMWord(0,560,123) - This will save the value 123 in the
+EEPROM after the 5 scoreboards. &nbsp;560 onwards should be free.</td>
+</tr>
+<tr>
+<td>value = jsfEEPROMWord(1,eepromAddress,0)</td>
+<td>Read a single value from EEPROM. &nbsp;The value is
+stored at <span style="font-style: italic;">eepromAddress</span>.<br>
+Example: &nbsp;value = jsfEEPROMWord(1,560,0) &nbsp; . <span style="font-style: italic;">Value</span> would contain
+<span style="font-style: italic;">123</span>
+if the above write had occurred.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: bold;">Memory
+Track (CD persistent memory cart support)</span></td>
+<td></td>
+</tr>
+<tr>
+<td>rapMTInit</td>
+<td>
+<p>If you are using Memory Track, you must put this command
+at the beginning of your code.</p>
+<p>Example: CALL rapMTInit</p>
+<p>See example projects: <span style="font-style: italic;">scores and scoresAdvanced</span></p>
+</td>
+</tr>
+<tr>
+<td>value = rapMTPresent</td>
+<td>Value is negative if no
+Memory Track is present. If you are using memory track, make sure you
+have used rapMTInit</td>
+</tr>
+<tr>
+<td>rapUserSaveData[]</td>
+<td>Points to 512
+bytes for user data which will be appended to the MT save</td>
+</tr>
+<tr>
+<td>rapMTSave</td>
+<td>Saves the
+highscore table. Use it in combination with rapMTPresent and rapMTInit.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="debugging">
+<h1>Debugging</h1>
+<p>This will display a debug window detailing the main 68K
+registers and 16 user defined watch variables. &nbsp;It will also
+show a user defined string.</p>
+<p>All values shown are in HEX.</p>
+<p>By default, the 7-15 watch variables will point to; Ticks and
+NTSC flag, VBL Time remaining, last collision result, current active
+list, tilemap x, tilemap y, end of program data (BSS), Free RAM.</p>
+<p>&nbsp;</p>
+<table class="docutils" border="1">
+<colgroup><col width="22%"><col width="78%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>rapDebugSetXY(x,y)<br>
+</td>
+<td>Set the position of the Raptor debug window in pixels.<br>
+</td>
+</tr>
+<tr>
+<td>rapDebugPrint "This is some debug text"<br>
+</td>
+<td>Print some text in the debug window. &nbsp;Maximum
+of 77 chars.<br>
+</td>
+</tr>
+<tr>
+<td>rapDebugSetVisible(DEBUG_SHOW)&nbsp;&nbsp;&nbsp;
+<br>
+</td>
+<td>Show or hide the debug window. &nbsp;Valid options
+to pass in are DEBUG_SHOW or&nbsp;DEBUG_HIDE</td>
+</tr>
+<tr>
+<td>rapDebugUpdate()<br>
+</td>
+<td>Tell Raptor that you want the debug values to update.<br>
+</td>
+</tr>
+<tr>
+<td>rapDebugInverse()<br>
+</td>
+<td>Switches between White background with black text and
+black background with white text.<br>
+</td>
+</tr>
+<tr>
+<td>jsfDebugMessage "Quick debug message"<br>
+</td>
+<td>Will automatically show the debug window with your text
+string. &nbsp;Your program will keep running. NOTE: Call
+rapDebugSetXY(x,y) before using this.<br>
+</td>
+</tr>
+<tr>
+<td>jsfDebugMessageHalt "We have halted the application"<br>
+</td>
+<td>Will automatically show the debug window with your text
+string and also HALT your program from continuing. &nbsp;NOTE: The
+background will intentionally strobe colours!! Also; Call
+rapDebugSetXY(x,y) before using this.<br>
+</td>
+</tr>
+<tr>
+<td>rapDebugSetMonitor(watchnumber, strptr(variabletowatch))</td>
+<td>This will set up a watch over a variable of your
+choice. &nbsp;You pass in the address of the variable, whenever a
+rapDebugUpdate() is called, Raptor will get the value at the variable
+and update it's debug values. &nbsp;There are 16 watch numbers that
+you can set up (0-15).<br>
+<span style="font-weight: bold;">Example:</span><br>
+rapDebugSetMonitor(0, strptr(sprite[sprBugIndex].x)) &nbsp; ' This
+will set up the first watch to peek at that sprites x position.</td>
+</tr>
+<tr>
+<td><br>
+</td>
+<td><span style="font-weight: bold;">See
+example project</span>: debugview<br>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sound-input-engines">
+<h1>Sound/input engines</h1>
+<p>Two sound and input engines are available. &nbsp;Your
+project can only use one or the other;&nbsp;U-235 or Zerosquare.</p>
+<p>To choose which engine to use, open your projects rapapp.s
+file and look at the very top for the line &nbsp; <span style="font-style: italic;">player equ 0</span></p>
+<p><span style="font-style: italic;">Set that value
+to either; &nbsp; 0=Zerosquare's player, 1=U-235 player</span></p>
+<div class="section" id="universalpad">
+<h2>Universal PAD Input - These commands can be used with both
+U235 and
+Zerosquare</h2>
+<table class="docutils" border="1">
+<colgroup><col width="20%"><col width="80%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>value = jsfGetPad(padID)</td>
+<td>
+<p class="first">The value returned from this
+command will repeat when the buttons are held down. &nbsp;This is
+ideal for general gameplay movement where the player would be holding a
+direction or firebutton.</p>
+<p class="first"></p>
+<p class="first">Returns values from either pad 1 or
+2. padID can be LEFT_PAD or RIGHT_PAD</p>
+<p style="font-weight: bold;">Example:</p>
+<p>pad1 = jsfGetPad(LEFT_PAD)</p>
+<p>Check dpad up: "if pad1 BAND JAGPAD_UP then"
+</p>
+<p class="last">
+Check button A is held down: "if pad1 BAND JAGPAD_A then"
+</p>
+</td>
+</tr>
+<tr>
+<td>value = jsfGetPadPressed(padID)</td>
+<td>The value returned from this command will be a single
+press (debounced). &nbsp;Therefore, it will always just return the
+last button pressed down. &nbsp;This is ideal for menus where you
+might not want the player to hold down the button to move something,
+but rather have to keep pressing a button.<br>
+<br>
+Returns values from either pad 1 or
+2. padID can be LEFT_PAD or RIGHT_PAD<br>
+<br>
+<p style="font-weight: bold;">Example:</p>
+<p>pad1 =&nbsp;jsfGetPadPressed(LEFT_PAD)</p>
+<p>Check dpad up: "if pad1 BAND JAGPAD_UP then"
+</p>
+<p class="last">
+Check button A was pressed: "if pad1 BAND JAGPAD_A then"
+</p>
+</td>
+</tr>
+<tr>
+<td>Direction pad masks</td>
+<td>
+<p class="last">JAGPAD_UP, JAGPAD_DOWN, JAGPAD_LEFT,
+JAGPAD_RIGHT,
+JAGPAD_A, JAGPAD_B, JAGPAD_C, JAGPAD_PAUSE, JAGPAD_OPTION, JAGPAD_0,
+JAGPAD_1, JAGPAD_2, JAGPAD_3, JAGPAD_4, JAGPAD_5, JAGPAD_6, JAGPAD_7,
+JAGPAD_8, JAGPAD_9, JAGPAD_STAR,JAGPAD_HASH</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="u-235">
+<h2>U-235</h2>
+<table class="docutils" border="1">
+<colgroup><col width="20%"><col width="80%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>u235PlayModule(mod_address,format)</td>
+<td>
+<p>plays a .mod file at address "mod_address" in either
+mono or stereo.</p>
+<p>"format" can be MOD_STEREO or MOD_MONO</p>
+<p>Example: u235PlayModule((int)strptr(Module1),MOD_STEREO)</p>
+<p>where Module1 is an asset in abs.</p>
+<p class=""><span style="font-weight: bold;">Example
+project</span>: u235_Test</p>
+</td>
+</tr>
+<tr>
+<td>u235StopModule()</td>
+<td>stops .mod playing</td>
+</tr>
+<tr>
+<td>u235GetPad(padID)</td>
+<td>
+<p class="first">This is the specific U235 pad
+input. It returns values from either pad 1 or 2. padID can be LEFT_PAD
+or RIGHT_PAD</p>
+<p class="">For standard pad input you should just
+use the universal function jsfGetPad(padID).</p>
+</td>
+</tr>
+<tr>
+<td>u235PlaySample(int channel,int sfxnum)</td>
+<td>triggers sampleno on channel</td>
+</tr>
+<tr>
+<td>u235PlaySampleFreq(channel,sampleno,frequency)</td>
+<td>triggers sampleno on channel at frequency in Hz</td>
+</tr>
+<tr>
+<td>u235ModuleVol(x)</td>
+<td>sets mod music volume (x in range 0 - 63)</td>
+</tr>
+<tr>
+<td>u235SampleVol(x)</td>
+<td>sets global sfx volume (x in range 0 - 63)</td>
+</tr>
+<tr>
+<td>u235KillChannel(x)</td>
+<td>stops playing sample at channel number x</td>
+</tr>
+<tr>
+<td>u235ChannelVol(channel,volume)</td>
+<td>set or adjust the volume on channel to volume (0 to 63)</td>
+</tr>
+<tr>
+<td>u235ChannelFreq(channel,frequency)</td>
+<td>sets frequency of channel (0 to 65535)</td>
+</tr>
+<tr>
+<td>rotary_mode1</td>
+<td>+1 = rotary, - 1 = jagpad (Port 1) (.l)</td>
+</tr>
+<tr>
+<td>rotary_mode2</td>
+<td>+1 = rotary, - 1 = jagpad (Port 2) (.l)</td>
+</tr>
+<tr>
+<td>turn_direction1</td>
+<td>rotary value (bigger is faster) - +=left / 0=nothing /
+- =right (Port 1) (.l)</td>
+</tr>
+<tr>
+<td>turn_direction2</td>
+<td>rotary value (bigger is faster) - +=left / 0=nothing /
+- =right (Port 2) (.l)</td>
+</tr>
+<tr>
+<td>rotary_interval1</td>
+<td>trim value for rotary (Port 1) (.l)</td>
+</tr>
+<tr>
+<td>rotary_interval2</td>
+<td>trim value for rotary (Port 2) (.l)</td>
+</tr>
+<tr>
+<td>spin_delta1</td>
+<td>value to add to turn_direction per increment (Port 1)
+(.l)</td>
+</tr>
+<tr>
+<td>spin_delta2</td>
+<td>value to add to turn_direction per increment (Port 2)
+(.l)</td>
+</tr>
+<tr>
+<td>value = u235Rnd</td>
+<td>Return a random number from U235SE. &nbsp;NOTE: A
+random number will only be generated if U235 is running. &nbsp;For
+example, playing a mod or sfx.</td>
+</tr>
+<tr>
+<td>Direction pad masks</td>
+<td>
+<p class="last">PAD_UP, PAD_U, PAD_DOWN, PAD_D,
+PAD_LEFT, PAD_L, PAD_RIGHT, PAD_R, PAD_HASH, PAD_9,<br>
+PAD_6, PAD_3, PAD_PAUSE, PAD_A, PAD_OPTION, PAD_STAR, PAD_7, PAD_4,
+PAD_1, PAD_0, PAD_8,&nbsp;PAD_5, PAD_2, PAD_B, PAD_C</p>
+</td>
+</tr>
+<tr>
+<td>u235Restart(int rate,int period)</td>
+<td>Stop and restart U235 at the desired rate and period.
+&nbsp;See tables below for values.<br>
+NOTE: changing to a higher frequency can impact performance.<br>
+eg. u235Restart(U235SE_16KHZ,U235SE_16KHZ_PERIOD)</td>
+</tr>
+<tr>
+<td>u235Init(int rate,int period)</td>
+<td>Start U235 at the desired rate and period.
+&nbsp;See tables below for values.<br>
+NOTE: changing to a higher frequency can impact performance.<br>
+eg.&nbsp;u235Init(U235SE_16KHZ,U235SE_16KHZ_PERIOD)</td>
+</tr>
+<tr>
+<td>u235StopDSP()</td>
+<td>Stop U235 from running.&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<br>
+<big><br style="font-weight: bold;">
+<span style="font-weight: bold;">Rate Values</span></big><br>
+<br>
+<table class="docutils" border="1" cellpadding="2" cellspacing="2">
+<colgroup><col width="20%"><col width="80%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U235SE_8KHZ</td>
+<td>Set playback rate&nbsp; (8.1kHz)</td>
+</tr>
+<tr>
+<td>U235SE_12KHZ</td>
+<td>Set playback rate&nbsp; (12.060kHz)</td>
+</tr>
+<tr>
+<td>U235SE_16KHZ</td>
+<td>Set playback rate&nbsp; (16.446kHz)</td>
+</tr>
+<tr>
+<td>U235SE_24KHZ</td>
+<td>Set playback rate&nbsp; (24.67kHz)</td>
+</tr>
+<tr>
+<td>U235SE_32KHZ</td>
+<td>Set playback rate&nbsp; (31.925kHz)</td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<big><span style="font-weight: bold;">Period Values</span></big><br>
+<br>
+<table class="docutils" border="1" cellpadding="2" cellspacing="2">
+<colgroup><col width="20%"><col width="80%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U235SE_8KHZ_PERIOD</td>
+<td>8kHz period</td>
+</tr>
+<tr>
+<td>U235SE_12KHZ_PERIOD</td>
+<td>12kHz period</td>
+</tr>
+<tr>
+<td>U235SE_16KHZ_PERIOD</td>
+<td>16kHz period</td>
+</tr>
+<tr>
+<td>U235SE_24KHZ_PERIOD</td>
+<td>24kHz period</td>
+</tr>
+<tr>
+<td>U235SE_32KHZ_PERIOD</td>
+<td>32kHz period</td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+</div>
+<div class="section" id="zerosquare">
+<h2>Zerosquare Player</h2>
+<table class="docutils" border="1">
+<colgroup><col width="31%"><col width="69%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>zeroGetPad(padID)</td>
+<td>
+<p>reads both pad ports and sends results back to
+variables
+zero_left_pad, zero_right_pad, zero_mousex_delta, zero_mousey_delta and
+zero_rotary_delta. padID can be LEFT_PAD or RIGHT_PAD. By default the
+engine is configured to assume 2
+joypads connected.</p>
+<p class="">For standard pad input you should just
+use the universal function jsfGetPad(padID).</p>
+<p class="">example projects: zero_Test, chessboard,
+print</p>
+</td>
+</tr>
+<tr>
+<td>zeroSetNormalPadMode()</td>
+<td>sets up the engine to read two pads (enabled by
+default).<br>
+<br>
+</td>
+</tr>
+<tr>
+<td>zeroSetJoyPort1()</td>
+<td>enables joypad port 1 to be used for rotary/mouse
+input. This
+doesn't enable rotary/mouse mode. zero_rotary_delta will give the
+number of rotary ticks since the last read command.</td>
+</tr>
+<tr>
+<td>zeroSetJoyPort2()</td>
+<td>enables joypad port 2 to be used for rotary/mouse
+input. This
+doesn't enable rotary/mouse mode. zero_rotary_delta will give the
+number of rotary ticks since the last read command.</td>
+</tr>
+<tr>
+<td>zeroSetRotaryMode()</td>
+<td>enables rotary mode.</td>
+</tr>
+<tr>
+<td>zeroSetAtariMouseMode</td>
+<td>enables Atari mouse mode. Input_Mouse_Left and
+Input_Mouse_Right
+are the masks to check for button presses zero_mousex_delta,
+zero_mousey_delta are the number of mouse ticks in x and y axis since
+the last read command.</td>
+</tr>
+<tr>
+<td>zeroSetAmigaMouseMode</td>
+<td>enables Amiga mouse mode. Input_Mouse_Left and
+Input_Mouse_Right
+are the masks to check for button presses zero_mousex_delta,
+zero_mousey_delta are the number of mouse ticks in x and y axis since
+the last read command.</td>
+</tr>
+<tr>
+<td>zeroPlay(channel,start_address, end_address, frequency,
+params)</td>
+<td>plays a sample starting from
+<span style="font-style: italic;">start_address</span>
+and ending at <span style="font-style: italic;">end_address</span>
+on <span style="font-style: italic;">channel</span>
+with speed <span style="font-style: italic;">frequency</span>
+and
+with flags <span style="font-style: italic;">params</span>.<br>
+<em>Channel</em> should be from 1 to 4.<br>
+<span style="font-style: italic;">Frequency</span>
+should be an
+integer that divides the base frequency of 46168Hz. So for example if
+it's set to 1, it'll play a sample at 46168Hz, a 2 will play a sample
+at 23084Hz etc.<br>
+<p class="">Example: zeroPlay(1,
+strptr(explode_sam),&nbsp;strptr(explode_sam_end), (46168/8000),
+Zero_Audio_8bit_Signed)<br>
+</p>
+<p class="">Example: zeroPlay(1,
+strptr(music),&nbsp;strptr(music_end), (46168/22050),
+Zero_Audio_Looping|Zero_Audio_8bit_muLaw)</p>
+<p class=""><span style="font-weight: bold;">Example
+project</span>: zero_Test</p>
+</td>
+</tr>
+<tr>
+<td>zeroPlaySample(channel,start_address, len, frequency,
+params)</td>
+<td>
+<p class="first">plays a sample starting from
+start_address with length len to channel chan with speed frequency and
+with flags params. <em>Channel</em> should be from 1 to 4.
+start_address should be aligned
+to 4 bytes. len should be a multiple of 4. frequency should be an
+integer that divides the base frequency of 46168Hz. So for example if
+it's set to 1, it'll play a sample at 46168Hz, a 2 will play a sample
+at 23084Hz etc.
+</p>
+<p class="">Example: zeroPlaySample(1,
+strptr(explode_sam), (strptr(explode_sam_end)-strptr(explode_sam)+3)
+and 0xfffffffc, (46168/8000), Zero_Audio_8bit_Signed)</p>
+<p class=""><span style="font-weight: bold;">Example
+project</span>: zero_Test</p>
+<dl class="last docutils">
+<dt>Available flags are:</dt>
+<dd>
+<ul class="first last simple">
+<li>Zero_Audio_8bit_Signed (plays an 8-bit signed
+sample)</li>
+<li>Zero_Audio_8bit_Unsigned (plays an 8 - bit
+unsigned sample)</li>
+<li>Zero_Audio_8bit_muLaw (plays a 8 - bit compressed
+?w sample)</li>
+<li>Zero_Audio_Looping (enables sample loop).</li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr>
+<td>zeroClearChannel(channel)</td>
+<td>Stops all audio on <span style="font-style: italic;">channel<br>
+</span><em>Channel</em> should be from 1 to 4.</td>
+</tr>
+<tr>
+<td>Direction pad masks</td>
+<td>Input_Pad_Pause,&nbsp;Input_Pad_A, Input_Pad_Up,
+Input_Pad_Down,
+Input_Pad_Left, Input_Pad_Right, Input_Pad_C1, Input_Pad_B,
+Input_Pad_Star, Input_Pad_7, Input_Pad_4, Input_Pad_1, Input_Pad_C2,
+Input_Pad_C, Input_Pad_0, Input_Pad_8, Input_Pad_5, Input_Pad_2,
+Input_Pad_C3, Input_Pad_Option, Input_Pad_Sharp, Input_Pad_9,
+Input_Pad_6, Input_Pad_3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="procontroller">
+<h2>LSP Sound and Input Engine. See example project <span style="font-style: italic;">lsp_test</span> for all
+these commands.</h2>
+<table class="docutils" border="1">
+<colgroup><col width="31%"><col width="39%"><col width="30%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td><span style="font-weight: bold;">Input</span></td>
+<td></td>
+</tr>
+<tr>
+<td>jsfGetPad(int pad)</td>
+<td>LSP Works with the universal PAD commands.</td>
+</tr>
+<tr>
+<td>jsfGetPadPressed(int pad)</td>
+<td>LSP Works with the universal PAD commands.</td>
+</tr>
+<tr>
+<td>Direction Pad Masks</td>
+<td><span style="color: rgb(85, 85, 85); font-family: Arial,sans-serif; font-size: medium; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">JAGPAD_UP,
+JAGPAD_DOWN, JAGPAD_LEFT, JAGPAD_RIGHT, JAGPAD_A, JAGPAD_B, JAGPAD_C,
+JAGPAD_PAUSE, JAGPAD_OPTION, JAGPAD_0, JAGPAD_1, JAGPAD_2, JAGPAD_3,
+JAGPAD_4, JAGPAD_5, JAGPAD_6, JAGPAD_7, JAGPAD_8, JAGPAD_9,
+JAGPAD_STAR,JAGPAD_HASH</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: bold;">Sound</span></td>
+<td>NOTE: Once a MOD has started playing, it will alter the
+buffers. &nbsp;Therefore, to replay a MOD you must reload it.<br>
+See example <span style="font-style: italic;">lsp_test</span>
+on how to load the buffers from a packed asset.</td>
+</tr>
+<tr>
+<td>LSPStartMusic()<br>
+</td>
+<td>Start music that was previously loaded via
+LSPPlayModule.<br>
+</td>
+</tr>
+<tr>
+<td>LSPStopMusic()</td>
+<td>Stop any current music that's playing.</td>
+<td></td>
+</tr>
+<tr>
+<td>LSPMusicToggle()</td>
+<td>Toggle existing music on/off.</td>
+<td></td>
+</tr>
+<tr>
+<td>LSPPlayModule(int MODULE_lsmusic,int MODULE_lsbank)</td>
+<td>Set up LSP to play the MOD stored in modMusicBuffer
+using the instrument bank stored in&nbsp;modBankBuffer.<br>
+<span style="font-weight: bold;">Example</span>:
+LSPPlayModule((int)strptr(modMusicBuffer),(int)strptr(modBankBuffer))</td>
+<td></td>
+</tr>
+<tr>
+<td>void LSPPlaySample(void *sound_address, void
+*sound_endaddress, int frequency, int volume, int channel)</td>
+<td>Play a sample sound. &nbsp;You must pass in the
+start &amp; end address of
+the sample.&nbsp;You must&nbsp;supply the frequency, volume
+(0-63) and
+sound channel (0-3).<br>
+Example: LSPPlaySample(strptr(explode_sam),
+strptr(explode_sam_end),7389, 63, 0)<br>
+<span style="font-weight: bold;">NOTE</span>:
+Samples will only play when a MOD is playing.</td>
+<td></td>
+</tr>
+<tr>
+<td>LSPPlaySampleLoop(void
+*sound_address, void *sound_endaddress, void *sound_loopaddress, void
+*sound_loopendaddress, int frequency, int volume, int channel)</td>
+<td>Play
+a sample sound. &nbsp;You must pass in the start &amp; end
+address of
+the sample. &nbsp;If you want it to loop then you must populate the
+start &amp; end addresses of the part you want to loop (pass 0's in
+for
+these if not looping). &nbsp;You must also supply the frequency,
+volume
+(0-63) and sound channel (0-3).<br>
+Example: LSPPlaySample(strptr(explode_sam), strptr(explode_sam_end),0,
+0, 7389, 63, 0)<br>
+<span style="font-weight: bold;">NOTE</span>:
+Samples will only play when a MOD is playing.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="procontroller">
+<h2>Pro Controller Support</h2>
+<h3>The Pro Controller buttons all map to the existing standard
+Jag Pad
+controller. &nbsp;This was by design of the original hardware and
+cannot be changed in JagStudio.<br>
+Therefore, see the table below to know which buttons to check to
+support the Pro Controller.<br>
+We have supplied helper names for the additional buttons, but keep in
+mind they map to the existing number pad buttons.</h3>
+<table class="docutils" border="1">
+<colgroup><col width="31%"><col width="39%"><col width="30%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+<th class="head cell2">Helper Names</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>Shoulder Button Left</td>
+<td>Number Pad 4</td>
+<td>JAGPAD_TL</td>
+</tr>
+<tr>
+<td>Shoulder Button Right</td>
+<td>Number Pad 6<br>
+</td>
+<td>JAGPAD_TR</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Number Pad 9 </td>
+<td>JAGPAD_X</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Number Pad 8 </td>
+<td>JAGPAD_Y</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Number Pad 7 </td>
+<td>JAGPAD_Z</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="teamtap">
+<h2>Team Tap</h2>
+<h3>Team Tap has it's own input commands. &nbsp;Please use
+these, rather than the specific one with the sound/input engine you are
+using (you can mix both though as shown in the example).<br>
+<span style="font-weight: bold;">See example: <span style="font-style: italic;">teamtap</span></span></h3>
+<table class="docutils" border="1">
+<colgroup><col width="31%"><col width="39%"><col width="30%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>value = rapCheckTTExists(TT_LEFT)</td>
+<td>Check the existence of a Team Tap in the left Jaguar
+joypad port. <span style="font-style: italic;">value</span>
+will contain a 1 if it exists.</td>
+</tr>
+<tr>
+<td>value = rapCheckTTExists(TT_RIGHT)</td>
+<td>Check the existence of a Team Tap in the right Jaguar
+joypad port. <span style="font-style: italic;">value</span>
+will contain a 1 if it exists.</td>
+</tr>
+<tr>
+<td>rapGetTTState(TT_LEFT)</td>
+<td>Read all the Joypad values from the Team Tap on the
+left Jaguar Port. <span style="font-style: italic;">Must
+be called before rapGetTTPad</span></td>
+</tr>
+<tr>
+<td>rapGetTTState(TT_RIGHT)</td>
+<td>Read all the Joypad values from the Team Tap on the
+right Jaguar Port. <span style="font-style: italic;">Must
+be called before rapGetTTPad</span></td>
+</tr>
+<tr>
+<td>value = rapGetTTPad(TT_LEFT, TT_PAD_1)</td>
+<td>Read the current Joypad values from the first port on
+the left hand Team Tap. <span style="font-style: italic;">&nbsp;You
+can then analyse value to determine what is pressed by comparing with
+the Direction pad masks below. &nbsp; <span style="font-weight: bold;">Eg.&nbsp; IF&nbsp;value
+BAND PAD_A THEN ...... &nbsp;</span></span></td>
+</tr>
+<tr>
+<td>value&nbsp;= rapGetTTPad(TT_LEFT, TT_PAD_2)</td>
+<td>Read the current Joypad values from the second port on
+the left hand Team Tap.</td>
+</tr>
+<tr>
+<td>value&nbsp;= rapGetTTPad(TT_LEFT, TT_PAD_3)</td>
+<td>Read the current Joypad values from the third port on
+the left hand Team Tap.</td>
+</tr>
+<tr>
+<td>value&nbsp;= rapGetTTPad(TT_LEFT, TT_PAD_4)</td>
+<td> Read the current Joypad values from the forth port on
+the left hand Team Tap.</td>
+</tr>
+<tr>
+<td>value&nbsp;&nbsp;= rapGetTTPad(TT_RIGHT,
+TT_PAD_1)</td>
+<td>Read the current Joypad values from the first port on
+the right hand Team Tap.</td>
+</tr>
+<tr>
+<td>value&nbsp;&nbsp;= rapGetTTPad(TT_RIGHT,
+TT_PAD_2)</td>
+<td>Read the current Joypad values from the second port on
+the&nbsp;right hand Team Tap.</td>
+</tr>
+<tr>
+<td>value&nbsp;&nbsp;= rapGetTTPad(TT_RIGHT,
+TT_PAD_3)</td>
+<td>Read the current Joypad values from the third port on
+the&nbsp;right hand Team Tap.</td>
+</tr>
+<tr>
+<td>value&nbsp;&nbsp;= rapGetTTPad(TT_RIGHT,
+TT_PAD_4)</td>
+<td>Read the current Joypad values from the forth port on
+the&nbsp;right hand Team Tap.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Direction pad masks</td>
+<td>PAD_UP, PAD_U, PAD_DOWN, PAD_D,
+PAD_LEFT, PAD_L, PAD_RIGHT, PAD_R, PAD_HASH, PAD_9,<br>
+PAD_6, PAD_3, PAD_PAUSE, PAD_A, PAD_OPTION, PAD_STAR, PAD_7, PAD_4,
+PAD_1, PAD_0, PAD_8,&nbsp;PAD_5, PAD_2, PAD_B, PAD_C </td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="jaggd">
+<h1><a name="JagGD"></a>JagGD</h1>
+<p>If you want to use the JaguarGD or GameDrive Cart from RetroHQ
+either for development or specific game features then see below;<br>
+See BASIC example project '<span style="font-style: italic;">jaguargd</span>'.</p>
+<span style="font-style: italic;">These features were
+added to the GD Cart firmware; v1.11, ASIC 1.08, Menu 1.08, Stub
+1.04.<br>
+You must be using at least this version for all these functions to work.<br>
+</span>
+<p style="font-weight: bold; font-style: italic;">EEPROM
+Saves when developing using JagStudio. &nbsp;<big style="color: rgb(204, 0, 0);">NOTE: EEPROM SAVES ARE
+CURRENTLY DISABLED AS THERE ARE BUGS IN THE GD FIRMWARE. &nbsp;</big></p>
+<p>If
+you use the jaggd command when building, JagStudio will now
+automatically add the -e switch to the command line. &nbsp;This
+will
+create an e2p file on your SD Card and use that for your development
+build.</p>
+<p>This gives you the ability to properly test EEPROM saves on
+your GD Cart between power cycles.<span style="font-weight: bold;"></span></p>
+<p>&nbsp;</p>
+<table class="docutils" border="1">
+<colgroup><col width="22%"><col width="78%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Command</th>
+<th class="head cell2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>x = rapGDDetect<br>
+</td>
+<td>If x is set to 1 then the GD Cart has been detected.<br>
+Eg. if rapGDDetect = 1 THEN Print "GD Detected"<br>
+</td>
+</tr>
+<tr>
+<td>x&nbsp;= rapGDCardInserted()<br>
+</td>
+<td>Detect if an SD Card is inserted. &nbsp;If x = 1
+then an SD Card is inserted.<br>
+</td>
+</tr>
+<tr>
+<td>rapGDSetLEDOn()<br>
+</td>
+<td>Turn the GD LED On.<br>
+</td>
+</tr>
+<tr>
+<td>rapGDSetLEDOff()<br>
+</td>
+<td>Turn the GD LED Off.<br>
+</td>
+</tr>
+<tr>
+<td>rapGDReset(<span style="font-style: italic;">resetcommand</span>)<br>
+</td>
+<td>Reset the console using one of the following
+resetcommands;<br>
+GD_RESET_NORMAL<br>
+GD_RESET_MENU<br>
+GD_RESET_DEBUG<br>
+Example; rapGDReset(GD_RESET_MENU)<br>
+</td>
+</tr>
+<tr>
+<td>rapGDDebugPrint "string to print here"<br>
+</td>
+<td>Send this string message to the COM port for external
+debugging.
+&nbsp;You can use something like "putty" to listen to the COM port
+and
+view the string messages sent from your Jaguar.<br>
+</td>
+</tr>
+<tr>
+<td>rapGDLoadFile(void *fullPathAddr, void *buffer)</td>
+<td>Load the file and populate its contents into the buffer.<br>
+Example;<br>
+DIM gfxBuffer[352*240*2] AS CHAR<br>
+DIM fullpath$<br>
+DIM success AS INTEGER<br>
+fullpath$ = "\LOGO.JAG"<br>
+success = rapGDLoadFile(strptr(fullpath$),strptr(gfxBuffer))<br>
+sprite[sprBackground].gfxbase = (int)gfxBuffer<br>
+<br>
+success=0 if the load worked.&nbsp; If it's -1 then it failed.<br>
+See example BASIC project '<span style="font-style: italic;">jaguargd</span>'</td>
+</tr>
+<tr>
+<td>rapGDSaveFile(void *fullPathAddr, void *buffer, int
+size)</td>
+<td>Save the contents of gfxBuffer to a file with the full
+path suppled<br>
+<br>
+Example;<br>
+fullpath$ = "\LOGO.SAV"<br>
+success = rapGDSaveFile(strptr(fullpath$),strptr(gfxBuffer),352*240*2)</td>
+</tr>
+<tr>
+<td><br>
+</td>
+<td><br>
+</td>
+</tr>
+<tr>
+<td><span style="font-weight: bold;">Serial
+Numbers.</span><br>
+rapGDGetCartSerial()<br>
+</td>
+<td>If you want to retreive the serial number of the users
+Cart then first call rapGDGetCartSerial()<br>
+This will populate the internal variables with the relevant details.</td>
+</tr>
+<tr>
+<td>rapGDASERIAL$</td>
+<td>The internal variable used to store the ASCII GD serial.</td>
+</tr>
+<tr>
+<td>rapGDSERIAL<br>
+</td>
+<td>The HEX GD serial number.<br>
+</td>
+</tr>
+<tr>
+<td>rapGDGetCardSerial()</td>
+<td>Look up the SD Card Serial number.</td>
+</tr>
+<tr>
+<td>rapGDSDSERIAL</td>
+<td>SD Card serial number</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="table-a">
+<h1><a class="reference internal" href="#table-a">Table
+A (sprite object properties)</a>
+</h1>
+<h3>
+These are the properties you can use to access a sprite from code. In
+the following example substitute 'property' with one of the values
+below (from 1st column); sprite[spr_index].property = value,<br>
+Eg. &nbsp;Where spr_index is the number of the sprite to update
+(the position of the object in the rapinit.s file)<br>
+sprite[spr_index].active = R_is_active<br>
+sprite[spr_index].x = 100&lt;&lt;16<br>
+sprite[spr_index].y_ = 50<br>
+sprite[spr_index].wrap = R_edge_wrap</h3>
+<br>
+<table class="docutils" border="1">
+<colgroup><col width="20%"><col width="10%"><col width="50%"><col width="20%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head">Offset's friendly name</th>
+<th class="head">Offset</th>
+<th class="head">Description</th>
+<td style="font-weight: bold;" class="head">Possible
+Values (From code)</td>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><span style="font-weight: normal; font-style: italic;">If using in
+rapinit.s then exclude the R_ from the setting.</span></td>
+</tr>
+<tr>
+<td>active</td>
+<td>4</td>
+<td>Show or hide the sprite</td>
+<td>R_is_active<br>
+R_is_inactive </td>
+</tr>
+<tr>
+<td>x</td>
+<td>8</td>
+<td>x position in 16.16</td>
+<td>100&lt;&lt;16 &nbsp; &nbsp; (would be
+100 pixels from the left)</td>
+</tr>
+<tr>
+<td>x_</td>
+<td>10</td>
+<td>x position (does not require 16.16 conversion)</td>
+<td>100 &nbsp; &nbsp; (would be 100 pixels from the
+left)</td>
+</tr>
+<tr>
+<td>y</td>
+<td>12</td>
+<td>y position in 16.16</td>
+<td>100&lt;&lt;16 &nbsp; &nbsp; (would be
+100 pixels from the top)</td>
+</tr>
+<tr>
+<td>y_</td>
+<td>14</td>
+<td>y position (does not require 16.16 conversion)</td>
+<td>100 &nbsp; &nbsp; (would be 100 pixels from the
+top)</td>
+</tr>
+<tr>
+<td>xadd</td>
+<td>16</td>
+<td>x velocity to add in 16.16 &nbsp;(auto-move the
+sprite)</td>
+<td>2&lt;&lt;16 &nbsp; &nbsp;
+(automatically move the sprite 2 pixels on X every frame)</td>
+</tr>
+<tr>
+<td>xadd_</td>
+<td>18</td>
+<td>x velocity to add (does not require 16.16 conversion)
+&nbsp;(auto-move the sprite)</td>
+<td>2 &nbsp; &nbsp;&nbsp;(automatically move
+the sprite 2 pixels on X every frame)</td>
+</tr>
+<tr>
+<td>yadd</td>
+<td>20</td>
+<td>y velocity to add in 16.16 &nbsp;(auto-move the
+sprite)</td>
+<td>2&lt;&lt;16 &nbsp;
+&nbsp;&nbsp;(automatically move the sprite 2 pixels on Y every
+frame)</td>
+</tr>
+<tr>
+<td>yadd_</td>
+<td>22</td>
+<td>y velocity to add (does not require 16.16 conversion)
+&nbsp;(auto-move the sprite)</td>
+<td>2 &nbsp; &nbsp;&nbsp;(automatically move
+the sprite 2 pixels on Y every frame)</td>
+</tr>
+<tr>
+<td>flip</td>
+<td>24</td>
+<td>if set, add _width to X and set mirror</td>
+<td>R_is_normal<br>
+R_is_flipped</td>
+</tr>
+<tr>
+<td>width</td>
+<td>28</td>
+<td>Width of sprite</td>
+<td>In pixels</td>
+</tr>
+<tr>
+<td>height</td>
+<td>32</td>
+<td>Height of sprite</td>
+<td>In pixels</td>
+</tr>
+<tr>
+<td>vbox</td>
+<td>36</td>
+<td>Height of collision box from centre in pixels</td>
+<td>In pixels (does not change when scaling used)</td>
+</tr>
+<tr>
+<td>hbox</td>
+<td>40</td>
+<td>Width of collision box from centre in pixels</td>
+<td>In pixels (does not change when scaling used)</td>
+</tr>
+<tr>
+<td>gfxbase</td>
+<td>44</td>
+<td>Pointer to phrase aligned sprite bitmap data</td>
+<td></td>
+</tr>
+<tr>
+<td>framesz</td>
+<td>48</td>
+<td>Size of sprite frame in bytes (offset to next frame)</td>
+<td></td>
+</tr>
+<tr>
+<td>framedel</td>
+<td>52</td>
+<td>Counter until the next anim frame advances<br>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>curframe</td>
+<td>56</td>
+<td>Current frame number (or 0 for no frames)</td>
+<td></td>
+</tr>
+<tr>
+<td>maxframe</td>
+<td>60</td>
+<td>Additional number of animation frames after the first</td>
+<td></td>
+</tr>
+<tr>
+<td>animloop</td>
+<td>64</td>
+<td>R_ani_rept&nbsp;= loop
+animation<br>
+R_ani_once=terminate
+on loop</td>
+<td>R_ani_rept<br>
+R_ani_once</td>
+</tr>
+<tr>
+<td>wrap</td>
+<td>68</td>
+<td>What the sprite will do when exiting the bounds of the
+screen.&nbsp;<br>
+R_edge_wrap = wrap round to the opposite side.<br>
+R_edge_ignore = Ignore the edge and don't wrap (won't be visible when
+off screen but will be active).<br>
+R_edge_kill = Automatically set the sprite as inactive when it leaves
+the screen.</td>
+<td>R_edge_wrap<br>
+R_edge_ignore<br>
+R_edge_kill</td>
+</tr>
+<tr>
+<td>timer</td>
+<td>72</td>
+<td>integer number of frames to stay alive, or R_spr_inf
+for infinite</td>
+<td>R_spr_inf</td>
+</tr>
+<tr>
+<td>track</td>
+<td>76</td>
+<td>R_spr_linear&nbsp;= use fract update, else pointer
+to x.y co-ords</td>
+<td>R_spr_linear</td>
+</tr>
+<tr>
+<td>colchk</td>
+<td>80</td>
+<td>R_cant_hit&nbsp;= no collision detection</td>
+<td>R_can_hit<br>
+R_cant_hit</td>
+</tr>
+<tr>
+<td>scaled</td>
+<td>84</td>
+<td>R_spr_unscale&nbsp;= sprite is not scaled<br>
+R_spr_scale = sprite will or can be scaled</td>
+<td>R_spr_scale<br>
+R_spr_unscale</td>
+</tr>
+<tr>
+<td>scale_x</td>
+<td>88</td>
+<td>32 is 1:1. 0-31 are scaled down, 33-255 are scaled up.</td>
+<td>32</td>
+</tr>
+<tr>
+<td>scale_y</td>
+<td>92</td>
+<td>32 is 1:1. 0-31 are scaled down, 33-255 are scaled up.</td>
+<td>32</td>
+</tr>
+<tr>
+<td>CLUT</td>
+<td>96</td>
+<td>R_no_CLUT&nbsp;for no change, else use an integer
+of 0-15 if the sprite is less than 16bit colour.</td>
+<td>R_no_CLUT<br>
+or 0-15</td>
+</tr>
+<tr>
+<td>animspd</td>
+<td>100</td>
+<td>Number of screen updates (VB) before the animation
+advances</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>bytewid</td>
+<td>104</td>
+<td>Width of one scanline of sprite in bytes</td>
+<td></td>
+</tr>
+<tr>
+<td>tracktop</td>
+<td>108</td>
+<td>Loop point for tracking, or -1 for exit</td>
+<td>0</td>
+</tr>
+<tr>
+<td>was_hit</td>
+<td>112</td>
+<td>Set to +ve if by the collision routine if sprite hit</td>
+<td></td>
+</tr>
+<tr>
+<td>coffx</td>
+<td>116</td>
+<td>Collision box x offset - pixel distance from centre of
+sprite</td>
+<td></td>
+</tr>
+<tr>
+<td>coffy</td>
+<td>120</td>
+<td>Collision box y offset - pixel distance from centre of
+sprite</td>
+<td></td>
+</tr>
+<tr>
+<td>remhit</td>
+<td>124</td>
+<td>R_cd_remove&nbsp;= Set the sprite as inactive if
+hit.<br>
+R_cd_keep =&nbsp; Leave the sprite active.</td>
+<td>R_cd_remove<br>
+R_cd_keep</td>
+</tr>
+<tr>
+<td>bboxlink</td>
+<td>128</td>
+<td>R_single, or pointer to bounding box link data</td>
+<td>R_single</td>
+</tr>
+<tr>
+<td>hitpoint</td>
+<td>132</td>
+<td>Hitpoints of damage to take before removal</td>
+<td></td>
+</tr>
+<tr>
+<td>damage</td>
+<td>136</td>
+<td>Damage to deal</td>
+<td></td>
+</tr>
+<tr>
+<td>flash</td>
+<td>140</td>
+<td>Make sprite blink</td>
+<td></td>
+</tr>
+<tr>
+<td>gwidth</td>
+<td>144</td>
+<td>Graphics width</td>
+<td></td>
+</tr>
+<tr>
+<td>Rrmotion</td>
+<td>148</td>
+<td>Pointer to RMotion animation</td>
+<td></td>
+</tr>
+<tr>
+<td>rmcurfrm</td>
+<td>152</td>
+<td>RMotion internal</td>
+<td></td>
+</tr>
+<tr>
+<td>rmfrm</td>
+<td>156</td>
+<td>RMotion internal</td>
+<td></td>
+</tr>
+<tr>
+<td>bdepth</td>
+<td>160</td>
+<td>Bit Depth of sprite - Sprite graphics type: 1,2,4,8,16
+or 24 bit</td>
+<td>1,&nbsp; 2,&nbsp; 4,&nbsp; 8,&nbsp;
+16,&nbsp; 24</td>
+</tr>
+<tr>
+<td>cryrgb</td>
+<td>164</td>
+<td>If CRY colour space</td>
+<td>R_is_RGB<br>
+R_is_cry</td>
+</tr>
+<tr>
+<td>trans</td>
+<td>168</td>
+<td>Trans for see-through background, opaque for solid
+background. &nbsp;If &lt;16bit then colour index 0 is used.
+&nbsp;Otherwise black is used.</td>
+<td>R_is_trans<br>
+R_is_opaque</td>
+</tr>
+<tr>
+<td>userdat1</td>
+<td>172</td>
+<td>Reserved for future expansion - Can be used to store
+extra information about the sprite.</td>
+<td></td>
+</tr>
+<tr>
+<td>userdat2</td>
+<td>176</td>
+<td>Reserved for future expansion - Can be used to store
+extra information about the sprite.</td>
+<td></td>
+</tr>
+<tr>
+<td>userdat3</td>
+<td>180</td>
+<td>Reserved for future expansion - Can be used to store
+extra information about the sprite.</td>
+<td></td>
+</tr>
+<tr>
+<td>userdat4</td>
+<td>184</td>
+<td>Reserved for future expansion - Can be used to store
+extra information about the sprite.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<br>
+<span style="font-weight: bold; text-decoration: underline;"></span><br>
+<h1><a name="RB_to_JagStudio_Manual_Migration_Guide_"></a>RB+
+to JagStudio Manual Migration Guide&nbsp;&nbsp;
+&nbsp;</h1>
+<big><span style="font-weight: bold;">1. </span></big><big>COPY
+your entire game project folder over to&nbsp;<span style="font-style: italic;">Projects\Basic\</span>
+inside the
+JagStudio folder.<br>
+<br>
+<span style="font-weight: bold;">2.</span><br>
+<span style="font-weight: bold;">a)</span> </big><big>If
+you <span style="font-weight: bold;">haven't</span>
+edited rapapp.s - Just copy over the latest version from
+<span style="font-style: italic;">JagStudio\buildfiles\template\</span>
+into your project folder.</big><br>
+<big><span style="font-weight: bold;">b) </span></big><big>If
+you <span style="font-weight: bold;">have</span>
+made
+changes that you cannot remember then do the following;<br>
+</big><br>
+<dl>
+<dt><big>- Add the
+following line in the list of includes at the top (around line 18);</big></dt>
+</dl>
+<div style="margin-left: 40px; font-family: monospace;"><big>include
+"RAPTOR235.INC"</big></div>
+<dl>
+<dt><big>- Directly
+above the line <span style="font-style: italic;"><big><span style="font-family: monospace;">jsr
+&nbsp; &nbsp; RAPTOR_U235init</span></big>
+&nbsp; &nbsp;</span>Add
+these two;</big></dt>
+</dl>
+<div style="margin-left: 40px; font-family: monospace;"><big>move.l&nbsp;&nbsp;&nbsp;
+#U235SE_16KHZ,d0</big><br>
+<big>move.l&nbsp;&nbsp;&nbsp;
+#U235SE_16KHZ_PERIOD,d1</big></div>
+<dl>
+<dt><big>- Directly under the
+line&nbsp;</big><big style="font-style: italic;"><big><span style="font-family: monospace;">RAPTOR_user_vbi:</span></big>
+&nbsp; &nbsp;&nbsp;</big><big>Add these lines;</big></dt>
+</dl>
+<div style="margin-left: 40px; font-family: monospace;"><big>if
+player=1</big><br>
+<big>jsr&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+RAPTOR_U235playqueue</big><br>
+<big>endif</big></div>
+<dl>
+<dt><big>- Replace this single
+line &nbsp; &nbsp;&nbsp;</big><big style="font-style: italic;"><big><span style="font-family: monospace;">.uvbi_out:&nbsp;&nbsp;&nbsp;
+rts</span></big> &nbsp; &nbsp; </big><big>to
+the multiple lines;</big></dt>
+</dl>
+<div style="margin-left: 40px; font-family: monospace;"><big>.uvbi_out:</big><br>
+<big>if
+player=1</big><br>
+<big>jsr&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+RAPTOR_U235resetqueue</big><br>
+<big>endif</big><br>
+<big>rts</big></div>
+<dl>
+<dt><big>- Rename
+the two occurrences of
+<big><span style="font-family: monospace;">RUPDALL_FLAG</span></big>
+to <big><span style="font-family: monospace;">jsfVsyncFlag</span></big></big></dt>
+</dl>
+<dl>
+<dt><big>- Directly
+above the section; &nbsp; &nbsp;</big><big style="font-style: italic;"><big><span style="font-family: monospace;">;;
+Graphics</span></big> &nbsp; </big><big>add
+in;</big></dt>
+</dl>
+<div style="margin-left: 40px;"><big style="font-family: monospace;">if
+player=0</big><br style="font-family: monospace;">
+<big style="font-family: monospace;">include
+"jagstudio_pad_zero.inc"</big><br style="font-family: monospace;">
+<big style="font-family: monospace;">else</big><br style="font-family: monospace;">
+<big style="font-family: monospace;">include
+"jagstudio_pad_u235.inc"</big><br style="font-family: monospace;">
+<big style="font-family: monospace;">endif</big><br>
+</div>
+<big><br>
+</big><big><span style="font-weight: bold;">3.</span>
+In all&nbsp;your .bas files, delete this line if you have
+it;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<big><span style="font-family: monospace;">rlist=(RAPTOR_LIST
+*)strptr(RAPTOR_sprite_table)</span></big><br>
+<span style="font-weight: bold;">4.</span>
+In all your .bas files; Find and replace all the old commands to
+replace with new JagStudio versions.&nbsp; See list below of old
+and
+new commands. <span style="font-weight: bold;">NOTE</span>:
+There are some syntax changes.<br>
+<span style="font-weight: bold;">5.</span> In all
+your .bas files; Change all
+<big><span style="font-family: monospace;">RSETOBJ(objnum,prop,value)</span></big>
+to <big><span style="font-family: monospace;">sprite[objnum].prop
+= value</span></big><br>
+<span style="font-weight: bold;">6.</span> In all
+your .bas files; Change all <big><span style="font-family: monospace;">value =
+RGETOBJ(objnum,<span style="font-style: italic;">prop</span>)</span></big>
+to <big><span style="font-family: monospace;">value
+= sprite[objnum].<span style="font-style: italic;">prop</span></span></big><br>
+<span style="font-weight: bold;">7.</span> If you
+have any lines containing <big><span style="font-family: monospace;">rlist[].</span><span style="font-style: italic; font-family: monospace;">property</span></big>
+then
+rename to <big><span style="font-family: monospace;">sprite[].</span><span style="font-style: italic; font-family: monospace;">property</span></big><br>
+<br>
+</big>
+<div class="section" id="oldandnewcommands">
+<h1>List of OLD commands and their NEW names</h1>
+<table class="docutils" border="1">
+<thead valign="bottom"><tr>
+<th class="head cell1">RB+ Command</th>
+<th class="head cell2">JagStudio Command (rename to)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>RSETOBJ(objnum,property,value)</td>
+<td>Removed - use <big><span style="font-family: monospace;">sprite[objnum].<span style="font-style: italic;">property</span> = value</span></big>
+&nbsp; instead</td>
+</tr>
+<tr>
+<td>value = RGETOBJ(objnum,property)</td>
+<td>Removed - use <big><span style="font-family: monospace;">value = sprite[objnum].<span style="font-style: italic;">property</span></span></big><span style="font-style: italic;"> </span>instead</td>
+</tr>
+<tr>
+<td>SNDPLAY(int sampleno,int channel)</td>
+<td>u235PlaySample(int channel,int sfxnum)</td>
+</tr>
+<tr>
+<td>ZEROPAD()</td>
+<td>jsfGetPad(pad) - Global pad reader for u235 and Zero.
+Where pad is&nbsp;LEFT_PAD or RIGHT_PAD</td>
+</tr>
+<tr>
+<td>zero_left_pad / zero_right_pad</td>
+<td>These are no longer needed as the pad values are
+populated by jsfGetPad(pad)</td>
+</tr>
+<tr>
+<td>GETPAD(padnum)</td>
+<td>jsfGetPad(pad) - Global pad reader for u235 and
+Zero.&nbsp;Where pad is&nbsp;LEFT_PAD or RIGHT_PAD</td>
+</tr>
+<tr>
+<td>powaset<br>
+</td>
+<td>jsfSprlistFieldSet<br>
+</td>
+</tr>
+<tr>
+<td>powadiff</td>
+<td>jsfSprlistFieldMod</td>
+</tr>
+<tr>
+<td>powazap</td>
+<td>jsfSprlistFieldSetval</td>
+</tr>
+<tr>
+<td>powabset</td>
+<td>jsfSprlistFieldSetOffset</td>
+</tr>
+<tr>
+<td>powabdiff</td>
+<td>jsfSprlistFieldModOffset</td>
+</tr>
+<tr>
+<td>powabzap</td>
+<td>jsfSprlistFieldSetvalOffset</td>
+</tr>
+<tr>
+<td>powaunpack</td>
+<td>jsfUnpack (you can also use jsfUnpack68k)</td>
+</tr>
+<tr>
+<td>powablitlist</td>
+<td>REMOVED - Use rapBlitList which is now the full version.</td>
+</tr>
+<tr>
+<td>fullpowablitlist</td>
+<td>rapBlitlist</td>
+</tr>
+<tr>
+<td>powaeeprom</td>
+<td>jsfEEPROM</td>
+</tr>
+<tr>
+<td>powaeepromword</td>
+<td>jsfEEPROMWord</td>
+</tr>
+<tr>
+<td>powaeepromboard</td>
+<td>jsfEEPROMBoard</td>
+</tr>
+<tr>
+<td>SNDZEROPLAY</td>
+<td>zeroPlaySample</td>
+</tr>
+<tr>
+<td>RAPTOR_particle_clear</td>
+<td>rapParticleClear</td>
+</tr>
+<tr>
+<td>RLOCATE</td>
+<td>rapLocate</td>
+</tr>
+<tr>
+<td>RPRINT</td>
+<td>rapPrint</td>
+</tr>
+<tr>
+<td>RPRINTINT</td>
+<td>jsfPrintInt</td>
+</tr>
+<tr>
+<td>loadclut</td>
+<td>jsfLoadClut</td>
+</tr>
+<tr>
+<td>colour</td>
+<td>jsfColour</td>
+</tr>
+<tr>
+<td>DELAY</td>
+<td>jsfDelay</td>
+</tr>
+<tr>
+<td>RBSORT</td>
+<td>jsfSort</td>
+</tr>
+<tr>
+<td>RSETLIST</td>
+<td>rapSetActiveList</td>
+</tr>
+<tr>
+<td>FADEPAL</td>
+<td>rapFadeClut</td>
+</tr>
+<tr>
+<td>RHIT</td>
+<td>rapCollide</td>
+</tr>
+<tr>
+<td>RPARTI</td>
+<td>rapParticleInject</td>
+</tr>
+<tr>
+<td>RSETMAP</td>
+<td>rapSetMapLoc</td>
+</tr>
+<tr>
+<td>fadesingle</td>
+<td>rapFadeSingle</td>
+</tr>
+<tr>
+<td>hiscore_sort</td>
+<td>rapHiscoreSort</td>
+</tr>
+<tr>
+<td>hiscore_check</td>
+<td>rapHiscoreCheck</td>
+</tr>
+<tr>
+<td>bin2asc</td>
+<td>rapNumToStr</td>
+</tr>
+<tr>
+<td>MODPLAY</td>
+<td>u235PlayModule(int module,short stereo)&nbsp;-
+'stereo' input can be;&nbsp; MOD_MONO or MOD_STEREO</td>
+</tr>
+<tr>
+<td>RUPDALL</td>
+<td>jsfVsync - The normal VSYNC command should still
+generally be used and maps to jsfVsync(0)</td>
+</tr>
+<tr>
+<td>basic_r_indx = index</td>
+<td>jsfSetFontIndx(index)</td>
+</tr>
+<tr>
+<td>basic_r_size = index</td>
+<td>jsfSetFontSize(index)</td>
+</tr>
+<tr>
+<td>SNDKILL</td>
+<td>u235KillChannel</td>
+</tr>
+<tr>
+<td>SNDDELTA</td>
+<td>u235ChannelVol</td>
+</tr>
+<tr>
+<td>raptor_fade_delay</td>
+<td>rapFadeDelay</td>
+</tr>
+<tr>
+<td>raptor_ntsc_flag</td>
+<td>rapNTSCFlag</td>
+</tr>
+<tr>
+<td>MODVOL</td>
+<td>u235ModuleVol</td>
+</tr>
+<tr>
+<td>SNDVOL</td>
+<td>u235SampleVol</td>
+</tr>
+<tr>
+<td>SNDFREQ</td>
+<td>u235ChannelFreq&nbsp;- Not required if using
+u235PlaySampleFreq</td>
+</tr>
+<tr>
+<td>Input_SetJoyPort1</td>
+<td>zeroSetJoyPort1()</td>
+</tr>
+<tr>
+<td>Input_SetJoyPort2</td>
+<td>zeroSetJoyPort2()</td>
+</tr>
+<tr>
+<td>Input_SetNormalPadMode</td>
+<td>zeroSetNormalPadMode()</td>
+</tr>
+<tr>
+<td>Input_SetRotaryMode</td>
+<td>zeroSetRotaryMode()</td>
+</tr>
+<tr>
+<td>Input_SetAtariMouseMode</td>
+<td>zeroSetAtariMouseMode()</td>
+</tr>
+<tr>
+<td>Input_SetAmigaMouseMode</td>
+<td>zeroSetAmigaMouseMode()</td>
+</tr>
+<tr>
+<td>rlist[]</td>
+<td>sprite[]</td>
+</tr>
+<tr>
+<td>RAPTOR_mt_init</td>
+<td>rapMTInit</td>
+</tr>
+<tr>
+<td>raptor_mt_present</td>
+<td>rapMTPresent</td>
+</tr>
+<tr>
+<td>RAPTOR_mt_save</td>
+<td>rapMTSave</td>
+</tr>
+<tr>
+<td>U235SE_rng</td>
+<td>u235Rnd</td>
+</tr>
+<tr>
+<td>raptor_highscores_hex</td>
+<td>rapHighscoresScore</td>
+</tr>
+<tr>
+<td>raptor_highscores_nam</td>
+<td>rapHighscoresName</td>
+</tr>
+<tr>
+<td>raptor_highscores1_hex</td>
+<td>rapHighscores1Score</td>
+</tr>
+<tr>
+<td>raptor_highscores1_nam</td>
+<td>rapHighscores1Name</td>
+</tr>
+<tr>
+<td>raptor_highscores2_hex</td>
+<td>rapHighscores2Score</td>
+</tr>
+<tr>
+<td>raptor_highscores2_nam</td>
+<td>rapHighscores2Name</td>
+</tr>
+<tr>
+<td>raptor_highscores3_hex</td>
+<td>rapHighscores3Score</td>
+</tr>
+<tr>
+<td>raptor_highscores3_nam</td>
+<td>rapHighscores3Name</td>
+</tr>
+<tr>
+<td>raptor_highscores4_hex</td>
+<td>rapHighscores4Score</td>
+</tr>
+<tr>
+<td>raptor_highscores4_nam</td>
+<td>rapHighscores4Name</td>
+</tr>
+<tr>
+<td>raptor_highscores5_hex</td>
+<td>rapHighscores5Score</td>
+</tr>
+<tr>
+<td>raptor_highscores5_nam</td>
+<td>rapHighscores5Name</td>
+</tr>
+<tr>
+<td>raptor_vbl_time_remain</td>
+<td>rapVBLTimeRemain</td>
+</tr>
+<tr>
+<td>raptor_ticks</td>
+<td>rapTicks</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h1><a name="oldandnewjoypadconstants"></a>Old
+and new Joypad constants.</h1>
+<table class="docutils" style="text-align: left; width: 100%;" border="1">
+<colgroup><col width="20%"><col width="20%"><col width="60%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head"><span style="font-weight: bold;">Old
+Zero
+Player Value</span></th>
+<th class="head"><span style="font-weight: bold;">Old
+U235
+Value</span></th>
+<th class="head"><span style="font-weight: bold;">New
+(Universal) JagPad Constant</span><span style="font-weight: normal;"> (will work for either
+sound/input engine)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="font-weight: bold;"><br>
+</span></td>
+<td><span style="font-weight: bold;"><br>
+</span></td>
+<td><span style="font-weight: bold;"><br>
+</span></td>
+</tr>
+<tr>
+<td>Input_Pad_Up</td>
+<td>PAD_UP</td>
+<td>JAGPAD_UP</td>
+</tr>
+<tr>
+<td>Input_Pad_Down</td>
+<td>PAD_DOWN</td>
+<td>JAGPAD_DOWN</td>
+</tr>
+<tr>
+<td>Input_Pad_Left</td>
+<td>PAD_LEFT</td>
+<td>JAGPAD_LEFT</td>
+</tr>
+<tr>
+<td>Input_Pad_Right</td>
+<td>PAD_RIGHT</td>
+<td>JAGPAD_RIGHT</td>
+</tr>
+<tr>
+<td>Input_Pad_A</td>
+<td>PAD_A</td>
+<td>JAGPAD_A</td>
+</tr>
+<tr>
+<td>Input_Pad_B</td>
+<td>PAD_B</td>
+<td>JAGPAD_B</td>
+</tr>
+<tr>
+<td>Input_Pad_C</td>
+<td>PAD_C</td>
+<td>JAGPAD_C</td>
+</tr>
+<tr>
+<td>Input_Pad_Pause</td>
+<td>PAD_PAUSE</td>
+<td>JAGPAD_PAUSE</td>
+</tr>
+<tr>
+<td>Input_Pad_Option</td>
+<td>PAD_OPTION</td>
+<td>JAGPAD_OPTION</td>
+</tr>
+<tr>
+<td>Input_Pad_0</td>
+<td>PAD_0</td>
+<td>JAGPAD_0</td>
+</tr>
+<tr>
+<td>Input_Pad_1</td>
+<td>PAD_1</td>
+<td>JAGPAD_1</td>
+</tr>
+<tr>
+<td>Input_Pad_2</td>
+<td>PAD_2</td>
+<td>JAGPAD_2</td>
+</tr>
+<tr>
+<td>Input_Pad_3</td>
+<td>PAD_3</td>
+<td>JAGPAD_3</td>
+</tr>
+<tr>
+<td>Input_Pad_4</td>
+<td>PAD_4</td>
+<td>JAGPAD_4</td>
+</tr>
+<tr>
+<td>Input_Pad_5</td>
+<td>PAD_5</td>
+<td>JAGPAD_5</td>
+</tr>
+<tr>
+<td>Input_Pad_6</td>
+<td>PAD_6</td>
+<td>JAGPAD_6</td>
+</tr>
+<tr>
+<td>Input_Pad_7</td>
+<td>PAD_7</td>
+<td>JAGPAD_7</td>
+</tr>
+<tr>
+<td>Input_Pad_8</td>
+<td>PAD_8</td>
+<td>JAGPAD_8</td>
+</tr>
+<tr>
+<td>Input_Pad_9</td>
+<td>PAD_9</td>
+<td>JAGPAD_9</td>
+</tr>
+<tr>
+<td>Input_Pad_Star</td>
+<td>PAD_STAR</td>
+<td>JAGPAD_STAR</td>
+</tr>
+<tr>
+<td>Input_Pad_Hash</td>
+<td>PAD_HASH</td>
+<td>JAGPAD_HASH</td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<h1><a name="furtherreading"></a>Further
+Reading</h1>
+<h6>Here are some useful links for additional Jaguar programming
+documentation.</h6>
+<br>
+<table class="docutils" border="1">
+<colgroup><col width="29%"><col width="71%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Article</th>
+<th class="head cell2">Link</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>JagStudio Programming Forum on AtariAge</td>
+<td><a target="_blank" href="https://forums.atariage.com/forum/370-jagstudio/">https://forums.atariage.com/forum/370-jagstudio/</a></td>
+</tr>
+<tr>
+<td>RAPTOR Manual (JagStudio uses the&nbsp;RAPTOR API)</td>
+<td><a target="_blank" href="https://reboot-games.com/raptor/RAPTOR%20API.html">https://reboot-games.com/raptor/RAPTOR%20API.html</a></td>
+</tr>
+<tr>
+<td>Jaguar V10 Document (a link to the PDF is in the forum
+post)<br>
+</td>
+<td><a href="https://forums.atariage.com/topic/328570-updated-jaguar-documentation-v10/" target="_blank">https://forums.atariage.com/topic/328570-updated-jaguar-documentation-v10/</a><br>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<h6>The AtariAge Programming sub forum contains some good
+articles
+regarding RB+ and the Jaguar. &nbsp;RB+ was the foundation which
+JagStudio was built upon and&nbsp;the posts linked below still
+contain relevant information.<br>
+<br>
+Just note that the syntax of all the commands have changed.
+&nbsp;However, the principles are all the same.</h6>
+<br>
+<span style="font-weight: bold;">PLEASE DO NOT POST
+REPLIES
+IN THE RB+ FORUM.</span> &nbsp;Instead, post any relevant
+questions in the JagStudio forum found <a href="https://forums.atariage.com/forum/370-jagstudio/" target="_blank">here</a> instead.<br>
+<br>
+<table class="docutils" border="1">
+<colgroup><col width="29%"><col width="71%"></colgroup>
+<thead valign="bottom"><tr>
+<th class="head cell1">Article</th>
+<th class="head cell2">Link</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td>rb+
+tutorial #2: A scary trip through the Object Processor and raptor lists</td>
+<td><a href="https://forums.atariage.com/topic/263126-rb-tutorial-2-a-scary-trip-through-the-object-processor-and-raptor-lists/" target="_blank">https://forums.atariage.com/topic/263126-rb-tutorial-2-a-scary-trip-through-the-object-processor-and-raptor-lists/</a></td>
+</tr>
+<tr>
+<td>rb+
+tutorial #3: rb+ and audio - untangling a mess!</td>
+<td><a href="https://forums.atariage.com/topic/263346-rb-tutorial-3-rb-and-audio-untangling-a-mess/" target="_blank">https://forums.atariage.com/topic/263346-rb-tutorial-3-rb-and-audio-untangling-a-mess/</a></td>
+</tr>
+<tr>
+<td>rb+
+tutorial #4: assets.txt AKA how do import graphics and sound in rb+?</td>
+<td><a href="https://forums.atariage.com/topic/263272-rb-tutorial-4-assetstxt-aka-how-do-import-graphics-and-sound-in-rb/" target="_blank">https://forums.atariage.com/topic/263272-rb-tutorial-4-assetstxt-aka-how-do-import-graphics-and-sound-in-rb/</a></td>
+</tr>
+<tr>
+<td>rb+
+tutorial #6: tools of the trade</td>
+<td><a href="https://forums.atariage.com/topic/265885-rb-tutorial-6-tools-of-the-trade/" target="_blank">https://forums.atariage.com/topic/265885-rb-tutorial-6-tools-of-the-trade/</a></td>
+</tr>
+</tbody>
+</table>
+<br>
+</div>
+</div>
+</div>
+</div>
+</body></html>

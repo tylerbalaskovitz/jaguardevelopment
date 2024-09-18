@@ -1,0 +1,67 @@
+Build started on 25/08/2021 13:14:10.50 
+ 
+Buildlink starting
+
+Checking if assets.txt is newer than any of the build folder files....
+    Opening - F:\Jaguar\Tools\JagStudio\projects\basic\maprunner\assets.txt...
+    Opening - F:\Jaguar\Tools\JagStudio\projects\basic\maprunner\build\linkfile.bin...
+    Opening - F:\Jaguar\Tools\JagStudio\projects\basic\maprunner\build\romassets.inc...
+    Opening - F:\Jaguar\Tools\JagStudio\projects\basic\maprunner\build\romassets.h...
+    Opening - F:\Jaguar\Tools\JagStudio\projects\basic\maprunner\build\ramassets.inc...
+    Opening - F:\Jaguar\Tools\JagStudio\projects\basic\maprunner\build\build.log...
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+        Processing ASSETS\GFX\sand.bmp
+        Converting BMP internally into gfxdata/clut...
+        File is 16 pixels wide, 16 pixels high and is 4 bits/pixel
+        Adding in RAM...
+    Reading assets.txt line
+        Processing ASSETS\GFX\rock3.bmp
+        Converting BMP internally into gfxdata/clut...
+        File is 16 pixels wide, 16 pixels high and is 4 bits/pixel
+        Adding in RAM...
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+Buildlink finished - everything went fine!
+ 
+Assembling raptor skeleton... 
+ 
+Translating .bas file to C... 
+      BCX Path set to Not Found
+BCX-32: BASIC to C/C++ Translator by Kevin Diggins (c) 1999-2009
+BCX-32 Version 6.00 (2009/06/02)
+[Lines In: 226] [Lines Out: 452] [Statements: 157] [Time: 0.05 sec's]
+BCX translated F:\Jaguar\Tools\JagStudio\projects\basic\maprunner\maprunner.bas to F:\Jaguar\Tools\JagStudio\projects\basic\maprunner\build\maprunner.c For a C Compiler
+ 
+Compiling C code to O... 
+Compiling C code to S... 
+ 
+Linking things... 
+UNRESOLVED SYMBOLS
+	R_sprite_tabwidth (jstudio_functions.o)
+Build error! 

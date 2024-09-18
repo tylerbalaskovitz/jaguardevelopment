@@ -1,0 +1,8 @@
+ABS,PAL_BLUE,gfx_clut,ASSETS\GFX\palblue.bmp
+ABS,PAL_RED,gfx_clut,ASSETS\GFX\palred.bmp
+ABS,PAL_GREEN_INK,gfx_clut,ASSETS\GFX\greenink.bmp
+ABS,BMP_RBPLUS,gfx_noclut,ASSETS\GFX\rbplus.bmp
+ABS,CRY_BLOB,cry_graphics,ASSETS\GFX\blob128.cry
+
+
+

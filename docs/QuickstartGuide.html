@@ -1,0 +1,1678 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/"><title>JagStudio - Quickstart Guide</title>
+
+<style type="text/css">
+div.clearer {
+clear: both;
+}
+div.related {
+width: 100%;
+font-size: 90%;
+}
+div.related h3 {
+display: none;
+}
+div.related ul {
+margin: 0;
+padding: 0 0 0 10px;
+list-style-type: none;
+list-style-image: none;
+list-style-position: outside;
+}
+div.related li {
+display: inline;
+}
+div.related li.right {
+float: right;
+margin-right: 5px;
+}
+div.sphinxsidebarwrapper {
+padding: 10px 5px 0 10px;
+}
+div.sphinxsidebar {
+float: left;
+width: 230px;
+margin-left: -100%;
+font-size: 90%;
+}
+div.sphinxsidebar ul {
+list-style-type: none;
+list-style-image: none;
+list-style-position: outside;
+}
+div.sphinxsidebar ul ul, div.sphinxsidebar ul.want-points {
+margin-left: 20px;
+list-style-type: square;
+list-style-image: none;
+list-style-position: outside;
+}
+div.sphinxsidebar ul ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+div.sphinxsidebar form {
+margin-top: 10px;
+}
+div.sphinxsidebar input {
+border: 1px solid #98dbcc;
+font-family: sans-serif;
+font-size: 1em;
+}
+img {
+border: none;
+}
+ul.search {
+margin: 10px 0 0 20px;
+padding: 0;
+}
+ul.search li {
+padding: 5px 0 5px 20px;
+background-image: url(file.png);
+background-repeat: no-repeat;
+background-position: 0 7px;
+}
+ul.search li a {
+font-weight: bold;
+}
+ul.search li div.context {
+margin: 2px 0 0 30px;
+color: #888888;
+text-align: left;
+}
+ul.keywordmatches li.goodmatch a {
+font-weight: bold;
+}
+table.contentstable {
+width: 90%;
+}
+table.contentstable p.biglink {
+line-height: 150%;
+}
+a.biglink {
+font-size: 1.3em;
+}
+span.linkdescr {
+font-style: italic;
+padding-top: 5px;
+font-size: 90%;
+}
+table.indextable {
+width: 100%;
+}
+table.indextable td {
+text-align: left;
+vertical-align: top;
+}
+table.indextable dl, table.indextable dd {
+margin-top: 0;
+margin-bottom: 0;
+}
+table.indextable tr.pcap {
+height: 10px;
+}
+table.indextable tr.cap {
+margin-top: 10px;
+background-color: #f2f2f2;
+}
+img.toggler {
+margin-right: 3px;
+margin-top: 3px;
+cursor: pointer;
+}
+div.modindex-jumpbox {
+border-top: 1px solid #dddddd;
+border-bottom: 1px solid #dddddd;
+margin: 1em 0;
+padding: 0.4em;
+}
+div.genindex-jumpbox {
+border-top: 1px solid #dddddd;
+border-bottom: 1px solid #dddddd;
+margin: 1em 0;
+padding: 0.4em;
+}
+a.headerlink {
+visibility: hidden;
+}
+h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, h4:hover > a.headerlink, h5:hover > a.headerlink, h6:hover > a.headerlink, dt:hover > a.headerlink {
+visibility: visible;
+}
+div.body p.caption {
+text-align: inherit;
+}
+div.body td {
+text-align: left;
+}
+.field-list ul {
+padding-left: 1em;
+}
+.first {
+margin-top: 0 ! important;
+}
+p.rubric {
+margin-top: 30px;
+font-weight: bold;
+}
+.align-left {
+text-align: left;
+}
+.align-center {
+clear: both;
+text-align: center;
+}
+.align-right {
+text-align: right;
+}
+div.sidebar {
+border: 1px solid #ddddbb;
+margin: 0 0 0.5em 1em;
+padding: 7px 7px 0;
+background-color: #ffffee;
+width: 40%;
+float: right;
+}
+p.sidebar-title {
+font-weight: bold;
+}
+div.topic {
+border: 1px solid #cccccc;
+margin: 10px 0;
+padding: 7px 7px 0;
+}
+p.topic-title {
+font-size: 1.1em;
+font-weight: bold;
+margin-top: 10px;
+}
+div.admonition {
+padding: 7px;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+div.admonition dt {
+font-weight: bold;
+}
+div.admonition dl {
+margin-bottom: 0;
+}
+p.admonition-title {
+margin: 0px 10px 5px 0px;
+font-weight: bold;
+}
+div.body p.centered {
+text-align: center;
+margin-top: 25px;
+}
+table.docutils {
+border: none;
+border-collapse: collapse;
+width: 100%;
+}
+table.docutils td, table.docutils th {
+border-style: none none solid;
+border-color: -moz-use-text-color -moz-use-text-color #aaaaaa;
+border-width: 0 0 1px;
+padding: 1px 8px 1px 5px;
+}
+table.field-list td, table.field-list th {
+border: none;
+}
+table.footnote td, table.footnote th {
+border: none;
+}
+th {
+text-align: left;
+padding-right: 5px;
+}
+table.citation {
+border-left: 1px solid gray;
+margin-left: 1px;
+}
+table.citation td {
+border-bottom: medium none;
+}
+ol.arabic {
+list-style-type: decimal;
+list-style-image: none;
+list-style-position: outside;
+}
+ol.loweralpha {
+list-style-type: lower-alpha;
+list-style-image: none;
+list-style-position: outside;
+}
+ol.upperalpha {
+list-style-type: upper-alpha;
+list-style-image: none;
+list-style-position: outside;
+}
+ol.lowerroman {
+list-style-type: lower-roman;
+list-style-image: none;
+list-style-position: outside;
+}
+ol.upperroman {
+list-style-type: upper-roman;
+list-style-image: none;
+list-style-position: outside;
+}
+dl {
+margin-bottom: 15px;
+}
+dd p {
+margin-top: 0px;
+}
+dd ul, dd table {
+margin-bottom: 10px;
+}
+dd {
+margin-top: 3px;
+margin-bottom: 10px;
+margin-left: 30px;
+}
+dt:target, .highlighted {
+background-color: #fbe54e;
+}
+dl.glossary dt {
+font-weight: bold;
+font-size: 1.1em;
+}
+.field-list ul {
+margin: 0;
+padding-left: 1em;
+}
+.field-list p {
+margin: 0;
+}
+.refcount {
+color: #006600;
+}
+.optional {
+font-size: 1.3em;
+}
+.versionmodified {
+font-style: italic;
+}
+.system-message {
+border: 3px solid red;
+padding: 5px;
+background-color: #ffddaa;
+}
+.footnote:target {
+background-color: #ffffaa;
+}
+.line-block {
+display: block;
+margin-top: 1em;
+margin-bottom: 1em;
+}
+.line-block .line-block {
+margin-top: 0;
+margin-bottom: 0;
+margin-left: 1.5em;
+}
+.guilabel, .menuselection {
+font-family: sans-serif;
+}
+.accelerator {
+text-decoration: underline;
+}
+.classifier {
+font-style: oblique;
+}
+pre {
+overflow: auto;
+}
+td.linenos pre {
+border: none;
+padding: 5px 0px;
+background-color: transparent;
+color: #aaaaaa;
+}
+table.highlighttable {
+margin-left: 0.5em;
+}
+table.highlighttable td {
+padding: 0 0.5em;
+}
+tt.descname {
+background-color: transparent;
+font-weight: bold;
+font-size: 1.2em;
+}
+tt.descclassname {
+background-color: transparent;
+}
+tt.xref, a tt {
+background-color: transparent;
+font-weight: bold;
+}
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+background-color: transparent;
+}
+.viewcode-link {
+float: right;
+}
+.viewcode-back {
+float: right;
+font-family: sans-serif;
+}
+div.viewcode-block:target {
+margin: -1px -10px;
+padding: 0 10px;
+}
+img.math {
+vertical-align: middle;
+}
+div.body div.math p {
+text-align: center;
+}
+span.eqno {
+float: right;
+}
+@media print {
+div.document, div.documentwrapper, div.bodywrapper { margin: 0 ! important;
+width: 100%;
+}
+div.sphinxsidebar, div.related, div.footer, #top-link { display: none;
+}
+}
+table.docutils td.cell1, table.docutils th.cell1 {
+width: 40%;
+}
+table.docutils td.cell2, table.docutils th.cell2 {
+width: 60%;
+}
+</style>
+<style type="text/css">
+/*
+* nature.css_t
+* ~~~~~~~~~~~~
+*
+* Sphinx stylesheet -- nature theme.
+*
+* :copyright: Copyright 2007-2010 by the Sphinx team, see AUTHORS.
+* :license: BSD, see LICENSE for details.
+*
+*/
+/* -- page layout ----------------------------------------------------------- */
+body {
+font-family: Arial, sans-serif;
+font-size: 100%;
+/*background-color: #111;*/
+color: #555;
+margin: 0;
+padding: 0;
+}
+div.documentwrapper {
+float: left;
+width: 100%;
+}
+div.bodywrapper {
+margin: 0 0 0 230px;
+}
+hr {
+border: 1px solid #B1B4B6;
+}
+div.document {
+background-color: #eee;
+}
+div.body {
+background-color: #ffffff;
+color: #3E4349;
+padding: 0 30px 30px 30px;
+font-size: 0.9em;
+}
+div.footer {
+color: #555;
+width: 100%;
+padding: 13px 0;
+text-align: center;
+font-size: 75%;
+}
+div.footer a {
+color: #444;
+text-decoration: underline;
+}
+div.related {
+background-color: #6BA81E;
+line-height: 32px;
+color: #fff;
+text-shadow: 0px 1px 0 #444;
+font-size: 0.9em;
+}
+div.related a {
+color: #E2F3CC;
+}
+div.sphinxsidebar {
+font-size: 0.75em;
+line-height: 1.5em;
+}
+div.sphinxsidebarwrapper{
+padding: 20px 0;
+}
+div.sphinxsidebar h3,
+div.sphinxsidebar h4 {
+font-family: Arial, sans-serif;
+color: #222;
+font-size: 1.2em;
+font-weight: normal;
+margin: 0;
+padding: 5px 10px;
+background-color: #ddd;
+text-shadow: 1px 1px 0 white
+}
+div.sphinxsidebar h4{
+font-size: 1.1em;
+}
+div.sphinxsidebar h3 a {
+color: #444;
+}
+div.sphinxsidebar p {
+color: #888;
+padding: 5px 20px;
+}
+div.sphinxsidebar p.topless {
+}
+div.sphinxsidebar ul {
+margin: 10px 20px;
+padding: 0;
+color: #000;
+}
+div.sphinxsidebar a {
+color: #444;
+}
+div.sphinxsidebar input {
+border: 1px solid #ccc;
+font-family: sans-serif;
+font-size: 1em;
+}
+div.sphinxsidebar input[type=text]{
+margin-left: 20px;
+}
+/* -- body styles ----------------------------------------------------------- */
+a {
+color: #005B81;
+text-decoration: none;
+}
+a:hover {
+color: #E32E00;
+text-decoration: underline;
+}
+div.body h1,
+div.body h2,
+div.body h3,
+div.body h4,
+div.body h5,
+div.body h6 {
+font-family: Arial, sans-serif;
+background-color: #BED4EB;
+font-weight: normal;
+color: #212224;
+margin: 30px 0px 10px 0px;
+padding: 5px 0 5px 10px;
+text-shadow: 0px 1px 0 white
+}
+div.body h1 { border-top: 20px solid white; margin-top: 0; font-size: 200%; }
+div.body h2 { font-size: 150%; background-color: #C8D5E3; }
+div.body h3 { font-size: 120%; background-color: #D8DEE3; }
+div.body h4 { font-size: 110%; background-color: #D8DEE3; }
+div.body h5 { font-size: 100%; background-color: #D8DEE3; }
+div.body h6 { font-size: 100%; background-color: #D8DEE3; }
+a.headerlink {
+color: #c60f0f;
+font-size: 0.8em;
+padding: 0 4px 0 4px;
+text-decoration: none;
+}
+a.headerlink:hover {
+background-color: #c60f0f;
+color: white;
+}
+div.body p, div.body dd, div.body li {
+line-height: 1.5em;
+}
+div.admonition p.admonition-title + p {
+display: inline;
+}
+div.highlight{
+background-color: white;
+}
+div.note {
+background-color: #eee;
+border: 1px solid #ccc;
+}
+div.seealso {
+background-color: #ffc;
+border: 1px solid #ff6;
+}
+div.topic {
+background-color: #eee;
+}
+div.warning {
+background-color: #ffe4e4;
+border: 1px solid #f66;
+}
+p.admonition-title {
+display: inline;
+}
+p.admonition-title:after {
+content: ":";
+}
+pre {
+padding: 10px;
+background-color: White;
+color: #222;
+line-height: 1.2em;
+border: 1px solid #C6C9CB;
+font-size: 1.1em;
+margin: 1.5em 0 1.5em 0;
+-webkit-box-shadow: 1px 1px 1px #d8d8d8;
+-moz-box-shadow: 1px 1px 1px #d8d8d8;
+}
+tt {
+background-color: #ecf0f3;
+color: #222;
+/* padding: 1px 2px; */
+font-size: 1.1em;
+font-family: monospace;
+}
+.viewcode-back {
+font-family: Arial, sans-serif;
+}
+div.viewcode-block:target {
+background-color: #f4debf;
+border-top: 1px solid #ac9;
+border-bottom: 1px solid #ac9;
+}
+p {
+margin: 0;
+}
+ul li dd {
+margin-top: 0;
+}
+ul li dl {
+margin-bottom: 0;
+}
+li dl dd {
+margin-bottom: 0;
+}
+dd ul {
+padding-left: 0;
+}
+li dd ul {
+margin-bottom: 0;
+}
+</style></head>
+<body>
+<div class="document">
+<div class="body">
+<pre class="literal-block"><img src="jstudio.png" alt=""><br>A complete Assembler, BASIC and 'C' Development Suite for the Atari Jaguar<br><br>Quick Start Guide - Updated: Jan 27th, 2021 - v1.0</pre>
+<p style="font-weight: bold; text-decoration: underline;">Quick
+Start Guide
+</p>
+<p>This guide is designed to&nbsp;walk a newcomer through
+starting a new project in Basic, getting some graphics on the screen
+with some simple input and sound effects.</p>
+<p>The finished version of the project created in this guide can
+be found in your JagStudio folder under <big><span style="font-family: monospace;">\projects\basic\quickguide</span></big>.<br><br>JagStudio supports BASIC, C and Assember languages, but this guide is written for BASIC only.</p><p>
+<br>
+If
+you would like to learn more, please read the reference manual, explore
+all the example projects or visit the official site at <a href="https://jagstudio.reboot-games.com" target="_blank">jagstudio.reboot-games.com</a>
+or the forums over at <a href="https://atariage.com/forums/forum/370-jagstudio/" target="_blank">AtariAge</a>.<br>
+</p>
+<p>The
+docs folder also contains the help file for BCX Basic (BCXHelp.chm)
+upon which the Basic portion of JagStudio is based. &nbsp;This can
+be
+very useful for exploring what commands are available.<br>
+<br>
+</p>
+<p style="font-weight: bold; text-decoration: underline;">Index</p>
+<ul>
+<li><a href="#part1">Setting up the project</a></li>
+<li><a href="#part2">Adding a sprite</a></li>
+<li><a href="#part3">Controlling your sprite with
+the JoyPad</a></li>
+<li><a href="#part4">Auto sprite movement</a></li>
+<li><a href="#part5">Making Noise</a></li>
+<li><a href="#examples">Running the example
+projects</a></li><li><a href="#syntax">Syntax Highlighting for BASIC in Notepad++</a></li>
+</ul>
+<div class="section" id="part5">
+<h1>Tools to use</h1>
+You are free to use any tools you find suitable. &nbsp;However,
+here are some recomendations;<br>
+<br>
+<table style="text-align: left; width: 538px; height: 65px;" border="1" cellpadding="2" cellspacing="0">
+<tbody>
+<tr>
+<td>Text Editor</td>
+<td>Notepad++</td>
+</tr>
+<tr>
+<td>Graphic Editor</td>
+<td>Paintshop Pro 7 or 8</td>
+</tr>
+<tr>
+<td>Sound Editor</td>
+<td>Audacity</td>
+</tr>
+</tbody>
+</table>
+<br>
+</div>
+<div class="section" id="part1">
+<h1>Setting up the project</h1>
+<ol>
+<li>Open a command line to the JagStudio folder.</li>
+<ul>
+<li>In Windows, an easy way to do this is to use file
+explorer to browse to the Jagstudio folder, then in the breadcrumb at
+the top, click in there and type <span style="font-style: italic;">cmd</span>
+and press enter. &nbsp;This will open a command window straight in
+that folder.<br>
+<img style="width: 1001px; height: 43px;" alt="" src="quickstartassets/docfiles/cmd1.PNG"><br>
+</li>
+</ul>
+<li>Type in &nbsp;<span style="font-style: italic;">build
+yourprojectname newbasic &nbsp; </span>Where yourprojectname
+is a unique name for your game.</li>
+<li>This will create the nesessary startup project template
+files for you to edit for your game.</li>
+<li>In file explorer, from your JagStudio folder, browse
+to&nbsp;\projects\basic\yourprojectname</li>
+<li>You will see a selection of files and folders.
+&nbsp;These are;</li>
+<ul>
+<li>
+<table style="text-align: left; width: 100%;" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td>assets</td>
+<td>folder</td>
+<td>Where you store your graphics, sound effects,
+fonts and music</td>
+</tr>
+<tr>
+<td>yourprojectname.bas</td>
+<td>file</td>
+<td>This is the main file for your game where you
+will put the majority of your code</td>
+</tr>
+<tr>
+<td>assets.txt</td>
+<td>file</td>
+<td>This is where you declare all your assets from
+the assets folder and how they are converted/imported into your game</td>
+</tr>
+<tr>
+<td>rapapp.s</td>
+<td>file</td>
+<td>This is the main Raptor startup file.
+&nbsp;Generally you do not need to touch this file except for
+choosing your sound/input engine</td>
+</tr>
+<tr>
+<td>rapinit.s</td>
+<td>file</td>
+<td>This is where you declare all the sprite objects
+your game will use. &nbsp;These will be sprites, backgrounds and
+text/particle layers</td>
+</tr>
+<tr>
+<td>rapu235.s</td>
+<td>file</td>
+<td>If you are using the U235 Sound Engine then this
+is where you set up your sound effects.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<li>You need to decide which sound and input engine you want to
+use for your game. &nbsp;See the relevant sections in the manual
+for descriptions and features of each. &nbsp;We will use
+Zerosquares player for this guide.</li>
+<li>Once decided, open rapapp.s in a text editor (we recommend
+Notepad++) and look at the top. &nbsp;You will see the line;</li>
+<ul>
+<li style="font-style: italic;">player equ
+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;0=Zerosquare's
+player, 1=U-235 player</li>
+<li>The 0 after the equ must be set to 0 for Zerosquares
+player or 1 for U235.</li>
+</ul>
+<li>As we are using Zerosquares player for this guide, leave it
+as 0 and save and close the file. &nbsp;You are now ready to start
+creating your game.</li>
+</ol>
+</div>
+<div class="section" id="part2">
+<h1>Adding a sprite</h1>
+<ol>
+</ol>
+<dl>
+<dt>To keep things straight forward, we will
+provide you with some assets to play with. &nbsp;You can experiment
+with your own afterwards :)</dt>
+</dl>
+<ol>
+<li>From your JagStudio folder, using file explorer, browse to
+<span style="font-style: italic;">\docs\quickstartassets</span>\
+and copy <span style="font-style: italic;">bug1.bmp</span>
+and <span style="font-style: italic;">bug2.bmp</span>.</li>
+<li>Then browse to your project folder in
+<span style="font-style: italic;">\JagStudio\projects\basic\yourprojectname</span>
+and open the <span style="font-style: italic;">\assets\gfx\</span>
+folder.</li>
+<li>Paste the two files in there.</li>
+<li>For now, we will just use one of these graphics.</li>
+<li>In your project root folder, open assets.txt in a text
+editor.</li>
+<li>Type in the following&nbsp;line. &nbsp;This tells
+JagStudio where in memory the sprite will be stored, what to call it,
+what kind of CLUT it uses and the path to the graphic file.</li>
+<ul>
+<li>ABS,SPRITE_BUG,gfx_clut16,assets\gfx\bug.bmp</li>
+</ul>
+<li>Save your changes.</li>
+<li>Now open rapinit.s in a text editor.</li>
+<li>This is the file that tells the Jaguar what objects
+(sprites) exist in your game. &nbsp;The object processor will
+process this list and display the relevant graphics.</li>
+<li>Scroll down until you see the&nbsp; ;Template
+&nbsp;line - then paste the following code <span style="font-weight: bold;">above</span> that line.</li>
+<ul>
+<li><br>
+<span style="font-family: monospace;">; Bug</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+1&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ; (REPEAT
+COUNTER) &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;; Create
+this many objects of this type (or 1 for a single object)</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+is_active&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_active&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;; sprite
+active flag</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.w&nbsp;&nbsp;&nbsp;
+176,0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; sprite_x&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;; 16.16 x value to position at</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.w&nbsp;&nbsp;&nbsp;
+130,0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; sprite_y&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;; 16.16 y value to position at</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.w&nbsp;&nbsp;&nbsp;
+0,0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;;
+sprite_xadd&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;; 16.16 x
+addition for sprite movement</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.w&nbsp;&nbsp;&nbsp;
+0,0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;;
+sprite_yadd&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;; 16.16 y
+addition for sprite movement</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+16&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; ;
+sprite_width&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;; width
+of sprite (in pixels)</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+16&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;;
+sprite_height&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;; height
+of sprite (in pixels)</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+is_normal&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_flip&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;; flag
+for mirroring data left&lt;&gt;right</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_coffx&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;; x
+offset from center for collision box center</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_coffy&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;; y
+offset from center for collision box
+center&nbsp;&nbsp;&nbsp; </span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+16/2&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;;
+sprite_hbox&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;; width
+of collision box</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+16/2&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;;
+sprite_vbox&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;; height
+of collision box</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+SPRITE_BUG&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;;
+sprite_gfxbase&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; start of bitmap data</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+16&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;; (BIT
+DEPTH)&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;; bitmap depth (1/2/4/8/16/24)</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+is_RGB&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;;
+(CRY/RGB)&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;; bitmap
+GFX type</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+is_trans&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;;
+(TRANSPARENCY)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; bitmap TRANS flag</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+16*16*2&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;;
+sprite_framesz&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; size per frame in bytes of sprite data</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+16*2&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;;
+sprite_bytewid&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; width in bytes of one line of sprite
+data</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_animspd&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; frame delay between animation changes</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_maxframe&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;; number of frames in animation chain</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+ani_rept&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;;
+sprite_animloop&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;; repeat or play once</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+edge_wrap&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_wrap&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;; wrap on
+screen exit, or remove</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+spr_inf&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;;
+sprite_timer&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;; frames
+sprite is active for (or spr_inf)</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+spr_linear&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;;
+sprite_track&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;; use
+16.16 xadd/yadd or point to 16.16 x/y table</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_tracktop&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;; pointer to loop point in track table
+(if used)</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+spr_unscale&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;;
+sprite_scaled&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;; flag
+for scaleable object</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+32&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;;
+sprite_scale_x&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; x scale factor (if scaled)</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+32&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;;
+sprite_scale_y&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; y scale factor (if scaled)</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+-1&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;;
+sprite_was_hit&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; initially flagged as not hit</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+1&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_CLUT&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;; no_CLUT
+(8/16/24 bit) or CLUT (1/2/4 bit)</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+can_hit&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;;
+sprite_colchk&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;; if
+sprite can collide with another</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+cd_keep&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;;
+sprite_remhit&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;; flag to
+remove (or keep) on collision</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+single&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;;
+sprite_bboxlink&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;; single for normal bounding box, else
+pointer to table</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+1&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_hitpoint&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;; Hitpoints before death</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+2&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_damage&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;;
+Hitpoints deducted from target</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+dc.l&nbsp;&nbsp;&nbsp;
+16*2&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;;
+sprite_gwidth&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;; GFX
+width (of data)</span></li>
+</ul>
+<li>This can look quite daunting at first. These lines all
+represent an object (sprite) that is displayed on the screen.
+&nbsp;Each of the lines describes a property to define the
+sprite. &nbsp;You would typically be editing the properties in the
+2nd column of data. &nbsp;You can reference the&nbsp;manual to
+learn what all these properties do.</li>
+<li>Save the rapinit.s file.</li>
+<li>You can now run your project to see the sprite!</li>
+<li>In the command prompt you opened in the first section
+(within the JagStudio folder) type in &nbsp;<span style="font-style: italic;">build yourprojectname</span>
+and hit enter. &nbsp;You should now see the following Virtual
+Jaguar emulator window;<br>
+<img style="width: 329px; height: 349px;" alt="" src="quickstartassets/docfiles/sprite1.PNG"></li>
+<li>Congratulations, you have now displayed your first sprite!</li>
+<li>When you have finished admiring your static sprite, close
+the VJ window and lets get on with moving it around the screen.</li>
+</ol>
+</div>
+<div class="section" id="part3">
+<h1>Controlling your sprite with the JoyPad</h1>
+<ol>
+<li>In your project folder, open yourprojectname.bas in a text
+editor. &nbsp;This is the file where most of your game logic will
+go. &nbsp;You can use more than one .bas file and $include those
+files into this one, but lets keep it easy for now.</li>
+<li>First, we need to tell your program what number your new
+sprite is. &nbsp;The number is its position in the rapinit.s list.
+&nbsp;If you go back and look, the first object is the
+text/particle layer, your sprite should be the 2nd item in the list.</li>
+<li>In your bas file, you should see this line;</li>
+<ul>
+<li><img style="width: 632px; height: 77px;" alt="" src="quickstartassets/docfiles/spriteconst.PNG"></li>
+</ul>
+<li>Below that line, type in &nbsp; &nbsp; <span style="font-style: italic;">const sprBug1% = 1</span></li>
+<li>This defines a constant value called sprBug1. &nbsp;It
+is of type integer and you have assigned it the value of 1. &nbsp;A
+constant is a value that will never change. &nbsp;From now on in
+your code, you can refer to this sprite as sprBug1.</li>
+<li>Below that, hit enter a couple of times to give yourself
+some room and then enter; &nbsp; <span style="font-style: italic;">DIM pad1 AS INTEGER</span></li>
+<li>This declares a new variable called pad1 that can hold an
+integer value. &nbsp;We will use this to store the input that comes
+back from the joypad.</li>
+<li>Now scroll down and find the main game loop. &nbsp;It
+will look like this;</li>
+<ul>
+<li><img style="width: 404px; height: 162px;" alt="" src="quickstartassets/docfiles/mainloop.PNG"></li>
+</ul>
+<li>Underneath that Do command type in; &nbsp; <span style="font-style: italic;">pad1 = jsfGetPad(LEFT_PAD)</span></li>
+<li>This gets the input from the left joypad and assigns it to
+the pad1 variable.</li>
+<li>Now we need to examine that variable input and move the
+sprite accordingly. &nbsp;Type in the following code;</li>
+<ul>
+<li>&nbsp;&nbsp;&nbsp; IF pad1 BAND JAGPAD_UP
+THEN&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+sprite[sprBug1].y_ -= 2<br>
+&nbsp;&nbsp;&nbsp; ELSEIF pad1 BAND JAGPAD_DOWN
+THEN&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+sprite[sprBug1].y_ += 2<br>
+&nbsp;&nbsp;&nbsp; ENDIF<br>
+<br>
+&nbsp;&nbsp;&nbsp; IF pad1 BAND JAGPAD_LEFT
+THEN&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+sprite[sprBug1].x_ -= 2<br>
+&nbsp;&nbsp;&nbsp; ELSEIF pad1 BAND JAGPAD_RIGHT
+THEN&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+sprite[sprBug1].x_ += 2&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; ENDIF</li>
+</ul>
+<li>These IF statements all check the pad1 variable to see if
+any of the joypad directions are set. &nbsp;The command <span style="font-style: italic;">sprite[sprBug1].y_ -= 2</span>
+will minus 2 pixels from the Y position of the sprite. &nbsp;<span style="font-weight: bold;">NOTE: the y_ has an underscore on
+the end. &nbsp;Dont forget it.</span></li>
+<li>Now save your bas file and go back to your command prompt
+and type in build yourprojectname and hit enter.</li>
+<li>You should now see your same sprite again but this time you
+should be able to move it around the screen. &nbsp;Open the VJ
+settings window to view the controller keyboard mappings.
+&nbsp;They will probably either be cursor keys or A/D/S/X.</li>
+<li>You can now move a sprite around the screen with your
+joypad.</li>
+</ol>
+<br>
+<div class="section" id="part4">
+<h1>Auto sprite movement</h1>
+<ol>
+<li>In this section we will add a second sprite that will move
+all on it's own. &nbsp;Open your assets.txt file again and enter
+this new line below your previous one;</li>
+<ul>
+<li>ABS,SPRITE_BUG2,gfx_clut16,assets\gfx\bug2.bmp</li>
+</ul>
+<li>Now open rapinit.s again and enter the following new object
+definition below your previous sprite (but above the ;template)</li>
+<ul style="font-family: monospace;">
+<li>; Bug2<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+1&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;; (REPEAT
+COUNTER) &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;; Create
+this many objects of this type (or 1 for a single object)<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+is_active&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;;
+sprite_active&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;; sprite
+active flag<br>
+&nbsp;&nbsp;&nbsp; dc.w&nbsp;&nbsp;&nbsp;
+16,0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;;
+sprite_x&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;; 16.16 x value to position at<br>
+&nbsp;&nbsp;&nbsp; dc.w&nbsp;&nbsp;&nbsp;
+16,0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;;
+sprite_y&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;; 16.16 y value to position at<br>
+&nbsp;&nbsp;&nbsp; dc.w&nbsp;&nbsp;&nbsp;
+2,0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp; ;
+sprite_xadd&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;; 16.16 x
+addition for sprite movement<br>
+&nbsp;&nbsp;&nbsp; dc.w&nbsp;&nbsp;&nbsp;
+1,0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp; ;
+sprite_yadd&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;; 16.16 y
+addition for sprite movement<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+16&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;;
+sprite_width&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;; width
+of sprite (in pixels)<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+16&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;;
+sprite_height&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;; height
+of sprite (in pixels)<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+is_normal&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;;
+sprite_flip&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;; flag
+for mirroring data left&lt;&gt;right<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;;
+sprite_coffx&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;; x
+offset from center for collision box center<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;;
+sprite_coffy&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;; y
+offset from center for collision box
+center&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+16/2&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;;
+sprite_hbox&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;; width
+of collision box<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+16/2&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;;
+sprite_vbox&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;; height
+of collision box<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+SPRITE_BUG2&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp; ;
+sprite_gfxbase&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; start of bitmap data<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+16&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;; (BIT
+DEPTH)&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;; bitmap depth (1/2/4/8/16/24)<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+is_RGB&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;;
+(CRY/RGB)&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;; bitmap
+GFX type<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+is_trans&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;;
+(TRANSPARENCY)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; bitmap TRANS flag<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+16*16*2&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;;
+sprite_framesz&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; size per frame in bytes of sprite data<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+16*2&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;;
+sprite_bytewid&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; width in bytes of one line of sprite
+data<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_animspd&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; frame delay between animation changes<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_maxframe&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;; number of frames in animation chain<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+ani_rept&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;;
+sprite_animloop&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;; repeat or play once<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+edge_wrap&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_wrap&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;; wrap on
+screen exit, or remove<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+spr_inf&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;;
+sprite_timer&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;; frames
+sprite is active for (or spr_inf)<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+spr_linear&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;;
+sprite_track&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;; use
+16.16 xadd/yadd or point to 16.16 x/y table<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_tracktop&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;; pointer to loop point in track table
+(if used)<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+spr_unscale&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;;
+sprite_scaled&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;; flag
+for scaleable object<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+32&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;;
+sprite_scale_x&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; x scale factor (if scaled)<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+32&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;;
+sprite_scale_y&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; y scale factor (if scaled)<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+-1&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;;
+sprite_was_hit&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; initially flagged as not hit<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+1&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_CLUT&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;; no_CLUT
+(8/16/24 bit) or CLUT (1/2/4 bit)<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+can_hit&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;;
+sprite_colchk&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;; if
+sprite can collide with another<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+cd_keep&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;;
+sprite_remhit&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;; flag to
+remove (or keep) on collision<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+single&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;;
+sprite_bboxlink&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;; single for normal bounding box, else
+pointer to table<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+1&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_hitpoint&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;; Hitpoints before death<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+2&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ;
+sprite_damage&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;;
+Hitpoints deducted from target<br>
+&nbsp;&nbsp;&nbsp; dc.l&nbsp;&nbsp;&nbsp;
+16*2&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;;
+sprite_gwidth&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;; GFX
+width (of data)</li>
+</ul>
+<li>This will display another sprite on the screen but this one
+will move all on its own. &nbsp;The magic that causes this to
+happen is in the two properties sprite_xadd and&nbsp;sprite_yadd.
+&nbsp;We are telling it to move 2 pixels to the right and 1 pixel
+down.</li>
+<li>Go back to your trusty command prompt and run your game
+again with <span style="font-style: italic;">build
+yourprojectname</span></li>
+<li>You should now see a 2nd sprite moving diagonally across
+the screen and wrapping back to the left/top.</li>
+<ul>
+<li><img style="width: 329px; height: 347px;" alt="" src="quickstartassets/docfiles/automove.png"></li>
+</ul>
+<li>It's always good practice to put the constant in your bas
+file too. &nbsp;It's technically not needed for what we just did,
+but if you add more sprites, your numbers could end up incorrect.</li>
+<li>Open yourprojectname.bas and at the top under your previous
+CONST line, add this line;</li>
+<ul>
+<li>const sprBug2% = 2</li>
+</ul>
+<li>Save all changes.</li>
+</ol>
+<div class="section" id="part5">
+<h1>Making noise (Using Zerosquare player)</h1>
+<ol>
+<li>Using a file explorer go back to the
+<span style="font-style: italic;">JagStudio\docs\quickstartassets\</span>
+folder and copy <span style="font-style: italic;">explosion.wav</span></li>
+<li>In your project folder, open the <span style="font-style: italic;">\assets\sfx\</span> folder
+and paste
+the sound file in.</li>
+<li>Now open assets.txt and type in the following line.
+&nbsp;This tells your game to store the sound in memory at runtime
+(ABS), gives it a name of <span style="font-style: italic;">explode_sam</span>,
+tells it to convert the wav file to RAW format and that it's 8000Hz.
+&nbsp;Finally, it details the path to the sound file.</li>
+<ul>
+<li>ABS,explode_sam,sfx_raw8000,assets\sfx\explosion.wav</li>
+</ul>
+<li>Now we need to play the sound effect. &nbsp;We will
+just map it to the B joypad button.</li>
+<li>Open yourprojectname.BAS file in a text editor.</li>
+<li>Underneath your previous code for moving the sprite, type
+in this;</li>
+<ul>
+<li>&nbsp;&nbsp;&nbsp; IF pad1 BAND JAGPAD_B
+THEN&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+zeroPlaySample(1, strptr(explode_sam),
+(strptr(explode_sam_end)-strptr(explode_sam)+3) and 0xfffffffc,
+(46168/8000), Zero_Audio_8bit_Signed)<br>
+&nbsp;&nbsp;&nbsp; ENDIF</li>
+</ul>
+<li>This tells the Jaguar to play the sound when the player
+presses the B button. &nbsp;This is a complicated looking line but
+its essentially telling the Zerosquare player which channel to play the
+sound on (1), the start and end address of your sound, the Hz to play
+it at and that its an 8bit signed sound file. &nbsp;If you add
+other sounds, just replace the two explode_sam with your new sound name
+and the&nbsp;explode_sam_end with your new sound name with _end
+added to it.</li>
+<li>Run your game again from the command prompt with <span style="font-style: italic;">build yourprojectname</span>
+and now press the joypad B button (check VJ controller keyboard
+mappings). &nbsp;You should hear a little explosion sound.<br>
+</li>
+</ol>
+</div>
+<div class="section" id="examples">
+<h1>Running the example projects</h1>
+JagStudio comes with a collection of example projects, each covering
+various aspects you might need to use in a game.<br>
+<br>
+You can run any of the example projects. &nbsp;To see which
+projects are available, browse from your JagStudio folder to
+\projects\basic . &nbsp;The folder names listed in that folder are
+the project names.<br>
+<br>
+Follow these steps;<br>
+<ol>
+<li>Open a command prompt in your JagStudio folder.</li>
+<li>Type in <span style="font-style: italic;">build
+exampleprojectname</span> &nbsp; where exampleprojectname is
+the name of the project you want to run.</li>
+<li>Eg. &nbsp; type in &nbsp; <span style="font-style: italic;">build doger</span> and hit
+enter to run that example game in VJ.</li>
+</ol>
+</div>
+<div class="section" id="syntax">
+<h1>Syntax Highlighting for BASIC</h1>
+If you are using Notepad++ and want to set it up for some simple syntax
+highlighting for BASIC code, follow this;<br>
+<br>
+<ol>
+<li>Open one of your .bas code files in Notepad++</li>
+<li>Click Settings &gt; Style Configurator...</li>
+<li>Scroll down the Language list on the left to find <span style="font-style: italic;">VB / VBS</span>
+and click on it.</li>
+<li>Now at the bottom, in the textbox under "<span style="font-style: italic;">User Ext.</span>" type in
+<big><span style="font-weight: bold; font-family: monospace;">bas</span></big></li>
+<li>Click on Save &amp; Close.</li>
+<li>Close and reopen NotePad++ and now your code should have
+some simple highlighting.</li>
+</ol><br>Alternatively, you can import the <span style="font-style: italic;">JagStudio NP++ Syntax.xml</span> file in the <span style="font-style: italic;">\docs\notepad++\</span> folder. &nbsp;To do so, follow these steps;<br><ol><li>Open Notepad++</li><li>Click the "Language" menu, then "Define your language..."</li><li>At the top of the pop-up click "Import..."</li><li>Browse to&nbsp;<span style="font-style: italic;">\docs\notepad++\</span> and double click&nbsp;<span style="font-style: italic;">JagStudio NP++ Syntax.xml</span> to open.</li><li>It should pop up to say "Import Successful" - click ok.</li><li>Close and reopen Notepad++</li><li>With a .bas file open, click the "Language" menu again and at the bottom you should now see "JagStudio" listed.&nbsp; Select it.<br></li></ol>You should now see that all your .bas files contain pretty colours.<br><br><br>If you don't like any of the colours;<br><ol><li>Click the "Language" menu, then "Define your language..."</li><li>At the top in the "User Language" drop down, choose "JagStudio".</li><li>In the tabs below that, find the section for the items you want to change and click the "Styler" button.</li><li>In the Styler, you can pick a new foreground text colour.</li><li>To
+ensure your text looks correct against a light or dark background you
+should right click on the "Background Colour" so you see diagonal lines
+through it.&nbsp; This will make the text background transparent.</li></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

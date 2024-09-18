@@ -1,0 +1,933 @@
+#NO_APP
+	.text
+	.even
+	.globl	__Z3rndv
+__Z3rndv:
+	link.w %fp,#0
+	jsr _rand
+	move.l %d0,-(%sp)
+	jsr ___floatsisf
+	move.l #0x30000000,(%sp)
+	move.l %d0,-(%sp)
+	jsr ___mulsf3
+	addq.l #8,%sp
+	unlk %fp
+	rts
+	.even
+	.globl	__Z15check_collisionv
+__Z15check_collisionv:
+	link.w %fp,#0
+	movem.l #16188,-(%sp)
+	move.l __ZL6enemy5,-(%sp)
+	move.l __ZL6enemy1,-(%sp)
+	move.l __ZL7bullets+40,-(%sp)
+	move.l __ZL7bullets+4,-(%sp)
+	jsr rapCollide
+	move.l %d0,__ZL7cd_flag
+	lea (16,%sp),%sp
+	jlt .L2
+	clr.l __ZL1i
+	move.l sprite,%a0
+	move.l __ZL6enemy1,%d5
+	moveq #0,%d1
+	moveq #0,%d0
+	move.l #_rand,%d3
+	move.l #___floatsisf,%d2
+	lea ___mulsf3,%a5
+	lea ___extendsfdf2,%a4
+	lea _floor,%a3
+	move.l #___fixdfsi,%d7
+.L5:
+	move.l %d0,%a1
+	add.l %d5,%a1
+	move.l %a1,%d4
+	add.l %a1,%d4
+	add.l %a1,%d4
+	lsl.l #6,%d4
+	lea (%a0,%d4.l),%a1
+	move.l 112(%a1),%d4
+	move.l %d4,__ZL19check_for_hit_enemy
+	moveq #-1,%d6
+	cmp.l %d4,%d6
+	jeq .L4
+	move.l %d0,%d1
+	add.l __ZL6enemy1,%d1
+	move.l %d1,%d4
+	add.l %d1,%d4
+	add.l %d4,%d1
+	lsl.l #6,%d1
+	move.l %d6,112(%a0,%d1.l)
+	move.l 8(%a1),%d4
+	move.l %d0,%d1
+	add.l __ZL10explosions+4,%d1
+	move.l %d1,%d5
+	add.l %d1,%d5
+	add.l %d5,%d1
+	lsl.l #6,%d1
+	add.l %a0,%d1
+	move.l %d1,%a2
+	move.l %d4,8(%a2)
+	add.l __ZL12bigsplosions+4,%d0
+	move.l %d0,%d5
+	add.l %d0,%d5
+	add.l %d5,%d0
+	lsl.l #6,%d0
+	add.l #-1048576,%d4
+	move.l %d4,8(%a0,%d0.l)
+	move.l 12(%a1),%d0
+	move.l %d0,__ZL4xunt
+	add.l #655360,%d0
+	move.l %d0,12(%a2)
+	move.l %d3,%a0
+	jsr (%a0)
+	move.l %d0,-(%sp)
+	move.l %d2,%a2
+	jsr (%a2)
+	move.l #0x31800000,(%sp)
+	move.l %d0,-(%sp)
+	jsr (%a5)
+	addq.l #4,%sp
+	move.l %d0,(%sp)
+	jsr (%a4)
+	move.l %d1,(%sp)
+	move.l %d0,-(%sp)
+	jsr (%a3)
+	addq.l #4,%sp
+	move.l %d1,(%sp)
+	move.l %d0,-(%sp)
+	move.l %d7,%a0
+	jsr (%a0)
+	addq.l #8,%sp
+	move.l %d0,__ZL5randy
+	move.l sprite,%a0
+	move.l __ZL1i,%d1
+	move.l %d1,%a1
+	add.l __ZL12bigsplosions+4,%a1
+	move.l %a1,%d4
+	add.l %a1,%d4
+	add.l %a1,%d4
+	lsl.l #6,%d4
+	lea (%a0,%d4.l),%a1
+	swap %d0
+	clr.w %d0
+	move.l __ZL4xunt,%d4
+	sub.l %d0,%d4
+	move.l %d4,12(%a1)
+	move.l %d1,%d0
+	add.l __ZL10explosions+4,%d0
+	move.l %d0,%d4
+	add.l %d0,%d4
+	add.l %d4,%d0
+	lsl.l #6,%d0
+	add.l %a0,%d0
+	move.l __ZL7exp_max,%d4
+	move.l %d0,%a2
+	move.l %d4,56(%a2)
+	move.l %d4,56(%a1)
+	moveq #1,%d4
+	move.l %d4,4(%a2)
+	move.l %d4,4(%a1)
+	move.l __ZL6enemy1,%d5
+	move.l %d1,%d0
+	add.l %d5,%d0
+	move.l %d0,%a1
+	add.l %d0,%a1
+	add.l %a1,%d0
+	lsl.l #6,%d0
+	lea (%a0,%d0.l),%a1
+	move.l %d4,84(%a1)
+	moveq #48,%d6
+	move.l %d6,88(%a1)
+	move.l %d6,92(%a1)
+.L4:
+	move.l %d1,%d0
+	addq.l #1,%d0
+	move.l %d0,__ZL1i
+	moveq #4,%d1
+	cmp.l %d0,%d1
+	jlt .L2
+	move.l %d0,%d1
+	jra .L5
+.L2:
+	movem.l -40(%fp),#15612
+	unlk %fp
+	rts
+	.even
+	.globl	__Z12move_enemiesv
+__Z12move_enemiesv:
+	link.w %fp,#0
+	movem.l #8252,-(%sp)
+	pea 3.w
+	move.l __ZL6tocker,-(%sp)
+	jsr ___divsi3
+	addq.l #8,%sp
+	move.l %d0,%a1
+	move.l %d0,__ZL6tucker
+	move.l sprite,%a3
+	move.l __ZL6enemy1,%d0
+	move.l __ZL6ticker,%a2
+	move.l %d0,%d1
+	add.l %d0,%d1
+	add.l %d0,%d1
+	lsl.l #6,%d1
+	lea (%a3,%d1.l),%a4
+	lea __ZL4sins,%a0
+	lea (%a2,%a2.l),%a5
+	add.l %a5,%a5
+	move.l (%a5,%a0.l),%d1
+	add.l #160,%d1
+	swap %d1
+	clr.w %d1
+	move.l %d1,8(%a4)
+	lea (%a1,%a1.l),%a5
+	add.l %a5,%a5
+	move.l (%a5,%a0.l),%d1
+	moveq #14,%d2
+	lsl.l %d2,%d1
+	add.l #3932160,%d1
+	move.l %d1,12(%a4)
+	move.l %d0,%d1
+	addq.l #1,%d1
+	move.l %d1,%a4
+	add.l %d1,%a4
+	add.l %a4,%d1
+	lsl.l #6,%d1
+	lea (%a3,%d1.l),%a4
+	lea (72,%a2),%a5
+	add.l %a5,%a5
+	add.l %a5,%a5
+	move.l (%a5,%a0.l),%d1
+	add.l #160,%d1
+	swap %d1
+	clr.w %d1
+	move.l %d1,8(%a4)
+	lea (72,%a1),%a5
+	add.l %a5,%a5
+	add.l %a5,%a5
+	move.l (%a5,%a0.l),%d1
+	lsl.l %d2,%d1
+	add.l #3932160,%d1
+	move.l %d1,12(%a4)
+	move.l %d0,%d1
+	addq.l #2,%d1
+	move.l %d1,%a4
+	add.l %d1,%a4
+	add.l %a4,%d1
+	lsl.l #6,%d1
+	lea (%a3,%d1.l),%a4
+	lea (144,%a2),%a5
+	move.l %a5,%d1
+	add.l %a5,%d1
+	add.l %d1,%d1
+	move.l (%a0,%d1.l),%d1
+	add.l #160,%d1
+	swap %d1
+	clr.w %d1
+	move.l %d1,8(%a4)
+	lea (144,%a1),%a5
+	move.l %a5,%d1
+	add.l %a5,%d1
+	add.l %d1,%d1
+	move.l (%a0,%d1.l),%d1
+	lsl.l %d2,%d1
+	add.l #3932160,%d1
+	move.l %d1,12(%a4)
+	move.l %d0,%d1
+	addq.l #3,%d1
+	move.l %d1,%a4
+	add.l %d1,%a4
+	add.l %a4,%d1
+	lsl.l #6,%d1
+	lea (%a3,%d1.l),%a4
+	lea (216,%a2),%a5
+	move.l %a5,%d1
+	add.l %a5,%d1
+	add.l %d1,%d1
+	move.l (%a0,%d1.l),%d1
+	add.l #160,%d1
+	swap %d1
+	clr.w %d1
+	move.l %d1,8(%a4)
+	lea (216,%a1),%a5
+	move.l %a5,%d1
+	add.l %a5,%d1
+	add.l %d1,%d1
+	move.l (%a0,%d1.l),%d1
+	lsl.l %d2,%d1
+	add.l #3932160,%d1
+	move.l %d1,12(%a4)
+	addq.l #4,%d0
+	move.l %d0,%d1
+	add.l %d0,%d1
+	add.l %d1,%d0
+	lsl.l #6,%d0
+	add.l %d0,%a3
+	lea (288,%a2),%a2
+	add.l %a2,%a2
+	add.l %a2,%a2
+	move.l (%a2,%a0.l),%d1
+	add.l #160,%d1
+	swap %d1
+	clr.w %d1
+	move.l %d1,8(%a3)
+	lea (288,%a1),%a1
+	add.l %a1,%a1
+	add.l %a1,%a1
+	move.l (%a1,%a0.l),%d1
+	lsl.l %d2,%d1
+	add.l #3932160,%d1
+	move.l %d1,12(%a3)
+	move.l #288,__ZL4xunt
+	moveq #5,%d0
+	move.l %d0,__ZL1i
+	movem.l -20(%fp),#15364
+	unlk %fp
+	rts
+	.even
+	.globl	__Z9check_padv
+__Z9check_padv:
+	link.w %fp,#0
+	move.l %d2,-(%sp)
+	move.l __ZL4pad1,%d0
+	move.l %d0,%d1
+	and.l JAGPAD_LEFT,%d1
+	jeq .L11
+	move.l __ZL8ship_pos,%d1
+	cmp.l #5636096,%d1
+	jgt .L19
+.L11:
+	move.l %d0,%d1
+	and.l JAGPAD_RIGHT,%d1
+	jeq .L12
+	move.l __ZL8ship_pos,%d1
+	cmp.l #13631487,%d1
+	jgt .L14
+	move.l __ZL4ship,%a0
+	move.l %a0,%d2
+	add.l %a0,%d2
+	add.l %a0,%d2
+	lsl.l #6,%d2
+	move.l sprite,%a0
+	add.l %d2,%a0
+	add.l #131072,%d1
+	move.l %d1,8(%a0)
+	move.l __ZL13ship_gfx_size,%d1
+	add.l %d1,%d1
+	add.l __ZL12ship_gfx_loc,%d1
+	move.l %d1,44(%a0)
+.L14:
+	move.l JAGPAD_B,%d2
+	cmp.l %d0,%d2
+	jeq .L15
+.L16:
+	and.l %d2,%d0
+	jeq .L10
+	move.l __ZL10bullettime,%d0
+	cmp.l __ZL11bulletdelay.l,%d0
+	jlt .L10
+	clr.l __ZL10bullettime
+	move.l __ZL9bulletctr,%d0
+	move.l %d0,%a0
+	add.l %d0,%a0
+	move.l %a0,%a1
+	add.l #__ZL7bullets,%a1
+	move.l (%a1,%a0.l),%d1
+	move.l %d1,%a0
+	add.l %d1,%a0
+	add.l %a0,%d1
+	lsl.l #6,%d1
+	move.l sprite,%a0
+	add.l %d1,%a0
+	move.l __ZL8ship_pos,%d1
+	add.l #589824,%d1
+	move.l %d1,8(%a0)
+	move.l #10878976,12(%a0)
+	moveq #1,%d1
+	move.l %d1,80(%a0)
+	moveq #-1,%d1
+	move.l %d1,112(%a0)
+	moveq #10,%d1
+	move.l %d1,132(%a0)
+	move.b #1,%d1
+	move.l %d1,4(%a0)
+	addq.l #1,%d0
+	move.l %d0,__ZL9bulletctr
+	move.l __ZL10maxbullets,%d1
+	addq.l #1,%d1
+	cmp.l %d0,%d1
+	jeq .L20
+.L10:
+	move.l (%sp)+,%d2
+	unlk %fp
+	rts
+.L12:
+	tst.l %d0
+	jne .L14
+	move.l JAGPAD_B,%d2
+.L15:
+	move.l __ZL4ship,%d1
+	move.l %d1,%a0
+	add.l %d1,%a0
+	add.l %a0,%d1
+	lsl.l #6,%d1
+	move.l sprite,%a0
+	move.l __ZL12ship_gfx_loc,44(%a0,%d1.l)
+	jra .L16
+.L19:
+	move.l __ZL4ship,%a0
+	move.l %a0,%d2
+	add.l %a0,%d2
+	add.l %a0,%d2
+	lsl.l #6,%d2
+	move.l sprite,%a0
+	add.l %d2,%a0
+	add.l #-131072,%d1
+	move.l %d1,8(%a0)
+	move.l __ZL12ship_gfx_loc,%d1
+	add.l __ZL13ship_gfx_size,%d1
+	move.l %d1,44(%a0)
+	jra .L11
+.L20:
+	moveq #1,%d0
+	move.l %d0,__ZL9bulletctr
+	move.l (%sp)+,%d2
+	unlk %fp
+	rts
+	.even
+	.globl	__Z18choose_stars_framev
+__Z18choose_stars_framev:
+	link.w %fp,#0
+	move.l %d3,-(%sp)
+	move.l %d2,-(%sp)
+	move.l sprite,%a0
+	move.l __ZL4ship,%d0
+	move.l %d0,%d1
+	add.l %d0,%d1
+	add.l %d1,%d0
+	lsl.l #6,%d0
+	move.l 8(%a0,%d0.l),%d0
+	move.l %d0,__ZL8ship_pos
+	cmp.l #6553600,%d0
+	jgt .L23
+	move.l __ZL5stars,%d1
+	move.l %d1,%a1
+	add.l %d1,%a1
+	add.l %a1,%d1
+	lsl.l #6,%d1
+	move.l __ZL13stars_gfx_loc,44(%a0,%d1.l)
+.L23:
+	move.l %d0,%d1
+	add.l #-6553601,%d1
+	cmp.l #655359,%d1
+	jhi .L24
+	move.l __ZL5stars,%d1
+	move.l %d1,%a1
+	add.l %d1,%a1
+	add.l %a1,%d1
+	lsl.l #6,%d1
+	move.l __ZL13stars_gfx_loc,%d2
+	add.l __ZL14stars_gfx_size,%d2
+	move.l %d2,44(%a0,%d1.l)
+.L24:
+	move.l %d0,%d1
+	add.l #-7208961,%d1
+	cmp.l #655359,%d1
+	jhi .L25
+	move.l __ZL5stars,%d1
+	move.l %d1,%a1
+	add.l %d1,%a1
+	add.l %a1,%d1
+	lsl.l #6,%d1
+	move.l __ZL14stars_gfx_size,%a1
+	add.l %a1,%a1
+	add.l __ZL13stars_gfx_loc,%a1
+	move.l %a1,44(%a0,%d1.l)
+.L25:
+	move.l %d0,%d1
+	add.l #-7864321,%d1
+	cmp.l #655359,%d1
+	jhi .L26
+	move.l __ZL5stars,%d1
+	move.l %d1,%a1
+	add.l %d1,%a1
+	add.l %a1,%d1
+	lsl.l #6,%d1
+	move.l __ZL14stars_gfx_size,%a1
+	move.l %a1,%d2
+	add.l %a1,%d2
+	lea (%a1,%d2.l),%a1
+	add.l __ZL13stars_gfx_loc,%a1
+	move.l %a1,44(%a0,%d1.l)
+.L26:
+	move.l %d0,%d1
+	add.l #-8519681,%d1
+	cmp.l #655359,%d1
+	jhi .L27
+	move.l __ZL5stars,%d1
+	move.l %d1,%a1
+	add.l %d1,%a1
+	add.l %a1,%d1
+	lsl.l #6,%d1
+	move.l __ZL14stars_gfx_size,%a1
+	add.l %a1,%a1
+	add.l %a1,%a1
+	add.l __ZL13stars_gfx_loc,%a1
+	move.l %a1,44(%a0,%d1.l)
+.L27:
+	move.l %d0,%d1
+	add.l #-9175041,%d1
+	cmp.l #655359,%d1
+	jhi .L28
+	move.l __ZL5stars,%d1
+	move.l %d1,%a1
+	add.l %d1,%a1
+	add.l %a1,%d1
+	lsl.l #6,%d1
+	move.l __ZL14stars_gfx_size,%a1
+	move.l %a1,%d2
+	add.l %a1,%d2
+	add.l %d2,%d2
+	lea (%a1,%d2.l),%a1
+	add.l __ZL13stars_gfx_loc,%a1
+	move.l %a1,44(%a0,%d1.l)
+.L28:
+	move.l %d0,%d1
+	add.l #-9830401,%d1
+	cmp.l #655359,%d1
+	jhi .L29
+	move.l __ZL5stars,%d1
+	move.l %d1,%a1
+	add.l %d1,%a1
+	add.l %a1,%d1
+	lsl.l #6,%d1
+	move.l __ZL14stars_gfx_size,%a1
+	move.l %a1,%d2
+	add.l %a1,%d2
+	lea (%a1,%d2.l),%a1
+	add.l %a1,%a1
+	add.l __ZL13stars_gfx_loc,%a1
+	move.l %a1,44(%a0,%d1.l)
+.L29:
+	move.l %d0,%d1
+	add.l #-10485761,%d1
+	cmp.l #655359,%d1
+	jhi .L30
+	move.l __ZL5stars,%d1
+	move.l %d1,%a1
+	add.l %d1,%a1
+	add.l %a1,%d1
+	lsl.l #6,%d1
+	move.l __ZL14stars_gfx_size,%d3
+	move.l %d3,%d2
+	lsl.l #3,%d2
+	sub.l %d3,%d2
+	add.l __ZL13stars_gfx_loc,%d2
+	move.l %d2,44(%a0,%d1.l)
+.L30:
+	move.l %d0,%d1
+	add.l #-11141121,%d1
+	cmp.l #655359,%d1
+	jhi .L31
+	move.l __ZL5stars,%d1
+	move.l %d1,%a1
+	add.l %d1,%a1
+	add.l %a1,%d1
+	lsl.l #6,%d1
+	move.l __ZL14stars_gfx_size,%d2
+	lsl.l #3,%d2
+	add.l __ZL13stars_gfx_loc,%d2
+	move.l %d2,44(%a0,%d1.l)
+.L31:
+	move.l %d0,%d1
+	add.l #-11796481,%d1
+	cmp.l #655359,%d1
+	jhi .L32
+	move.l __ZL5stars,%d1
+	move.l %d1,%a1
+	add.l %d1,%a1
+	add.l %a1,%d1
+	lsl.l #6,%d1
+	move.l __ZL14stars_gfx_size,%d2
+	move.l %d2,%d3
+	lsl.l #3,%d3
+	add.l %d3,%d2
+	add.l __ZL13stars_gfx_loc,%d2
+	move.l %d2,44(%a0,%d1.l)
+.L32:
+	move.l %d0,%d1
+	add.l #-12451841,%d1
+	cmp.l #655359,%d1
+	jhi .L33
+	move.l __ZL5stars,%d0
+	move.l %d0,%d1
+	add.l %d0,%d1
+	add.l %d1,%d0
+	lsl.l #6,%d0
+	move.l __ZL14stars_gfx_size,%d1
+	move.l %d1,%a1
+	add.l %d1,%a1
+	add.l %a1,%a1
+	add.l %a1,%d1
+	add.l %d1,%d1
+	add.l __ZL13stars_gfx_loc,%d1
+	move.l %d1,44(%a0,%d0.l)
+.L22:
+	move.l (%sp)+,%d2
+	move.l (%sp)+,%d3
+	unlk %fp
+	rts
+.L33:
+	cmp.l #13107200,%d0
+	jle .L22
+	move.l __ZL5stars,%d0
+	move.l %d0,%d1
+	add.l %d0,%d1
+	add.l %d0,%d1
+	lsl.l #6,%d1
+	move.l __ZL14stars_gfx_size,%d0
+	move.l %d0,%a1
+	add.l %d0,%a1
+	add.l %d0,%a1
+	add.l %a1,%a1
+	add.l %a1,%a1
+	sub.l %d0,%a1
+	add.l __ZL13stars_gfx_loc,%a1
+	move.l %a1,44(%a0,%d1.l)
+	move.l (%sp)+,%d2
+	move.l (%sp)+,%d3
+	unlk %fp
+	rts
+	.even
+	.globl	__Z9basicmainv
+__Z9basicmainv:
+	link.w %fp,#0
+	movem.l #12348,-(%sp)
+	moveq #1,%d0
+	move.l %d0,__ZL5stars
+	moveq #2,%d1
+	move.l %d1,__ZL4ship
+	move.b #3,%d0
+	move.l %d0,__ZL6enemy1
+	move.b #4,%d1
+	move.l %d1,__ZL6enemy2
+	move.b #5,%d0
+	move.l %d0,__ZL6enemy3
+	move.b #6,%d1
+	move.l %d1,__ZL6enemy4
+	move.b #7,%d0
+	move.l %d0,__ZL6enemy5
+	clr.l __ZL7bullets
+	move.b #8,%d1
+	move.l %d1,__ZL7bullets+4
+	move.b #9,%d0
+	move.l %d0,__ZL7bullets+8
+	move.b #10,%d1
+	move.l %d1,__ZL7bullets+12
+	move.b #11,%d0
+	move.l %d0,__ZL7bullets+16
+	move.b #12,%d1
+	move.l %d1,__ZL7bullets+20
+	move.b #13,%d0
+	move.l %d0,__ZL7bullets+24
+	move.b #14,%d1
+	move.l %d1,__ZL7bullets+28
+	move.b #15,%d0
+	move.l %d0,__ZL7bullets+32
+	move.b #16,%d1
+	move.l %d1,__ZL7bullets+36
+	move.b #17,%d0
+	move.l %d0,__ZL7bullets+40
+	clr.l __ZL10explosions
+	move.b #18,%d1
+	move.l %d1,__ZL10explosions+4
+	move.b #19,%d0
+	move.l %d0,__ZL10explosions+8
+	move.b #20,%d1
+	move.l %d1,__ZL10explosions+12
+	move.b #21,%d0
+	move.l %d0,__ZL10explosions+16
+	move.b #22,%d1
+	move.l %d1,__ZL10explosions+20
+	clr.l __ZL12bigsplosions
+	move.b #23,%d0
+	move.l %d0,__ZL12bigsplosions+4
+	move.b #24,%d1
+	move.l %d1,__ZL12bigsplosions+8
+	move.b #25,%d0
+	move.l %d0,__ZL12bigsplosions+12
+	move.b #26,%d1
+	move.l %d1,__ZL12bigsplosions+16
+	move.b #27,%d0
+	move.l %d0,__ZL12bigsplosions+20
+	clr.l __ZL12framecounter
+	clr.l __ZL4pad1
+	clr.l __ZL8ship_pos
+	clr.l __ZL13stars_gfx_loc
+	clr.l __ZL12ship_gfx_loc
+	clr.l __ZL14stars_gfx_size
+	clr.l __ZL13ship_gfx_size
+	clr.l __ZL4xunt
+	move.l #160,__ZL7enemy_x
+	clr.l __ZL6ticker
+	clr.l __ZL6tocker
+	clr.l __ZL6tucker
+	clr.l __ZL18check_enemy_active
+	clr.l __ZL19check_for_hit_enemy
+	move.b #1,%d1
+	move.l %d1,__ZL9bulletctr
+	clr.l __ZL10bullettime
+	move.b #3,%d0
+	move.l %d0,__ZL11bulletdelay
+	move.b #10,%d1
+	move.l %d1,__ZL10maxbullets
+	clr.l __ZL5randy
+	clr.l __ZL7exp_max
+	clr.l __ZL14exp_multiplier
+	clr.l __ZL7cd_flag
+	clr.l __ZL1j
+	move.l #0x40490fdb,__ZL3pie
+	move.l #0x3c8efa36,__ZL4rads
+	lea __ZL4sins,%a3
+	lea __ZL4sins+1440,%a2
+	moveq #1,%d2
+	clr.l %d0
+	clr.l %d1
+	lea ___floatsisf,%a5
+	lea ___mulsf3,%a4
+	move.l %d1,-(%sp)
+	move.l %d0,-(%sp)
+	jsr ___fixdfsi
+	addq.l #8,%sp
+	move.l %d0,(%a3)+
+	move.l %d0,(%a2)+
+	move.l %d2,%d0
+	addq.l #1,%d2
+	cmp.l #361,%d2
+	jeq .L38
+.L45:
+	move.l %d0,-(%sp)
+	jsr (%a5)
+	move.l #0x3c8efa36,(%sp)
+	move.l %d0,-(%sp)
+	jsr (%a4)
+	addq.l #4,%sp
+	move.l %d0,(%sp)
+	jsr ___extendsfdf2
+	move.l %d1,(%sp)
+	move.l %d0,-(%sp)
+	jsr _sin
+	addq.l #4,%sp
+	clr.l (%sp)
+	move.l #1078984704,-(%sp)
+	move.l %d1,-(%sp)
+	move.l %d0,-(%sp)
+	jsr ___muldf3
+	lea (12,%sp),%sp
+	move.l %d1,(%sp)
+	move.l %d0,-(%sp)
+	jsr _floor
+	addq.l #8,%sp
+	move.l %d1,-(%sp)
+	move.l %d0,-(%sp)
+	jsr ___fixdfsi
+	addq.l #8,%sp
+	move.l %d0,(%a3)+
+	move.l %d0,(%a2)+
+	move.l %d2,%d0
+	addq.l #1,%d2
+	cmp.l #361,%d2
+	jne .L45
+.L38:
+	move.l #360,__ZL1i
+	move.l sprite,%a0
+	move.l 236(%a0),__ZL13stars_gfx_loc
+	move.l 240(%a0),__ZL14stars_gfx_size
+	move.l 428(%a0),__ZL12ship_gfx_loc
+	move.l 432(%a0),__ZL13ship_gfx_size
+	pea 16.w
+	pea 10.w
+	pea STARS_clut
+	lea jsfLoadClut,%a2
+	jsr (%a2)
+	addq.l #8,%sp
+	moveq #16,%d0
+	move.l %d0,(%sp)
+	pea 14.w
+	pea SHIP_clut
+	jsr (%a2)
+	addq.l #8,%sp
+	moveq #16,%d1
+	move.l %d1,(%sp)
+	pea 13.w
+	pea ENEMY_clut
+	jsr (%a2)
+	addq.l #8,%sp
+	moveq #16,%d2
+	move.l %d2,(%sp)
+	pea 12.w
+	pea BULLET_clut
+	jsr (%a2)
+	addq.l #8,%sp
+	moveq #16,%d3
+	move.l %d3,(%sp)
+	pea 11.w
+	pea BOOM_clut
+	jsr (%a2)
+	move.l sprite,%a0
+	move.l __ZL5stars,%d0
+	move.l %d0,%d1
+	add.l %d0,%d1
+	add.l %d1,%d0
+	lsl.l #6,%d0
+	move.l __ZL14stars_gfx_size,%d1
+	move.l %d1,%a1
+	add.l %d1,%a1
+	add.l %a1,%a1
+	add.l %a1,%d1
+	add.l __ZL13stars_gfx_loc,%d1
+	move.l %d1,44(%a0,%d0.l)
+	move.l __ZL10explosions+4,%d0
+	move.l %d0,%d1
+	add.l %d0,%d1
+	add.l %d1,%d0
+	lsl.l #6,%d0
+	move.l 60(%a0,%d0.l),__ZL7exp_max
+	lea (12,%sp),%sp
+	move.l #__Z12move_enemiesv,%d3
+	move.l #jsfGetPad,%d2
+	lea __Z9check_padv,%a5
+	lea __Z18choose_stars_framev,%a4
+	lea _jsfVsync,%a3
+	lea __Z15check_collisionv,%a2
+	move.l %d3,%a0
+	jsr (%a0)
+	move.l __ZL4ship,%d0
+	move.l %d0,%d1
+	add.l %d0,%d1
+	add.l %d1,%d0
+	lsl.l #6,%d0
+	move.l sprite,%a0
+	move.l 8(%a0,%d0.l),__ZL8ship_pos
+	pea 1.w
+	move.l %d2,%a0
+	jsr (%a0)
+	move.l %d0,__ZL4pad1
+	jsr (%a5)
+	jsr (%a4)
+	clr.l (%sp)
+	jsr (%a3)
+	addq.l #4,%sp
+	jsr (%a2)
+	move.l __ZL12framecounter,%d0
+	addq.l #1,%d0
+	move.l %d0,__ZL12framecounter
+	moveq #60,%d1
+	cmp.l %d0,%d1
+	jeq .L46
+.L40:
+	move.l __ZL6ticker,%d0
+	addq.l #2,%d0
+	move.l %d0,__ZL6ticker
+	cmp.l #360,%d0
+	jeq .L47
+.L41:
+	move.l __ZL6tocker,%d0
+	addq.l #1,%d0
+	move.l %d0,__ZL6tocker
+	cmp.l #1080,%d0
+	jeq .L48
+.L42:
+	addq.l #1,__ZL10bullettime
+.L49:
+	move.l %d3,%a0
+	jsr (%a0)
+	move.l __ZL4ship,%d0
+	move.l %d0,%d1
+	add.l %d0,%d1
+	add.l %d1,%d0
+	lsl.l #6,%d0
+	move.l sprite,%a0
+	move.l 8(%a0,%d0.l),__ZL8ship_pos
+	pea 1.w
+	move.l %d2,%a0
+	jsr (%a0)
+	move.l %d0,__ZL4pad1
+	jsr (%a5)
+	jsr (%a4)
+	clr.l (%sp)
+	jsr (%a3)
+	addq.l #4,%sp
+	jsr (%a2)
+	move.l __ZL12framecounter,%d0
+	addq.l #1,%d0
+	move.l %d0,__ZL12framecounter
+	moveq #60,%d1
+	cmp.l %d0,%d1
+	jne .L40
+	jra .L46
+.L48:
+	clr.l __ZL6tocker
+	addq.l #1,__ZL10bullettime
+	jra .L49
+.L47:
+	clr.l __ZL6ticker
+	move.l __ZL6tocker,%d0
+	addq.l #1,%d0
+	move.l %d0,__ZL6tocker
+	cmp.l #1080,%d0
+	jne .L42
+	jra .L48
+.L46:
+	clr.l __ZL12framecounter
+	move.l __ZL6ticker,%d0
+	addq.l #2,%d0
+	move.l %d0,__ZL6ticker
+	cmp.l #360,%d0
+	jne .L41
+	jra .L47
+	.globl	colliders
+	.data
+	.even
+colliders:
+	.long	raptor_collisionlist
+	.globl	sprite
+	.even
+sprite:
+	.long	RAPTOR_sprite_table
+.lcomm __ZL5stars,4
+.lcomm __ZL4ship,4
+.lcomm __ZL6enemy1,4
+.lcomm __ZL6enemy2,4
+.lcomm __ZL6enemy3,4
+.lcomm __ZL6enemy4,4
+.lcomm __ZL6enemy5,4
+.lcomm __ZL7bullets,44
+.lcomm __ZL10explosions,24
+.lcomm __ZL12bigsplosions,24
+.lcomm __ZL12framecounter,4
+.lcomm __ZL4pad1,4
+.lcomm __ZL8ship_pos,4
+.lcomm __ZL13stars_gfx_loc,4
+.lcomm __ZL12ship_gfx_loc,4
+.lcomm __ZL14stars_gfx_size,4
+.lcomm __ZL13ship_gfx_size,4
+.lcomm __ZL4xunt,4
+.lcomm __ZL7enemy_x,4
+.lcomm __ZL6ticker,4
+.lcomm __ZL6tocker,4
+.lcomm __ZL6tucker,4
+.lcomm __ZL18check_enemy_active,4
+.lcomm __ZL19check_for_hit_enemy,4
+.lcomm __ZL9bulletctr,4
+.lcomm __ZL10bullettime,4
+.lcomm __ZL11bulletdelay,4
+.lcomm __ZL10maxbullets,4
+.lcomm __ZL5randy,4
+.lcomm __ZL7exp_max,4
+.lcomm __ZL14exp_multiplier,4
+.lcomm __ZL7cd_flag,4
+.lcomm __ZL1i,4
+.lcomm __ZL1j,4
+.lcomm __ZL3pie,4
+.lcomm __ZL4rads,4
+.lcomm __ZL4sins,2880

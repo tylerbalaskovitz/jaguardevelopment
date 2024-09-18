@@ -1,0 +1,55 @@
+
+JagStudio License
+
+As JagStudio contains the RAPTOR API you need to abide by the RAPTOR API license.
+
+This software is provided free of charge to anyone and everyone.  The creators of JagStudio accept no responsibility for damage or loss by its use or misuse.  We grant you the right to use this software within your own works provided that:
+
+Clear identification of the use of this software is included within your own works, either by use of the currently approved logo provided, or textually.
+The identification of the use of this software must appear within the digital works in a manner that is visible to the end user and upon any physical packaging.
+The software may not be reverse engineered or modified without prior written consent of the author(s).
+No source code forming any part of The Software is to be distributed without explicit written permission from the author(s).
+
+*************************************************************************
+
+RAPTOR API license
+
+This software is provided free of charge to anyone and everyone.  REBOOT accepts no responsibility for damage or loss by its use or misuse.  REBOOT grants you the right to use this software within your own works provided that:
+
+Clear identification of the use of this software is included within your own works, either by use of the currently approved logo provided, or textually.
+The identification of the use of this software must appear within the digital works in a manner that is visible to the end user and upon any physical packaging.
+The software may not be reverse engineered or modified without prior written consent of the author(s).
+No source code forming any part of The Software is to be distributed without explicit written permission from the author(s).
+
+*************************************************************************
+
+JagStudio uses portions from:
+
+- RAPTOR API from Reboot (https://raptorapi.reboot-games.com)
+- JagStudio was built upon the basis of RB+ created by GGN.
+- BCX -- The FREE! Basic to C Translator For Windows by Kevin Diggins (www.bcxbasic.com/)
+- GCC: Copyright (C) Free Software Foundation, Inc (http://www.fsf.org/). Verbatim copying and distribution of this entire article is permitted in any medium, provided this notice is preserved.
+- Vincent Riviere's m68k-atari-mint cross-tools (http://vincent.riviere.free.fr/soft/m68k-atari-mint/)
+- pack2e: UCL data compression library (v1.03, Jul 20 2004). Copyright (C) 1996-2004 Markus Franz Xaver Johannes Oberhumer (http://www.oberhumer.com/opensource/ucl/)
+- SoX - Sound eXchange (http://sox.sourceforge.net/)
+- U-235 Sound engine (http://www.u-235.co.uk/developer/sound-engine/about/)
+- Audio player by Zerosquare of Jagware
+- CRY converter by Zerosquare of Jagware
+- Binary bitfield macros by Tom Torfs.
+- Example program by OMF, used with permission.
+- ee_printf Copyright (C) 2002 Michael Ringgaard
+- qsort implementation by Matthias Fleischer and Gunther Nikl, placed in the public domain
+- LSP Sound Engine (https://github.com/arnaud-carre/LSPlayer and https://github.com/ericde45/LSP_Jaguar)
+- Jaguar GameDrive development tools (https://www.retrohq.co.uk/products/atari-jaguar-gd-flash-cartridge)
+
+*************************************************************************
+
+BigP Emulator
+
+Thank you to Rich Whitehouse for allowing us to include this!
+More info here: https://www.richwhitehouse.com/jaguar/
+
+For detailed license info please see:
+Please see \buildfiles\bin\bigpemu\ReadMe.txt
+
+*************************************************************************

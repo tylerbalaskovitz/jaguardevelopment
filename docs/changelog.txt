@@ -1,0 +1,50 @@
+JagStudio Change Log
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+1.11		2023-02-10
+
+* Added		build.sh added for Linux users. (Many thanks to WillT and djhardrich).
+* Added		New EEPROM functions - Including separate User Data reading/writing.
+* Added		RetroHQ GameDrive Support and example BASIC project (jaguargd).
+* Added		LSP Sound and Input Engine (https://github.com/ericde45/LSP_Jaguar).    See example 'lsp_test'
+* Added		BigP Emulator as a build option use 'build projectname bigp'  (Massive thanks to Rich Whitehouse for permission to include this)
+				Please see: https://www.richwhitehouse.com/jaguar/
+* Added		Team Tap support.  Please see docs and the new example 'teamtap'.
+* Added		Flash Check.  This gives the ability to detect the kind of Cart the game is running on.  See example 'flashcheck'.
+* Added		Font palette switching/loading - see project "fontpalettes".
+* Added		jsfClearBuffer function.  Utility function to clear a chunk of memory (not designed for performance).
+* Added		New Array "rapSpriteTableStarts" contains 16 longword entries that point to the beginning address of each sprite object list (when using multiple lists).
+* Added		Ability to _pack any other type of asset file in assets.txt .  See example 'lsp_test'.
+* Added		New example project 'scaling'.  Simple demo showing how to scale a sprite.
+* Added		Split screen Tile Maps now possible.  See the Tile Map section of the docs for the variables.  RAPTOR API contains a split screen example.
+* Added		Tile Map variable to support setting Tile gfx bit depth (See raptor_map_bitdepth in rapapp.s).
+* Updated	BREAKING CHANGE: rapHiscoreSort - Now requires the player name in the second function parameter. Eg. rapHiscoreSort(table_to_sort, name).
+
+------------------------------------------------------------------------------------------------------------------------------------------
+1.1			2021-08-29
+
+* Added		Angle calculation and direction vector.  See example BASIC project 'calcangle'
+* Added		Collision List.  See example BASIC project "collisionlist".
+* Added		Z-Sorting for Sprites based on a sprite property.  See example BASIC project "zsort".
+* Added		New "fader" BASIC project. Example on how to do CLUT fades.
+* Added		Clock functions.  See new clocktest project (BASIC).
+* Added		Raptor Sprite Shift.  Eg. rapSpriteShift(xshift, yshift, sprBug1, 3) - See project "spriteshift" (BASIC).
+* Added		Dynamic object scale - See project "shootbang" (BASIC).
+* Added 	Simplified version of zeroPlaySample.
+				Now you just pass the start and end addresses - the length and rounding are worked out for you.
+				Eg.  zeroPlay(channel,start_address, end_address, frequency, params).				
+* Added 	Simple way to stop sound on a channel when using Zero player.
+				Rather than the old way of calling zeroPlaySample with 0's.
+				Eg.  zeroClearChannel(channel)	
+* Updated	All documentation with some further clarity and the new functions.
+* Fixed		BCX Print generating a \n
+* Fixed		Fix build.bat so it creates a <projectname>.s in the build folder for C projects.
+* Fixed		Fix build.bat so it can send ABS files to the JagGD.
+* Fixed		Fix comment in object template for scale max to 228.
+* Fixed		xdivs, xdivu, xmuls, xmulu where sometimes they would use an address register and fail compilation.
+	
+------------------------------------------------------------------------------------------------------------------------------------------
+1.0			2021-02-05	
+
+Initial Release

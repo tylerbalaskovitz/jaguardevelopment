@@ -1,0 +1,201 @@
+Build started on 09/03/2021 15:48:39.74 
+ 
+Buildlink starting
+
+Checking if assets.txt is newer than any of the build folder files....
+    Opening - F:\Jaguar\Tools\JagStudio\projects\basic\2player\assets.txt...
+    Opening - F:\Jaguar\Tools\JagStudio\projects\basic\2player\build\linkfile.bin...
+    Opening - F:\Jaguar\Tools\JagStudio\projects\basic\2player\build\romassets.inc...
+    Opening - F:\Jaguar\Tools\JagStudio\projects\basic\2player\build\romassets.h...
+    Opening - F:\Jaguar\Tools\JagStudio\projects\basic\2player\build\ramassets.inc...
+    Opening - F:\Jaguar\Tools\JagStudio\projects\basic\2player\build\build.log...
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+        Processing assets\gfx\bug.bmp
+        Converting BMP internally into gfxdata/clut...
+        File is 16 pixels wide, 16 pixels high and is 16 bits/pixel
+        Adding in RAM...
+    Reading assets.txt line
+        Processing assets\gfx\bug2.bmp
+        Converting BMP internally into gfxdata/clut...
+        File is 16 pixels wide, 16 pixels high and is 16 bits/pixel
+        Adding in RAM...
+    Reading assets.txt line
+        Processing assets\sfx\explosion.wav
+        Converting sound file into raw file (using sox)...
+        Command run: sox.exe F:\Jaguar\Tools\JagStudio\projects\basic\2player\assets\sfx\explosion.wav--channels 1 --bits 8 --encoding signed-integer "F:\Jaguar\Tools\JagStudio\projects\basic\2player\build\explosion.wav.raw" --show-progress rate -v 8000
+        Adding in RAM...
+Buildlink finished - everything went fine!
+ 
+Assembling raptor skeleton... 
+zero_audio.s 3: Warning: CLR.L opcode ignored...
+ 
+Translating .bas file to C... 
+      BCX Path set to Not Found
+BCX-32: BASIC to C/C++ Translator by Kevin Diggins (c) 1999-2009
+BCX-32 Version 6.00 (2009/06/02)
+[Lines In: 72] [Lines Out: 157] [Statements: 37] [Time: 0.04 sec's]
+BCX translated F:\Jaguar\Tools\JagStudio\projects\basic\2player\2player.bas to F:\Jaguar\Tools\JagStudio\projects\basic\2player\build\2player.c For a C Compiler
+ 
+Compiling C code to O... 
+Compiling C code to S... 
+ 
+Linking things... 
+LOAD MAP
+
+NON-RELOCATABLE SYMBOLS
+
+
+
+TEXT-SEGMENT RELOCATABLE SYMBOLS
+
+_TEXT_E  G  0002C0E0   Audio_Play G  000041DE   Input_ReadPads G  00004320   
+Input_SetJoyPort1 G  0000435A   Input_SetJoyPort2 G  00004368   Input_SetNormalPadMode G  00004376   
+Input_SetRotaryMode G  00004384   Input_SetAtariMouseMode G  000043A2   Input_SetAmigaMouseMode G  000043B0   
+Input_Read G  000043BE   jsfVsyncFlag G  0000559C   RAPTOR_PRE_Object_List G  000055A0   
+RAPTOR_POST_Object_List G  000055A2   AUDIOPLAYER G  00005786   JAGPAD_UP G  00005788   
+JAGPAD_DOWN G  0000578C   JAGPAD_LEFT G  00005790   JAGPAD_RIGHT G  00005794   
+JAGPAD_HASH G  00005798   JAGPAD_9 G  0000579C   JAGPAD_6 G  000057A0   
+JAGPAD_3 G  000057A4   JAGPAD_PAUSE G  000057A8   JAGPAD_A G  000057AC   
+JAGPAD_OPTION G  000057B0   JAGPAD_STAR G  000057B4   JAGPAD_7 G  000057B8   
+JAGPAD_4 G  000057BC   JAGPAD_1 G  000057C0   JAGPAD_0 G  000057C4   
+JAGPAD_8 G  000057C8   JAGPAD_5 G  000057CC   JAGPAD_2 G  000057D0   
+JAGPAD_B G  000057D4   JAGPAD_C G  000057D8   JAGPAD_C1 G  000057DC   
+JAGPAD_C2 G  000057E0   JAGPAD_C3 G  000057E4   SPRITE_BUG G  00012BF0   
+SPRITE_BUG2 G  00012DF0   explode_sam G  00012FF0   explode_sam_end G  00014902   
+RAPTOR_HWinit G  00014BAE   RAPTOR_start_video G  0001711E   RAPTOR_UPDATE_ALL G  00017208   
+RAPTOR_setlist G  0001722C   raptor_vidmode G  0001FA68   raptor_videnable G  0001FA6C   
+raptor_varmod G  0001FA70   raptor_maptop_obj G  0001FA74   raptor_tiles_x G  0001FA78   
+raptor_tiles_y G  0001FA7C   raptor_tilesperx G  0001FA80   raptor_tilespery G  0001FA84   
+raptor_mapwidth G  0001FA88   raptor_mapheight G  0001FA8C   raptor_maxparts G  0001FA90   
+raptor_mapbmptiles G  0001FA98   raptor_tilerem_mask G  0001FA9C   raptor_partbuf_x G  0001FAA0   
+raptor_partbuf_y G  0001FAA4   raptor_pdriftx G  0001FAA8   raptor_pdrifty G  0001FAAC   
+raptor_top_of_bss G  0001FAB0   raptor_trashram G  0001FAB4   raptor_uvbi_jmp G  0001FAB8   
+raptor_poobjl G  0001FABC   raptor_probjl G  0001FAC0   raptor_8x8_addr G  0001FAC4   
+raptor_8x16_addr G  0001FAC8   raptor_16x16_addr G  0001FACC   raptor_partipal G  0001FAD0   
+raptor_MTwork G  0001FAD4   raptor_pgfx G  0001FAD8   raptor_pgfxe G  0001FADC   
+raptor_spritetab G  0001FAE0   raptor_partitab G  0001FAE4   raptor_mtapp G  0001FAE8   
+raptor_mtfn G  0001FAEC   raptor_inittab G  0001FAF0   __Z9basicmainv G  0001492A   
+rapLocate G  0002A24E   _rapPrint G  0002A1F2   jsfGetPad G  0002976C   
+zeroPlaySample G  0002A72E   _jsfVsync G  00029C78   RAPTOR_Version G  00014AE0   
+RAPTOR_random G  00014AFA   RAPTOR_Install G  00014B0C   raptor_font8x8_pal G  00014C9C   
+raptor_font8x16_pal G  00014CBC   raptor_font16x16_pal G  00014CDC   RAPTOR_ERROR G  00015070   
+RAPTOR_InitVideo G  00015086   raptor_collisionlist G  00015264   RAPTOR_move_palette G  0001626C   
+RAPTOR_GFXConvert G  00016284   RAPTOR_setup_object_bra G  000166F4   RAPTOR_setup_object_xy G  0001670E   
+RAPTOR_setup_object_xyg G  00016744   RAPTOR_setup_object_xg G  00016788   RAPTOR_setup_object_g G  000167B8   
+RAPTOR_setup_object_xyz G  000167C8   RAPTOR_rmw G  000168A0   RAPTOR_setpalt G  000168AC   
+RAPTOR_reflect G  000168C0   raptor_blitter_use G  000168CC   RAPTOR_CreateObject G  00016A48   
+RAPTOR_chk_highscores G  00016B74   RAPTOR_resort_score_table G  00016BD8   raptor_MT_start_address G  00016C62   
+raptor_MT_save_length G  00016C66   raptor_highscores1_hex G  00016CBA   raptor_highscores1_nam G  00016CE2   
+raptor_highscores2_hex G  00016D32   raptor_highscores2_nam G  00016D5A   raptor_highscores3_hex G  00016DAA   
+raptor_highscores3_nam G  00016DD2   raptor_highscores4_hex G  00016E22   raptor_highscores4_nam G  00016E4A   
+raptor_highscores5_hex G  00016E9A   raptor_highscores5_nam G  00016EC2   raptor_last_score_hex G  00016F12   
+raptor_last_score_name G  00016F16   raptor_user_savedata G  00016F1A   raptor_VI G  00017162   
+RAPTOR_wait_frame G  00017164   raptor_vbl_time_remain G  0001718E   RAPTOR_wait_frame_UPDATE_ALL G  00017192   
+RAPTOR_UPDATE_PARTICLES_ERASE G  000171C8   RAPTOR_UPDATE_PARTICLES_PLOT G  000171D8   RAPTOR_UPDATE_SPRITES G  000171E8   
+RAPTOR_UPDATE_PARTICLES G  000171F8   RAPTOR_update_offscreenlist G  0001728C   RAPTOR_VB_INTERUPT G  00017300   
+raptor_ticks G  000173CC   raptor_ntsc_flag G  000173CE   raptor_liststart G  000173D4   
+RAPTOR_call_GPU_code G  000173DA   RAPTOR_call_GPU_code_STOP G  0001740E   RAPTOR_call_GPU_code_nowait G  00017438   
+RAPTOR_particle_init G  0001744A   RAPTOR_particle_clear G  00017474   RAPTOR_print G  000174F6   
+RAPTOR_printr G  0001766C   RAPTOR_HEXtoDEC G  000176AA   RAPTOR_particle_trigtable G  00017720   
+RAPTOR_d_lz77 G  00018720   raptor_map_position_x G  000187D8   raptor_map_position_y G  000187DC   
+RAPTOR_init_map_objs G  000187E0   RAPTOR_map_set_position G  000188CA   raptor_fade_delay G  000188DC   
+RAPTOR_fade_clut G  000188DE   RAPTOR_fade_clutindex G  00018990   RAPTOR_attach_rmotion G  00018A36   
+RAPTOR_blitter G  00018A3C   RAPTOR_NRVUnpack G  00018A64   raptor_console_x G  00018A84   
+raptor_console_y G  00018A8C   raptor_console_visible G  00018A94   raptor_console_monitors G  00018AE4   
+RAPTOR_console_inverse G  0001E938   RAPTOR_console_update_registers G  0001E960   RAPTOR_console_update_usermonitors G  0001E9C4   
+RAPTOR_console_update_textline G  0001EA3A   raptor_mapindex G  0001FA94   raptor_ang_search G  0001FAF4   
+RAPTOR_mt_init G  0001FB00   RAPTOR_mt_load G  0001FB4C   RAPTOR_mt_save G  0001FC48   
+raptor_mt_present G  00021A54   RAPTOR_MTtrash G  00021C70   RAPTOR_U235SilenceChannels G  00025C80   
+RAPTOR_U235ChangeReplayFrq G  00025CE4   RAPTOR_U235setpad1 G  00025CF2   RAPTOR_U235setpad2 G  00025CFE   
+RAPTOR_U235setrot1 G  00025D0A   RAPTOR_U235setrot2 G  00025D22   RAPTOR_U235init G  00025D3A   
+RAPTOR_U235stopDSP G  00025DB6   RAPTOR_U235playsample G  00025DDC   RAPTOR_U235queuesample G  00025E12   
+RAPTOR_U235playqueue G  00025E30   RAPTOR_U235resetqueue G  00025E5C   RAPTOR_U235setmodule G  00025E8C   
+RAPTOR_U235gomodule_mono G  00025E9C   RAPTOR_U235gomodule_stereo G  00025EBA   RAPTOR_U235stopmodule G  00025ED8   
+raptor_samplebank_ptr G  00026030   modinit  G  000260A8   U235SE_initNTSC G  00026064   
+U235SE_initPAL G  00026076   U235SE_modinit G  000260A8   modinitpos G  000260AA   
+U235SE_modinitpos G  000260AA   dspcode  G  00026950   ___mulsi3 G  00028960   
+___udivsi3 G  000289A0   ___divsi3 G  00028A00   ___umodsi3 G  00028A40   
+___modsi3 G  00028A80   $_exception_handler G  0002920E   ___addsf3 G  00028B0E   
+___subsf3 G  00028B08   ___mulsf3 G  00028D9E   ___divsf3 G  00028ECA   
+___negsf2 G  00029090   ___cmpsf2 G  0002917E   ___cmpsf2_internal G  000290E2   
+___clear_sticky_bit G  00029200   ___eqsf2 G  00029280   ___ltsf2 G  000292A0   
+___unordsf2 G  000292C0   ___unorddf2 G  00029304   ___floatunsidf G  00029376   
+___floatsidf G  000293DA   ___floatunsisf G  0002946A   ___truncdfsf2 G  0002950A   
+___floatsisf G  0002947E   ___extendsfdf2 G  00029492   ___fixdfsi G  00029640   
+___fixsfsi G  000296BA   _jsfDebugMessage G  000296E0   _jsfDebugMessageHalt G  00029724   
+jsfGetPadPressed G  000297FA   __Z17jsfGetPadPressed1v G  000298D2   __Z17jsfGetPadPressed2v G  0002993A   
+rapUnpack G  000299A2   jsfUnpack68k G  000299CE   jsfSprlistFieldSetvalOffset G  00029A8A   
+jsfSprlistFieldModOffset G  00029AD0   jsfSprlistFieldSetOffset G  00029B18   jsfSprlistFieldSetval G  00029B5C   
+jsfSprlistFieldMod G  00029BA0   jsfSprlistFieldSet G  00029BE6   _cls     G  00029C2A   
+_jsfPlot G  00029C36   jsfDelay G  00029CE4   jsfEEPROM G  00029D2E   
+eeReadBank G  0002BFA4   eeWriteBank G  0002BF6E   jsfEEPROMWord G  00029D5A   
+eeReadWord G  0002BF02   eeWriteWord G  0002BEE0   jsfEEPROMBoard G  00029D8A   
+eeReadSingleBank G  0002BF46   eeWriteSingleBank G  0002BF08   jsfLoadClut G  00029DBA   
+jsfSort  G  00029E5C   rapDebugSetMonitor G  00029FCE   _rapDebugPrint G  00029FF0   
+rapDebugUpdate G  0002A00C   rapDebugSetXY G  0002A020   rapDebugSetVisible G  0002A038   
+rapHiscoreSort G  0002A05A   rapBlitlist G  0002A070   rapNumToStr G  0002A0A0   
+RBRA     G  0002A0C0   rapHiscoreCheck G  0002A0DC   rapFadeSingle G  0002A104   
+rapFadeClut G  0002A11E   rapSetActiveList G  0002A140   rapCollide G  0002A15A   
+rapParticleInject G  0002A1A4   rapSetMapLoc G  0002A1CC   _rapPrintCont G  0002A226   
+rapUpdateOffscreenList G  0002A266   u235PlaySample G  0002A280   u235PlaySampleFreq G  0002A2D6   
+u235ChannelFreq G  0002A340   u235KillChannel G  0002A39A   u235ChannelVol G  0002A3E0   
+_u235GetPad G  0002A436   __Z14u235PlayModuleis G  0002A46C   __Z14u235StopModulev G  0002A4D6   
+__Z11u235Silencev G  0002A4F8   u235ChangeReplayFrq G  0002A51A   _u235ModuleVol G  0002A560   
+_u235SampleVol G  0002A570   u235StopDSP G  0002A580   u235Init G  0002A5A6   
+u235Restart G  0002A5EC   zeroGetPad G  0002A6CE   zeroPlay G  0002A78E   
+zeroClearChannel G  0002A7FE   __Z10ee_sprintfPcPKcz G  0002BE90   ee_printf G  0002BEAC   
+eeUpdateChecksum G  0002BFC4   eeValidateChecksum G  0002BFEC   
+
+DATA-SEGMENT RELOCATABLE SYMBOLS
+
+_DATA_E  G  0002C160   sprite   G  0002C0E0   __fpCCR  G  0002C100   
+_xcpt    G  0002C120   
+
+BSS-SEGMENT RELOCATABLE SYMBOLS
+
+_BSS_E   G  000519A0   RAPTOR_particle_gfx G  00030170   RAPTOR_sprite_table G  00039770   
+_trashram G  00051810   _jsfFontIndx G  0005188A   _jsfFontSize G  0005188E   
+_js_r_textbuffer G  00051858   zero_left_pad G  00051870   zero_right_pad G  00051874   
+_pad2    G  00051850   _pad2Last G  00051848   _pad2Prev G  00051840   
+_pad1    G  00051854   _pad1Last G  0005184C   _pad1Prev G  00051844   
+_plot_colour G  00051888   position_in_highscore G  00051884   _js_r_xpos G  00051896   
+_js_r_ypos G  00051892   _yt2     G  0005185C   _y       G  00051864   
+_errno   G  0005186C   zero_mousex_delta G  00051878   zero_mousey_delta G  0005187C   
+zero_rotary_delta G  00051880   
+
+ 
+Build successful! 
+ 
+starting vj 
