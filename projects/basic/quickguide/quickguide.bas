@@ -14,17 +14,45 @@ const sprBug2% = 2							' This is the auto-moving sprite
 
 DIM pad1 AS INTEGER							' Value to store the joypad movement in
 
+DIM tx AS INTEGER							' Value to store the joypad movement in
+tx = 130
+DIM ty AS INTEGER							' Value to store the joypad movement in
+ty = 182
 
+DIM hori AS INTEGER							' Value to store the joypad movement in
+DIM hori AS INTEGER							' Value to store the joypad movement in
+hori = 0
+
+DIM scroll AS INTEGER							' Value to store the joypad movement in
+scroll = 0
+
+DIM v1 AS STRING							' Value to store the joypad movement in
+v1="Tyler"
+
+DIM v2 AS STRING							' Value to store the joypad movement in
+v2="Navraj"
+DIM v3 AS STRING							' Value to store the joypad movement in
+v3="Loving"
+DIM v4 AS STRING							' Value to store the joypad movement in
+v4="Matthew"
+DIM v5 AS STRING							' Value to store the joypad movement in
+v5="John"
+DIM v6 AS STRING							' Value to store the joypad movement in
+v6="Christian"
 jsfSetFontIndx(1)							' Set font style
+
 jsfSetFontSize(1)							' Set font size
 
 
-rapLocate 130,182							' Position the text cursor
+rapLocate tx,ty							' Position the text cursor
 rapPrint "JagStudio"						' Print some text on the screen
 
 
 ' Main Loop
 Do
+if scroll = 0 then
+	
+endif 
 
 	pad1 = jsfGetPad(LEFT_PAD)				' Get the buttons pressed on the joypad
 
@@ -49,7 +77,52 @@ Do
     
 	ENDIF
 
+	IF pad1 BAND JAGPAD_1 THEN   			
+		
+		
+    
+	ENDIF
 
+	IF pad1 BAND JAGPAD_2 THEN   			
+		
+		
+    
+	ENDIF
+	IF pad1 BAND JAGPAD_3 THEN   			
+		
+		
+    
+	ENDIF
+	IF pad1 BAND JAGPAD_4 THEN   			
+		
+		
+    
+	ENDIF
+	IF pad1 BAND JAGPAD_5 THEN   			
+		
+		
+    
+	ENDIF
+	IF pad1 BAND JAGPAD_6 THEN   			
+		
+		
+    
+	ENDIF
+	IF pad1 BAND JAGPAD_7 THEN   			
+		
+		
+    
+	ENDIF
+	IF pad1 BAND JAGPAD_8 THEN   			
+		
+		
+    
+	ENDIF
+	IF pad1 BAND JAGPAD_9 THEN   			
+		
+		
+    
+	ENDIF
 	VSYNC									' this is required so the sprites update on the screen
 	
 LOOP
