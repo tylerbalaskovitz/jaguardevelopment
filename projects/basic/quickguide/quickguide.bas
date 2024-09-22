@@ -11,26 +11,23 @@
 const sprParticleLayer% = 0
 const sprBug1% = 1							' sprBug1 is the name of your sprite to move around.  Its the 2nd object in the list.
 const sprBug2% = 2							' This is the auto-moving sprite
+const sprBut3% = 3
 
 DIM pad1 AS INTEGER							' Value to store the joypad movement in
 
 DIM tx AS INTEGER							' Value to store the joypad movement in
-tx = 130
+tx = 30
 DIM ty AS INTEGER							' Value to store the joypad movement in
 ty = 182
-
-DIM hori AS INTEGER							' Value to store the joypad movement in
-DIM hori AS INTEGER							' Value to store the joypad movement in
-hori = 0
 
 DIM scroll AS INTEGER							' Value to store the joypad movement in
 scroll = 0
 
 DIM winner AS STRING							' Value to store the joypad movement in
 winner="?"
+
 DIM v1 AS STRING							' Value to store the joypad movement in
 v1="Tyler"
-
 DIM v2 AS STRING							' Value to store the joypad movement in
 v2="Navraj"
 DIM v3 AS STRING							' Value to store the joypad movement in
@@ -41,31 +38,36 @@ DIM v5 AS STRING							' Value to store the joypad movement in
 v5="John"
 DIM v6 AS STRING							' Value to store the joypad movement in
 v6="Christian"
+
 jsfSetFontIndx(1)							' Set font style
 
 jsfSetFontSize(1)							' Set font size
 
 
 
-FUNCTION scroll AS STRING 
+FUNCTION scrollText (w as String) as String
 	 if scroll = 1 then
+	 	winner = w
 		 tx -= 2
 		 rapLocate tx,ty
-		 print "Congrats!",winner," is the winner!",space$(2)
-	 elseif scroll = 0 then
+		 print "Congratulations!",winner," is the winner!",space$(2)
+	endif
+	 if scroll = 0 then
 		rapLocate tx,ty							' Position the text cursor
-		rapPrint "Who will be today's winner?"						' Print some text on the screen
+		print "Who will be today's winner?"						' Print some text on the screen
 	 endif
 END FUNCTION
-
-FUNCTION writeWinner(w) AS STRING 
+'
+FUNCTION writeWinner(w as String) AS STRING 
          winner=w
          rapLocate tx,ty
 	 scroll = 1
 END FUNCTION
 ' Main Loop
+
+
 Do
-	scroll
+	scrollText(winner)
 
 	pad1 = jsfGetPad(LEFT_PAD)				' Get the buttons pressed on the joypad
 
