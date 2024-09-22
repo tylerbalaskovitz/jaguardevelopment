@@ -1,0 +1,51 @@
+Buildlink starting
+
+Checking if assets.txt is newer than any of the build folder files....
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/imagescroller/assets.txt...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/imagescroller\build\linkfile.bin...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/imagescroller\build\romassets.inc...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/imagescroller\build\romassets.h...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/imagescroller\build\ramassets.inc...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/imagescroller\build\build.log...
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+        Processing assets\GFX\bg.bmp
+        Converting BMP internally into gfxdata/clut...
+        File is 1280 pixels wide, 254 pixels high and is 8 bits/pixel
+        Adding in RAM...
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+Buildlink finished - everything went fine!
