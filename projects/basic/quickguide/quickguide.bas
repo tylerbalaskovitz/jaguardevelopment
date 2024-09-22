@@ -26,6 +26,8 @@ hori = 0
 DIM scroll AS INTEGER							' Value to store the joypad movement in
 scroll = 0
 
+DIM winner AS STRING							' Value to store the joypad movement in
+winner="?"
 DIM v1 AS STRING							' Value to store the joypad movement in
 v1="Tyler"
 
@@ -44,15 +46,26 @@ jsfSetFontIndx(1)							' Set font style
 jsfSetFontSize(1)							' Set font size
 
 
-rapLocate tx,ty							' Position the text cursor
-rapPrint "JagStudio"						' Print some text on the screen
 
+FUNCTION scroll AS STRING 
+	 if scroll = 1 then
+		 tx -= 2
+		 rapLocate tx,ty
+		 print "Congrats!",winner," is the winner!",space$(2)
+	 elseif scroll = 0 then
+		rapLocate tx,ty							' Position the text cursor
+		rapPrint "Who will be today's winner?"						' Print some text on the screen
+	 endif
+END FUNCTION
 
+FUNCTION writeWinner(w) AS STRING 
+         winner=w
+         rapLocate tx,ty
+	 scroll = 1
+END FUNCTION
 ' Main Loop
 Do
-if scroll = 0 then
-	
-endif 
+	scroll
 
 	pad1 = jsfGetPad(LEFT_PAD)				' Get the buttons pressed on the joypad
 
@@ -78,33 +91,38 @@ endif
 	ENDIF
 
 	IF pad1 BAND JAGPAD_1 THEN   			
-		
+	writeWinner(v1)	
 		
     
 	ENDIF
 
 	IF pad1 BAND JAGPAD_2 THEN   			
 		
+	writeWinner(v2)	
 		
     
 	ENDIF
 	IF pad1 BAND JAGPAD_3 THEN   			
 		
+	writeWinner(v3)	
 		
     
 	ENDIF
 	IF pad1 BAND JAGPAD_4 THEN   			
 		
+	writeWinner(v4)	
 		
     
 	ENDIF
 	IF pad1 BAND JAGPAD_5 THEN   			
 		
+	writeWinner(v5)	
 		
     
 	ENDIF
 	IF pad1 BAND JAGPAD_6 THEN   			
 		
+	writeWinner(v6)	
 		
     
 	ENDIF
