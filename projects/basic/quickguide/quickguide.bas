@@ -16,7 +16,7 @@ const sprBut3% = 3
 DIM pad1 AS INTEGER							' Value to store the joypad movement in
 
 DIM tx AS INTEGER							' Value to store the joypad movement in
-tx = 130
+tx = 30
 DIM ty AS INTEGER							' Value to store the joypad movement in
 ty = 182
 
@@ -50,7 +50,7 @@ FUNCTION scrollText (w as String) as String
 	 	winner = w
 		 tx -= 2
 		 rapLocate tx,ty
-		 print "Congrats!",winner," is the winner!",space$(2)
+		 print "Congratulations!",winner," is the winner!",space$(2)
 	endif
 	 if scroll = 0 then
 		rapLocate tx,ty							' Position the text cursor
@@ -67,7 +67,7 @@ END FUNCTION
 
 
 Do
-	scrollText
+	scrollText(winner)
 
 	pad1 = jsfGetPad(LEFT_PAD)				' Get the buttons pressed on the joypad
 

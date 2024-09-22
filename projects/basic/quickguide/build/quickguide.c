@@ -100,8 +100,8 @@ void basicmain()
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 14] const sprBut3% = 3
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 16] DIM pad1 AS INTEGER
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 18] DIM tx AS INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 19] tx = 130
-tx=130;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 19] tx = 30
+tx=30;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 20] DIM ty AS INTEGER
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 21] ty = 182
 ty=182;
@@ -138,8 +138,8 @@ jsfSetFontSize(1);
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 69] Do
 for(;;)
   {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 70] scrollText
-    scrollText;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 70] scrollText(winner)
+    scrollText(winner);
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 72] pad1 = jsfGetPad(LEFT_PAD)
     pad1=jsfGetPad(LEFT_PAD);
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 74] IF pad1 BAND JAGPAD_UP THEN
@@ -282,8 +282,8 @@ char * scrollText (char *w)
       tx-=2;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 52] rapLocate tx,ty
       rapLocate(tx,ty);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 53] print "Congrats!",winner," is the winner!",space$(2)
-      js_r_textbuffer=ee_printf("%s%s%s%s","Congrats!",winner," is the winner!",space(2));
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 53] print "Congratulations!",winner," is the winner!",space$(2)
+      js_r_textbuffer=ee_printf("%s%s%s%s","Congratulations!",winner," is the winner!",space(2));
       rapPrint();
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 54] endif
     }

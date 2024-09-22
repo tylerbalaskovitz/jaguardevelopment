@@ -105,7 +105,7 @@ raptor_init_table:
 
 	
 	; Bug2
-	dc.l	1								; (REPEAT COUNTER) 				; Create this many objects of this type (or 1 for a single object)
+	dc.l	2								; (REPEAT COUNTER) 				; Create this many objects of this type (or 1 for a single object)
 	dc.l	is_active						; sprite_active					; sprite active flag
 	dc.w	16,0							; sprite_x						; 16.16 x value to position at
 	dc.w	16,0							; sprite_y						; 16.16 y value to position at
@@ -147,10 +147,10 @@ raptor_init_table:
 	; Bug3
 	dc.l	1								; (REPEAT COUNTER) 				; Create this many objects of this type (or 1 for a single object)
 	dc.l	is_active						; sprite_active					; sprite active flag
-	dc.w	16,0							; sprite_x						; 16.16 x value to position at
-	dc.w	16,0							; sprite_y						; 16.16 y value to position at
-	dc.w	2,0								; sprite_xadd					; 16.16 x addition for sprite movement
-	dc.w	1,0								; sprite_yadd					; 16.16 y addition for sprite movement
+	dc.w	32,0							; sprite_x						; 16.16 x value to position at
+	dc.w	32,0							; sprite_y						; 16.16 y value to position at
+	dc.w	4,0								; sprite_xadd					; 16.16 x addition for sprite movement
+	dc.w	2,0								; sprite_yadd					; 16.16 y addition for sprite movement
 	dc.l	16								; sprite_width					; width of sprite (in pixels)
 	dc.l	16								; sprite_height					; height of sprite (in pixels)
 	dc.l	is_normal						; sprite_flip					; flag for mirroring data left<>right
