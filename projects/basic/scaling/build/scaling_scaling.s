@@ -65,7 +65,7 @@ __Z9basicmainv:
 	pea SHIP_clut
 	jsr jsfLoadClut
 	move.l sprite,%a0
-	moveq #-1,%d0
+	moveq #1,%d0
 	move.l %d0,84(%a0)
 	lea (12,%sp),%sp
 	move.l #jsfGetPad,%d2

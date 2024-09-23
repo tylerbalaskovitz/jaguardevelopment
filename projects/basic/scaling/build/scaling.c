@@ -64,123 +64,123 @@ static int     scaleY;
 
 void basicmain()
 {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 13] const sprShip% = 0
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 14] const sprParticleLayer% = 1
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 17] DIM pad1 AS INTEGER
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 17] pad1=0
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 13] const sprShip% = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 14] const sprParticleLayer% = 1
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 17] DIM pad1 AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 17] pad1=0
 pad1=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 18] DIM scaleX AS INTEGER
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 18] scaleX=32
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 18] DIM scaleX AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 18] scaleX=32
 scaleX=32;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 19] DIM scaleY AS INTEGER
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 19] scaleY=32
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 19] DIM scaleY AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 19] scaleY=32
 scaleY=32;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 21] jsfSetFontIndx(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 21] jsfSetFontIndx(1)
 jsfSetFontIndx(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 22] jsfSetFontSize(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 22] jsfSetFontSize(1)
 jsfSetFontSize(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 23] rapLocate 90,182
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 23] rapLocate 90,182
 rapLocate(90,182);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 24] rapPrint "Scaling Example"
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 24] rapPrint "Scaling Example"
 js_r_textbuffer=(char *)"Scaling Example";
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 27] jsfSetFontIndx(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 27] jsfSetFontIndx(0)
 jsfSetFontIndx(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 28] jsfSetFontSize(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 28] jsfSetFontSize(0)
 jsfSetFontSize(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 30] rapLocate 32,40
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 30] rapLocate 32,40
 rapLocate(32,40);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 31] rapPrint "DPAD = Change X/Y Scale"
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 31] rapPrint "DPAD = Change X/Y Scale"
 js_r_textbuffer=(char *)"DPAD = Change X/Y Scale";
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 33] rapLocate 32,56
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 33] rapLocate 32,56
 rapLocate(32,56);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 34] rapPrint "B    = Reset Scale to 1:1"
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 34] rapPrint "B    = Reset Scale to 1:1"
 js_r_textbuffer=(char *)"B    = Reset Scale to 1:1";
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 36] rapLocate 32,100
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 36] rapLocate 32,100
 rapLocate(32,100);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 37] rapPrint "Scale X:"
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 37] rapPrint "Scale X:"
 js_r_textbuffer=(char *)"Scale X:";
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 38] rapLocate 32,130
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 38] rapLocate 32,130
 rapLocate(32,130);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 39] rapPrint "Scale Y:"
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 39] rapPrint "Scale Y:"
 js_r_textbuffer=(char *)"Scale Y:";
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 42] jsfLoadClut(strptr(SHIP_clut),1,16)
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 42] jsfLoadClut(strptr(SHIP_clut),1,16)
 jsfLoadClut((unsigned short *)STRPTR(SHIP_clut),1,16);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 44] sprite[sprShip].scaled = R_spr_unscale
-sprite[sprShip].scaled=R_spr_unscale;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 48] Do
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 44] sprite[sprShip].scaled = R_spr_scale
+sprite[sprShip].scaled=R_spr_scale;
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 49] Do
 for(;;)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 49] pad1 = jsfGetPad(LEFT_PAD)
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 50] pad1 = jsfGetPad(LEFT_PAD)
     pad1=jsfGetPad(LEFT_PAD);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 51] IF pad1 BAND JAGPAD_RIGHT AND scaleX < 228 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 52] IF pad1 BAND JAGPAD_RIGHT AND scaleX < 228 THEN
     if(pad1 BAND JAGPAD_RIGHT&&scaleX<228)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 53] scaleX = scaleX + 1
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 54] scaleX = scaleX + 1
         scaleX+=1;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 55] ELSEIF pad1 BAND JAGPAD_LEFT AND scaleX > 0 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 56] ELSEIF pad1 BAND JAGPAD_LEFT AND scaleX > 0 THEN
       }
     else if(pad1 BAND JAGPAD_LEFT&&scaleX>0)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 57] scaleX = scaleX - 1
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 58] scaleX = scaleX - 1
         scaleX-=1;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 59] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 60] ENDIF
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 62] IF pad1 BAND JAGPAD_UP AND scaleY < 228 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 63] IF pad1 BAND JAGPAD_UP AND scaleY < 228 THEN
     if(pad1 BAND JAGPAD_UP&&scaleY<228)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 64] scaleY = scaleY + 1
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 65] scaleY = scaleY + 1
         scaleY+=1;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 66] ELSEIF pad1 BAND JAGPAD_DOWN AND scaleY > 0 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 67] ELSEIF pad1 BAND JAGPAD_DOWN AND scaleY > 0 THEN
       }
     else if(pad1 BAND JAGPAD_DOWN&&scaleY>0)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 68] scaleY = scaleY - 1
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 69] scaleY = scaleY - 1
         scaleY-=1;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 70] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 71] ENDIF
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 73] IF pad1 BAND JAGPAD_B THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 74] IF pad1 BAND JAGPAD_B THEN
     if(pad1 BAND JAGPAD_B)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 75] scaleX = 32
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 76] scaleX = 32
         scaleX=32;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 76] scaleY = 32
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 77] scaleY = 32
         scaleY=32;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 78] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 79] ENDIF
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 82] jsfSetFontIndx(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 83] jsfSetFontIndx(1)
     jsfSetFontIndx(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 84] rapLocate 104,100
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 85] rapLocate 104,100
     rapLocate(104,100);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 85] rapPrint "    "
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 86] rapPrint "    "
     js_r_textbuffer=(char *)"    ";
     rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 86] rapLocate 104,100
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 87] rapLocate 104,100
     rapLocate(104,100);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 87] jsfPrintInt scaleX
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 88] jsfPrintInt scaleX
     js_r_textbuffer=ee_printf("%d",scaleX);
     rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 89] rapLocate 104,130
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 90] rapLocate 104,130
     rapLocate(104,130);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 90] rapPrint "    "
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 91] rapPrint "    "
     js_r_textbuffer=(char *)"    ";
     rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 91] rapLocate 104,130
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 92] rapLocate 104,130
     rapLocate(104,130);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 92] jsfPrintInt scaleY
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 93] jsfPrintInt scaleY
     js_r_textbuffer=ee_printf("%d",scaleY);
     rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 99] sprite[sprShip].scale_x = scaleX
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 100] sprite[sprShip].scale_x = scaleX
     sprite[sprShip].scale_x=scaleX;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 100] sprite[sprShip].scale_y = scaleY
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 101] sprite[sprShip].scale_y = scaleY
     sprite[sprShip].scale_y=scaleY;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 103] VSYNC
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 104] VSYNC
     jsfVsync(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scaling\scaling.bas - 105] LOOP
+// [/home/tbone/Programming/jagstudio/projects/basic/scaling/scaling.bas - 106] LOOP
   }
   while(1) {};   //  End of main program
 }
