@@ -60,202 +60,202 @@ static int     eeprom_present=0;
 
 void basicmain()
 {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 8] dim i as short
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 9] dim j as short
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 10] dim name$
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 11] dim srcname%,dstname%
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 12] jsfSetFontSize(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 9] dim i as short
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 10] dim j as short
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 11] dim name$
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 12] dim srcname%,dstname%
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 13] jsfSetFontSize(0)
 jsfSetFontSize(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 13] dim eeprom_present%=0
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 17] jsfSetFontIndx(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 14] dim eeprom_present%=0
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 18] jsfSetFontIndx(1)
 jsfSetFontIndx(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 19] CALL rapMTInit
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 20] CALL rapMTInit
 rapMTInit();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 23] if rapMTPresent<0 then
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 24] if rapMTPresent<0 then
 if(rapMTPresent<0)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 28] eeprom_present=jsfEEPROM(1,rapHighscoresScore)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 29] eeprom_present=jsfEEPROM(1,rapHighscoresScore)
     eeprom_present=jsfEEPROM(1,rapHighscoresScore);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 29] if eeprom_present=1 then
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 30] if eeprom_present=1 then
     if(eeprom_present==1)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 31] for i=0 to 9
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 32] for i=0 to 9
         for(i=0; i<=9; i+=1)
           {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 32] rapHighscoresScore[i]=(9-i)*100
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 33] rapHighscoresScore[i]=(9-i)*100
             rapHighscoresScore[i]=(9-i)*100;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 33] next i
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 34] next i
           }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 35] jsfEEPROM(0,rapHighscoresScore)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 36] jsfEEPROM(0,rapHighscoresScore)
         jsfEEPROM(0,rapHighscoresScore);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 37] eeprom_present=jsfEEPROM(1,rapHighscoresScore)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 38] eeprom_present=jsfEEPROM(1,rapHighscoresScore)
         eeprom_present=jsfEEPROM(1,rapHighscoresScore);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 38] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 39] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 40] if eeprom_present<>0 then
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 41] if eeprom_present<>0 then
     if(eeprom_present!=0)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 44] rapLocate 160,0
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 45] rapLocate 160,0
         rapLocate(160,0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 45] rapPrint "No MT/EE detected!"
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 46] rapPrint "No MT/EE detected!"
         js_r_textbuffer=(char *)"No MT/EE detected!";
         rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 46] for i=0 to 9
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 47] for i=0 to 9
         for(i=0; i<=9; i+=1)
           {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 47] rapHighscoresScore[i]=(9-i)*100
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 48] rapHighscoresScore[i]=(9-i)*100
             rapHighscoresScore[i]=(9-i)*100;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 48] next i
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 49] next i
           }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 49] else
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 50] else
       }
     else
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 53] rapLocate 160,0
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 54] rapLocate 160,0
         rapLocate(160,0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 54] rapPrint "EEPROM detected!"
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 55] rapPrint "EEPROM detected!"
         js_r_textbuffer=(char *)"EEPROM detected!";
         rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 56] rapLocate 0,25*8
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 57] rapLocate 0,25*8
         rapLocate(0,25*8);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 57] jsfSetFontIndx(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 58] jsfSetFontIndx(1)
         jsfSetFontIndx(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 59] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 60] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 60] else
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 61] else
   }
 else
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 61] rapLocate 160,0
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 62] rapLocate 160,0
     rapLocate(160,0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 62] rapPrint "MT detected!"
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 63] rapPrint "MT detected!"
     js_r_textbuffer=(char *)"MT detected!";
     rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 67] rapLocate 0,25*8
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 68] rapLocate 0,25*8
     rapLocate(0,25*8);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 68] jsfSetFontIndx(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 69] jsfSetFontIndx(1)
     jsfSetFontIndx(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 69] print "Saved value:",rapHighscoresScore[31]
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 70] print "Saved value:",rapHighscoresScore[31]
     js_r_textbuffer=ee_printf("%s% d","Saved value:",(int)rapHighscoresScore[31]);
     rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 74] rapHighscoresScore[31]=123456789
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 75] rapHighscoresScore[31]=123456789
     rapHighscoresScore[31]=123456789;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 76] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 77] endif
   }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 80] rapLocate 0,0
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 81] rapLocate 0,0
 rapLocate(0,0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 81] rapPrint "Initial table:"
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 82] rapPrint "Initial table:"
 js_r_textbuffer=(char *)"Initial table:";
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 82] jsfSetFontIndx(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 83] jsfSetFontIndx(0)
 jsfSetFontIndx(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 84] dstname=(int)strptr(name$)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 85] dstname=(int)strptr(name$)
 dstname=(int)STRPTR(name);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 85] mid$(name$,9,1)=""
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 86] mid$(name$,9,1)=""
 midstr(name,9,1,"");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 87] for i=0 to 9
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 88] for i=0 to 9
 for(i=0; i<=9; i+=1)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 88] rapLocate 0,8+i*8
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 89] rapLocate 0,8+i*8
     rapLocate(0,8+i*8);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 90] srcname=(int)strptr(rapHighscoresName[9-i]);
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 91] srcname=(int)strptr(rapHighscoresName[9-i]);
     srcname=(int)STRPTR(rapHighscoresName[9-i]);;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 91] lpoke dstname,lpeek(srcname)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 92] lpoke dstname,lpeek(srcname)
     *(volatile unsigned int*)(dstname)=(volatile unsigned int)    lpeek(srcname);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 92] lpoke dstname+4,lpeek(srcname+4)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 93] lpoke dstname+4,lpeek(srcname+4)
     *(volatile unsigned int*)(dstname+4)=(volatile unsigned int)    lpeek(srcname+4);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 93] PRINT "#";i;" - ";name$;" -";rapHighscoresScore[9-i]
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 94] PRINT "#";i;" - ";name$;" -";rapHighscoresScore[9-i]
     js_r_textbuffer=ee_printf("%s% d%s%s%s% d","#",(int)i," - ",name," -",(int)rapHighscoresScore[9-i]);
     rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 94] next i
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 95] next i
   }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 99] jsfSetFontIndx(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 100] jsfSetFontIndx(1)
 jsfSetFontIndx(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 100] rapLocate 0,8*10+8+8
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 101] rapLocate 0,8*10+8+8
 rapLocate(0,8*10+8+8);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 101] rapPrint "After a highscore of 432 points:"
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 102] rapPrint "After a highscore of 432 points:"
 js_r_textbuffer=(char *)"After a highscore of 432 points:";
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 102] jsfSetFontIndx(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 103] jsfSetFontIndx(0)
 jsfSetFontIndx(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 103] name$="I WON!!!"
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 104] name$="I WON!!!"
 strcpy(name,"I WON!!!");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 104] if rapHiscoreCheck(432,name$,0)>0 then
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 105] if rapHiscoreCheck(432,name$,0)>0 then
 if(rapHiscoreCheck(432,name,0)>0)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 105] call rapHiscoreSort(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 106] call rapHiscoreSort(0)
     rapHiscoreSort(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 106] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 107] endif
   }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 107] for i=0 to 9
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 108] for i=0 to 9
 for(i=0; i<=9; i+=1)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 108] rapLocate 0,8*10+8+8+8+i*8
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 109] rapLocate 0,8*10+8+8+8+i*8
     rapLocate(0,8*10+8+8+8+i*8);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 110] srcname=(int)strptr(rapHighscoresName[9-i]);
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 111] srcname=(int)strptr(rapHighscoresName[9-i]);
     srcname=(int)STRPTR(rapHighscoresName[9-i]);;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 111] lpoke dstname,lpeek(srcname)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 112] lpoke dstname,lpeek(srcname)
     *(volatile unsigned int*)(dstname)=(volatile unsigned int)    lpeek(srcname);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 112] lpoke dstname+4,lpeek(srcname+4)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 113] lpoke dstname+4,lpeek(srcname+4)
     *(volatile unsigned int*)(dstname+4)=(volatile unsigned int)    lpeek(srcname+4);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 113] PRINT "#";i;" - ";name$;" -";rapHighscoresScore[9-i]
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 114] PRINT "#";i;" - ";name$;" -";rapHighscoresScore[9-i]
     js_r_textbuffer=ee_printf("%s% d%s%s%s% d","#",(int)i," - ",name," -",(int)rapHighscoresScore[9-i]);
     rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 114] next i
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 115] next i
   }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 118] jsfSetFontIndx(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 119] jsfSetFontIndx(1)
 jsfSetFontIndx(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 119] rapLocate 0,8*10+8+8+8+10*8+8
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 120] rapLocate 0,8*10+8+8+8+10*8+8
 rapLocate(0,8*10+8+8+8+10*8+8);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 121] if rapMTPresent<0 then
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 122] if rapMTPresent<0 then
 if(rapMTPresent<0)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 122] if eeprom_present<>0 then
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 123] if eeprom_present<>0 then
     if(eeprom_present!=0)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 123] rapPrint "No MT/EE detected, so no scores saved!"
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 124] rapPrint "No MT/EE detected, so no scores saved!"
         js_r_textbuffer=(char *)"No MT/EE detected, so no scores saved!";
         rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 124] else
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 125] else
       }
     else
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 125] eeprom_present=jsfEEPROM(0,rapHighscoresScore)
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 126] eeprom_present=jsfEEPROM(0,rapHighscoresScore)
         eeprom_present=jsfEEPROM(0,rapHighscoresScore);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 126] if eeprom_present=0 then
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 127] if eeprom_present=0 then
         if(eeprom_present==0)
           {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 127] rapPrint "EEPROM detected, scores saved!"
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 128] rapPrint "EEPROM detected, scores saved!"
             js_r_textbuffer=(char *)"EEPROM detected, scores saved!";
             rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 128] else
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 129] else
           }
         else
           {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 129] rapPrint "EEPROM detected, save fail!"
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 130] rapPrint "EEPROM detected, save fail!"
             js_r_textbuffer=(char *)"EEPROM detected, save fail!";
             rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 130] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 131] endif
           }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 131] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 132] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 132] else
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 133] else
   }
 else
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 133] call rapMTSave
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 134] call rapMTSave
     rapMTSave();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 134] rapPrint "Memory Track detected, scores saved!"
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 135] rapPrint "Memory Track detected, scores saved!"
     js_r_textbuffer=(char *)"Memory Track detected, scores saved!";
     rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 135] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 136] endif
   }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 137] do
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 138] do
 for(;;)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 139] vsync
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 140] vsync
     jsfVsync(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\scores\scores.bas - 140] loop
+// [/home/tbone/Programming/jagstudio/projects/basic/scores/scores.bas - 141] loop
   }
   while(1) {};   //  End of main program
 }

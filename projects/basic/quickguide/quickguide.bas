@@ -11,7 +11,9 @@
 const sprParticleLayer% = 0
 const sprBug1% = 1							' sprBug1 is the name of your sprite to move around.  Its the 2nd object in the list.
 const sprBug2% = 2							' This is the auto-moving sprite
-const sprBut3% = 3
+const sprBug3% = 3
+const sprBug4% = 4 
+const sprBug5% = 5
 
 DIM pad1 AS INTEGER							' Value to store the joypad movement in
 
