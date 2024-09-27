@@ -7,15 +7,15 @@ SPRITE_BUG2: incbin "build/bug2.bmp.gfxdata"
 SPRITE_BUG2_end:
 .extern SPRITE_BUG2
 .dphrase
-SPRITE_BUG3: incbin "build/bug2.bmp.gfxdata"
+SPRITE_BUG3: incbin "build/bugAgain.bmp.gfxdata"
 SPRITE_BUG3_end:
 .extern SPRITE_BUG3
 .dphrase
-SPRITE_BUG4: incbin "build/bug2.bmp.gfxdata"
+SPRITE_BUG4: incbin "build/bugAgain.bmp.gfxdata"
 SPRITE_BUG4_end:
 .extern SPRITE_BUG4
 .dphrase
-SPRITE_BUG5: incbin "build/bug2.bmp.gfxdata"
+SPRITE_BUG5: incbin "build/bugAgain.bmp.gfxdata"
 SPRITE_BUG5_end:
 .extern SPRITE_BUG5
 .dphrase
