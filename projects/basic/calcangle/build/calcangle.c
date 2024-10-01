@@ -64,98 +64,98 @@ static char    calcAngleBuffer[65540];
 
 void basicmain()
 {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 15] const sprParticleLayer% = 0
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 16] const sprBug1% = 1
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 17] const sprBug2% = 2
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 18] const sprBug3% = 3
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 20] DIM pad1 AS INTEGER
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 22] jsfSetFontIndx(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 15] const sprParticleLayer% = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 16] const sprBug1% = 1
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 17] const sprBug2% = 2
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 18] const sprBug3% = 3
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 20] DIM pad1 AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 22] jsfSetFontIndx(1)
 jsfSetFontIndx(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 23] jsfSetFontSize(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 23] jsfSetFontSize(1)
 jsfSetFontSize(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 26] rapLocate 130,182
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 26] rapLocate 130,182
 rapLocate(130,182);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 27] rapPrint "CalcAngle"
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 27] rapPrint "CalcAngle"
 js_r_textbuffer=(char *)"CalcAngle";
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 28] rapLocate 118,210
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 28] rapLocate 118,210
 rapLocate(118,210);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 29] rapPrint "DPAD To Move"
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 29] rapPrint "DPAD To Move"
 js_r_textbuffer=(char *)"DPAD To Move";
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 31] dim angle as integer
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 33] DIM calcAngleBuffer[65540] as char
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 35] rapInitCalcAngle(calcAngleBuffer)
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 31] dim angle as integer
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 33] DIM calcAngleBuffer[65540] as char
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 35] rapInitCalcAngle(calcAngleBuffer)
 rapInitCalcAngle(calcAngleBuffer);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 38] jsfSetFontIndx(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 38] jsfSetFontIndx(0)
 jsfSetFontIndx(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 39] jsfSetFontSize(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 39] jsfSetFontSize(0)
 jsfSetFontSize(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 43] Do
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 43] Do
 for(;;)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 45] pad1 = jsfGetPad(LEFT_PAD)
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 45] pad1 = jsfGetPad(LEFT_PAD)
     pad1=jsfGetPad(LEFT_PAD);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 47] IF pad1 BAND JAGPAD_UP THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 47] IF pad1 BAND JAGPAD_UP THEN
     if(pad1 BAND JAGPAD_UP)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 48] sprite[sprBug1].y_ -= 2
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 48] sprite[sprBug1].y_ -= 2
         sprite[sprBug1].y_-=2;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 49] ELSEIF pad1 BAND JAGPAD_DOWN THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 49] ELSEIF pad1 BAND JAGPAD_DOWN THEN
       }
     else if(pad1 BAND JAGPAD_DOWN)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 50] sprite[sprBug1].y_ += 2
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 50] sprite[sprBug1].y_ += 2
         sprite[sprBug1].y_+=2;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 51] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 51] ENDIF
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 53] IF pad1 BAND JAGPAD_LEFT THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 53] IF pad1 BAND JAGPAD_LEFT THEN
     if(pad1 BAND JAGPAD_LEFT)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 54] sprite[sprBug1].x_ -= 2
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 54] sprite[sprBug1].x_ -= 2
         sprite[sprBug1].x_-=2;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 55] ELSEIF pad1 BAND JAGPAD_RIGHT THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 55] ELSEIF pad1 BAND JAGPAD_RIGHT THEN
       }
     else if(pad1 BAND JAGPAD_RIGHT)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 56] sprite[sprBug1].x_ += 2
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 56] sprite[sprBug1].x_ += 2
         sprite[sprBug1].x_+=2;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 57] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 57] ENDIF
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 62] angle = rapCalcAngle(sprite[sprBug2].x_, sprite[sprBug2].y_, sprite[sprBug1].x_, sprite[sprBug1].y_)
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 62] angle = rapCalcAngle(sprite[sprBug2].x_, sprite[sprBug2].y_, sprite[sprBug1].x_, sprite[sprBug1].y_)
     angle=rapCalcAngle(sprite[sprBug2].x_,sprite[sprBug2].y_,sprite[sprBug1].x_,sprite[sprBug1].y_);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 66] rapLocate 20,30
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 66] rapLocate 20,30
     rapLocate(20,30);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 67] print "0-511 Angle: ";angle
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 67] print "0-511 Angle: ";angle
     js_r_textbuffer=ee_printf("%s% d","0-511 Angle: ",(int)angle);
     rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 74] rapAngleVector(angle)
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 74] rapAngleVector(angle)
     rapAngleVector(angle);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 78] rapLocate 20,50
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 78] rapLocate 20,50
     rapLocate(20,50);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 79] print "Vector X: ";rapAngle_xAdd
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 79] print "Vector X: ";rapAngle_xAdd
     js_r_textbuffer=ee_printf("%s% d","Vector X: ",(int)rapAngle_xAdd);
     rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 81] rapLocate 20,70
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 81] rapLocate 20,70
     rapLocate(20,70);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 82] print "Vector Y: ";rapAngle_yAdd
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 82] print "Vector Y: ";rapAngle_yAdd
     js_r_textbuffer=ee_printf("%s% d","Vector Y: ",(int)rapAngle_yAdd);
     rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 86] sprite[sprBug2].xadd = rapAngle_xAdd
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 86] sprite[sprBug2].xadd = rapAngle_xAdd
     sprite[sprBug2].xadd=rapAngle_xAdd;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 87] sprite[sprBug2].yadd = rapAngle_yAdd
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 87] sprite[sprBug2].yadd = rapAngle_yAdd
     sprite[sprBug2].yadd=rapAngle_yAdd;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 96] angle = rapCalcAngle(sprite[sprBug3].x_, sprite[sprBug3].y_, sprite[sprBug1].x_, sprite[sprBug1].y_)
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 96] angle = rapCalcAngle(sprite[sprBug3].x_, sprite[sprBug3].y_, sprite[sprBug1].x_, sprite[sprBug1].y_)
     angle=rapCalcAngle(sprite[sprBug3].x_,sprite[sprBug3].y_,sprite[sprBug1].x_,sprite[sprBug1].y_);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 97] rapAngleVector(angle)
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 97] rapAngleVector(angle)
     rapAngleVector(angle);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 98] sprite[sprBug3].xadd = rapAngle_xAdd<<2
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 98] sprite[sprBug3].xadd = rapAngle_xAdd<<2
     sprite[sprBug3].xadd=rapAngle_xAdd<<2;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 99] sprite[sprBug3].yadd = rapAngle_yAdd<<2
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 99] sprite[sprBug3].yadd = rapAngle_yAdd<<2
     sprite[sprBug3].yadd=rapAngle_yAdd<<2;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 104] VSYNC
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 104] VSYNC
     jsfVsync(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\calcangle\calcangle.bas - 106] LOOP
+// [/home/tbone/Programming/jagstudio/projects/basic/calcangle/calcangle.bas - 106] LOOP
   }
   while(1) {};   //  End of main program
 }

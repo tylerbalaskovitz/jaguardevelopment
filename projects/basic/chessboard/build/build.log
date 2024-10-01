@@ -1,0 +1,57 @@
+Buildlink starting
+
+Checking if assets.txt is newer than any of the build folder files....
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/chessboard/assets.txt...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/chessboard\build\linkfile.bin...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/chessboard\build\romassets.inc...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/chessboard\build\romassets.h...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/chessboard\build\ramassets.inc...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/chessboard\build\build.log...
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+        Processing ASSETS\GFX\BTS.bmp
+        Converting BMP internally into gfxdata/clut...
+        File is 320 pixels wide, 240 pixels high and is 16 bits/pixel
+        Adding in RAM...
+    Reading assets.txt line
+        Processing ASSETS\GFX\a4awesome.bmp
+        Converting BMP internally into gfxdata/clut...
+        File is 352 pixels wide, 256 pixels high and is 4 bits/pixel
+        Adding in RAM...
+    Reading assets.txt line
+        Processing ASSETS\GFX\uwin.bmp
+        Converting BMP internally into gfxdata/clut...
+        File is 352 pixels wide, 256 pixels high and is 4 bits/pixel
+        Adding in RAM...
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+Buildlink finished - everything went fine!

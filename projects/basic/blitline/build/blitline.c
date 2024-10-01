@@ -68,180 +68,180 @@ static int     sins[360];
 
 void basicmain()
 {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 18] jsfSetFontIndx(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 18] jsfSetFontIndx(0)
 jsfSetFontIndx(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 19] jsfSetFontSize(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 19] jsfSetFontSize(0)
 jsfSetFontSize(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 21] DIM particles%
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 21] particles=0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 21] DIM particles%
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 21] particles=0
 particles=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 22] DIM canvasSpr%
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 22] canvasSpr=1
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 22] DIM canvasSpr%
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 22] canvasSpr=1
 canvasSpr=1;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 25] DIM gfxcanvas%
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 25] gfxcanvas=sprite[canvasSpr].gfxbase
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 25] DIM gfxcanvas%
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 25] gfxcanvas=sprite[canvasSpr].gfxbase
 gfxcanvas=sprite[canvasSpr].gfxbase;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 27] DIM blitlist%[131][16]
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 30] DIM x AS INTEGER
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 30] x=110
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 27] DIM blitlist%[131][16]
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 30] DIM x AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 30] x=110
 x=110;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 31] DIM xmod AS INTEGER
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 31] xmod=2
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 31] DIM xmod AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 31] xmod=2
 xmod=2;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 32] DIM y AS INTEGER
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 32] y=0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 32] DIM y AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 32] y=0
 y=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 33] DIM linecolour AS INTEGER
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 33] linecolour=200
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 33] DIM linecolour AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 33] linecolour=200
 linecolour=200;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 34] DIM width AS INTEGER
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 34] width=100
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 34] DIM width AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 34] width=100
 width=100;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 35] DIM pie!
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 35] pie=3.1415926535897932384626433832795
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 35] DIM pie!
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 35] pie=3.1415926535897932384626433832795
 pie=3.1415926535897932384626433832795;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 36] DIM rads!
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 36] rads=(pie/180)
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 36] DIM rads!
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 36] rads=(pie/180)
 rads=(pie/180);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 37] DIM sinz!
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 38] DIM sins[360] AS INTEGER
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 39] DIM sineloop AS INTEGER
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 39] sineloop = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 37] DIM sinz!
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 38] DIM sins[360] AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 39] DIM sineloop AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 39] sineloop = 0
 sineloop=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 42] jsfSetFontIndx(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 42] jsfSetFontIndx(1)
 jsfSetFontIndx(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 43] jsfSetFontSize(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 43] jsfSetFontSize(1)
 jsfSetFontSize(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 44] rapLocate 16,18
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 44] rapLocate 16,18
 rapLocate(16,18);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 45] rapPrint "Please Wait: Calculating Sine values"
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 45] rapPrint "Please Wait: Calculating Sine values"
 js_r_textbuffer=(char *)"Please Wait: Calculating Sine values";
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 48] FOR y=0 to 359
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 48] FOR y=0 to 359
 for(y=0; y<=359; y+=1)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 49] sinz=(sin(y*rads)*64)
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 49] sinz=(sin(y*rads)*64)
     sinz=(sin(y*rads)*64);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 50] sins[y]=INT(sinz)
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 50] sins[y]=INT(sinz)
     sins[y]=FINT(sinz);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 51] NEXT
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 51] NEXT
   }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 54] CLS
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 54] CLS
 cls();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 57] jsfSetFontIndx(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 57] jsfSetFontIndx(1)
 jsfSetFontIndx(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 58] jsfSetFontSize(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 58] jsfSetFontSize(1)
 jsfSetFontSize(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 59] rapLocate 110,170
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 59] rapLocate 110,170
 rapLocate(110,170);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 60] rapPrint "Blitlist Basic"
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 60] rapPrint "Blitlist Basic"
 js_r_textbuffer=(char *)"Blitlist Basic";
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 64] FOR y = 0 TO 130
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 64] FOR y = 0 TO 130
 for(y=0; y<=130; y+=1)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 65] blitlist[y][0] = gfxcanvas
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 65] blitlist[y][0] = gfxcanvas
     blitlist[y][0]=gfxcanvas;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 66] blitlist[y][1] = PIXEL16|XADDPIX|WID320|PITCH1
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 66] blitlist[y][1] = PIXEL16|XADDPIX|WID320|PITCH1
     blitlist[y][1]=PIXEL16|XADDPIX|WID320|PITCH1;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 67] blitlist[y][2] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 67] blitlist[y][2] = 0
     blitlist[y][2]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 68] blitlist[y][3] = (y<<16)+x
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 68] blitlist[y][3] = (y<<16)+x
     blitlist[y][3]=(y<<16)+x;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 69] blitlist[y][4] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 69] blitlist[y][4] = 0
     blitlist[y][4]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 70] blitlist[y][5] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 70] blitlist[y][5] = 0
     blitlist[y][5]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 71] blitlist[y][6] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 71] blitlist[y][6] = 0
     blitlist[y][6]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 72] blitlist[y][7] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 72] blitlist[y][7] = 0
     blitlist[y][7]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 73] blitlist[y][8] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 73] blitlist[y][8] = 0
     blitlist[y][8]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 74] blitlist[y][9] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 74] blitlist[y][9] = 0
     blitlist[y][9]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 75] blitlist[y][10] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 75] blitlist[y][10] = 0
     blitlist[y][10]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 76] blitlist[y][11] = linecolour+y
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 76] blitlist[y][11] = linecolour+y
     blitlist[y][11]=linecolour+y;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 77] blitlist[y][12] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 77] blitlist[y][12] = 0
     blitlist[y][12]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 78] blitlist[y][13] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 78] blitlist[y][13] = 0
     blitlist[y][13]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 79] blitlist[y][14] = (1<<16)+width
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 79] blitlist[y][14] = (1<<16)+width
     blitlist[y][14]=(1<<16)+width;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 80] blitlist[y][15] = PATDSEL
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 80] blitlist[y][15] = PATDSEL
     blitlist[y][15]=PATDSEL;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 81] NEXT y
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 81] NEXT y
   }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 84] blitlist[130][0] = -1
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 84] blitlist[130][0] = -1
 blitlist[130][0]=-1;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 88] blitlist[0][0] = gfxcanvas
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 88] blitlist[0][0] = gfxcanvas
 blitlist[0][0]=gfxcanvas;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 89] blitlist[0][1] = PIXEL16|XADDPHR|WID320|PITCH1
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 89] blitlist[0][1] = PIXEL16|XADDPHR|WID320|PITCH1
 blitlist[0][1]=PIXEL16|XADDPHR|WID320|PITCH1;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 90] blitlist[0][2] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 90] blitlist[0][2] = 0
 blitlist[0][2]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 91] blitlist[0][3] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 91] blitlist[0][3] = 0
 blitlist[0][3]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 92] blitlist[0][4] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 92] blitlist[0][4] = 0
 blitlist[0][4]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 93] blitlist[0][5] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 93] blitlist[0][5] = 0
 blitlist[0][5]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 94] blitlist[0][6] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 94] blitlist[0][6] = 0
 blitlist[0][6]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 95] blitlist[0][7] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 95] blitlist[0][7] = 0
 blitlist[0][7]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 96] blitlist[0][8] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 96] blitlist[0][8] = 0
 blitlist[0][8]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 97] blitlist[0][9] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 97] blitlist[0][9] = 0
 blitlist[0][9]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 98] blitlist[0][10] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 98] blitlist[0][10] = 0
 blitlist[0][10]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 99] blitlist[0][11] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 99] blitlist[0][11] = 0
 blitlist[0][11]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 100] blitlist[0][12] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 100] blitlist[0][12] = 0
 blitlist[0][12]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 101] blitlist[0][13] = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 101] blitlist[0][13] = 0
 blitlist[0][13]=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 102] blitlist[0][14] = (130<<16)+320
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 102] blitlist[0][14] = (130<<16)+320
 blitlist[0][14]=(130<<16)+320;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 103] blitlist[0][15] = LFU_CLEAR
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 103] blitlist[0][15] = LFU_CLEAR
 blitlist[0][15]=LFU_CLEAR;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 107] DO
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 107] DO
 for(;;)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 109] vsync
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 109] vsync
     jsfVsync(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 112] rapBlitlist(strptr(blitlist))
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 112] rapBlitlist(strptr(blitlist))
     rapBlitlist(STRPTR(blitlist));
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 115] linecolour+=12
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 115] linecolour+=12
     linecolour+=12;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 118] FOR y = 1 TO 130
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 118] FOR y = 1 TO 130
     for(y=1; y<=130; y+=1)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 120] blitlist[y][0] = gfxcanvas
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 120] blitlist[y][0] = gfxcanvas
         blitlist[y][0]=gfxcanvas;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 121] blitlist[y][3] = (y<<16)+(x+sins[sineloop>>4])
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 121] blitlist[y][3] = (y<<16)+(x+sins[sineloop>>4])
         blitlist[y][3]=(y<<16)+(x+sins[sineloop>>4]);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 122] blitlist[y][14] = (1<<16)+width
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 122] blitlist[y][14] = (1<<16)+width
         blitlist[y][14]=(1<<16)+width;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 123] blitlist[y][11] = linecolour+y*3
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 123] blitlist[y][11] = linecolour+y*3
         blitlist[y][11]=linecolour+y*3;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 125] sineloop+=1
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 125] sineloop+=1
         sineloop+=1;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 126] IF sineloop > (360<<4)-1 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 126] IF sineloop > (360<<4)-1 THEN
         if(sineloop>(360<<4)-1)
           {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 127] sineloop=0
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 127] sineloop=0
             sineloop=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 128] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 128] ENDIF
           }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 129] NEXT y
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 129] NEXT y
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 131] blitlist[130][0] = -1
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 131] blitlist[130][0] = -1
     blitlist[130][0]=-1;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\blitline\blitline.bas - 133] LOOP
+// [/home/tbone/Programming/jagstudio/projects/basic/blitline/blitline.bas - 133] LOOP
   }
   while(1) {};   //  End of main program
 }

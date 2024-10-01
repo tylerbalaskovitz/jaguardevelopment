@@ -23,79 +23,289 @@ __Z9randomizej:
 	.globl	__Z8drawtiless
 __Z8drawtiless:
 	link.w %fp,#0
-	movem.l #12336,-(%sp)
-	move.w 10(%fp),%d0
-	ext.l %d0
-	clr.w __ZZ8drawtilessE1i
-	move.w __ZL5tiley,%d3
-	muls.w #15360,%d3
-	move.l %d3,__ZZ8drawtilessE13tile_y_offset
+	movem.l #8240,-(%sp)
+	move.w 10(%fp),%a1
+	clr.l __ZZ8drawtilessE14screen_address
+	move.w __ZL5tiley,%d2
+	muls.w #15360,%d2
+	move.l %d2,__ZZ8drawtilessE13tile_y_offset
 	move.w __ZL5tilex,%d1
 	ext.l %d1
 	lsl.l #4,%d1
 	move.l %d1,__ZZ8drawtilessE13tile_x_offset
 	add.l #tiles,%d1
-	add.l %d1,%d3
-	move.l %d3,__ZZ8drawtilessE12tile_address
+	move.l %d2,%a0
+	add.l %d1,%a0
+	move.l %a0,__ZZ8drawtilessE12tile_address
 	move.w 14(%fp),%d1
 	muls.w #4608,%d1
 	move.l %d1,__ZZ8drawtilessE15screen_y_offset
+	move.l %a1,%d0
 	lsl.l #4,%d0
 	move.l %d0,__ZZ8drawtilessE15screen_x_offset
-	move.l %d0,%d2
-	add.l #scrbuf,%d2
-	add.l %d1,%d2
-	move.l %d2,__ZZ8drawtilessE14screen_address
-	move.l %d3,%a3
-	move.l %d2,%a0
-	move.l %d2,%d1
-	add.l #4608,%d1
-	move.l %d3,%a1
-	move.l (%a1),%d0
-	move.l %a0,%a2
+	add.l #scrbuf,%d0
+	move.l %d1,%a1
+	add.l %d0,%a1
+	move.l %a0,%a3
+	move.l (%a3)+,%d0
+	move.l %a1,%a2
 	move.l %d0,(%a2)+
-	addq.l #4,%a3
 	move.l (%a3),%d0
 	move.l %d0,(%a2)
-	lea (8,%a0),%a2
-	lea (8,%a1),%a3
+	lea (8,%a1),%a2
+	lea (8,%a0),%a3
 	move.l (%a3),%d0
 	move.l %d0,(%a2)
-	lea (12,%a0),%a2
-	lea (12,%a1),%a3
+	lea (12,%a1),%a2
+	lea (12,%a0),%a3
 	move.l (%a3),%d0
 	move.l %d0,(%a2)
-	lea (960,%a1),%a3
-	lea (288,%a0),%a0
-	cmp.l %a0,%d1
-	jeq .L7
-.L5:
-	move.l %a3,%a1
-	move.l (%a1),%d0
-	move.l %a0,%a2
-	move.l %d0,(%a2)+
-	addq.l #4,%a3
+	lea (288,%a1),%a2
+	lea (960,%a0),%a3
 	move.l (%a3),%d0
 	move.l %d0,(%a2)
-	lea (8,%a0),%a2
-	lea (8,%a1),%a3
+	lea (292,%a1),%a2
+	lea (964,%a0),%a3
 	move.l (%a3),%d0
 	move.l %d0,(%a2)
-	lea (12,%a0),%a2
-	lea (12,%a1),%a3
+	lea (296,%a1),%a2
+	lea (968,%a0),%a3
 	move.l (%a3),%d0
 	move.l %d0,(%a2)
-	lea (960,%a1),%a3
-	lea (288,%a0),%a0
-	cmp.l %a0,%d1
-	jne .L5
-.L7:
-	add.l #15360,%d3
-	move.l %d3,__ZZ8drawtilessE12tile_address
-	add.l #4608,%d2
-	move.l %d2,__ZZ8drawtilessE14screen_address
+	lea (300,%a1),%a2
+	lea (972,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (576,%a1),%a2
+	lea (1920,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (580,%a1),%a2
+	lea (1924,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (584,%a1),%a2
+	lea (1928,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (588,%a1),%a2
+	lea (1932,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (864,%a1),%a2
+	lea (2880,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (868,%a1),%a2
+	lea (2884,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (872,%a1),%a2
+	lea (2888,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (876,%a1),%a2
+	lea (2892,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (1152,%a1),%a2
+	lea (3840,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (1156,%a1),%a2
+	lea (3844,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (1160,%a1),%a2
+	lea (3848,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (1164,%a1),%a2
+	lea (3852,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (1440,%a1),%a2
+	lea (4800,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (1444,%a1),%a2
+	lea (4804,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (1448,%a1),%a2
+	lea (4808,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (1452,%a1),%a2
+	lea (4812,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (1728,%a1),%a2
+	lea (5760,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (1732,%a1),%a2
+	lea (5764,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (1736,%a1),%a2
+	lea (5768,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (1740,%a1),%a2
+	lea (5772,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (2016,%a1),%a2
+	lea (6720,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (2020,%a1),%a2
+	lea (6724,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (2024,%a1),%a2
+	lea (6728,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (2028,%a1),%a2
+	lea (6732,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (2304,%a1),%a2
+	lea (7680,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (2308,%a1),%a2
+	lea (7684,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (2312,%a1),%a2
+	lea (7688,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (2316,%a1),%a2
+	lea (7692,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (2592,%a1),%a2
+	lea (8640,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (2596,%a1),%a2
+	lea (8644,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (2600,%a1),%a2
+	lea (8648,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (2604,%a1),%a2
+	lea (8652,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (2880,%a1),%a2
+	lea (9600,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (2884,%a1),%a2
+	lea (9604,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (2888,%a1),%a2
+	lea (9608,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (2892,%a1),%a2
+	lea (9612,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (3168,%a1),%a2
+	lea (10560,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (3172,%a1),%a2
+	lea (10564,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (3176,%a1),%a2
+	lea (10568,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (3180,%a1),%a2
+	lea (10572,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (3456,%a1),%a2
+	lea (11520,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (3460,%a1),%a2
+	lea (11524,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (3464,%a1),%a2
+	lea (11528,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (3468,%a1),%a2
+	lea (11532,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (3744,%a1),%a2
+	lea (12480,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (3748,%a1),%a2
+	lea (12484,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (3752,%a1),%a2
+	lea (12488,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (3756,%a1),%a2
+	lea (12492,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (4032,%a1),%a2
+	lea (13440,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (4036,%a1),%a2
+	lea (13444,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (4040,%a1),%a2
+	lea (13448,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (4044,%a1),%a2
+	lea (13452,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (4320,%a1),%a2
+	lea (14400,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (4324,%a1),%a2
+	lea (14404,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (4328,%a1),%a2
+	lea (14408,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (4332,%a1),%a2
+	lea (14412,%a0),%a3
+	move.l (%a3),%d0
+	move.l %d0,(%a2)
+	lea (15360,%a0),%a0
+	move.l %a0,__ZZ8drawtilessE12tile_address
+	lea (4608,%a1),%a1
+	move.l %a1,__ZZ8drawtilessE14screen_address
 	move.w #16,__ZZ8drawtilessE1i
-	movem.l (%sp)+,#3084
+	movem.l (%sp)+,#3076
 	unlk %fp
 	rts
 .LC0:
@@ -113,17 +323,17 @@ __Z8drawtiless:
 .LC6:
 	.ascii "x=\0"
 .LC7:
-	.ascii "%s% d%s% d%s% d%s% d\12\0"
+	.ascii "%s% d%s% d%s% d%s% d\0"
 .LC8:
 	.ascii "Seconds left: \0"
 .LC9:
-	.ascii "%s% .7G\12\0"
+	.ascii "%s% .7G\0"
 .LC10:
 	.ascii "It's over!!!!!!!!!!!!!!!!!!!!!!!!!!\0"
 	.even
 	.globl	__Z9basicmainv
 __Z9basicmainv:
-	link.w %fp,#-16
+	link.w %fp,#0
 	movem.l #16188,-(%sp)
 	moveq #1,%d0
 	move.l %d0,_jsfFontIndx
@@ -134,7 +344,9 @@ __Z9basicmainv:
 	jsr (%a4)
 	move.l #.LC0,_js_r_textbuffer
 	addq.l #8,%sp
-	jsr _rapPrint
+	move.l #_rapPrint,%d4
+	move.l %d4,%a0
+	jsr (%a0)
 	clr.l _jsfFontIndx
 	clr.l _jsfFontSize
 	pea 218.w
@@ -142,7 +354,8 @@ __Z9basicmainv:
 	jsr (%a4)
 	move.l #.LC1,_js_r_textbuffer
 	addq.l #8,%sp
-	jsr _rapPrint
+	move.l %d4,%a1
+	jsr (%a1)
 	pea 256.w
 	clr.l -(%sp)
 	pea tiles_clut
@@ -151,7 +364,7 @@ __Z9basicmainv:
 	lea (12,%sp),%sp
 	clr.w %d1
 	moveq #0,%d2
-.L11:
+.L6:
 	move.l %d2,%d0
 	lsl.l #3,%d0
 	move.l %d0,%a0
@@ -160,23 +373,23 @@ __Z9basicmainv:
 	add.l %a0,%a0
 	add.l #__ZL3map,%a0
 	moveq #0,%d0
-.L10:
+.L5:
 	move.w %d1,%d3
 	add.w %d0,%d3
 	move.w %d3,(%a0)+
 	addq.l #1,%d0
 	moveq #18,%d3
 	cmp.l %d0,%d3
-	jne .L10
+	jne .L5
 	addq.l #1,%d2
 	add.w #60,%d1
 	moveq #10,%d0
 	cmp.l %d2,%d0
-	jne .L11
+	jne .L6
 	clr.w __ZL1y
 	clr.b %d3
 	lea __Z8drawtiless,%a3
-.L13:
+.L8:
 	move.l %d3,%d0
 	lsl.l #3,%d0
 	move.l %d0,%a2
@@ -185,7 +398,7 @@ __Z9basicmainv:
 	add.l %a2,%a2
 	add.l #__ZL3map,%a2
 	moveq #0,%d2
-.L12:
+.L7:
 	move.w (%a2)+,%d0
 	move.w %d0,__ZL1c
 	moveq #60,%d1
@@ -205,47 +418,47 @@ __Z9basicmainv:
 	addq.l #8,%sp
 	moveq #18,%d0
 	cmp.l %d2,%d0
-	jne .L12
+	jne .L7
 	move.w %d3,%d1
 	addq.w #1,%d1
 	move.w %d1,__ZL1y
 	addq.l #1,%d3
 	move.b #10,%d0
 	cmp.l %d3,%d0
-	jne .L13
+	jne .L8
 	move.l #scrbuf,%d1
 	move.l %d1,%a2
-.L15:
+.L10:
 	move.l #46080,%a1
 	add.l %a2,%a1
 	move.l %a2,%a0
-.L14:
+.L9:
 	move.b #-128,(%a0)
 	lea (288,%a0),%a0
 	cmp.l %a0,%a1
-	jne .L14
+	jne .L9
 	lea (16,%a2),%a2
 	cmp.l #scrbuf+288,%a2
-	jne .L15
+	jne .L10
 	move.w #18,__ZL1x
-.L17:
+.L12:
 	move.l %d1,%d0
 	add.l #288,%d0
 	move.l %d1,%a0
-.L16:
+.L11:
 	move.b #-128,(%a0)+
 	cmp.l %a0,%d0
-	jne .L16
+	jne .L11
 	add.l #4608,%d1
 	cmp.l #scrbuf+46080,%d1
-	jne .L17
+	jne .L12
 	move.w #10,__ZL1y
 	move.w #288,__ZL1c
 	move.w #50,__ZL16ticks_per_second
 	tst.w raptor_ntsc_flag
-	jeq .L18
+	jeq .L13
 	move.w #60,__ZL16ticks_per_second
-.L18:
+.L13:
 	move.w #100,__ZL8sprite_x
 	move.w #80,__ZL8sprite_y
 	pea 180.w
@@ -253,11 +466,12 @@ __Z9basicmainv:
 	jsr (%a4)
 	move.l #.LC2,_js_r_textbuffer
 	addq.l #8,%sp
-	jsr _rapPrint
+	move.l %d4,%a0
+	jsr (%a0)
 	lea _srand,%a2
-.L19:
-	move.w __ZL1c,%a0
-	move.l %a0,-(%sp)
+.L14:
+	move.w __ZL1c,%a1
+	move.l %a1,-(%sp)
 	jsr (%a2)
 	add.w #539,__ZL1c
 	moveq #1,%d1
@@ -266,7 +480,7 @@ __Z9basicmainv:
 	move.l %d0,__ZL4pad1
 	and.l JAGPAD_A,%d0
 	addq.l #4,%sp
-	jeq .L19
+	jeq .L14
 	jsr __Z3rndv
 	move.l %d0,-(%sp)
 	jsr ___extendsfdf2
@@ -283,36 +497,34 @@ __Z9basicmainv:
 	move.l %d0,-(%sp)
 	jsr ___adddf3
 	lea (16,%sp),%sp
-	move.l %d0,%d2
-	move.l %d1,%d3
-	lea ___floatsidf,%a5
-	move.w __ZL16ticks_per_second,%a1
-	move.l %a1,-(%sp)
-	jsr (%a5)
+	move.l %d0,%d6
+	move.l %d1,%d7
+	move.l #___floatsidf,%d2
+	move.w __ZL16ticks_per_second,%a0
+	move.l %a0,-(%sp)
+	move.l %d2,%a1
+	jsr (%a1)
 	move.l %d1,(%sp)
 	move.l %d0,-(%sp)
-	move.l %d3,-(%sp)
-	move.l %d2,-(%sp)
+	move.l %d7,-(%sp)
+	move.l %d6,-(%sp)
 	jsr (%a2)
 	lea (12,%sp),%sp
 	move.l %d1,(%sp)
 	move.l %d0,-(%sp)
-	move.l #_floor,%d3
-	move.l %d3,%a0
-	jsr (%a0)
+	jsr _floor
 	addq.l #8,%sp
-	move.l #___fixdfsi,%d2
+	lea ___fixdfsi,%a5
 	move.l %d1,-(%sp)
 	move.l %d0,-(%sp)
-	move.l %d2,%a1
-	jsr (%a1)
+	jsr (%a5)
 	addq.l #8,%sp
 	move.w %d0,__ZL15countdown_ticks
 	move.l #_jsfVsync,%d6
 	move.l #ee_printf,%d5
-	move.l #___floatsisf,%d4
+	move.l #___floatsisf,%d3
 	move.l #_rapPrint,%d7
-.L39:
+.L34:
 	clr.l -(%sp)
 	move.l %d6,%a0
 	jsr (%a0)
@@ -323,116 +535,104 @@ __Z9basicmainv:
 	move.l %d0,%d1
 	and.l JAGPAD_UP,%d1
 	addq.l #4,%sp
-	jeq .L21
+	jeq .L16
 	move.w __ZL8sprite_y,%d1
-	jle .L21
+	jle .L16
 	subq.w #1,%d1
 	move.w %d1,__ZL8sprite_y
-.L21:
+.L16:
 	move.l %d0,%d1
 	and.l JAGPAD_DOWN,%d1
-	jeq .L22
+	jeq .L17
 	move.w __ZL8sprite_y,%d1
 	cmp.w #143,%d1
-	jgt .L22
+	jgt .L17
 	addq.w #1,%d1
 	move.w %d1,__ZL8sprite_y
-.L22:
+.L17:
 	move.l %d0,%d1
 	and.l JAGPAD_LEFT,%d1
-	jne .L23
+	jne .L18
 	move.w __ZL8sprite_x,%d1
-.L24:
+.L19:
 	and.l JAGPAD_RIGHT,%d0
-	jeq .L25
+	jeq .L20
 	cmp.w #271,%d1
-	jgt .L25
+	jgt .L20
 	addq.w #1,%d1
 	move.w %d1,__ZL8sprite_x
-.L25:
+.L20:
 	move.l sprite,%a0
 	swap %d1
 	clr.w %d1
 	add.l #1048576,%d1
-	move.l %d1,384(%a0)
+	move.l %d1,392(%a0)
 	move.w __ZL8sprite_y,%d0
 	ext.l %d0
 	swap %d0
 	clr.w %d0
 	add.l #1048576,%d0
-	move.l %d0,388(%a0)
+	move.l %d0,396(%a0)
 	pea 192.w
 	clr.l -(%sp)
 	jsr (%a4)
-	move.w __ZL8sprite_y,%a2
-	move.l %a2,%d0
-	addq.l #8,%d0
-	jmi .L41
-	asr.l #4,%d0
-	move.l %d0,-(%sp)
-	jsr (%a5)
-	move.l %d1,(%sp)
-	move.l %d0,-(%sp)
-	move.l %d3,%a1
-	jsr (%a1)
+	move.w __ZL8sprite_y,%a3
+	move.w __ZL8sprite_x,%a2
 	addq.l #8,%sp
-	move.l %d0,-8(%fp)
-	move.l %d1,-4(%fp)
-	move.w __ZL8sprite_x,%a3
 	move.l %a3,%d0
 	addq.l #8,%d0
-	jmi .L42
-.L27:
+	jmi .L36
 	asr.l #4,%d0
 	move.l %d0,-(%sp)
-	jsr (%a5)
-	move.l %d1,(%sp)
-	move.l %d0,-(%sp)
-	move.l %d3,%a0
-	jsr (%a0)
-	move.l %d0,-16(%fp)
-	move.l %d1,-12(%fp)
-	lea (12,%sp),%sp
-	move.l -4(%fp),(%sp)
-	move.l -8(%fp),-(%sp)
 	move.l %d2,%a1
 	jsr (%a1)
+	move.l %d1,(%sp)
+	move.l %d0,-(%sp)
+	jsr (%a5)
 	addq.l #4,%sp
 	move.l %d0,(%sp)
 	pea .LC3
-	move.l -12(%fp),-(%sp)
-	move.l -16(%fp),-(%sp)
+	move.l %a2,%d0
+	addq.l #8,%d0
+	jmi .L37
+.L22:
+	asr.l #4,%d0
+	move.l %d0,-(%sp)
 	move.l %d2,%a0
 	jsr (%a0)
+	move.l %d1,(%sp)
+	move.l %d0,-(%sp)
+	jsr (%a5)
 	addq.l #4,%sp
 	move.l %d0,(%sp)
 	pea .LC4
-	move.l %a2,-(%sp)
-	pea .LC5
 	move.l %a3,-(%sp)
+	pea .LC5
+	move.l %a2,-(%sp)
 	pea .LC6
 	pea .LC7
 	move.l %d5,%a1
 	jsr (%a1)
 	move.l %d0,_js_r_textbuffer
 	lea (36,%sp),%sp
-	jsr _rapPrint
+	move.l %d4,%a0
+	jsr (%a0)
 	pea 180.w
 	clr.l -(%sp)
 	jsr (%a4)
 	move.w __ZL15countdown_ticks,%d0
 	addq.l #8,%sp
-	jle .L28
-.L43:
-	move.w %d0,%a0
-	move.l %a0,-(%sp)
-	move.l %d4,%a1
-	jsr (%a1)
+	jle .L23
+.L38:
+	move.w %d0,%a1
+	move.l %a1,-(%sp)
+	move.l %d3,%a0
+	jsr (%a0)
 	move.l %d0,%a2
-	move.w __ZL16ticks_per_second,%a0
-	move.l %a0,(%sp)
-	move.l %d4,%a1
-	jsr (%a1)
+	move.w __ZL16ticks_per_second,%a1
+	move.l %a1,(%sp)
+	move.l %d3,%a0
+	jsr (%a0)
 	move.l %d0,(%sp)
 	move.l %a2,-(%sp)
 	jsr ___divsf3
@@ -446,84 +646,74 @@ __Z9basicmainv:
 	jsr ee_printf
 	move.l %d0,_js_r_textbuffer
 	lea (16,%sp),%sp
-	move.l %d7,%a0
-	jsr (%a0)
+	move.l %d7,%a1
+	jsr (%a1)
 	subq.w #1,__ZL15countdown_ticks
-	jra .L39
-.L42:
+	jra .L34
+.L37:
 	moveq #23,%d0
-	add.l %a3,%d0
+	add.l %a2,%d0
 	asr.l #4,%d0
 	move.l %d0,-(%sp)
-	jsr (%a5)
-	move.l %d1,(%sp)
-	move.l %d0,-(%sp)
-	move.l %d3,%a0
-	jsr (%a0)
-	move.l %d0,-16(%fp)
-	move.l %d1,-12(%fp)
-	lea (12,%sp),%sp
-	move.l -4(%fp),(%sp)
-	move.l -8(%fp),-(%sp)
-	move.l %d2,%a1
-	jsr (%a1)
-	addq.l #4,%sp
-	move.l %d0,(%sp)
-	pea .LC3
-	move.l -12(%fp),-(%sp)
-	move.l -16(%fp),-(%sp)
 	move.l %d2,%a0
 	jsr (%a0)
+	move.l %d1,(%sp)
+	move.l %d0,-(%sp)
+	jsr (%a5)
 	addq.l #4,%sp
 	move.l %d0,(%sp)
 	pea .LC4
-	move.l %a2,-(%sp)
-	pea .LC5
 	move.l %a3,-(%sp)
+	pea .LC5
+	move.l %a2,-(%sp)
 	pea .LC6
 	pea .LC7
 	move.l %d5,%a1
 	jsr (%a1)
 	move.l %d0,_js_r_textbuffer
 	lea (36,%sp),%sp
-	jsr _rapPrint
+	move.l %d4,%a0
+	jsr (%a0)
 	pea 180.w
 	clr.l -(%sp)
 	jsr (%a4)
 	move.w __ZL15countdown_ticks,%d0
 	addq.l #8,%sp
-	jgt .L43
-.L28:
+	jgt .L38
+.L23:
 	move.l #.LC10,_js_r_textbuffer
-	move.l %d7,%a1
-	jsr (%a1)
-	jra .L39
-.L41:
+	move.l %d7,%a0
+	jsr (%a0)
+	jra .L34
+.L36:
 	moveq #23,%d0
-	add.l %a2,%d0
+	add.l %a3,%d0
 	asr.l #4,%d0
 	move.l %d0,-(%sp)
-	jsr (%a5)
+	move.l %d2,%a1
+	jsr (%a1)
 	move.l %d1,(%sp)
 	move.l %d0,-(%sp)
-	move.l %d3,%a1
-	jsr (%a1)
-	addq.l #8,%sp
-	move.l %d0,-8(%fp)
-	move.l %d1,-4(%fp)
-	move.w __ZL8sprite_x,%a3
-	move.l %a3,%d0
+	jsr (%a5)
+	addq.l #4,%sp
+	move.l %d0,(%sp)
+	pea .LC3
+	move.l %a2,%d0
 	addq.l #8,%d0
-	jpl .L27
-	jra .L42
-.L23:
+	jpl .L22
+	jra .L37
+.L18:
 	move.w __ZL8sprite_x,%d1
-	jle .L24
+	jle .L19
 	subq.w #1,%d1
 	move.w %d1,__ZL8sprite_x
-	jra .L24
-	.globl	sprite
+	jra .L19
+	.globl	colliders
 	.data
+	.even
+colliders:
+	.long	raptor_collisionlist
+	.globl	sprite
 	.even
 sprite:
 	.long	RAPTOR_sprite_table

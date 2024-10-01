@@ -1,0 +1,45 @@
+Buildlink starting
+
+Checking if assets.txt is newer than any of the build folder files....
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/localisation/assets.txt...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/localisation\build\linkfile.bin...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/localisation\build\romassets.inc...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/localisation\build\romassets.h...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/localisation\build\ramassets.inc...
+    Opening - /home/tbone/Programming/jagstudio/projects/basic/localisation\build\build.log...
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+    Reading assets.txt line
+Buildlink finished - everything went fine!

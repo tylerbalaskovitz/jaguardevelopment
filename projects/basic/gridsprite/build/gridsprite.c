@@ -91,200 +91,200 @@ void    drawtile (short, short);
 
 void basicmain()
 {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 10] jsfSetFontIndx(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 10] jsfSetFontIndx(1)
 jsfSetFontIndx(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 11] jsfSetFontSize(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 11] jsfSetFontSize(1)
 jsfSetFontSize(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 12] rapLocate 0,202
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 12] rapLocate 0,202
 rapLocate(0,202);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 13] rapPrint "  Map draw and sprite position example  "
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 13] rapPrint "  Map draw and sprite position example  "
 js_r_textbuffer=(char *)"  Map draw and sprite position example  ";
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 15] jsfSetFontIndx(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 15] jsfSetFontIndx(0)
 jsfSetFontIndx(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 16] jsfSetFontSize(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 16] jsfSetFontSize(0)
 jsfSetFontSize(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 17] rapLocate 0,218
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 17] rapLocate 0,218
 rapLocate(0,218);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 18] rapPrint "Uses graphics from Hyptosis"
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 18] rapPrint "Uses graphics from Hyptosis"
 js_r_textbuffer=(char *)"Uses graphics from Hyptosis";
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 21] jsfLoadClut(strptr(tiles_clut),0,256)
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 21] jsfLoadClut(strptr(tiles_clut),0,256)
 jsfLoadClut((unsigned short *)STRPTR(tiles_clut),0,256);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 25] const dest_screen_width_in_bytes=288
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 27] const tile_height=16
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 30] const tile_width_in_bytes=16
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 33] const src_screen_width_in_bytes=960
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 35] const map_width=18
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 37] const map_height=10
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 39] DIM pad1 as integer
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 39] pad1=0
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 25] const dest_screen_width_in_bytes=288
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 27] const tile_height=16
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 30] const tile_width_in_bytes=16
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 33] const src_screen_width_in_bytes=960
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 35] const map_width=18
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 37] const map_height=10
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 39] DIM pad1 as integer
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 39] pad1=0
 pad1=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 40] dim x as short
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 41] dim y as short
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 42] dim c as short
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 43] dim tilex as short
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 44] dim tiley as short
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 46] dim map[map_height][map_width] as short
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 49] for y=0 to map_height-1
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 40] dim x as short
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 41] dim y as short
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 42] dim c as short
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 43] dim tilex as short
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 44] dim tiley as short
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 46] dim map[map_height][map_width] as short
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 49] for y=0 to map_height-1
 for(y=0; y<=map_height-1; y+=1)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 50] for x=0 to map_width-1
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 50] for x=0 to map_width-1
     for(x=0; x<=map_width-1; x+=1)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 51] map[y][x]=60*y+x
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 51] map[y][x]=60*y+x
         map[y][x]=60*y+x;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 52] next x
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 52] next x
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 53] next y
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 53] next y
   }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 56] for y=0 to map_height-1
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 56] for y=0 to map_height-1
 for(y=0; y<=map_height-1; y+=1)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 57] for x=0 to map_width-1
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 57] for x=0 to map_width-1
     for(x=0; x<=map_width-1; x+=1)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 58] c=map[y][x]
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 58] c=map[y][x]
         c=map[y][x];
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 59] tilex=(c % (src_screen_width_in_bytes/tile_width_in_bytes))
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 59] tilex=(c % (src_screen_width_in_bytes/tile_width_in_bytes))
         tilex=(c % (src_screen_width_in_bytes/tile_width_in_bytes));
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 60] tiley=(c/(src_screen_width_in_bytes/tile_width_in_bytes))
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 60] tiley=(c/(src_screen_width_in_bytes/tile_width_in_bytes))
         tiley=(c/(src_screen_width_in_bytes/tile_width_in_bytes));
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 61] drawtile(x,y)
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 61] drawtile(x,y)
         drawtile(x,y);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 62] next x
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 62] next x
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 63] next y
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 63] next y
   }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 66] for x=0 to map_width-1
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 66] for x=0 to map_width-1
 for(x=0; x<=map_width-1; x+=1)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 67] for c=0 to 160-1
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 67] for c=0 to 160-1
     for(c=0; c<=160-1; c+=1)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 68] poke strptr(scrbuf)+16*x+c*288,128
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 68] poke strptr(scrbuf)+16*x+c*288,128
         *(volatile unsigned char*)(STRPTR(scrbuf)+16*x+c*288)=(volatile unsigned char)        128;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 69] next c
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 69] next c
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 70] next x
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 70] next x
   }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 71] for y=0 to map_height-1
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 71] for y=0 to map_height-1
 for(y=0; y<=map_height-1; y+=1)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 72] for c=0 to 288-1
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 72] for c=0 to 288-1
     for(c=0; c<=288-1; c+=1)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 73] poke strptr(scrbuf)+c+y*16*288,128
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 73] poke strptr(scrbuf)+c+y*16*288,128
         *(volatile unsigned char*)(STRPTR(scrbuf)+c+y*16*288)=(volatile unsigned char)        128;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 74] next c
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 74] next c
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 75] next y
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 75] next y
   }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 78] dim ticks_per_second as short
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 79] ticks_per_second=50
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 78] dim ticks_per_second as short
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 79] ticks_per_second=50
 ticks_per_second=50;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 80] if rapNTSCFlag <> 0 then
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 80] if rapNTSCFlag <> 0 then
 if(rapNTSCFlag!=0)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 81] ticks_per_second = 60
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 81] ticks_per_second = 60
     ticks_per_second=60;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 82] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 82] endif
   }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 85] dim sprite_x as WORD
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 86] dim sprite_y as WORD
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 87] sprite_x=100
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 85] dim sprite_x as WORD
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 86] dim sprite_y as WORD
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 87] sprite_x=100
 sprite_x=100;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 88] sprite_y=80
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 88] sprite_y=80
 sprite_y=80;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 94] rapLocate 0,180
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 94] rapLocate 0,180
 rapLocate(0,180);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 95] rapPrint "Press A to begin countdown"
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 95] rapPrint "Press A to begin countdown"
 js_r_textbuffer=(char *)"Press A to begin countdown";
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 96] do
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 96] do
 for(;;)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 97] randomize(c)
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 97] randomize(c)
     randomize(c);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 98] c+=539
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 98] c+=539
     c+=539;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 99] pad1=jsfGetPad(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 99] pad1=jsfGetPad(1)
     pad1=jsfGetPad(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 100] loop until pad1 BAND JAGPAD_A
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 100] loop until pad1 BAND JAGPAD_A
     if(pad1 BAND JAGPAD_A)
       {
         break;
       }
   }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 103] dim countdown_ticks as short
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 104] countdown_ticks=int((5.0+10.0*rnd)*ticks_per_second)
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 103] dim countdown_ticks as short
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 104] countdown_ticks=int((5.0+10.0*rnd)*ticks_per_second)
 countdown_ticks=FINT((5.0+10.0*rnd())*ticks_per_second);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 107] do
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 107] do
 for(;;)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 108] vsync
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 108] vsync
     jsfVsync(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 109] pad1=jsfGetPad(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 109] pad1=jsfGetPad(1)
     pad1=jsfGetPad(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 110] if (pad1 band JAGPAD_UP) and sprite_y>0 then
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 110] if (pad1 band JAGPAD_UP) and sprite_y>0 then
     if((pad1 BAND JAGPAD_UP)&&sprite_y>0)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 111] sprite_y--
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 111] sprite_y--
         sprite_y--;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 112] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 112] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 113] if (pad1 band JAGPAD_DOWN) and sprite_y<160-16 then
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 113] if (pad1 band JAGPAD_DOWN) and sprite_y<160-16 then
     if((pad1 BAND JAGPAD_DOWN)&&sprite_y<160-16)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 114] sprite_y++
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 114] sprite_y++
         sprite_y++;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 115] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 115] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 116] if (pad1 band JAGPAD_LEFT) and sprite_x>0 then
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 116] if (pad1 band JAGPAD_LEFT) and sprite_x>0 then
     if((pad1 BAND JAGPAD_LEFT)&&sprite_x>0)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 117] sprite_x--
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 117] sprite_x--
         sprite_x--;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 118] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 118] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 119] if (pad1 band JAGPAD_RIGHT) and sprite_x<288-16 then
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 119] if (pad1 band JAGPAD_RIGHT) and sprite_x<288-16 then
     if((pad1 BAND JAGPAD_RIGHT)&&sprite_x<288-16)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 120] sprite_x++
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 120] sprite_x++
         sprite_x++;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 121] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 121] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 122] sprite[2].x=(16+sprite_x)<<16
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 122] sprite[2].x=(16+sprite_x)<<16
     sprite[2].x=(16+sprite_x)<<16;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 123] sprite[2].y=(16+sprite_y)<<16
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 123] sprite[2].y=(16+sprite_y)<<16
     sprite[2].y=(16+sprite_y)<<16;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 124] rapLocate 0,192
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 124] rapLocate 0,192
     rapLocate(0,192);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 125] print "x=";sprite_x;", y=";sprite_y;", map x=";int((sprite_x+8)/16);", map y=";int((sprite_y+8)/16)
-    js_r_textbuffer=(char *)ee_printf("%s% d%s% d%s% d%s% d\n","x=",(int)sprite_x,", y=",(int)sprite_y,", map x=",(int)FINT((sprite_x+8)/16),", map y=",(int)FINT((sprite_y+8)/16));
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 125] print "x=";sprite_x;", y=";sprite_y;", map x=";int((sprite_x+8)/16);", map y=";int((sprite_y+8)/16)
+    js_r_textbuffer=ee_printf("%s% d%s% d%s% d%s% d","x=",(int)sprite_x,", y=",(int)sprite_y,", map x=",(int)FINT((sprite_x+8)/16),", map y=",(int)FINT((sprite_y+8)/16));
     rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 126] rapLocate 0,180
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 126] rapLocate 0,180
     rapLocate(0,180);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 127] if countdown_ticks>0 then
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 127] if countdown_ticks>0 then
     if(countdown_ticks>0)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 128] print "Seconds left: ";(float)countdown_ticks/(float)ticks_per_second
-        js_r_textbuffer=(char *)ee_printf("%s% .7G\n","Seconds left: ",(float)countdown_ticks/(float)ticks_per_second);
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 128] print "Seconds left: ";(float)countdown_ticks/(float)ticks_per_second
+        js_r_textbuffer=ee_printf("%s% .7G","Seconds left: ",(float)countdown_ticks/(float)ticks_per_second);
         rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 129] countdown_ticks--
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 129] countdown_ticks--
         countdown_ticks--;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 130] else
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 130] else
       }
     else
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 131] rapPrint "It's over!!!!!!!!!!!!!!!!!!!!!!!!!!"
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 131] rapPrint "It's over!!!!!!!!!!!!!!!!!!!!!!!!!!"
         js_r_textbuffer=(char *)"It's over!!!!!!!!!!!!!!!!!!!!!!!!!!";
         rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 132] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 132] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 133] loop
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 133] loop
   }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 138] sub drawtile(x as SHORT, y as SHORT)
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 138] sub drawtile(x as SHORT, y as SHORT)
   while(1) {};   //  End of main program
 }
 
@@ -312,57 +312,57 @@ void randomize (unsigned int seed)
 
 void drawtile (short x, short y)
 {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 139] local i as short
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 139] local i as short
   static  short  i;
   memset(&i,0,sizeof(i));
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 140] local screen_y_offset as LONG
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 140] local screen_y_offset as LONG
   static  long  screen_y_offset;
   memset(&screen_y_offset,0,sizeof(screen_y_offset));
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 141] local screen_x_offset as LONG
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 141] local screen_x_offset as LONG
   static  long  screen_x_offset;
   memset(&screen_x_offset,0,sizeof(screen_x_offset));
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 142] local screen_address as LONG
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 142] local screen_address as LONG
   static  long  screen_address;
   memset(&screen_address,0,sizeof(screen_address));
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 144] local tile_y_offset as LONG
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 144] local tile_y_offset as LONG
   static  long  tile_y_offset;
   memset(&tile_y_offset,0,sizeof(tile_y_offset));
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 145] local tile_x_offset as LONG
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 145] local tile_x_offset as LONG
   static  long  tile_x_offset;
   memset(&tile_x_offset,0,sizeof(tile_x_offset));
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 146] local tile_address as LONG
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 146] local tile_address as LONG
   static  long  tile_address;
   memset(&tile_address,0,sizeof(tile_address));
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 148] tile_y_offset=tiley*(src_screen_width_in_bytes*tile_height)
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 148] tile_y_offset=tiley*(src_screen_width_in_bytes*tile_height)
   tile_y_offset=tiley*(src_screen_width_in_bytes*tile_height);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 149] tile_x_offset=tilex*tile_width_in_bytes
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 149] tile_x_offset=tilex*tile_width_in_bytes
   tile_x_offset=tilex*tile_width_in_bytes;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 150] tile_address=(LONG)strptr(tiles)+tile_x_offset+tile_y_offset
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 150] tile_address=(LONG)strptr(tiles)+tile_x_offset+tile_y_offset
   tile_address=(long)STRPTR(tiles)+tile_x_offset+tile_y_offset;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 152] screen_y_offset=y*(dest_screen_width_in_bytes*tile_height)
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 152] screen_y_offset=y*(dest_screen_width_in_bytes*tile_height)
   screen_y_offset=y*(dest_screen_width_in_bytes*tile_height);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 153] screen_x_offset=x*tile_width_in_bytes
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 153] screen_x_offset=x*tile_width_in_bytes
   screen_x_offset=x*tile_width_in_bytes;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 154] screen_address=(LONG)strptr(scrbuf)+screen_x_offset+screen_y_offset
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 154] screen_address=(LONG)strptr(scrbuf)+screen_x_offset+screen_y_offset
   screen_address=(long)STRPTR(scrbuf)+screen_x_offset+screen_y_offset;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 156] for i=0 to tile_height-1
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 156] for i=0 to tile_height-1
   for(i=0; i<=tile_height-1; i+=1)
     {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 158] lpoke screen_address,lpeek(tile_address)
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 158] lpoke screen_address,lpeek(tile_address)
       *(volatile unsigned int*)(screen_address)=(volatile unsigned int)      lpeek(tile_address);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 159] lpoke screen_address+4,lpeek(tile_address+4)
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 159] lpoke screen_address+4,lpeek(tile_address+4)
       *(volatile unsigned int*)(screen_address+4)=(volatile unsigned int)      lpeek(tile_address+4);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 160] lpoke screen_address+8,lpeek(tile_address+8)
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 160] lpoke screen_address+8,lpeek(tile_address+8)
       *(volatile unsigned int*)(screen_address+8)=(volatile unsigned int)      lpeek(tile_address+8);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 161] lpoke screen_address+12,lpeek(tile_address+12)
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 161] lpoke screen_address+12,lpeek(tile_address+12)
       *(volatile unsigned int*)(screen_address+12)=(volatile unsigned int)      lpeek(tile_address+12);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 162] screen_address+=dest_screen_width_in_bytes
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 162] screen_address+=dest_screen_width_in_bytes
       screen_address+=dest_screen_width_in_bytes;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 163] tile_address+=src_screen_width_in_bytes
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 163] tile_address+=src_screen_width_in_bytes
       tile_address+=src_screen_width_in_bytes;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 164] next i
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 164] next i
     }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\gridsprite\gridsprite.bas - 165] end sub
+// [/home/tbone/Programming/jagstudio/projects/basic/gridsprite/gridsprite.bas - 165] end sub
 }
 
 

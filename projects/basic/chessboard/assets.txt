@@ -27,7 +27,7 @@
 ' That's all, have fun!
 '
 
-ABS,BMP_CHESSBOARD,gfx_clut16,ASSETS\GFX\chessboard.bmp
+ABS,BTS,gfx_clut16,ASSETS\GFX\BTS.bmp
 ABS,BMP_PRESS_A,gfx_clut,ASSETS\GFX\a4awesome.bmp
 ABS,BMP_WIN,gfx_clut,ASSETS\GFX\uwin.bmp
 

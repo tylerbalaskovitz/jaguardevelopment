@@ -69,258 +69,258 @@ char*   join (int, ... );
 
 void basicmain()
 {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 8] dim pad1 as LONG
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 9] pad1=32
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 8] dim pad1 as LONG
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 9] pad1=32
 pad1=32;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 11] jsfSetFontIndx(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 11] jsfSetFontIndx(0)
 jsfSetFontIndx(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 12] jsfSetFontSize(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 12] jsfSetFontSize(0)
 jsfSetFontSize(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 13] rapLocate 10,0
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 13] rapLocate 10,0
 rapLocate(10,0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 14] rapPrint "helloooooooooooooooo!"
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 14] rapPrint "helloooooooooooooooo!"
 js_r_textbuffer=(char *)"helloooooooooooooooo!";
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 16] rapLocate 10,20
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 16] rapLocate 10,20
 rapLocate(10,20);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 17] print "hiya! ",pad1," hello ",123.237462376
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 17] print "hiya! ",pad1," hello ",123.237462376
 js_r_textbuffer=ee_printf("%s% d%s% G","hiya! ",(int)pad1," hello ",(float)123.237462376);
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 19] dim a$
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 20] a$="zzzzzzzz"
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 19] dim a$
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 20] a$="zzzzzzzz"
 strcpy(a,"zzzzzzzz");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 21] rapNumToStr(567,3,a$)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 21] rapNumToStr(567,3,a$)
 rapNumToStr(567,3,a);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 23] jsfSetFontIndx(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 23] jsfSetFontIndx(1)
 jsfSetFontIndx(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 24] jsfSetFontSize(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 24] jsfSetFontSize(1)
 jsfSetFontSize(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 25] rapLocate 10,40
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 25] rapLocate 10,40
 rapLocate(10,40);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 26] rapPrint a$
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 26] rapPrint a$
 js_r_textbuffer=(char *)a;
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 29] jsfSetFontIndx(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 29] jsfSetFontIndx(0)
 jsfSetFontIndx(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 30] jsfSetFontSize(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 30] jsfSetFontSize(0)
 jsfSetFontSize(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 31] rapLocate 10,70
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 31] rapLocate 10,70
 rapLocate(10,70);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 32] jsfPrintInt 3433
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 32] jsfPrintInt 3433
 js_r_textbuffer=ee_printf("%d",3433);
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 37] jsfSetFontIndx(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 37] jsfSetFontIndx(0)
 jsfSetFontIndx(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 38] jsfSetFontSize(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 38] jsfSetFontSize(0)
 jsfSetFontSize(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 39] rapLocate 10,100
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 39] rapLocate 10,100
 rapLocate(10,100);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 40] rapPrint "Continued"
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 40] rapPrint "Continued"
 js_r_textbuffer=(char *)"Continued";
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 42] jsfSetFontIndx(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 42] jsfSetFontIndx(1)
 jsfSetFontIndx(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 43] rapPrintCont " string "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 43] rapPrintCont " string "
 js_r_textbuffer=(char *)" string ";
 rapPrintCont();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 45] jsfSetFontSize(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 45] jsfSetFontSize(1)
 jsfSetFontSize(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 46] jsfSetFontIndx(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 46] jsfSetFontIndx(0)
 jsfSetFontIndx(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 47] rapPrintCont " from "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 47] rapPrintCont " from "
 js_r_textbuffer=(char *)" from ";
 rapPrintCont();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 49] jsfSetFontSize(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 49] jsfSetFontSize(1)
 jsfSetFontSize(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 50] jsfSetFontIndx(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 50] jsfSetFontIndx(1)
 jsfSetFontIndx(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 51] rapPrintCont " last "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 51] rapPrintCont " last "
 js_r_textbuffer=(char *)" last ";
 rapPrintCont();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 53] jsfSetFontSize(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 53] jsfSetFontSize(0)
 jsfSetFontSize(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 54] jsfSetFontIndx(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 54] jsfSetFontIndx(1)
 jsfSetFontIndx(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 55] rapPrintCont " position "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 55] rapPrintCont " position "
 js_r_textbuffer=(char *)" position ";
 rapPrintCont();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 58] jsfSetFontIndx(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 58] jsfSetFontIndx(0)
 jsfSetFontIndx(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 59] jsfSetFontSize(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 59] jsfSetFontSize(0)
 jsfSetFontSize(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 60] rapLocate 10,150
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 60] rapLocate 10,150
 rapLocate(10,150);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 61] rapPrint "Press joypad buttons"
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 61] rapPrint "Press joypad buttons"
 js_r_textbuffer=(char *)"Press joypad buttons";
 rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 65] jsfColour 6
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 65] jsfColour 6
 plot_colour=6<<4;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 66] jsfPlot(100,11)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 66] jsfPlot(100,11)
 jsfPlot(100,11);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 69] rapLocate 10,170
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 69] rapLocate 10,170
 rapLocate(10,170);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 71] do
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 71] do
 for(;;)
   {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 72] pad1=jsfGetPad(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 72] pad1=jsfGetPad(1)
     pad1=jsfGetPad(1);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 73] a$=""
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 73] a$=""
     *a=0;
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 75] if pad1 band JAGPAD_PAUSE then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 75] if pad1 band JAGPAD_PAUSE then
     if(pad1 BAND JAGPAD_PAUSE)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 76] a$=a$+"Pause "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 76] a$=a$+"Pause "
         strcat(a,"Pause ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 77] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 77] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 78] if pad1 band JAGPAD_A then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 78] if pad1 band JAGPAD_A then
     if(pad1 BAND JAGPAD_A)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 79] a$=a$+"A "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 79] a$=a$+"A "
         strcat(a,"A ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 80] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 80] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 81] if pad1 band JAGPAD_UP then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 81] if pad1 band JAGPAD_UP then
     if(pad1 BAND JAGPAD_UP)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 82] a$=a$+"Up "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 82] a$=a$+"Up "
         strcat(a,"Up ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 83] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 83] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 84] if pad1 band JAGPAD_DOWN then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 84] if pad1 band JAGPAD_DOWN then
     if(pad1 BAND JAGPAD_DOWN)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 85] a$=a$+"Down "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 85] a$=a$+"Down "
         strcat(a,"Down ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 86] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 86] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 87] if pad1 band JAGPAD_LEFT then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 87] if pad1 band JAGPAD_LEFT then
     if(pad1 BAND JAGPAD_LEFT)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 88] a$=a$+"Left "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 88] a$=a$+"Left "
         strcat(a,"Left ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 89] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 89] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 90] if pad1 band JAGPAD_RIGHT then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 90] if pad1 band JAGPAD_RIGHT then
     if(pad1 BAND JAGPAD_RIGHT)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 91] a$=a$+"Right "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 91] a$=a$+"Right "
         strcat(a,"Right ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 92] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 92] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 93] if pad1 band JAGPAD_B then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 93] if pad1 band JAGPAD_B then
     if(pad1 BAND JAGPAD_B)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 94] a$=a$+"B "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 94] a$=a$+"B "
         strcat(a,"B ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 95] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 95] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 96] if pad1 band JAGPAD_STAR then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 96] if pad1 band JAGPAD_STAR then
     if(pad1 BAND JAGPAD_STAR)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 97] a$=a$+"Star "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 97] a$=a$+"Star "
         strcat(a,"Star ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 98] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 98] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 99] if pad1 band JAGPAD_7 then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 99] if pad1 band JAGPAD_7 then
     if(pad1 BAND JAGPAD_7)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 100] a$=a$+"7 "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 100] a$=a$+"7 "
         strcat(a,"7 ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 101] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 101] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 102] if pad1 band JAGPAD_4 then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 102] if pad1 band JAGPAD_4 then
     if(pad1 BAND JAGPAD_4)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 103] a$=a$+"4 "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 103] a$=a$+"4 "
         strcat(a,"4 ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 104] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 104] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 105] if pad1 band JAGPAD_1 then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 105] if pad1 band JAGPAD_1 then
     if(pad1 BAND JAGPAD_1)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 106] a$=a$+"1 "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 106] a$=a$+"1 "
         strcat(a,"1 ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 107] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 107] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 108] if pad1 band JAGPAD_C then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 108] if pad1 band JAGPAD_C then
     if(pad1 BAND JAGPAD_C)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 109] a$=a$+"C "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 109] a$=a$+"C "
         strcat(a,"C ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 110] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 110] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 111] if pad1 band JAGPAD_0 then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 111] if pad1 band JAGPAD_0 then
     if(pad1 BAND JAGPAD_0)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 112] a$=a$+"0 "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 112] a$=a$+"0 "
         strcat(a,"0 ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 113] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 113] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 114] if pad1 band JAGPAD_8 then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 114] if pad1 band JAGPAD_8 then
     if(pad1 BAND JAGPAD_8)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 115] a$=a$+"8 "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 115] a$=a$+"8 "
         strcat(a,"8 ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 116] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 116] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 117] if pad1 band JAGPAD_5 then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 117] if pad1 band JAGPAD_5 then
     if(pad1 BAND JAGPAD_5)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 118] a$=a$+"5 "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 118] a$=a$+"5 "
         strcat(a,"5 ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 119] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 119] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 120] if pad1 band JAGPAD_2 then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 120] if pad1 band JAGPAD_2 then
     if(pad1 BAND JAGPAD_2)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 121] a$=a$+"2 "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 121] a$=a$+"2 "
         strcat(a,"2 ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 122] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 122] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 123] if pad1 band JAGPAD_OPTION then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 123] if pad1 band JAGPAD_OPTION then
     if(pad1 BAND JAGPAD_OPTION)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 124] a$=a$+"Option "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 124] a$=a$+"Option "
         strcat(a,"Option ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 125] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 125] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 126] if pad1 band JAGPAD_HASH then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 126] if pad1 band JAGPAD_HASH then
     if(pad1 BAND JAGPAD_HASH)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 127] a$=a$+"# "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 127] a$=a$+"# "
         strcat(a,"# ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 128] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 128] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 129] if pad1 band JAGPAD_9 then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 129] if pad1 band JAGPAD_9 then
     if(pad1 BAND JAGPAD_9)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 130] a$=a$+"9 "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 130] a$=a$+"9 "
         strcat(a,"9 ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 131] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 131] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 132] if pad1 band JAGPAD_6 then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 132] if pad1 band JAGPAD_6 then
     if(pad1 BAND JAGPAD_6)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 133] a$=a$+"6 "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 133] a$=a$+"6 "
         strcat(a,"6 ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 134] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 134] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 135] if pad1 band JAGPAD_3 then
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 135] if pad1 band JAGPAD_3 then
     if(pad1 BAND JAGPAD_3)
       {
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 136] a$=a$+"3 "
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 136] a$=a$+"3 "
         strcat(a,"3 ");
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 137] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 137] endif
       }
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 139] a$=a$+space$(39-len(a$))
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 139] a$=a$+space$(39-len(a$))
     strcat(a,space(39-strlen(a)));
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 141] PRINT a$
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 141] PRINT a$
     js_r_textbuffer=ee_printf("%s",a);
     rapPrint();
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 143] vsync
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 143] vsync
     jsfVsync(0);
-// [F:\Jaguar\Tools\JagStudio\projects\basic\print\print.bas - 145] loop
+// [/home/tbone/Programming/jagstudio/projects/basic/print/print.bas - 145] loop
   }
   while(1) {};   //  End of main program
 }
