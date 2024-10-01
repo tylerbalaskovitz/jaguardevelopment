@@ -10,17 +10,16 @@
 ' -----------------------------------------------------------------------
 const sprParticleLayer% = 0
 const sprBug1% = 1							' sprBug1 is the name of your sprite to move around.  Its the 2nd object in the list.
-const sprBug2% = 2							' This is the auto-moving sprite
 
 DIM pad1 AS INTEGER							' Value to store the joypad movement in
 
 
-jsfSetFontIndx(1)							' Set font style
+jsfSetFontIndx(0)							' Set font style
 jsfSetFontSize(1)							' Set font size
 
 
-rapLocate 130,182							' Position the text cursor
-rapPrint "JagStudio"						' Print some text on the screen
+rapLocate 38,182							' Position the text cursor
+rapPrint "Who will be today's winner?"						' Print some text on the screen
 
 
 ' Main Loop

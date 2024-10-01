@@ -1,17 +1,17 @@
 #NO_APP
 	.text
 .LC0:
-	.ascii "JagStudio\0"
+	.ascii "Who will be today's winner?\0"
 	.even
 	.globl	__Z9basicmainv
 __Z9basicmainv:
 	link.w %fp,#0
 	movem.l #8248,-(%sp)
+	clr.l _jsfFontIndx
 	moveq #1,%d0
-	move.l %d0,_jsfFontIndx
 	move.l %d0,_jsfFontSize
 	pea 182.w
-	pea 130.w
+	pea 38.w
 	jsr rapLocate
 	move.l #.LC0,_js_r_textbuffer
 	addq.l #8,%sp

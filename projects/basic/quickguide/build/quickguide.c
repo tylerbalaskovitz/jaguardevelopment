@@ -48,7 +48,6 @@
 
 #define sprParticleLayer 0
 #define sprBug1 1
-#define sprBug2 2
 
 // *************************************************
 //            User Global Variables
@@ -65,58 +64,57 @@ void basicmain()
 {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 11] const sprParticleLayer% = 0
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 12] const sprBug1% = 1
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 13] const sprBug2% = 2
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 15] DIM pad1 AS INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 18] jsfSetFontIndx(1)
-jsfSetFontIndx(1);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 19] jsfSetFontSize(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 14] DIM pad1 AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 17] jsfSetFontIndx(0)
+jsfSetFontIndx(0);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 18] jsfSetFontSize(1)
 jsfSetFontSize(1);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 22] rapLocate 130,182
-rapLocate(130,182);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 23] rapPrint "JagStudio"
-js_r_textbuffer=(char *)"JagStudio";
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 21] rapLocate 38,182
+rapLocate(38,182);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 22] rapPrint "Who will be today's winner?"
+js_r_textbuffer=(char *)"Who will be today's winner?";
 rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 27] Do
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 26] Do
 for(;;)
   {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 29] pad1 = jsfGetPad(LEFT_PAD)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 28] pad1 = jsfGetPad(LEFT_PAD)
     pad1=jsfGetPad(LEFT_PAD);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 31] IF pad1 BAND JAGPAD_UP THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 30] IF pad1 BAND JAGPAD_UP THEN
     if(pad1 BAND JAGPAD_UP)
       {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 32] sprite[sprBug1].y_ -= 2
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 31] sprite[sprBug1].y_ -= 2
         sprite[sprBug1].y_-=2;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 33] ELSEIF pad1 BAND JAGPAD_DOWN THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 32] ELSEIF pad1 BAND JAGPAD_DOWN THEN
       }
     else if(pad1 BAND JAGPAD_DOWN)
       {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 34] sprite[sprBug1].y_ += 2
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 33] sprite[sprBug1].y_ += 2
         sprite[sprBug1].y_+=2;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 35] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 34] ENDIF
       }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 37] IF pad1 BAND JAGPAD_LEFT THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 36] IF pad1 BAND JAGPAD_LEFT THEN
     if(pad1 BAND JAGPAD_LEFT)
       {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 38] sprite[sprBug1].x_ -= 2
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 37] sprite[sprBug1].x_ -= 2
         sprite[sprBug1].x_-=2;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 39] ELSEIF pad1 BAND JAGPAD_RIGHT THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 38] ELSEIF pad1 BAND JAGPAD_RIGHT THEN
       }
     else if(pad1 BAND JAGPAD_RIGHT)
       {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 40] sprite[sprBug1].x_ += 2
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 39] sprite[sprBug1].x_ += 2
         sprite[sprBug1].x_+=2;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 41] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 40] ENDIF
       }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 44] IF pad1 BAND JAGPAD_B THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 43] IF pad1 BAND JAGPAD_B THEN
     if(pad1 BAND JAGPAD_B)
       {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 48] zeroPlaySample(1, strptr(explode_sam), (strptr(explode_sam_end)-strptr(explode_sam)+3) and 0xfffffffc, (46168/8000), Zero_Audio_8bit_Signed)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 47] zeroPlaySample(1, strptr(explode_sam), (strptr(explode_sam_end)-strptr(explode_sam)+3) and 0xfffffffc, (46168/8000), Zero_Audio_8bit_Signed)
         zeroPlaySample(1,STRPTR(explode_sam),(STRPTR(explode_sam_end)-STRPTR(explode_sam)+3) BAND 0xfffffffc,(46168/8000),Zero_Audio_8bit_Signed);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 50] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 49] ENDIF
       }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 53] VSYNC
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 52] VSYNC
     jsfVsync(0);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 55] LOOP
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 54] LOOP
   }
   while(1) {};   //  End of main program
 }
