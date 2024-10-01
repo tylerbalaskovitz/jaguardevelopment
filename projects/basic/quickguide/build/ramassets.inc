@@ -1,7 +1,7 @@
 .dphrase
-SPRITE_BUG: incbin "build/bug.bmp.gfxdata"
-SPRITE_BUG_end:
-.extern SPRITE_BUG
+TI4: incbin "build/TI4.bmp.gfxdata"
+TI4_end:
+.extern TI4
 .dphrase
 SPRITE_BUG2: incbin "build/bug2.bmp.gfxdata"
 SPRITE_BUG2_end:
