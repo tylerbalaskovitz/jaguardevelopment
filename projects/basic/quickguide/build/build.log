@@ -40,9 +40,9 @@ Checking if assets.txt is newer than any of the build folder files....
     Reading assets.txt line
     Reading assets.txt line
     Reading assets.txt line
-        Processing assets\gfx\TI4.bmp
+        Processing assets\gfx\TI42.bmp
         Converting BMP internally into gfxdata/clut...
-        File is 320 pixels wide, 240 pixels high and is 16 bits/pixel
+        File is 640 pixels wide, 480 pixels high and is 16 bits/pixel
         Adding in RAM...
     Reading assets.txt line
         Processing assets\gfx\bug2.bmp

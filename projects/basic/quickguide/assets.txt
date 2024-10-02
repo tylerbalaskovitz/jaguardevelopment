@@ -30,6 +30,6 @@
 '
 ' Put all your asset descriptions below this line.
 
-ABS,TI4,gfx_clut16,assets\gfx\TI4.bmp
+ABS,TI4,gfx_clut16,assets\gfx\TI42.bmp
 ABS,SPRITE_BUG2,gfx_clut16,assets\gfx\bug2.bmp
 ABS,explode_sam,sfx_raw8000,assets\sfx\explosion.wav

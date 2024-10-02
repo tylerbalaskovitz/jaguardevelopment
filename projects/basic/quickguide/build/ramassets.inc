@@ -1,5 +1,5 @@
 .dphrase
-TI4: incbin "build/TI4.bmp.gfxdata"
+TI4: incbin "build/TI42.bmp.gfxdata"
 TI4_end:
 .extern TI4
 .dphrase
