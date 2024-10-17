@@ -17,6 +17,7 @@ DIM scrolling AS INTEGER							' Value to store the joypad movement in
 DIM tx AS INTEGER							' Value to store the joypad movement in
 DIM ty AS INTEGER							' Value to store the joypad movement in
 DIM winner AS STRING
+DIM players$[6]
 DIM p1 AS STRING
 DIM p2 AS STRING
 DIM p3 AS STRING
@@ -27,12 +28,12 @@ DIM spaces as INTEGER
 winner = ""
 tx = 38
 ty = 182
-p1 = "Tyler"
-p2 = "Loving"
-p3 = "John"
-p4 = "Navraj"
-p5 = "Matt"
-p6 = "Christian"
+players$[0]="Tyler"
+players$[1] = "Loving"
+players$[2] = "John"
+players$[3] = "Navraj"
+players$[4] = "Matt"
+players$[5] = "Christian"
 scrolling = 0
 jsfSetFontIndx(0)							' Set font style
 jsfSetFontSize(1)							' Set font size
@@ -60,6 +61,10 @@ ELSE
 
 END FUNCTION
 
+FUNCTION WriteName
+
+END FUNCTION
+
 
 
 
@@ -71,27 +76,27 @@ ScrollString(winner)
 	pad1 = jsfGetPad(LEFT_PAD)				' Get the buttons pressed on the joypad
 
     IF pad1 BAND JAGPAD_1 THEN   			' If up is pressed, move the sprite up
-    AssignWinner(p1)
+    AssignWinner(players$[0])
     ENDIF
 
     IF pad1 BAND JAGPAD_2 THEN   		' If left is pressed, move the sprite left
-    AssignWinner(p2)
+    AssignWinner(players$[1])
     ENDIF
 	
     IF pad1 BAND JAGPAD_3 THEN   		' If left is pressed, move the sprite left
-    AssignWinner(p3)
+    AssignWinner(players$[2])
     ENDIF
     
     IF pad1 BAND JAGPAD_4 THEN   		' If left is pressed, move the sprite left
-    AssignWinner(p4)
+    AssignWinner(players$[3])
     ENDIF
 
     IF pad1 BAND JAGPAD_5 THEN   		' If left is pressed, move the sprite left
-    AssignWinner(p5)
+    AssignWinner(players$[4])
     ENDIF
 
     IF pad1 BAND JAGPAD_6 THEN   		' If left is pressed, move the sprite left
-    AssignWinner(p6)
+    AssignWinner(players$[5])
     ENDIF
 
     IF pad1 BAND JAGPAD_7 THEN   		' If left is pressed, move the sprite left
@@ -100,7 +105,9 @@ ScrollString(winner)
     IF pad1 BAND JAGPAD_8 THEN   		' If left is pressed, move the sprite left
     ENDIF
 
-	
+	IF pad1 BAND JAGPAD_* THEN
+	AssignWinner(players$[0])
+	ENDIF
 	IF pad1 BAND JAGPAD_B THEN   			' If B is pressed, play the sound effect
 		
 	ENDIF
