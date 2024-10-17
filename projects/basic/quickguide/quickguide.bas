@@ -8,7 +8,6 @@
 ' -----------------------------------------------------------------------
 ' Define your sprite names here.  In the order of objects in rapinit.s
 ' -----------------------------------------------------------------------
-#INCLUDE ONCE <INCLUDE.bas>
 const sprParticleLayer% = 0
 const sprBug1% = 1							' sprBug1 is the name of your sprite to move around.  Its the 2nd object in the list.
 DIM screenNumber as INTEGER
