@@ -12,7 +12,7 @@ const sprParticleLayer% = 0
 const sprBug1% = 1							' sprBug1 is the name of your sprite to move around.  Its the 2nd object in the list.
 
 DIM pad1 AS INTEGER							' Value to store the joypad movement in
-
+DIM screenNumber AS INTEGER
 DIM scrolling AS INTEGER							' Value to store the joypad movement in
 DIM tx AS INTEGER							' Value to store the joypad movement in
 DIM ty AS INTEGER							' Value to store the joypad movement in
@@ -35,6 +35,7 @@ players$[3] = "Navraj"
 players$[4] = "Matt"
 players$[5] = "Christian"
 scrolling = 0
+screenNumber = 0 'Scren 0 Scrolling, Screen 1 Input Name 
 jsfSetFontIndx(0)							' Set font style
 jsfSetFontSize(1)							' Set font size
 
@@ -61,8 +62,8 @@ ELSE
 
 END FUNCTION
 
-FUNCTION WriteName
-
+FUNCTION writeName()
+	screenNumber = 1
 END FUNCTION
 
 
@@ -70,9 +71,9 @@ END FUNCTION
 
 ' Main Loop
 Do
-
-ScrollString(winner)
-
+IF screenNumber = 0 THEN
+	ScrollString(winner)
+ENDIF
 	pad1 = jsfGetPad(LEFT_PAD)				' Get the buttons pressed on the joypad
 
     IF pad1 BAND JAGPAD_1 THEN   			' If up is pressed, move the sprite up
@@ -105,8 +106,14 @@ ScrollString(winner)
     IF pad1 BAND JAGPAD_8 THEN   		' If left is pressed, move the sprite left
     ENDIF
 
+    IF pad1 BAND JAGPAD_HASH THEN   		' If left is pressed, move the sprite left
+	    cls
+	    screenNumber = 0
+    ENDIF
+
 	IF pad1 BAND JAGPAD_STAR THEN
-	AssignWinner(players$[0])
+	cls
+	writeName()
 	ENDIF
 	IF pad1 BAND JAGPAD_B THEN   			' If B is pressed, play the sound effect
 		
