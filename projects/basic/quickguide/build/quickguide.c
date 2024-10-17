@@ -195,8 +195,8 @@ for(;;)
       {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 106] ENDIF
       }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 108] IF pad1 BAND JAGPAD_* THEN
-    if(pad1 BAND JAGPAD_*)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 108] IF pad1 BAND JAGPAD_STAR THEN
+    if(pad1 BAND JAGPAD_STAR)
       {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 109] AssignWinner(players$[0])
         AssignWinner(players[0]);

@@ -105,7 +105,7 @@ ScrollString(winner)
     IF pad1 BAND JAGPAD_8 THEN   		' If left is pressed, move the sprite left
     ENDIF
 
-	IF pad1 BAND JAGPAD_* THEN
+	IF pad1 BAND JAGPAD_STAR THEN
 	AssignWinner(players$[0])
 	ENDIF
 	IF pad1 BAND JAGPAD_B THEN   			' If B is pressed, play the sound effect
