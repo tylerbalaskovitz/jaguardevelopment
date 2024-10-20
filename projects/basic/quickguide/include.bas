@@ -1,3 +1,3 @@
 FUNCTION Square (n AS INTEGER)
-    Square = n * n
+   print(n * n)
 END FUNCTION

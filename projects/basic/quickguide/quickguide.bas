@@ -8,6 +8,7 @@
 ' -----------------------------------------------------------------------
 ' Define your sprite names here.  In the order of objects in rapinit.s
 ' -----------------------------------------------------------------------
+$include "include.bas" 
 const sprParticleLayer% = 0
 const sprBug1% = 1							' sprBug1 is the name of your sprite to move around.  Its the 2nd object in the list.
 DIM screenNumber as INTEGER
@@ -31,6 +32,7 @@ scrolling = 0
 screenNumber = 0 'Scren 0 Scrolling, Screen 1 Input Name 
 jsfSetFontIndx(0)							' Set font style
 jsfSetFontSize(1)							' Set font size
+scrolling = Square(12)
 FUNCTION AssignWinner(inputString AS STRING)
     winner = inputString  ' Assign the value to the global string
 	scrolling = 1	
