@@ -17,12 +17,6 @@ DIM tx AS INTEGER							' Value to store the joypad movement in
 DIM ty AS INTEGER							' Value to store the joypad movement in
 DIM winner AS STRING
 DIM players$[6]
-DIM p1 AS STRING
-DIM p2 AS STRING
-DIM p3 AS STRING
-DIM p4 AS STRING
-DIM p5 AS STRING
-DIM p6 AS STRING
 DIM spaces as INTEGER
 winner = ""
 tx = 38
@@ -47,7 +41,7 @@ FUNCTION ScrollString(inputString AS STRING)
  	tx -=2
 	rapLocate tx,ty							' Position the text cursor
 		if LEN(inputString) >= 9 then
-		spaces = 0
+		spaces =0 
 		else
 		spaces = 2
 		endif
