@@ -39,23 +39,6 @@ FUNCTION AssignWinner(inputString AS STRING)
 	scrolling = 1	
 END FUNCTION
 
-FUNCTION ScrollString(inputString AS STRING)
- IF scrolling = 1 THEN
- 	tx -=2
-	rapLocate tx,ty							' Position the text cursor
-		if LEN(inputString) >= 9 then
-		spaces =0 
-		else
-		spaces = 2
-		endif
-	 print "Congratulations!",inputString," is the winner!",SPACE$(spaces)
-	 VSYNC
-ELSE
-	rapLocate tx,ty							' Position the text cursor
-	rapPrint "Who will be today's winner?"						' Print some text on the screen
- ENDIF
-
-END FUNCTION
 
 FUNCTION writeName()
 	screenNumber = 1
