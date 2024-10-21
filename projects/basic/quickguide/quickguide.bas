@@ -8,7 +8,6 @@
 ' -----------------------------------------------------------------------
 ' Define your sprite names here.  In the order of objects in rapinit.s
 ' -----------------------------------------------------------------------
-$include "include.bas" 
 $include "controllerTypes.bas" 
 $include "MainMenu.bas" 
 const sprParticleLayer% = 0
@@ -34,7 +33,6 @@ scrolling = 0
 screenNumber = 0 'Scren 0 Scrolling, Screen 1 Input Name 
 jsfSetFontIndx(0)							' Set font style
 jsfSetFontSize(1)							' Set font size
-scrolling = Square(12)
 FUNCTION AssignWinner(inputString AS STRING)
     winner = inputString  ' Assign the value to the global string
 	scrolling = 1	
@@ -50,21 +48,15 @@ Do
 	pad1 = jsfGetPad(LEFT_PAD)				' Get the buttons pressed on the joypad
 IF screenNumber = 0 THEN
 	ScrollString(scrolling, tx, ty, spaces, winner)
+	if scrolling = 1 THEN 
+	tx-=2 
+	ENDIF
 	selectWinnerKeypad(pad1)
 ENDIF
+IF screenNumber = 1 THEN
 
-    IF pad1 BAND JAGPAD_HASH THEN   		' If left is pressed, move the sprite left
-	    cls
-	    screenNumber = 0
-    ENDIF
-
-	IF pad1 BAND JAGPAD_STAR THEN
-	cls
-		writeName()
-	ENDIF
-	IF pad1 BAND JAGPAD_B THEN   			' If B is pressed, play the sound effect
-		
-	ENDIF
+ENDIF
+changeScreenKeypad(pad1)
 		'channel, start of sound, end of sound, Hz, options.
 		
 '		zeroPlaySample(1, strptr(explode_sam), (strptr(explode_sam_end)-strptr(explode_sam)+3) and 0xfffffffc, (46168/8000), Zero_Audio_8bit_Signed)

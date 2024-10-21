@@ -6,7 +6,6 @@ END FUNCTION
 
 FUNCTION ScrollString(scrolling AS INTEGER, tx AS INTEGER, ty as INTEGER, spaces AS INTEGER, inputString AS STRING)
  IF scrolling = 1 THEN
- 	tx -=2
 	rapLocate tx,ty							' Position the text cursor
 		if LEN(inputString) >= 9 then
 		spaces =0 
