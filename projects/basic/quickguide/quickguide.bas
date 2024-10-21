@@ -10,6 +10,7 @@
 ' -----------------------------------------------------------------------
 $include "include.bas" 
 $include "controllerTypes.bas" 
+$include "MainMenu.bas" 
 const sprParticleLayer% = 0
 const sprBug1% = 1							' sprBug1 is the name of your sprite to move around.  Its the 2nd object in the list.
 DIM screenNumber as INTEGER
@@ -48,7 +49,7 @@ END FUNCTION
 Do
 	pad1 = jsfGetPad(LEFT_PAD)				' Get the buttons pressed on the joypad
 IF screenNumber = 0 THEN
-	ScrollString(winner)
+	ScrollString(scrolling, tx, ty, spaces, winner)
 	selectWinnerKeypad(pad1)
 ENDIF
 

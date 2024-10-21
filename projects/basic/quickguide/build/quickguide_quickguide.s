@@ -215,9 +215,9 @@ __Z9basicmainv:
 	addq.l #4,%sp
 	lea jsfGetPad,%a3
 	move.l #rapLocate,%d4
-	move.l #_strlen,%d6
-	move.l #_BCX_TmpStr_buffer,%d7
-	move.l #ee_printf,%d5
+	move.l #_strlen,%d7
+	move.l #_BCX_TmpStr_buffer,%d5
+	move.l #ee_printf,%d6
 	move.l #_rapPrint,%d3
 	lea _jsfVsync,%a2
 	lea __Z18selectWinnerKeypadi,%a5
@@ -233,10 +233,10 @@ __Z9basicmainv:
 	move.l %d2,%d0
 	and.l JAGPAD_HASH,%d0
 	jne .L36
-.L31:
+.L30:
 	and.l JAGPAD_STAR,%d2
 	jne .L37
-.L32:
+.L31:
 	clr.l -(%sp)
 	jsr (%a2)
 	addq.l #4,%sp
@@ -262,14 +262,16 @@ __Z9basicmainv:
 	clr.l __ZL12screenNumber
 	move.l __ZL4pad1,%d2
 	and.l JAGPAD_STAR,%d2
-	jeq .L32
+	jeq .L31
 	jra .L37
 .L35:
-	moveq #1,%d0
-	cmp.l __ZL9scrolling.l,%d0
+	move.l __ZL2ty,%d0
+	move.l __ZL2tx,%a0
+	moveq #1,%d1
+	cmp.l __ZL9scrolling.l,%d1
 	jeq .L39
-	move.l __ZL2ty,-(%sp)
-	move.l __ZL2tx,-(%sp)
+	move.l %d0,-(%sp)
+	move.l %a0,-(%sp)
 	move.l %d4,%a0
 	jsr (%a0)
 	move.l #.LC4,_js_r_textbuffer
@@ -280,34 +282,56 @@ __Z9basicmainv:
 	move.l %d2,-(%sp)
 	jsr (%a5)
 	addq.l #4,%sp
-.L40:
+.L41:
 	move.l %d2,%d0
 	and.l JAGPAD_HASH,%d0
-	jeq .L31
+	jeq .L30
 	jra .L36
 .L39:
-	move.l __ZL2tx,%d0
-	subq.l #2,%d0
-	move.l %d0,__ZL2tx
-	move.l __ZL2ty,-(%sp)
 	move.l %d0,-(%sp)
+	pea -2(%a0)
 	move.l %d4,%a0
 	jsr (%a0)
 	pea __ZL6winner
-	move.l %d6,%a0
+	move.l %d7,%a0
 	jsr (%a0)
 	lea (12,%sp),%sp
 	moveq #8,%d1
 	cmp.l %d0,%d1
-	jcc .L28
-	clr.l __ZL6spaces
+	jcs .L40
+	clr.b _BCX_TmpStr_buffer+2
+	move.b #32,_BCX_TmpStr_buffer
+	move.l %d5,%a0
+	move.b #32,1(%a0)
+	move.l #_BCX_TmpStr_buffer,%d5
+	pea _BCX_TmpStr_buffer
+	pea .LC1
+	pea __ZL6winner
+	pea .LC2
+	pea .LC3
+	move.l %d6,%a0
+	jsr (%a0)
+	move.l %d0,_js_r_textbuffer
+	lea (20,%sp),%sp
+	move.l %d3,%a0
+	jsr (%a0)
+	clr.l -(%sp)
+	jsr (%a2)
+	addq.l #4,%sp
+.L42:
+	move.l __ZL4pad1,%d2
+	move.l %d2,-(%sp)
+	jsr (%a5)
+	addq.l #4,%sp
+	jra .L41
+.L40:
 	clr.b _BCX_TmpStr_buffer+1
 	pea _BCX_TmpStr_buffer
 	pea .LC1
 	pea __ZL6winner
 	pea .LC2
 	pea .LC3
-	move.l %d5,%a0
+	move.l %d6,%a0
 	jsr (%a0)
 	move.l %d0,_js_r_textbuffer
 	lea (20,%sp),%sp
@@ -316,58 +340,26 @@ __Z9basicmainv:
 	clr.l -(%sp)
 	jsr (%a2)
 	addq.l #4,%sp
-.L41:
-	move.l __ZL4pad1,%d2
-	move.l %d2,-(%sp)
-	jsr (%a5)
-	addq.l #4,%sp
-	jra .L40
-.L28:
-	moveq #2,%d0
-	move.l %d0,__ZL6spaces
-	clr.b _BCX_TmpStr_buffer+2
-	move.b #32,_BCX_TmpStr_buffer
-	move.l %d7,%a0
-	move.b #32,1(%a0)
-	move.l #_BCX_TmpStr_buffer,%d7
-	pea _BCX_TmpStr_buffer
-	pea .LC1
-	pea __ZL6winner
-	pea .LC2
-	pea .LC3
-	move.l %d5,%a0
-	jsr (%a0)
-	move.l %d0,_js_r_textbuffer
-	lea (20,%sp),%sp
-	move.l %d3,%a0
-	jsr (%a0)
-	clr.l -(%sp)
-	jsr (%a2)
-	addq.l #4,%sp
-	jra .L41
+	jra .L42
 	.even
-	.globl	__Z12AssignWinnerPc
-__Z12AssignWinnerPc:
+	.globl	__Z12AssignWinneriPcS_
+__Z12AssignWinneriPcS_:
 	link.w %fp,#0
-	move.l 8(%fp),-(%sp)
-	pea __ZL6winner
-	jsr _strcpy
-	moveq #1,%d0
-	move.l %d0,__ZL9scrolling
-	addq.l #8,%sp
 	unlk %fp
 	rts
 	.even
-	.globl	__Z12ScrollStringPc
-__Z12ScrollStringPc:
+	.globl	__Z12ScrollStringiiiiPc
+__Z12ScrollStringiiiiPc:
 	link.w %fp,#0
 	move.l %d2,-(%sp)
-	move.l 8(%fp),%d2
-	moveq #1,%d0
-	cmp.l __ZL9scrolling.l,%d0
+	move.l 12(%fp),%a0
+	move.l 16(%fp),%d0
+	move.l 24(%fp),%d2
+	moveq #1,%d1
+	cmp.l 8(%fp),%d1
 	jeq .L51
-	move.l __ZL2ty,-(%sp)
-	move.l __ZL2tx,-(%sp)
+	move.l %d0,-(%sp)
+	move.l %a0,-(%sp)
 	jsr rapLocate
 	move.l #.LC4,_js_r_textbuffer
 	addq.l #8,%sp
@@ -376,39 +368,15 @@ __Z12ScrollStringPc:
 	unlk %fp
 	rts
 .L51:
-	move.l __ZL2tx,%d0
-	subq.l #2,%d0
-	move.l %d0,__ZL2tx
-	move.l __ZL2ty,-(%sp)
 	move.l %d0,-(%sp)
+	pea -2(%a0)
 	jsr rapLocate
 	move.l %d2,-(%sp)
 	jsr _strlen
 	lea (12,%sp),%sp
 	moveq #8,%d1
 	cmp.l %d0,%d1
-	jcc .L46
-	clr.l __ZL6spaces
-	clr.b _BCX_TmpStr_buffer+1
-	pea _BCX_TmpStr_buffer
-	pea .LC1
-	move.l %d2,-(%sp)
-	pea .LC2
-	pea .LC3
-	jsr ee_printf
-	move.l %d0,_js_r_textbuffer
-	lea (20,%sp),%sp
-	jsr _rapPrint
-	clr.l -(%sp)
-	jsr _jsfVsync
-	addq.l #4,%sp
-.L52:
-	move.l -4(%fp),%d2
-	unlk %fp
-	rts
-.L46:
-	moveq #2,%d0
-	move.l %d0,__ZL6spaces
+	jcs .L52
 	clr.b _BCX_TmpStr_buffer+2
 	move.b #32,_BCX_TmpStr_buffer
 	move.b #32,_BCX_TmpStr_buffer+1
@@ -424,7 +392,37 @@ __Z12ScrollStringPc:
 	clr.l -(%sp)
 	jsr _jsfVsync
 	addq.l #4,%sp
-	jra .L52
+.L53:
+	move.l -4(%fp),%d2
+	unlk %fp
+	rts
+.L52:
+	clr.b _BCX_TmpStr_buffer+1
+	pea _BCX_TmpStr_buffer
+	pea .LC1
+	move.l %d2,-(%sp)
+	pea .LC2
+	pea .LC3
+	jsr ee_printf
+	move.l %d0,_js_r_textbuffer
+	lea (20,%sp),%sp
+	jsr _rapPrint
+	clr.l -(%sp)
+	jsr _jsfVsync
+	addq.l #4,%sp
+	jra .L53
+	.even
+	.globl	__Z12AssignWinnerPc
+__Z12AssignWinnerPc:
+	link.w %fp,#0
+	move.l 8(%fp),-(%sp)
+	pea __ZL6winner
+	jsr _strcpy
+	moveq #1,%d0
+	move.l %d0,__ZL9scrolling
+	addq.l #8,%sp
+	unlk %fp
+	rts
 	.even
 	.globl	__Z9writeNamev
 __Z9writeNamev:
@@ -453,4 +451,3 @@ sprite:
 .lcomm __ZL9scrolling,4
 .lcomm __ZL12screenNumber,4
 .lcomm __ZL4pad1,4
-.lcomm __ZL6spaces,4
