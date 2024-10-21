@@ -9,6 +9,7 @@
 ' Define your sprite names here.  In the order of objects in rapinit.s
 ' -----------------------------------------------------------------------
 $include "include.bas" 
+$include "controllerTypes.bas" 
 const sprParticleLayer% = 0
 const sprBug1% = 1							' sprBug1 is the name of your sprite to move around.  Its the 2nd object in the list.
 DIM screenNumber as INTEGER
@@ -60,44 +61,12 @@ FUNCTION writeName()
 	screenNumber = 1
 END FUNCTION
 
-FUNCTION selectWinnerKeypad()
-    IF pad1 BAND JAGPAD_1 THEN   			' If up is pressed, move the sprite up
-    AssignWinner(players$[0])
-    ENDIF
-
-    IF pad1 BAND JAGPAD_2 THEN   		' If left is pressed, move the sprite left
-    AssignWinner(players$[1])
-    ENDIF
-	
-    IF pad1 BAND JAGPAD_3 THEN   		' If left is pressed, move the sprite left
-    AssignWinner(players$[2])
-    ENDIF
-    
-    IF pad1 BAND JAGPAD_4 THEN   		' If left is pressed, move the sprite left
-    AssignWinner(players$[3])
-    ENDIF
-
-    IF pad1 BAND JAGPAD_5 THEN   		' If left is pressed, move the sprite left
-    AssignWinner(players$[4])
-    ENDIF
-
-    IF pad1 BAND JAGPAD_6 THEN   		' If left is pressed, move the sprite left
-    AssignWinner(players$[5])
-    ENDIF
-
-    IF pad1 BAND JAGPAD_7 THEN   		' If left is pressed, move the sprite left
-    ENDIF
-    
-    IF pad1 BAND JAGPAD_8 THEN   		' If left is pressed, move the sprite left
-    ENDIF
-
-END FUNCTION
 ' Main Loop
 Do
 	pad1 = jsfGetPad(LEFT_PAD)				' Get the buttons pressed on the joypad
 IF screenNumber = 0 THEN
 	ScrollString(winner)
-	selectWinnerKeypad()
+	selectWinnerKeypad(pad1)
 ENDIF
 
     IF pad1 BAND JAGPAD_HASH THEN   		' If left is pressed, move the sprite left

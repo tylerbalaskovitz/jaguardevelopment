@@ -53,133 +53,37 @@ __Z6Squarei:
 	unlk %fp
 	rts
 	.even
-	.globl	__Z12AssignWinnerPc
-__Z12AssignWinnerPc:
-	link.w %fp,#0
-	move.l 8(%fp),-(%sp)
-	pea __ZL6winner
-	jsr _strcpy
-	moveq #1,%d0
-	move.l %d0,__ZL9scrolling
-	addq.l #8,%sp
-	unlk %fp
-	rts
-.LC1:
-	.ascii " is the winner!\0"
-.LC2:
-	.ascii "Congratulations!\0"
-.LC3:
-	.ascii "%s%s%s%s\0"
-.LC4:
-	.ascii "Who will be today's winner?\0"
-	.even
-	.globl	__Z12ScrollStringPc
-__Z12ScrollStringPc:
+	.globl	__Z18selectWinnerKeypadi
+__Z18selectWinnerKeypadi:
 	link.w %fp,#0
 	move.l %d2,-(%sp)
 	move.l 8(%fp),%d2
-	moveq #1,%d0
-	cmp.l __ZL9scrolling.l,%d0
-	jeq .L17
-	move.l __ZL2ty,-(%sp)
-	move.l __ZL2tx,-(%sp)
-	jsr rapLocate
-	move.l #.LC4,_js_r_textbuffer
-	addq.l #8,%sp
-	jsr _rapPrint
-	move.l -4(%fp),%d2
-	unlk %fp
-	rts
-.L17:
-	move.l __ZL2tx,%d0
-	subq.l #2,%d0
-	move.l %d0,__ZL2tx
-	move.l __ZL2ty,-(%sp)
-	move.l %d0,-(%sp)
-	jsr rapLocate
-	move.l %d2,-(%sp)
-	jsr _strlen
-	lea (12,%sp),%sp
-	moveq #8,%d1
-	cmp.l %d0,%d1
-	jcc .L12
-	clr.l __ZL6spaces
-	clr.b _BCX_TmpStr_buffer+1
-	pea _BCX_TmpStr_buffer
-	pea .LC1
-	move.l %d2,-(%sp)
-	pea .LC2
-	pea .LC3
-	jsr ee_printf
-	move.l %d0,_js_r_textbuffer
-	lea (20,%sp),%sp
-	jsr _rapPrint
-	clr.l -(%sp)
-	jsr _jsfVsync
-	addq.l #4,%sp
-.L18:
-	move.l -4(%fp),%d2
-	unlk %fp
-	rts
-.L12:
-	moveq #2,%d0
-	move.l %d0,__ZL6spaces
-	clr.b _BCX_TmpStr_buffer+2
-	move.b #32,_BCX_TmpStr_buffer
-	move.b #32,_BCX_TmpStr_buffer+1
-	pea _BCX_TmpStr_buffer
-	pea .LC1
-	move.l %d2,-(%sp)
-	pea .LC2
-	pea .LC3
-	jsr ee_printf
-	move.l %d0,_js_r_textbuffer
-	lea (20,%sp),%sp
-	jsr _rapPrint
-	clr.l -(%sp)
-	jsr _jsfVsync
-	addq.l #4,%sp
-	jra .L18
-	.even
-	.globl	__Z9writeNamev
-__Z9writeNamev:
-	link.w %fp,#0
-	moveq #1,%d0
-	move.l %d0,__ZL12screenNumber
-	unlk %fp
-	rts
-	.even
-	.globl	__Z18selectWinnerKeypadv
-__Z18selectWinnerKeypadv:
-	link.w %fp,#0
-	move.l %d2,-(%sp)
-	move.l __ZL4pad1,%d2
 	move.l %d2,%d0
 	and.l JAGPAD_1,%d0
-	jne .L30
+	jne .L18
 	move.l %d2,%d0
 	and.l JAGPAD_2,%d0
-	jne .L31
-.L23:
+	jne .L19
+.L11:
 	move.l %d2,%d0
 	and.l JAGPAD_3,%d0
-	jne .L32
-.L24:
+	jne .L20
+.L12:
 	move.l %d2,%d0
 	and.l JAGPAD_4,%d0
-	jne .L33
-.L25:
+	jne .L21
+.L13:
 	move.l %d2,%d0
 	and.l JAGPAD_5,%d0
-	jne .L34
-.L26:
+	jne .L22
+.L14:
 	and.l JAGPAD_6,%d2
-	jne .L35
-.L28:
+	jne .L23
+.L16:
 	move.l -4(%fp),%d2
 	unlk %fp
 	rts
-.L35:
+.L23:
 	pea __ZL7players+10240
 	pea __ZL6winner
 	jsr _strcpy
@@ -189,7 +93,7 @@ __Z18selectWinnerKeypadv:
 	move.l -4(%fp),%d2
 	unlk %fp
 	rts
-.L34:
+.L22:
 	pea __ZL7players+8192
 	pea __ZL6winner
 	jsr _strcpy
@@ -197,9 +101,9 @@ __Z18selectWinnerKeypadv:
 	move.l %d0,__ZL9scrolling
 	addq.l #8,%sp
 	and.l JAGPAD_6,%d2
-	jeq .L28
-	jra .L35
-.L33:
+	jeq .L16
+	jra .L23
+.L21:
 	pea __ZL7players+6144
 	pea __ZL6winner
 	jsr _strcpy
@@ -208,9 +112,9 @@ __Z18selectWinnerKeypadv:
 	addq.l #8,%sp
 	move.l %d2,%d0
 	and.l JAGPAD_5,%d0
-	jeq .L26
-	jra .L34
-.L32:
+	jeq .L14
+	jra .L22
+.L20:
 	pea __ZL7players+4096
 	pea __ZL6winner
 	jsr _strcpy
@@ -219,9 +123,9 @@ __Z18selectWinnerKeypadv:
 	addq.l #8,%sp
 	move.l %d2,%d0
 	and.l JAGPAD_4,%d0
-	jeq .L25
-	jra .L33
-.L31:
+	jeq .L13
+	jra .L21
+.L19:
 	pea __ZL7players+2048
 	pea __ZL6winner
 	jsr _strcpy
@@ -230,9 +134,9 @@ __Z18selectWinnerKeypadv:
 	addq.l #8,%sp
 	move.l %d2,%d0
 	and.l JAGPAD_3,%d0
-	jeq .L24
-	jra .L32
-.L30:
+	jeq .L12
+	jra .L20
+.L18:
 	pea __ZL7players
 	pea __ZL6winner
 	jsr _strcpy
@@ -241,13 +145,21 @@ __Z18selectWinnerKeypadv:
 	addq.l #8,%sp
 	move.l %d2,%d0
 	and.l JAGPAD_2,%d0
-	jeq .L23
-	jra .L31
+	jeq .L11
+	jra .L19
+.LC1:
+	.ascii " is the winner!\0"
+.LC2:
+	.ascii "Congratulations!\0"
+.LC3:
+	.ascii "%s%s%s%s\0"
+.LC4:
+	.ascii "Who will be today's winner?\0"
 	.even
 	.globl	__Z9basicmainv
 __Z9basicmainv:
 	link.w %fp,#0
-	movem.l #15932,-(%sp)
+	movem.l #16188,-(%sp)
 	clr.b __ZL6winner
 	moveq #38,%d0
 	move.l %d0,__ZL2tx
@@ -302,88 +214,92 @@ __Z9basicmainv:
 	move.l %d0,__ZL9scrolling
 	addq.l #4,%sp
 	lea jsfGetPad,%a3
-	move.l #rapLocate,%d3
-	move.l #_strlen,%d5
-	move.l #_BCX_TmpStr_buffer,%d6
-	move.l #ee_printf,%d4
-	move.l #_rapPrint,%d2
+	move.l #rapLocate,%d4
+	move.l #_strlen,%d6
+	move.l #_BCX_TmpStr_buffer,%d7
+	move.l #ee_printf,%d5
+	move.l #_rapPrint,%d3
 	lea _jsfVsync,%a2
-	lea __Z18selectWinnerKeypadv,%a5
+	lea __Z18selectWinnerKeypadi,%a5
 	lea _cls,%a4
 	pea 1.w
 	jsr (%a3)
+	move.l %d0,%d2
 	move.l %d0,__ZL4pad1
 	addq.l #4,%sp
 	tst.l __ZL12screenNumber
-	jeq .L47
-.L38:
-	move.l %d0,%d1
-	and.l JAGPAD_HASH,%d1
-	jne .L48
-.L43:
-	and.l JAGPAD_STAR,%d0
-	jne .L49
-.L44:
+	jeq .L35
+.L26:
+	move.l %d2,%d0
+	and.l JAGPAD_HASH,%d0
+	jne .L36
+.L31:
+	and.l JAGPAD_STAR,%d2
+	jne .L37
+.L32:
 	clr.l -(%sp)
 	jsr (%a2)
 	addq.l #4,%sp
-.L50:
+.L38:
 	pea 1.w
 	jsr (%a3)
+	move.l %d0,%d2
 	move.l %d0,__ZL4pad1
 	addq.l #4,%sp
 	tst.l __ZL12screenNumber
-	jne .L38
-	jra .L47
-.L49:
+	jne .L26
+	jra .L35
+.L37:
 	jsr (%a4)
 	moveq #1,%d0
 	move.l %d0,__ZL12screenNumber
 	clr.l -(%sp)
 	jsr (%a2)
 	addq.l #4,%sp
-	jra .L50
-.L48:
+	jra .L38
+.L36:
 	jsr (%a4)
 	clr.l __ZL12screenNumber
-	move.l __ZL4pad1,%d0
-	and.l JAGPAD_STAR,%d0
-	jeq .L44
-	jra .L49
-.L47:
+	move.l __ZL4pad1,%d2
+	and.l JAGPAD_STAR,%d2
+	jeq .L32
+	jra .L37
+.L35:
 	moveq #1,%d0
 	cmp.l __ZL9scrolling.l,%d0
-	jeq .L51
+	jeq .L39
 	move.l __ZL2ty,-(%sp)
 	move.l __ZL2tx,-(%sp)
-	move.l %d3,%a0
+	move.l %d4,%a0
 	jsr (%a0)
 	move.l #.LC4,_js_r_textbuffer
 	addq.l #8,%sp
-	move.l %d2,%a0
+	move.l %d3,%a0
 	jsr (%a0)
+	move.l __ZL4pad1,%d2
+	move.l %d2,-(%sp)
 	jsr (%a5)
-	move.l __ZL4pad1,%d0
-.L52:
-	move.l %d0,%d1
-	and.l JAGPAD_HASH,%d1
-	jeq .L43
-	jra .L48
-.L51:
+	addq.l #4,%sp
+.L40:
+	move.l %d2,%d0
+	and.l JAGPAD_HASH,%d0
+	jeq .L31
+	jra .L36
+.L39:
 	move.l __ZL2tx,%d0
 	subq.l #2,%d0
 	move.l %d0,__ZL2tx
 	move.l __ZL2ty,-(%sp)
 	move.l %d0,-(%sp)
-	move.l %d3,%a0
+	move.l %d4,%a0
 	jsr (%a0)
 	pea __ZL6winner
-	move.l %d5,%a0
+	move.l %d6,%a0
 	jsr (%a0)
 	lea (12,%sp),%sp
 	moveq #8,%d1
 	cmp.l %d0,%d1
-	jcc .L40
+	jcc .L28
 	clr.l __ZL6spaces
 	clr.b _BCX_TmpStr_buffer+1
 	pea _BCX_TmpStr_buffer
@@ -391,42 +307,132 @@ __Z9basicmainv:
 	pea __ZL6winner
 	pea .LC2
 	pea .LC3
-	move.l %d4,%a0
+	move.l %d5,%a0
 	jsr (%a0)
 	move.l %d0,_js_r_textbuffer
 	lea (20,%sp),%sp
-	move.l %d2,%a0
+	move.l %d3,%a0
 	jsr (%a0)
 	clr.l -(%sp)
 	jsr (%a2)
 	addq.l #4,%sp
-.L53:
+.L41:
+	move.l __ZL4pad1,%d2
+	move.l %d2,-(%sp)
 	jsr (%a5)
-	move.l __ZL4pad1,%d0
-	jra .L52
-.L40:
+	addq.l #4,%sp
+	jra .L40
+.L28:
 	moveq #2,%d0
 	move.l %d0,__ZL6spaces
 	clr.b _BCX_TmpStr_buffer+2
 	move.b #32,_BCX_TmpStr_buffer
-	move.l %d6,%a0
+	move.l %d7,%a0
 	move.b #32,1(%a0)
-	move.l #_BCX_TmpStr_buffer,%d6
+	move.l #_BCX_TmpStr_buffer,%d7
 	pea _BCX_TmpStr_buffer
 	pea .LC1
 	pea __ZL6winner
 	pea .LC2
 	pea .LC3
-	move.l %d4,%a0
+	move.l %d5,%a0
 	jsr (%a0)
 	move.l %d0,_js_r_textbuffer
 	lea (20,%sp),%sp
-	move.l %d2,%a0
+	move.l %d3,%a0
 	jsr (%a0)
 	clr.l -(%sp)
 	jsr (%a2)
 	addq.l #4,%sp
-	jra .L53
+	jra .L41
+	.even
+	.globl	__Z12AssignWinnerPc
+__Z12AssignWinnerPc:
+	link.w %fp,#0
+	move.l 8(%fp),-(%sp)
+	pea __ZL6winner
+	jsr _strcpy
+	moveq #1,%d0
+	move.l %d0,__ZL9scrolling
+	addq.l #8,%sp
+	unlk %fp
+	rts
+	.even
+	.globl	__Z12ScrollStringPc
+__Z12ScrollStringPc:
+	link.w %fp,#0
+	move.l %d2,-(%sp)
+	move.l 8(%fp),%d2
+	moveq #1,%d0
+	cmp.l __ZL9scrolling.l,%d0
+	jeq .L51
+	move.l __ZL2ty,-(%sp)
+	move.l __ZL2tx,-(%sp)
+	jsr rapLocate
+	move.l #.LC4,_js_r_textbuffer
+	addq.l #8,%sp
+	jsr _rapPrint
+	move.l -4(%fp),%d2
+	unlk %fp
+	rts
+.L51:
+	move.l __ZL2tx,%d0
+	subq.l #2,%d0
+	move.l %d0,__ZL2tx
+	move.l __ZL2ty,-(%sp)
+	move.l %d0,-(%sp)
+	jsr rapLocate
+	move.l %d2,-(%sp)
+	jsr _strlen
+	lea (12,%sp),%sp
+	moveq #8,%d1
+	cmp.l %d0,%d1
+	jcc .L46
+	clr.l __ZL6spaces
+	clr.b _BCX_TmpStr_buffer+1
+	pea _BCX_TmpStr_buffer
+	pea .LC1
+	move.l %d2,-(%sp)
+	pea .LC2
+	pea .LC3
+	jsr ee_printf
+	move.l %d0,_js_r_textbuffer
+	lea (20,%sp),%sp
+	jsr _rapPrint
+	clr.l -(%sp)
+	jsr _jsfVsync
+	addq.l #4,%sp
+.L52:
+	move.l -4(%fp),%d2
+	unlk %fp
+	rts
+.L46:
+	moveq #2,%d0
+	move.l %d0,__ZL6spaces
+	clr.b _BCX_TmpStr_buffer+2
+	move.b #32,_BCX_TmpStr_buffer
+	move.b #32,_BCX_TmpStr_buffer+1
+	pea _BCX_TmpStr_buffer
+	pea .LC1
+	move.l %d2,-(%sp)
+	pea .LC2
+	pea .LC3
+	jsr ee_printf
+	move.l %d0,_js_r_textbuffer
+	lea (20,%sp),%sp
+	jsr _rapPrint
+	clr.l -(%sp)
+	jsr _jsfVsync
+	addq.l #4,%sp
+	jra .L52
+	.even
+	.globl	__Z9writeNamev
+__Z9writeNamev:
+	link.w %fp,#0
+	moveq #1,%d0
+	move.l %d0,__ZL12screenNumber
+	unlk %fp
+	rts
 	.globl	_BCX_TmpStr_buffer
 	.bss
 _BCX_TmpStr_buffer:
