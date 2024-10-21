@@ -19,3 +19,4 @@ ELSE
 	rapPrint "Who will be today's winner?"						' Print some text on the screen
  ENDIF
  END FUNCTION
+

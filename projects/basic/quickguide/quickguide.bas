@@ -49,7 +49,7 @@ Do
 IF screenNumber = 0 THEN
 	ScrollString(scrolling, tx, ty, spaces, winner)
 	if scrolling = 1 THEN 
-	tx-=2 
+	tx-=2
 	ENDIF
 	selectWinnerKeypad(pad1)
 ENDIF

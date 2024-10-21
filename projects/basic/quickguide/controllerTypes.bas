@@ -1,5 +1,3 @@
-'DIM pad1 AS INTEGER
-'pad1= jsfGetPad(LEFT_PAD)
 FUNCTION selectWinnerKeypad(pad1 as INTEGER)
     IF pad1 BAND JAGPAD_1 THEN   			' If up is pressed, move the sprite up
     AssignWinner(players$[0])
