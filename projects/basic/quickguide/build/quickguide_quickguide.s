@@ -138,6 +138,7 @@ __Z18selectWinnerKeypadi:
 __Z9basicmainv:
 	link.w %fp,#0
 	movem.l #16188,-(%sp)
+	clr.l __ZL9scrolling
 	clr.b __ZL6winner
 	moveq #38,%d0
 	move.l %d0,__ZL2tx
@@ -182,7 +183,6 @@ __Z9basicmainv:
 	move.b #97,__ZL7players+10247
 	move.b #110,__ZL7players+10248
 	clr.b __ZL7players+10249
-	clr.l __ZL9scrolling
 	clr.l __ZL12screenNumber
 	clr.l _jsfFontIndx
 	moveq #1,%d1
@@ -458,10 +458,10 @@ colliders:
 	.even
 sprite:
 	.long	RAPTOR_sprite_table
+.lcomm __ZL9scrolling,4
 .lcomm __ZL6winner,2048
 .lcomm __ZL2tx,4
 .lcomm __ZL2ty,4
 .lcomm __ZL7players,12288
-.lcomm __ZL9scrolling,4
 .lcomm __ZL12screenNumber,4
 .lcomm __ZL4pad1,4

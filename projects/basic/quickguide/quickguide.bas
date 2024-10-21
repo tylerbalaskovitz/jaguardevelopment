@@ -14,7 +14,6 @@ const sprParticleLayer% = 0
 const sprBug1% = 1							' sprBug1 is the name of your sprite to move around.  Its the 2nd object in the list.
 DIM screenNumber as INTEGER
 DIM pad1 AS INTEGER							' Value to store the joypad movement in
-DIM scrolling AS INTEGER							' Value to store the joypad movement in
 DIM tx AS INTEGER							' Value to store the joypad movement in
 DIM ty AS INTEGER							' Value to store the joypad movement in
 DIM winner AS STRING

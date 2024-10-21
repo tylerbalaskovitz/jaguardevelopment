@@ -1,4 +1,5 @@
-
+DIM scrolling AS INTEGER							' Value to store the joypad movement in
+scrolling = 0
 FUNCTION AssignWinner(scrolling AS INTEGER, winner AS STRING, inputString AS STRING)
     winner = inputString  ' Assign the value to the global string
 	scrolling = 1	
@@ -17,6 +18,5 @@ FUNCTION ScrollString(scrolling AS INTEGER, tx AS INTEGER, ty as INTEGER, spaces
 ELSE
 	rapLocate tx,ty							' Position the text cursor
 	rapPrint "Who will be today's winner?"						' Print some text on the screen
- ENDIF
- END FUNCTION
-
+ENDIF
+END FUNCTION
