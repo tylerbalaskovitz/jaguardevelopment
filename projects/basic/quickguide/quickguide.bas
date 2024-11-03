@@ -8,8 +8,9 @@
 ' -----------------------------------------------------------------------
 ' Define your sprite names here.  In the order of objects in rapinit.s
 ' -----------------------------------------------------------------------
-$include "controllerTypes.bas" 
+$include "ControllerTypes.bas" 
 $include "MainMenu.bas" 
+$include "EnterPlayers.bas"
 const sprParticleLayer% = 0
 const sprBug1% = 1							' sprBug1 is the name of your sprite to move around.  Its the 2nd object in the list.
 DIM screenNumber as INTEGER
@@ -22,12 +23,6 @@ DIM spaces as INTEGER
 winner = ""
 tx = 38
 ty = 182
-players$[0]="Tyler"
-players$[1] = "Loving"
-players$[2] = "John"
-players$[3] = "Navraj"
-players$[4] = "Matt"
-players$[5] = "Christian"
 scrolling = 0
 screenNumber = 0 'Scren 0 Scrolling, Screen 1 Input Name 
 jsfSetFontIndx(0)							' Set font style
