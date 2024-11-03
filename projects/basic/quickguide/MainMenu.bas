@@ -1,10 +1,7 @@
 DIM scrolling AS INTEGER
+DIM spaces as INTEGER
 scrolling = 0
 
-FUNCTION AssignWinner(scrolling AS INTEGER, winner AS STRING, inputString AS STRING)
-    winner = inputString 
-	scrolling = 1	
-END FUNCTION
 
 FUNCTION ScrollString(scrolling AS INTEGER, tx AS INTEGER, ty as INTEGER, spaces AS INTEGER, inputString AS STRING)
  IF scrolling = 1 THEN

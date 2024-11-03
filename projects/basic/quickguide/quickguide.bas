@@ -13,8 +13,6 @@ $include "MainMenu.bas"
 $include "PlayerVariables.bas"
 const sprParticleLayer% = 0
 const sprBug1% = 1							' sprBug1 is the name of your sprite to move around.  Its the 2nd object in the list.
-DIM spaces as INTEGER
-scrolling = 0
 
 
 

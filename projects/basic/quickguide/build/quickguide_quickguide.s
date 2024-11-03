@@ -142,15 +142,10 @@ __Z9basicmainv:
 	clr.l _jsfFontIndx
 	moveq #1,%d0
 	move.l %d0,_jsfFontSize
+	moveq #38,%d1
+	move.l %d1,__ZL2tx
+	move.l #182,__ZL2ty
 	clr.b __ZL6winner
-	move.b #74,__ZL14testPlayerName
-	move.b #101,__ZL14testPlayerName+1
-	move.b #102,__ZL14testPlayerName+2
-	move.b #102,__ZL14testPlayerName+3
-	move.b #114,__ZL14testPlayerName+4
-	move.b #101,__ZL14testPlayerName+5
-	move.b #121,__ZL14testPlayerName+6
-	clr.b __ZL14testPlayerName+7
 	move.b #84,__ZL7players
 	move.b #121,__ZL7players+1
 	move.b #108,__ZL7players+2
@@ -181,16 +176,15 @@ __Z9basicmainv:
 	move.b #116,__ZL7players+8194
 	move.b #116,__ZL7players+8195
 	clr.b __ZL7players+8196
-	pea __ZL14testPlayerName
-	pea __ZL7players+10240
-	jsr _strcpy
-	moveq #2,%d1
-	move.l %d1,__ZL7intName
-	moveq #38,%d2
-	move.l %d2,__ZL2tx
-	move.l #182,__ZL2ty
+	move.b #74,__ZL7players+10240
+	move.b #97,__ZL7players+10241
+	move.b #114,__ZL7players+10242
+	move.b #111,__ZL7players+10243
+	move.b #100,__ZL7players+10244
+	clr.b __ZL7players+10245
+	moveq #2,%d2
+	move.l %d2,__ZL7intName
 	clr.l __ZL12screenNumber
-	addq.l #8,%sp
 	lea jsfGetPad,%a3
 	move.l #rapLocate,%d4
 	move.l #_strlen,%d7
@@ -357,12 +351,6 @@ __Z18changeScreenKeypadi:
 	jeq .L48
 	jra .L51
 	.even
-	.globl	__Z12AssignWinneriPcS_
-__Z12AssignWinneriPcS_:
-	link.w %fp,#0
-	unlk %fp
-	rts
-	.even
 	.globl	__Z12ScrollStringiiiiPc
 __Z12ScrollStringiiiiPc:
 	link.w %fp,#0
@@ -373,7 +361,7 @@ __Z12ScrollStringiiiiPc:
 	move.l 24(%fp),%d2
 	moveq #1,%d3
 	cmp.l 8(%fp),%d3
-	jeq .L60
+	jeq .L59
 	move.l %d1,-(%sp)
 	move.l %d0,-(%sp)
 	jsr rapLocate
@@ -384,7 +372,7 @@ __Z12ScrollStringiiiiPc:
 	move.l -4(%fp),%d3
 	unlk %fp
 	rts
-.L60:
+.L59:
 	move.l %d1,-(%sp)
 	move.l %d0,-(%sp)
 	jsr rapLocate
@@ -393,7 +381,7 @@ __Z12ScrollStringiiiiPc:
 	lea (12,%sp),%sp
 	moveq #8,%d1
 	cmp.l %d0,%d1
-	jcs .L61
+	jcs .L60
 	clr.b _BCX_TmpStr_buffer+2
 	move.b #32,_BCX_TmpStr_buffer
 	move.b #32,_BCX_TmpStr_buffer+1
@@ -409,12 +397,12 @@ __Z12ScrollStringiiiiPc:
 	clr.l -(%sp)
 	jsr _jsfVsync
 	addq.l #4,%sp
-.L62:
+.L61:
 	move.l -8(%fp),%d2
 	move.l -4(%fp),%d3
 	unlk %fp
 	rts
-.L61:
+.L60:
 	clr.b _BCX_TmpStr_buffer+1
 	pea _BCX_TmpStr_buffer
 	pea .LC0
@@ -428,7 +416,15 @@ __Z12ScrollStringiiiiPc:
 	clr.l -(%sp)
 	jsr _jsfVsync
 	addq.l #4,%sp
-	jra .L62
+	jra .L61
+	.even
+	.globl	__Z9writeNamev
+__Z9writeNamev:
+	link.w %fp,#0
+	moveq #1,%d0
+	move.l %d0,__ZL12screenNumber
+	unlk %fp
+	rts
 	.even
 	.globl	__Z12AssignWinnerPc
 __Z12AssignWinnerPc:
@@ -439,14 +435,6 @@ __Z12AssignWinnerPc:
 	moveq #1,%d0
 	move.l %d0,__ZL9scrolling
 	addq.l #8,%sp
-	unlk %fp
-	rts
-	.even
-	.globl	__Z9writeNamev
-__Z9writeNamev:
-	link.w %fp,#0
-	moveq #1,%d0
-	move.l %d0,__ZL12screenNumber
 	unlk %fp
 	rts
 	.globl	_BCX_TmpStr_buffer
@@ -463,11 +451,10 @@ colliders:
 sprite:
 	.long	RAPTOR_sprite_table
 .lcomm __ZL9scrolling,4
-.lcomm __ZL6winner,2048
-.lcomm __ZL14testPlayerName,2048
-.lcomm __ZL7players,12288
-.lcomm __ZL7intName,4
 .lcomm __ZL2tx,4
 .lcomm __ZL2ty,4
+.lcomm __ZL6winner,2048
+.lcomm __ZL7players,12288
+.lcomm __ZL7intName,4
 .lcomm __ZL12screenNumber,4
 .lcomm __ZL4pad1,4
