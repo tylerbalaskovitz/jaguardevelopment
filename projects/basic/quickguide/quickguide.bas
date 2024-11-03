@@ -13,16 +13,9 @@ $include "MainMenu.bas"
 $include "EnterPlayers.bas"
 const sprParticleLayer% = 0
 const sprBug1% = 1							' sprBug1 is the name of your sprite to move around.  Its the 2nd object in the list.
-DIM screenNumber as INTEGER
 DIM pad1 AS INTEGER							' Value to store the joypad movement in
-DIM winner AS STRING
-DIM players$[6]
 DIM spaces as INTEGER
-winner = ""
 scrolling = 0
-screenNumber = 0 
-jsfSetFontIndx(0)							' Set font style
-jsfSetFontSize(1)							' Set font size
 FUNCTION AssignWinner(inputString AS STRING)
     winner = inputString  ' Assign the value to the global string
 	scrolling = 1	

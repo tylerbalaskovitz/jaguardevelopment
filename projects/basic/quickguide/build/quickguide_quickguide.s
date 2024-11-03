@@ -142,6 +142,15 @@ __Z9basicmainv:
 	clr.l _jsfFontIndx
 	moveq #1,%d0
 	move.l %d0,_jsfFontSize
+	clr.b __ZL6winner
+	move.b #74,__ZL14testPlayerName
+	move.b #101,__ZL14testPlayerName+1
+	move.b #102,__ZL14testPlayerName+2
+	move.b #102,__ZL14testPlayerName+3
+	move.b #114,__ZL14testPlayerName+4
+	move.b #101,__ZL14testPlayerName+5
+	move.b #121,__ZL14testPlayerName+6
+	clr.b __ZL14testPlayerName+7
 	move.b #84,__ZL7players
 	move.b #121,__ZL7players+1
 	move.b #108,__ZL7players+2
@@ -177,18 +186,9 @@ __Z9basicmainv:
 	jsr _strcpy
 	moveq #2,%d1
 	move.l %d1,__ZL7intName
-	move.b #74,__ZL14testPlayerName
-	move.b #101,__ZL14testPlayerName+1
-	move.b #102,__ZL14testPlayerName+2
-	move.b #102,__ZL14testPlayerName+3
-	move.b #114,__ZL14testPlayerName+4
-	move.b #101,__ZL14testPlayerName+5
-	move.b #121,__ZL14testPlayerName+6
-	clr.b __ZL14testPlayerName+7
 	moveq #38,%d2
 	move.l %d2,__ZL2tx
 	move.l #182,__ZL2ty
-	clr.b __ZL6winner
 	clr.l __ZL12screenNumber
 	addq.l #8,%sp
 	lea jsfGetPad,%a3
@@ -463,11 +463,11 @@ colliders:
 sprite:
 	.long	RAPTOR_sprite_table
 .lcomm __ZL9scrolling,4
-.lcomm __ZL7players,12288
+.lcomm __ZL6winner,2048
 .lcomm __ZL14testPlayerName,2048
+.lcomm __ZL7players,12288
 .lcomm __ZL7intName,4
 .lcomm __ZL2tx,4
 .lcomm __ZL2ty,4
-.lcomm __ZL6winner,2048
 .lcomm __ZL12screenNumber,4
 .lcomm __ZL4pad1,4
