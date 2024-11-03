@@ -1,7 +1,8 @@
-DIM scrolling AS INTEGER							' Value to store the joypad movement in
+DIM scrolling AS INTEGER
 scrolling = 0
+
 FUNCTION AssignWinner(scrolling AS INTEGER, winner AS STRING, inputString AS STRING)
-    winner = inputString  ' Assign the value to the global string
+    winner = inputString 
 	scrolling = 1	
 END FUNCTION
 

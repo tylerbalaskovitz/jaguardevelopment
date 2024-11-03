@@ -10,21 +10,13 @@
 ' -----------------------------------------------------------------------
 $include "ControllerTypes.bas" 
 $include "MainMenu.bas" 
-$include "EnterPlayers.bas"
+$include "PlayerVariables.bas"
 const sprParticleLayer% = 0
 const sprBug1% = 1							' sprBug1 is the name of your sprite to move around.  Its the 2nd object in the list.
-DIM pad1 AS INTEGER							' Value to store the joypad movement in
 DIM spaces as INTEGER
 scrolling = 0
-FUNCTION AssignWinner(inputString AS STRING)
-    winner = inputString  ' Assign the value to the global string
-	scrolling = 1	
-END FUNCTION
 
 
-FUNCTION writeName()
-	screenNumber = 1
-END FUNCTION
 
 ' Main Loop
 Do
