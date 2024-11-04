@@ -35,9 +35,11 @@ END FUNCTION
 'writes the players name
 FUNCTION selectWinnerKeypad(pad1 as INTEGER)
     IF pad1 BAND JAGPAD_UP THEN   			' If up is pressed, move the sprite up
+    temp+=1
     ENDIF
 
     IF pad1 BAND JAGPAD_DOWN THEN   		' If left is pressed, move the sprite left
+    temp-=1
     ENDIF
 	
     IF pad1 BAND JAGPAD_A THEN   		' If left is pressed, move the sprite left
