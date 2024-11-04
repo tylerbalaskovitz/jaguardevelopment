@@ -138,6 +138,8 @@ __Z18selectWinnerKeypadi:
 __Z9basicmainv:
 	link.w %fp,#0
 	movem.l #16188,-(%sp)
+	clr.l __ZL4temp
+	clr.b __ZL8tempName
 	clr.l __ZL9scrolling
 	clr.l _jsfFontIndx
 	moveq #1,%d0
@@ -323,6 +325,22 @@ __Z9basicmainv:
 	addq.l #4,%sp
 	jra .L43
 	.even
+	.globl	__Z15writePlayerNamei
+__Z15writePlayerNamei:
+	link.w %fp,#0
+	move.l 8(%fp),%d0
+	move.l %d0,%d1
+	and.l JAGPAD_UP,%d1
+	jeq .L46
+	addq.l #1,__ZL4temp
+.L46:
+	and.l JAGPAD_DOWN,%d0
+	jeq .L48
+	subq.l #1,__ZL4temp
+.L48:
+	unlk %fp
+	rts
+	.even
 	.globl	__Z18changeScreenKeypadi
 __Z18changeScreenKeypadi:
 	link.w %fp,#0
@@ -330,26 +348,26 @@ __Z18changeScreenKeypadi:
 	move.l 8(%fp),%d2
 	move.l %d2,%d0
 	and.l JAGPAD_HASH,%d0
-	jne .L50
+	jne .L56
 	and.l JAGPAD_STAR,%d2
-	jne .L51
-.L48:
+	jne .L57
+.L54:
 	move.l -4(%fp),%d2
 	unlk %fp
 	rts
-.L51:
+.L57:
 	jsr _cls
 	moveq #1,%d0
 	move.l %d0,__ZL12screenNumber
 	move.l -4(%fp),%d2
 	unlk %fp
 	rts
-.L50:
+.L56:
 	jsr _cls
 	clr.l __ZL12screenNumber
 	and.l JAGPAD_STAR,%d2
-	jeq .L48
-	jra .L51
+	jeq .L54
+	jra .L57
 	.even
 	.globl	__Z12ScrollStringiiiiPc
 __Z12ScrollStringiiiiPc:
@@ -361,7 +379,7 @@ __Z12ScrollStringiiiiPc:
 	move.l 24(%fp),%d2
 	moveq #1,%d3
 	cmp.l 8(%fp),%d3
-	jeq .L59
+	jeq .L65
 	move.l %d1,-(%sp)
 	move.l %d0,-(%sp)
 	jsr rapLocate
@@ -372,7 +390,7 @@ __Z12ScrollStringiiiiPc:
 	move.l -4(%fp),%d3
 	unlk %fp
 	rts
-.L59:
+.L65:
 	move.l %d1,-(%sp)
 	move.l %d0,-(%sp)
 	jsr rapLocate
@@ -381,7 +399,7 @@ __Z12ScrollStringiiiiPc:
 	lea (12,%sp),%sp
 	moveq #8,%d1
 	cmp.l %d0,%d1
-	jcs .L60
+	jcs .L66
 	clr.b _BCX_TmpStr_buffer+2
 	move.b #32,_BCX_TmpStr_buffer
 	move.b #32,_BCX_TmpStr_buffer+1
@@ -397,12 +415,12 @@ __Z12ScrollStringiiiiPc:
 	clr.l -(%sp)
 	jsr _jsfVsync
 	addq.l #4,%sp
-.L61:
+.L67:
 	move.l -8(%fp),%d2
 	move.l -4(%fp),%d3
 	unlk %fp
 	rts
-.L60:
+.L66:
 	clr.b _BCX_TmpStr_buffer+1
 	pea _BCX_TmpStr_buffer
 	pea .LC0
@@ -416,7 +434,7 @@ __Z12ScrollStringiiiiPc:
 	clr.l -(%sp)
 	jsr _jsfVsync
 	addq.l #4,%sp
-	jra .L61
+	jra .L67
 	.even
 	.globl	__Z9writeNamev
 __Z9writeNamev:
@@ -450,6 +468,8 @@ colliders:
 	.even
 sprite:
 	.long	RAPTOR_sprite_table
+.lcomm __ZL4temp,4
+.lcomm __ZL8tempName,2048
 .lcomm __ZL9scrolling,4
 .lcomm __ZL2tx,4
 .lcomm __ZL2ty,4

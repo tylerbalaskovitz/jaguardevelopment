@@ -1,3 +1,7 @@
+DIM temp as INTEGER
+DIM tempName as String
+temp = 0
+tempName = ""
 'Selects the players by Keypad value
 FUNCTION selectWinnerKeypad(pad1 as INTEGER)
     IF pad1 BAND JAGPAD_1 THEN   			' If up is pressed, move the sprite up
@@ -33,7 +37,7 @@ FUNCTION selectWinnerKeypad(pad1 as INTEGER)
 END FUNCTION
 
 'writes the players name
-FUNCTION selectWinnerKeypad(pad1 as INTEGER)
+FUNCTION writePlayerName(pad1 as INTEGER)
     IF pad1 BAND JAGPAD_UP THEN   			' If up is pressed, move the sprite up
     temp+=1
     ENDIF
