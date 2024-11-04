@@ -35,27 +35,21 @@ END FUNCTION
 'writes the players name
 FUNCTION selectWinnerKeypad(pad1 as INTEGER)
     IF pad1 BAND JAGPAD_UP THEN   			' If up is pressed, move the sprite up
-    AssignWinner(players$[0])
     ENDIF
 
     IF pad1 BAND JAGPAD_DOWN THEN   		' If left is pressed, move the sprite left
-    AssignWinner(players$[1])
     ENDIF
 	
     IF pad1 BAND JAGPAD_A THEN   		' If left is pressed, move the sprite left
-    AssignWinner(players$[2])
     ENDIF
     
     IF pad1 BAND JAGPAD_B THEN   		' If left is pressed, move the sprite left
-    AssignWinner(players$[3])
     ENDIF
 
     IF pad1 BAND JAGPAD_C THEN   		' If left is pressed, move the sprite left
-    AssignWinner(players$[4])
     ENDIF
 
     IF pad1 BAND JAGPAD_6 THEN   		' If left is pressed, move the sprite left
-    AssignWinner(players$[5])
     ENDIF
 
     IF pad1 BAND JAGPAD_7 THEN   		' If left is pressed, move the sprite left
