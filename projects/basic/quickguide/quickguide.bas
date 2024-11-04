@@ -25,7 +25,8 @@ IF screenNumber = 0 THEN
 	selectWinnerKeypad(pad1)
 ENDIF
 IF screenNumber = 1 THEN
-
+	writePlayerName(pad1)
+	registerPlayer(temp, tempName)
 ENDIF
 changeScreenKeypad(pad1)
 
