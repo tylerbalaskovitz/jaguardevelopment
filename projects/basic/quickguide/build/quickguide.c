@@ -118,8 +118,8 @@ temp=0;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 9] tempName = ""
 *tempName=0;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 11] FUNCTION registerPlayer(temp as INTEGER, tempName as STRING)
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 22] FUNCTION clearName(tempName as String)
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 26] FUNCTION addLetter(tempName as String, temp as INTEGER)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 28] FUNCTION clearName(tempName as String)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 32] FUNCTION addLetter(tempName as String, temp as INTEGER)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 9] $include "ControllerTypes.bas"
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 2] FUNCTION selectWinnerKeypad(pad1 as INTEGER)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 36] FUNCTION writePlayerName(pad1 as INTEGER)
@@ -259,41 +259,55 @@ char *chr (int a,int b,int c,int d,int e,int f,int g,int h,int i,int j)
 
 int registerPlayer (int temp, char *tempName)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 12] rapLocate 10, tempY
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 12] if temp < 65 then
+  if(temp<65)
+    {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 13] temp = 65
+      temp=65;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 14] endif
+    }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 15] if temp > 91 then
+  if(temp>91)
+    {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 16] temp = 91
+      temp=91;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 17] endif
+    }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 18] rapLocate 10, tempY
   rapLocate(10,tempY);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 13] print "Write your players name"
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 19] print "Write your players name"
   js_r_textbuffer=ee_printf("%s","Write your players name");
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 14] rapLocate 10, tempY+yGrowth
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 20] rapLocate 10, tempY+yGrowth
   rapLocate(10,tempY+yGrowth);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 15] print "Your name:",tempName
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 21] print "Your name:",tempName
   js_r_textbuffer=ee_printf("%s%s","Your name:",tempName);
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 16] rapLocate 10, tempY+yGrowth*2
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 22] rapLocate 10, tempY+yGrowth*2
   rapLocate(10,tempY+yGrowth*2);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 17] print CHR$(temp)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 23] print CHR$(temp)
   js_r_textbuffer=ee_printf("%s",chr(temp));
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 18] rapLocate 10, tempY+yGrowth*3
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 24] rapLocate 10, tempY+yGrowth*3
   rapLocate(10,tempY+yGrowth*3);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 19] print "ASCII value as ", temp
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 25] print "ASCII value as ", temp
   js_r_textbuffer=ee_printf("%s% d","ASCII value as ",(int)temp);
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 20] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 26] END FUNCTION
 }
 
 
 int clearName (char *tempName)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 24] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 30] END FUNCTION
 }
 
 
 int addLetter (char *tempName, int temp)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 28] letterHolder$=CHR$(temp)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 34] letterHolder$=CHR$(temp)
   strcpy(letterHolder,chr(temp));
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 29] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 35] END FUNCTION
 }
 
 
