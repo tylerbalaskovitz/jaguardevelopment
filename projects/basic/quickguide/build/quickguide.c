@@ -141,7 +141,7 @@ screenNumber=0;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 32] FUNCTION AssignWinner(inputString AS STRING)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 14] const sprParticleLayer% = 0
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 15] const sprBug1% = 1
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 20] Do
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 19] Do
 for(;;)
   {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 21] pad1 = jsfGetPad(LEFT_PAD)
@@ -169,9 +169,9 @@ for(;;)
       }
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 32] changeScreenKeypad(pad1)
     changeScreenKeypad(pad1);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 38] VSYNC
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 35] VSYNC
     jsfVsync(0);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 40] LOOP
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 36] LOOP
   }
   while(1) {};   //  End of main program
 }
