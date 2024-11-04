@@ -8,5 +8,5 @@ print "Write your players name"
 END FUNCTION
 
 FUNCTION clearName()
-
+ tempName = ""
 END FUNCTION
