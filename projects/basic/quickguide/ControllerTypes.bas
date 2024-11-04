@@ -1,7 +1,3 @@
-DIM temp as INTEGER
-DIM tempName as String
-temp = 0
-tempName = ""
 'Selects the players by Keypad value
 FUNCTION selectWinnerKeypad(pad1 as INTEGER)
     IF pad1 BAND JAGPAD_1 THEN   			' If up is pressed, move the sprite up

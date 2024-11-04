@@ -13,10 +13,10 @@ print "Your name:",tempName
 END FUNCTION
 
 FUNCTION clearName(tempName as String)
- tempName = ""
+
 END FUNCTION
 
 FUNCTION addLetter(tempName as String, temp as INTEGER)
- tempName = tempName + CHR$(temp) 
+
 END FUNCTION
 
