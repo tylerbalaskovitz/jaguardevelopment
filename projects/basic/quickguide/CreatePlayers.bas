@@ -9,6 +9,9 @@ temp = 0
 tempName = ""
 
 FUNCTION registerPlayer(temp as INTEGER, tempName as STRING)
+	if temp < 65 then
+	 temp = 65 
+	endif
 	rapLocate 10, tempY
 	print "Write your players name" 
 	rapLocate 10, tempY+yGrowth
