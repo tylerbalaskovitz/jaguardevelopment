@@ -58,12 +58,17 @@ __Z3chriiiiiiiiii:
 	.ascii "Your name:\0"
 .LC3:
 	.ascii "%s%s\0"
+.LC4:
+	.ascii "ASCII value as \0"
+.LC5:
+	.ascii "%s% d\0"
 	.even
 	.globl	__Z14registerPlayeriPc
 __Z14registerPlayeriPc:
 	link.w %fp,#0
-	movem.l #56,-(%sp)
-	pea 60.w
+	movem.l #8248,-(%sp)
+	move.l 8(%fp),%d2
+	move.l __ZL5tempY,-(%sp)
 	pea 10.w
 	lea rapLocate,%a4
 	jsr (%a4)
@@ -76,7 +81,9 @@ __Z14registerPlayeriPc:
 	addq.l #8,%sp
 	lea _rapPrint,%a2
 	jsr (%a2)
-	pea 75.w
+	move.l __ZL5tempY,%d0
+	add.l __ZL7yGrowth,%d0
+	move.l %d0,-(%sp)
 	pea 10.w
 	jsr (%a4)
 	addq.l #4,%sp
@@ -87,12 +94,15 @@ __Z14registerPlayeriPc:
 	move.l %d0,_js_r_textbuffer
 	lea (12,%sp),%sp
 	jsr (%a2)
-	pea 90.w
+	move.l __ZL7yGrowth,%d0
+	add.l %d0,%d0
+	add.l __ZL5tempY,%d0
+	move.l %d0,-(%sp)
 	pea 10.w
 	jsr (%a4)
 	clr.b _BCX_TmpStr_buffer+11
 	lea _BCX_TmpStr_buffer,%a0
-	move.b 11(%fp),(%a0)
+	move.b %d2,(%a0)
 	clr.b _BCX_TmpStr_buffer+1
 	clr.b _BCX_TmpStr_buffer+2
 	clr.b _BCX_TmpStr_buffer+3
@@ -110,7 +120,23 @@ __Z14registerPlayeriPc:
 	move.l %d0,_js_r_textbuffer
 	addq.l #8,%sp
 	jsr (%a2)
-	movem.l -12(%fp),#7168
+	move.l __ZL7yGrowth,%d0
+	move.l %d0,%d1
+	add.l %d0,%d1
+	add.l %d1,%d0
+	add.l __ZL5tempY,%d0
+	move.l %d0,-(%sp)
+	pea 10.w
+	jsr (%a4)
+	addq.l #4,%sp
+	move.l %d2,(%sp)
+	pea .LC4
+	pea .LC5
+	jsr (%a3)
+	move.l %d0,_js_r_textbuffer
+	lea (12,%sp),%sp
+	jsr (%a2)
+	movem.l -16(%fp),#7172
 	unlk %fp
 	rts
 	.even
@@ -235,27 +261,31 @@ __Z18selectWinnerKeypadi:
 	and.l JAGPAD_2,%d0
 	jeq .L14
 	jra .L22
-.LC4:
-	.ascii " is the winner!\0"
-.LC5:
-	.ascii "Congratulations!\0"
 .LC6:
-	.ascii "%s%s%s%s\0"
+	.ascii " is the winner!\0"
 .LC7:
+	.ascii "Congratulations!\0"
+.LC8:
+	.ascii "%s%s%s%s\0"
+.LC9:
 	.ascii "Who will be today's winner?\0"
 	.even
 	.globl	__Z9basicmainv
 __Z9basicmainv:
 	link.w %fp,#0
 	movem.l #16188,-(%sp)
+	moveq #60,%d0
+	move.l %d0,__ZL5tempY
+	moveq #15,%d1
+	move.l %d1,__ZL7yGrowth
 	clr.l __ZL4temp
 	clr.b __ZL8tempName
 	clr.l __ZL9scrolling
 	clr.l _jsfFontIndx
-	moveq #1,%d0
-	move.l %d0,_jsfFontSize
-	moveq #38,%d1
-	move.l %d1,__ZL2tx
+	moveq #1,%d2
+	move.l %d2,_jsfFontSize
+	move.b #38,%d0
+	move.l %d0,__ZL2tx
 	move.l #182,__ZL2ty
 	clr.b __ZL6winner
 	move.b #84,__ZL7players
@@ -294,8 +324,8 @@ __Z9basicmainv:
 	move.b #111,__ZL7players+10243
 	move.b #100,__ZL7players+10244
 	clr.b __ZL7players+10245
-	moveq #2,%d2
-	move.l %d2,__ZL7intName
+	move.b #2,%d1
+	move.l %d1,__ZL7intName
 	clr.l __ZL12screenNumber
 	lea jsfGetPad,%a3
 	lea rapLocate,%a5
@@ -304,7 +334,7 @@ __Z9basicmainv:
 	lea _rapPrint,%a4
 	lea _jsfVsync,%a2
 	move.l #__Z18selectWinnerKeypadi,%d6
-	move.l #_cls,%d3
+	move.l #_cls,%d4
 	pea 1.w
 	jsr (%a3)
 	move.l %d0,%d2
@@ -337,7 +367,7 @@ __Z9basicmainv:
 	jne .L29
 	jra .L43
 .L46:
-	move.l %d3,%a0
+	move.l %d4,%a0
 	jsr (%a0)
 	moveq #1,%d0
 	move.l %d0,__ZL12screenNumber
@@ -346,7 +376,7 @@ __Z9basicmainv:
 	addq.l #4,%sp
 	jra .L47
 .L45:
-	move.l %d3,%a0
+	move.l %d4,%a0
 	jsr (%a0)
 	clr.l __ZL12screenNumber
 	and.l JAGPAD_STAR,%d2
@@ -361,7 +391,7 @@ __Z9basicmainv:
 	move.l %d1,-(%sp)
 	move.l %d0,-(%sp)
 	jsr (%a5)
-	move.l #.LC7,_js_r_textbuffer
+	move.l #.LC9,_js_r_textbuffer
 	addq.l #8,%sp
 	jsr (%a4)
 	moveq #1,%d0
@@ -381,18 +411,18 @@ __Z9basicmainv:
 .L44:
 	move.l %d2,%d0
 	and.l JAGPAD_UP,%d0
-	move.l __ZL4temp,%d4
+	move.l __ZL4temp,%d3
 	tst.l %d0
 	jeq .L36
-	addq.l #1,%d4
-	move.l %d4,__ZL4temp
+	addq.l #1,%d3
+	move.l %d3,__ZL4temp
 .L36:
 	and.l JAGPAD_DOWN,%d2
 	jeq .L37
-	subq.l #1,%d4
-	move.l %d4,__ZL4temp
+	subq.l #1,%d3
+	move.l %d3,__ZL4temp
 .L37:
-	pea 60.w
+	move.l __ZL5tempY,-(%sp)
 	pea 10.w
 	jsr (%a5)
 	addq.l #4,%sp
@@ -403,7 +433,9 @@ __Z9basicmainv:
 	move.l %d0,_js_r_textbuffer
 	addq.l #8,%sp
 	jsr (%a4)
-	pea 75.w
+	move.l __ZL5tempY,%d0
+	add.l __ZL7yGrowth,%d0
+	move.l %d0,-(%sp)
 	pea 10.w
 	jsr (%a5)
 	addq.l #4,%sp
@@ -415,11 +447,14 @@ __Z9basicmainv:
 	move.l %d0,_js_r_textbuffer
 	lea (12,%sp),%sp
 	jsr (%a4)
-	pea 90.w
+	move.l __ZL7yGrowth,%d0
+	add.l %d0,%d0
+	add.l __ZL5tempY,%d0
+	move.l %d0,-(%sp)
 	pea 10.w
 	jsr (%a5)
 	clr.b _BCX_TmpStr_buffer+11
-	move.b %d4,_BCX_TmpStr_buffer
+	move.b %d3,_BCX_TmpStr_buffer
 	clr.b _BCX_TmpStr_buffer+1
 	clr.b _BCX_TmpStr_buffer+2
 	clr.b _BCX_TmpStr_buffer+3
@@ -437,6 +472,23 @@ __Z9basicmainv:
 	jsr (%a0)
 	move.l %d0,_js_r_textbuffer
 	addq.l #8,%sp
+	jsr (%a4)
+	move.l __ZL7yGrowth,%d0
+	move.l %d0,%d1
+	add.l %d0,%d1
+	add.l %d1,%d0
+	add.l __ZL5tempY,%d0
+	move.l %d0,-(%sp)
+	pea 10.w
+	jsr (%a5)
+	addq.l #4,%sp
+	move.l %d3,(%sp)
+	pea .LC4
+	pea .LC5
+	move.l %d5,%a0
+	jsr (%a0)
+	move.l %d0,_js_r_textbuffer
+	lea (12,%sp),%sp
 	jsr (%a4)
 	move.l __ZL4pad1,%d2
 	move.l %d2,%d0
@@ -468,10 +520,10 @@ __Z9basicmainv:
 	move.b #32,1(%a0)
 	move.l #_BCX_TmpStr_buffer,%d7
 	pea _BCX_TmpStr_buffer
-	pea .LC4
-	pea __ZL6winner
-	pea .LC5
 	pea .LC6
+	pea __ZL6winner
+	pea .LC7
+	pea .LC8
 	move.l %d5,%a0
 	jsr (%a0)
 	move.l %d0,_js_r_textbuffer
@@ -488,10 +540,10 @@ __Z9basicmainv:
 .L51:
 	clr.b _BCX_TmpStr_buffer+1
 	pea _BCX_TmpStr_buffer
-	pea .LC4
-	pea __ZL6winner
-	pea .LC5
 	pea .LC6
+	pea __ZL6winner
+	pea .LC7
+	pea .LC8
 	move.l %d5,%a0
 	jsr (%a0)
 	move.l %d0,_js_r_textbuffer
@@ -560,7 +612,7 @@ __Z12ScrollStringiiiiPc:
 	move.l %d1,-(%sp)
 	move.l %d0,-(%sp)
 	jsr rapLocate
-	move.l #.LC7,_js_r_textbuffer
+	move.l #.LC9,_js_r_textbuffer
 	addq.l #8,%sp
 	jsr _rapPrint
 	move.l -8(%fp),%d2
@@ -581,10 +633,10 @@ __Z12ScrollStringiiiiPc:
 	move.b #32,_BCX_TmpStr_buffer
 	move.b #32,_BCX_TmpStr_buffer+1
 	pea _BCX_TmpStr_buffer
-	pea .LC4
-	move.l %d2,-(%sp)
-	pea .LC5
 	pea .LC6
+	move.l %d2,-(%sp)
+	pea .LC7
+	pea .LC8
 	jsr ee_printf
 	move.l %d0,_js_r_textbuffer
 	lea (20,%sp),%sp
@@ -600,10 +652,10 @@ __Z12ScrollStringiiiiPc:
 .L75:
 	clr.b _BCX_TmpStr_buffer+1
 	pea _BCX_TmpStr_buffer
-	pea .LC4
-	move.l %d2,-(%sp)
-	pea .LC5
 	pea .LC6
+	move.l %d2,-(%sp)
+	pea .LC7
+	pea .LC8
 	jsr ee_printf
 	move.l %d0,_js_r_textbuffer
 	lea (20,%sp),%sp
@@ -645,6 +697,8 @@ colliders:
 	.even
 sprite:
 	.long	RAPTOR_sprite_table
+.lcomm __ZL5tempY,4
+.lcomm __ZL7yGrowth,4
 .lcomm __ZL4temp,4
 .lcomm __ZL8tempName,2048
 .lcomm __ZL9scrolling,4
