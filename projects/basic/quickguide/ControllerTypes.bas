@@ -35,11 +35,13 @@ END FUNCTION
 'writes the players name
 FUNCTION writePlayerName(pad1 as INTEGER)
     IF pad1 BAND JAGPAD_UP THEN   			' If up is pressed, move the sprite up
-    temp+=1
+    speedTemp+=1
+    checkTemps()
     ENDIF
 
     IF pad1 BAND JAGPAD_DOWN THEN   		' If left is pressed, move the sprite left
-    temp-=1
+    speedTemp-=1
+    checkTemps()
     ENDIF
 	
     IF pad1 BAND JAGPAD_A THEN   		' If left is pressed, move the sprite left
@@ -60,6 +62,23 @@ FUNCTION writePlayerName(pad1 as INTEGER)
     IF pad1 BAND JAGPAD_8 THEN   		' If left is pressed, move the sprite left
     ENDIF
 
+END FUNCTION
+
+FUNCTION checkTemps()
+	if speedTemp >5 then
+		speedTemp=0
+		temp+=1
+	endif
+	if speedTemp < -5 then
+		speedTemp=0
+		temp-=1
+	endif
+	if temp < 65 then
+	 temp = 65 
+	endif
+	 if temp > 90 then
+	 temp = 90
+	endif
 END FUNCTION
 
 FUNCTION changeScreenKeypad(pad1 as INTEGER)
