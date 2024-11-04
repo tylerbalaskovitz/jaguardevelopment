@@ -1,13 +1,11 @@
 ' -----------------------------------------------------------------------
-'
-' Example project from the quickstart guide.
-'
+' Main States of the Program are here, from player creation, name creation, etc.  
 ' -----------------------------------------------------------------------
-
 
 ' -----------------------------------------------------------------------
 ' Define your sprite names here.  In the order of objects in rapinit.s
 ' -----------------------------------------------------------------------
+$include "CreatePlayers.bas" 
 $include "ControllerTypes.bas" 
 $include "MainMenu.bas" 
 $include "PlayerVariables.bas"
