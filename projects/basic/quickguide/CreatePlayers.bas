@@ -2,7 +2,7 @@ DIM speedTemp as INTEGER
 DIM temp as INTEGER
 DIM tempY as INTEGER
 DIM yGrowth as INTEGER
-DIM letterHolder$ as String
+DIM letterHolder as String
 DIM tempName as String
 tempY = 60
 yGrowth = 15
@@ -27,6 +27,7 @@ END FUNCTION
 
 FUNCTION addLetter(tempName as String, temp as INTEGER)
 
-	letterHolder$=CHR$(temp)
+	letterHolder=CHR$(temp)
+	tempName = tempName+letterHolder
 END FUNCTION
 

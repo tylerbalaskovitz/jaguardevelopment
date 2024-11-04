@@ -76,6 +76,7 @@ static char    testPlayerName[2048];
 static char    players[6][2048];
 static char    winner[2048];
 
+char*   join (int, ... );
 char*   chr(int,int=0,int=0,int=0,int=0,int=0,int=0,int=0,int=0,int=0);
 
 // *************************************************
@@ -257,6 +258,32 @@ char *chr (int a,int b,int c,int d,int e,int f,int g,int h,int i,int j)
 }
 
 
+char * join(int n, ...)
+{
+  register int i = n, tmplen = 0;
+  register char *s_;
+  register char *strtmp;
+  va_list marker;
+  va_start(marker, n); // Initialize variable arguments
+  while(i-- > 0)
+  {
+    s_ = va_arg(marker, char *);
+    if(s_) tmplen += strlen(s_);
+  }
+  strtmp = BCX_TmpStr(tmplen);
+  va_end(marker); // Reset variable arguments
+  i = n;
+  va_start(marker, n); // Initialize variable arguments
+  while(i-- > 0)
+  {
+    s_ = va_arg(marker, char *);
+    if(s_) strcat(strtmp, s_);
+  }
+  va_end(marker); // Reset variable arguments
+  return strtmp;
+}
+
+
 
 // ************************************
 //       User Subs and Functions
@@ -299,7 +326,9 @@ int addLetter (char *tempName, int temp)
 {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 30] letterHolder$=CHR$(temp)
   strcpy(letterHolder,chr(temp));
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 31] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 31] tempName = tempName&letterHolder$
+  tempName=tempName&letterHolder;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 32] END FUNCTION
 }
 
 
