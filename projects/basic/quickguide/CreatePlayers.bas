@@ -10,6 +10,12 @@ print "Write your players name"
 rapLocate 10,75
 print "Your name:",tempName
 rapLocate 10,90
+IF temp < 65 THEN
+	temp = 71
+ENDIF
+IF temp > 71 THEN
+	temp = 65
+ENDIF
 print CHR$(temp) 
 END FUNCTION
 
@@ -18,6 +24,7 @@ FUNCTION clearName(tempName as String)
 END FUNCTION
 
 FUNCTION addLetter(tempName as String, temp as INTEGER)
+
 	letterHolder$=CHR$(temp)
 END FUNCTION
 
