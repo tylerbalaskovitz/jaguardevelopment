@@ -67,6 +67,7 @@ static int     tx;
 static int     ty;
 static int     screenNumber;
 static int     pad1;
+static char    letterHolder[2048];
 static char    tempName[2048];
 static char    testPlayerName[2048];
 static char    players[6][2048];
@@ -102,14 +103,15 @@ void basicmain()
 {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 8] $include "CreatePlayers.bas"
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 1] DIM temp as INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 2] DIM tempName as String
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 3] temp = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 2] DIM letterHolder$ as String
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 3] DIM tempName as String
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 4] temp = 0
 temp=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 4] tempName = ""
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 5] tempName = ""
 *tempName=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 6] FUNCTION registerPlayer(temp as INTEGER, tempName as STRING)
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 15] FUNCTION clearName(tempName as String)
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 19] FUNCTION addLetter(tempName as String, temp as INTEGER)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 7] FUNCTION registerPlayer(temp as INTEGER, tempName as STRING)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 16] FUNCTION clearName(tempName as String)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 20] FUNCTION addLetter(tempName as String, temp as INTEGER)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 9] $include "ControllerTypes.bas"
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 2] FUNCTION selectWinnerKeypad(pad1 as INTEGER)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 36] FUNCTION writePlayerName(pad1 as INTEGER)
@@ -245,34 +247,38 @@ char *chr (int a,int b,int c,int d,int e,int f,int g,int h,int i,int j)
 
 int registerPlayer (int temp, char *tempName)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 7] rapLocate 10,0
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 8] rapLocate 10,0
   rapLocate(10,0);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 8] print "Write your players name"
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 9] print "Write your players name"
   js_r_textbuffer=ee_printf("%s","Write your players name");
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 9] rapLocate 10,30
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 10] rapLocate 10,30
   rapLocate(10,30);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 10] print CHR$(temp)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 11] print CHR$(temp)
   js_r_textbuffer=ee_printf("%s",chr(temp));
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 11] rapLocate 10,40
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 12] rapLocate 10,40
   rapLocate(10,40);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 12] print "Your name:",tempName
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 13] print "Your name:",tempName
   js_r_textbuffer=ee_printf("%s%s","Your name:",tempName);
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 13] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 14] END FUNCTION
 }
 
 
 int clearName (char *tempName)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 17] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 18] END FUNCTION
 }
 
 
 int addLetter (char *tempName, int temp)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 21] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 21] letterHolder$=CHR$(temp)
+  strcpy(letterHolder,chr(temp));
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 22] tempName = tempName + letterHolder
+  tempName+=letterHolder;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 23] END FUNCTION
 }
 
 

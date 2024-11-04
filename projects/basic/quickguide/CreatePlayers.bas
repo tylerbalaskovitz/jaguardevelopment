@@ -1,4 +1,5 @@
 DIM temp as INTEGER
+DIM letterHolder$ as String
 DIM tempName as String
 temp = 0
 tempName = ""
@@ -17,6 +18,7 @@ FUNCTION clearName(tempName as String)
 END FUNCTION
 
 FUNCTION addLetter(tempName as String, temp as INTEGER)
-
+	letterHolder$=CHR$(temp)
+	tempName = tempName + letterHolder
 END FUNCTION
 
