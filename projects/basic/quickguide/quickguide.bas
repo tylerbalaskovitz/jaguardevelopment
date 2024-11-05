@@ -9,6 +9,7 @@ $include "CreatePlayers.bas"
 $include "ControllerTypes.bas" 
 $include "MainMenu.bas" 
 $include "PlayerVariables.bas"
+$include "ScoreBoard.bas"
 const sprParticleLayer% = 0
 const sprBug1% = 1
 
