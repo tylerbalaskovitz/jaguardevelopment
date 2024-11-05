@@ -1,3 +1,6 @@
+DIM upperCase as INTEGER
+DIM lowerASCII as INTEGER
+DIM upperASCII as INTEGER
 DIM speedTemp as INTEGER
 DIM inputSpeed as INTEGER
 DIM temp as INTEGER
@@ -8,6 +11,9 @@ DIM letterHolder as String
 DIM tempName as String
 DIM playerLimit as INTEGER
 DIM selectedPlayer as INTEGER
+upperCase = 1
+lowerASCII = 65
+upperASCII = 90
 inputSpeed = 0
 selectedPlayer = 0 
 playerLimit = 6
@@ -22,8 +28,11 @@ FUNCTION registerPlayer(temp as INTEGER, tempName as STRING)
 	rapLocate 10, tempY
 	print "Write player ",selectedPlayer+1,"'s name"
 	rapLocate 10, tempY+=yGrowth
-	print SPACE$(50)
-	print "Your name:",tempName
+	print SPACE$(20)
+	print "Current Name: ",players$[selectedPlayer] 
+	rapLocate 10, tempY+=yGrowth
+	print SPACE$(20)
+	print "New name:",tempName
 	rapLocate 10, tempY+=yGrowth
 	print CHR$(temp) 
 	rapLocate 10, tempY+=yGrowth

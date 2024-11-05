@@ -99,11 +99,11 @@ FUNCTION checkTemps()
 		speedTemp=0
 		temp-=1
 	endif
-	if temp < 65 then
-	 temp = 65 
+	if temp < lowerASCII then
+	 temp = lowerASCII 
 	endif
-	 if temp > 90 then
-	 temp = 90
+	 if temp > upperASCII then
+	 temp = upperASCII 
 	endif
 END FUNCTION
 
