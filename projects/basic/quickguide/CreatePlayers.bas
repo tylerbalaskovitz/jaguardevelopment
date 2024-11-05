@@ -70,10 +70,12 @@ END FUNCTIOn
 FUNCTION addLetter(tempName as String)
 	inputSpeed+=1
 	if inputSpeed > 5 then
+	IF LEN(tempName) < 11 THEN
 		letterHolder=CHR$(temp)
 		tempName= CONCAT(tempName,letterHolder)
+	ENDIF
 	inputSpeed = 0
-	endif
+	ENDIF	
 END FUNCTION
 
 FUNCTION changeCase()
