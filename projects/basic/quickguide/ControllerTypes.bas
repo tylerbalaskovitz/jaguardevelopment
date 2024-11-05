@@ -88,6 +88,8 @@ FUNCTION writePlayerName(pad1 as INTEGER)
     IF pad1 BAND JAGPAD_9 THEN   		' If left is pressed, move the sprite left
     ENDIF
 
+    IF pad1 BAND JAGPAD_0 THEN   		' If left is pressed, move the sprite left
+    ENDIF
 END FUNCTION
 
 FUNCTION checkTemps()
@@ -99,11 +101,21 @@ FUNCTION checkTemps()
 		speedTemp=0
 		temp-=1
 	endif
-	if temp < lowerASCII then
-	 temp = lowerASCII 
+	if upperCase = 1 then
+		if temp < upperCaseLow then
+		 temp = upperCaseLow 
+		endif
+		 if temp > upperCaseHigh then
+		 temp = upperCaseHigh 
+		endif
 	endif
-	 if temp > upperASCII then
-	 temp = upperASCII 
+	if upperCase = 0 then
+		if temp < lowerCaseLow then
+		 temp = lowerCaseLow 
+		endif
+		 if temp > lowerCaseHigh then
+		 temp = lowerCaseHigh 
+		endif
 	endif
 END FUNCTION
 

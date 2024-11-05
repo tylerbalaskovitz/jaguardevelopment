@@ -1,6 +1,8 @@
 DIM upperCase as INTEGER
-DIM lowerASCII as INTEGER
-DIM upperASCII as INTEGER
+DIM upperCaseLow as INTEGER
+DIM upperCaseHigh as INTEGER
+DIM lowerCaseLow as INTEGER
+DIM lowerCaseHigh as INTEGER
 DIM speedTemp as INTEGER
 DIM inputSpeed as INTEGER
 DIM temp as INTEGER
@@ -12,8 +14,10 @@ DIM tempName as String
 DIM playerLimit as INTEGER
 DIM selectedPlayer as INTEGER
 upperCase = 1
-lowerASCII = 65
-upperASCII = 90
+upperCaseLow = 65
+upperCaseHigh = 90
+lowerCaseLow = 97
+lowerCaseHigh = 122 
 inputSpeed = 0
 selectedPlayer = 0 
 playerLimit = 6
@@ -40,10 +44,12 @@ FUNCTION registerPlayer(temp as INTEGER, tempName as STRING)
 	tempY=tempYStart
 END FUNCTION
 
+
 FUNCTION confirmName(confirmedName as Integer)
 	CLEAR(players$[confirmedName])
 	players$[confirmedName] = CONCAT(players$[confirmedName], tempName)
 END FUNCTION
+
 
 FUNCTION clearName()
 	CLEAR(tempName) 
