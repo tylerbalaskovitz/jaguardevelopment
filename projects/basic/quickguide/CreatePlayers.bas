@@ -22,12 +22,15 @@ FUNCTION registerPlayer(temp as INTEGER, tempName as STRING)
 END FUNCTION
 
 FUNCTION clearName(tempName as String)
-
+	tempName = clear(tempName) 
 END FUNCTION
 
-FUNCTION addLetter(tempName as String, temp as INTEGER)
-
-	letterHolder=CHR$(temp)
-	tempName = tempName+letterHolder
+FUNCTION addLetter(tempName as String)
+	speedTemp=10
+	IF speedTemp = 10 THEN 
+		letterHolder=CHR$(temp)
+		tempName= CONCAT(tempName,letterHolder)
+	ENDIF	
+	speedTemp = 0
 END FUNCTION
 
