@@ -32,10 +32,10 @@ FUNCTION registerPlayer(temp as INTEGER, tempName as STRING)
 	rapLocate 10, tempY
 	print "Write player ",selectedPlayer+1,"'s name"
 	rapLocate 10, tempY+=yGrowth
-	print SPACE$(20)
+	print SPACE$(23)
 	print "Current Name: ",players$[selectedPlayer] 
 	rapLocate 10, tempY+=yGrowth
-	print SPACE$(20)
+	print SPACE$(23)
 	print "New name:",tempName
 	rapLocate 10, tempY+=yGrowth
 	print CHR$(temp) 
@@ -54,6 +54,18 @@ END FUNCTION
 FUNCTION clearName()
 	CLEAR(tempName) 
 END FUNCTION
+
+FUNCTION removeLetter()
+	inputSpeed+=1
+	IF inputSpeed > 5 THEN 
+	IF LEN(tempName) > 0 THEN 
+		tempName=MID$(tempName, 1, LEN(tempName)-1)
+	ENDIF	
+	inputSpeed = 0
+	ENDIF	
+
+
+END FUNCTIOn
 
 FUNCTION addLetter(tempName as String)
 	inputSpeed+=1
