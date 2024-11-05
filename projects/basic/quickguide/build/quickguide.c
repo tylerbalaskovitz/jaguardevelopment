@@ -523,8 +523,8 @@ int writePlayerName (int pad1)
       checkTemps();
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 46] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 48] IF pad1 BAND JAGPAD_A THEN
-  if(pad1 BAND JAGPAD_A)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 48] IF pad1 BAND JAGPAD_OPTION THEN
+  if(pad1 BAND JAGPAD_OPTION)
     {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 49] clearName()
       clearName();
