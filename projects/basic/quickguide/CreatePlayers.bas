@@ -39,8 +39,6 @@ FUNCTION registerPlayer(temp as INTEGER, tempName as STRING)
 	print "New name:",tempName
 	rapLocate 10, tempY+=yGrowth
 	print CHR$(temp) 
-	rapLocate 10, tempY+=yGrowth
-	print "ASCII value as ", temp
 	tempY=tempYStart
 END FUNCTION
 
