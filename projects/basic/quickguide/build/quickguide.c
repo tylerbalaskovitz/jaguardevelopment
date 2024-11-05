@@ -60,8 +60,10 @@ char*   BCX_TmpStr(size_t);
 // *************************************************
 
 static int     upperCase;
-static int     lowerASCII;
-static int     upperASCII;
+static int     upperCaseLow;
+static int     upperCaseHigh;
+static int     lowerCaseLow;
+static int     lowerCaseHigh;
 static int     speedTemp;
 static int     inputSpeed;
 static int     temp;
@@ -94,9 +96,10 @@ int     registerPlayer (int, char *);
 int     confirmName (int);
 int     clearName (void);
 int     addLetter (char *);
-int     checkTemps (void);
+int     changeCase (void);
 int     selectWinnerKeypad (int);
 int     writePlayerName (int);
+int     checkTemps (void);
 int     changeScreenKeypad (int);
 int     ScrollString (int, int, int, int, char *);
 int     writeName (void);
@@ -116,51 +119,58 @@ void basicmain()
 {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 8] $include "CreatePlayers.bas"
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 1] DIM upperCase as INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 2] DIM lowerASCII as INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 3] DIM upperASCII as INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 4] DIM speedTemp as INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 5] DIM inputSpeed as INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 6] DIM temp as INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 7] DIM tempY as INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 8] DIM tempYStart as INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 9] DIM yGrowth as INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 10] DIM letterHolder as String
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 11] DIM tempName as String
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 12] DIM playerLimit as INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 13] DIM selectedPlayer as INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 14] upperCase = 1
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 2] DIM upperCaseLow as INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 3] DIM upperCaseHigh as INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 4] DIM lowerCaseLow as INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 5] DIM lowerCaseHigh as INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 6] DIM speedTemp as INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 7] DIM inputSpeed as INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 8] DIM temp as INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 9] DIM tempY as INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 10] DIM tempYStart as INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 11] DIM yGrowth as INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 12] DIM letterHolder as String
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 13] DIM tempName as String
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 14] DIM playerLimit as INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 15] DIM selectedPlayer as INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 16] upperCase = 1
 upperCase=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 15] lowerASCII = 65
-lowerASCII=65;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 16] upperASCII = 90
-upperASCII=90;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 17] inputSpeed = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 17] upperCaseLow = 65
+upperCaseLow=65;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 18] upperCaseHigh = 90
+upperCaseHigh=90;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 19] lowerCaseLow = 97
+lowerCaseLow=97;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 20] lowerCaseHigh = 122
+lowerCaseHigh=122;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 21] inputSpeed = 0
 inputSpeed=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 18] selectedPlayer = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 22] selectedPlayer = 0
 selectedPlayer=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 19] playerLimit = 6
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 23] playerLimit = 6
 playerLimit=6;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 20] tempYStart =60
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 24] tempYStart =60
 tempYStart=60;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 21] tempY = 60
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 25] tempY = 60
 tempY=60;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 22] yGrowth = 15
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 26] yGrowth = 15
 yGrowth=15;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 23] speedTemp = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 27] speedTemp = 0
 speedTemp=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 24] temp = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 28] temp = 0
 temp=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 25] tempName = ""
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 29] tempName = ""
 *tempName=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 27] FUNCTION registerPlayer(temp as INTEGER, tempName as STRING)
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 43] FUNCTION confirmName(confirmedName as Integer)
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 48] FUNCTION clearName()
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 52] FUNCTION addLetter(tempName as String)
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 61] FUNCTION checkTemps()
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 31] FUNCTION registerPlayer(temp as INTEGER, tempName as STRING)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 48] FUNCTION confirmName(confirmedName as Integer)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 54] FUNCTION clearName()
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 58] FUNCTION addLetter(tempName as String)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 67] FUNCTION changeCase()
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 9] $include "ControllerTypes.bas"
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 3] FUNCTION selectWinnerKeypad(pad1 as INTEGER)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 37] FUNCTION writePlayerName(pad1 as INTEGER)
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 94] FUNCTION changeScreenKeypad(pad1 as INTEGER)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 96] FUNCTION checkTemps()
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 123] FUNCTION changeScreenKeypad(pad1 as INTEGER)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 10] $include "MainMenu.bas"
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/MainMenu.bas - 1] DIM scrolling AS INTEGER
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/MainMenu.bas - 2] DIM spaces as INTEGER
@@ -296,115 +306,100 @@ char *chr (int a,int b,int c,int d,int e,int f,int g,int h,int i,int j)
 
 int registerPlayer (int temp, char *tempName)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 28] rapLocate 10, tempY
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 32] rapLocate 10, tempY
   rapLocate(10,tempY);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 29] print "Write player ",selectedPlayer+1,"'s name"
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 33] print "Write player ",selectedPlayer+1,"'s name"
   js_r_textbuffer=ee_printf("%s% d%s","Write player ",(int)selectedPlayer+1,"'s name");
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 30] rapLocate 10, tempY+=yGrowth
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 34] rapLocate 10, tempY+=yGrowth
   rapLocate(10,tempY+=yGrowth);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 31] print SPACE$(20)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 35] print SPACE$(20)
   js_r_textbuffer=ee_printf("%s",space(20));
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 32] print "Current Name: ",players$[selectedPlayer]
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 36] print "Current Name: ",players$[selectedPlayer]
   js_r_textbuffer=ee_printf("%s%s","Current Name: ",players[selectedPlayer]);
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 33] rapLocate 10, tempY+=yGrowth
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 37] rapLocate 10, tempY+=yGrowth
   rapLocate(10,tempY+=yGrowth);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 34] print SPACE$(20)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 38] print SPACE$(20)
   js_r_textbuffer=ee_printf("%s",space(20));
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 35] print "New name:",tempName
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 39] print "New name:",tempName
   js_r_textbuffer=ee_printf("%s%s","New name:",tempName);
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 36] rapLocate 10, tempY+=yGrowth
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 40] rapLocate 10, tempY+=yGrowth
   rapLocate(10,tempY+=yGrowth);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 37] print CHR$(temp)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 41] print CHR$(temp)
   js_r_textbuffer=ee_printf("%s",chr(temp));
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 38] rapLocate 10, tempY+=yGrowth
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 42] rapLocate 10, tempY+=yGrowth
   rapLocate(10,tempY+=yGrowth);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 39] print "ASCII value as ", temp
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 43] print "ASCII value as ", temp
   js_r_textbuffer=ee_printf("%s% d","ASCII value as ",(int)temp);
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 40] tempY=tempYStart
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 44] tempY=tempYStart
   tempY=tempYStart;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 41] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 45] END FUNCTION
 }
 
 
 int confirmName (int confirmedName)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 44] CLEAR(players$[confirmedName])
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 49] CLEAR(players$[confirmedName])
   Clear (players[confirmedName]);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 45] players$[confirmedName] = CONCAT(players$[confirmedName], tempName)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 50] players$[confirmedName] = CONCAT(players$[confirmedName], tempName)
   strcpy(players[confirmedName],strcat(players[confirmedName],tempName));
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 46] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 51] END FUNCTION
 }
 
 
 int clearName (void)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 49] CLEAR(tempName)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 55] CLEAR(tempName)
   Clear (tempName);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 50] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 56] END FUNCTION
 }
 
 
 int addLetter (char *tempName)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 53] inputSpeed+=1
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 59] inputSpeed+=1
   inputSpeed+=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 54] if inputSpeed > 5 then
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 60] if inputSpeed > 5 then
   if(inputSpeed>5)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 55] letterHolder=CHR$(temp)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 61] letterHolder=CHR$(temp)
       strcpy(letterHolder,chr(temp));
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 56] tempName= CONCAT(tempName,letterHolder)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 62] tempName= CONCAT(tempName,letterHolder)
       tempName=strcat(tempName,letterHolder);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 57] inputSpeed = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 63] inputSpeed = 0
       inputSpeed=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 58] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 64] endif
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 59] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 65] END FUNCTION
 }
 
 
-int checkTemps (void)
+int changeCase (void)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 62] if speedTemp >5 then
-  if(speedTemp>5)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 68] IF upperCase = 1 THEN
+  if(upperCase==1)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 63] speedTemp=0
-      speedTemp=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 64] temp+=1
-      temp+=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 65] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 69] temp+=37
+      temp+=37;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 70] upperCase = 0
+      upperCase=0;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 71] ELSE
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 66] if speedTemp < -5 then
-  if(speedTemp<-5)
+  else
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 67] speedTemp=0
-      speedTemp=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 68] temp-=1
-      temp-=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 69] endif
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 72] temp-=37
+      temp-=37;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 73] upperCase = 1
+      upperCase=1;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 74] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 70] if temp < lowerASCII then
-  if(temp<lowerASCII)
-    {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 71] temp = lowerASCII
-      temp=lowerASCII;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 72] endif
-    }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 73] if temp > upperASCII then
-  if(temp>upperASCII)
-    {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 74] temp = upperASCII
-      temp=upperASCII;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 75] endif
-    }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 76] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 75] END FUNCTION
 }
 
 
@@ -564,36 +559,105 @@ int writePlayerName (int pad1)
     {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 89] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 91] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 91] IF pad1 BAND JAGPAD_0 THEN
+  if(pad1 BAND JAGPAD_0)
+    {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 92] changeCase()
+      changeCase();
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 93] ENDIF
+    }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 94] END FUNCTION
+}
+
+
+int checkTemps (void)
+{
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 97] if speedTemp >5 then
+  if(speedTemp>5)
+    {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 98] speedTemp=0
+      speedTemp=0;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 99] temp+=1
+      temp+=1;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 100] endif
+    }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 101] if speedTemp < -5 then
+  if(speedTemp<-5)
+    {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 102] speedTemp=0
+      speedTemp=0;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 103] temp-=1
+      temp-=1;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 104] endif
+    }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 105] if upperCase = 1 then
+  if(upperCase==1)
+    {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 106] if temp < upperCaseLow then
+      if(temp<upperCaseLow)
+        {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 107] temp = upperCaseLow
+          temp=upperCaseLow;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 108] endif
+        }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 109] if temp > upperCaseHigh then
+      if(temp>upperCaseHigh)
+        {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 110] temp = upperCaseHigh
+          temp=upperCaseHigh;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 111] endif
+        }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 112] endif
+    }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 113] if upperCase = 0 then
+  if(upperCase==0)
+    {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 114] if temp < lowerCaseLow then
+      if(temp<lowerCaseLow)
+        {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 115] temp = lowerCaseLow
+          temp=lowerCaseLow;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 116] endif
+        }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 117] if temp > lowerCaseHigh then
+      if(temp>lowerCaseHigh)
+        {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 118] temp = lowerCaseHigh
+          temp=lowerCaseHigh;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 119] endif
+        }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 120] endif
+    }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 121] END FUNCTION
 }
 
 
 int changeScreenKeypad (int pad1)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 95] IF pad1 BAND JAGPAD_HASH THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 124] IF pad1 BAND JAGPAD_HASH THEN
   if(pad1 BAND JAGPAD_HASH)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 96] cls
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 125] cls
       cls();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 97] screenNumber = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 126] screenNumber = 0
       screenNumber=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 98] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 127] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 100] IF pad1 BAND JAGPAD_STAR THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 129] IF pad1 BAND JAGPAD_STAR THEN
   if(pad1 BAND JAGPAD_STAR)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 101] cls
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 130] cls
       cls();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 102] writeName()
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 131] writeName()
       writeName();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 103] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 132] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 104] IF pad1 BAND JAGPAD_B THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 133] IF pad1 BAND JAGPAD_B THEN
   if(pad1 BAND JAGPAD_B)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 106] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 135] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 107] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 136] END FUNCTION
 }
 
 

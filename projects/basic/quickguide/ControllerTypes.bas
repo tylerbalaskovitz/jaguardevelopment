@@ -89,6 +89,7 @@ FUNCTION writePlayerName(pad1 as INTEGER)
     ENDIF
 
     IF pad1 BAND JAGPAD_0 THEN   		' If left is pressed, move the sprite left
+    changeCase()
     ENDIF
 END FUNCTION
 

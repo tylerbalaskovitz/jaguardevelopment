@@ -64,3 +64,12 @@ FUNCTION addLetter(tempName as String)
 	endif
 END FUNCTION
 
+FUNCTION changeCase()
+	IF upperCase = 1 THEN 
+		temp+=37
+		upperCase = 0
+	ELSE 
+		temp-=37
+		upperCase = 1
+	ENDIF
+END FUNCTION
