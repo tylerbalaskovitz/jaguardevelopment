@@ -385,16 +385,16 @@ int changeCase (void)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 68] IF upperCase = 1 THEN
   if(upperCase==1)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 69] temp+=37
-      temp+=37;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 69] temp+=32
+      temp+=32;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 70] upperCase = 0
       upperCase=0;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 71] ELSE
     }
   else
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 72] temp-=37
-      temp-=37;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 72] temp-=32
+      temp-=32;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 73] upperCase = 1
       upperCase=1;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 74] ENDIF

@@ -269,14 +269,14 @@ __Z10changeCasev:
 	moveq #1,%d0
 	cmp.l __ZL9upperCase.l,%d0
 	jeq .L23
-	moveq #-37,%d0
+	moveq #-32,%d0
 	add.l %d0,__ZL4temp
 	moveq #1,%d0
 	move.l %d0,__ZL9upperCase
 	unlk %fp
 	rts
 .L23:
-	move.b #37,%d0
+	move.b #32,%d0
 	add.l %d0,__ZL4temp
 	clr.l __ZL9upperCase
 	unlk %fp
@@ -497,7 +497,7 @@ __Z15writePlayerNamei:
 	moveq #1,%d0
 	cmp.l __ZL9upperCase.l,%d0
 	jeq .L74
-	moveq #-37,%d0
+	moveq #-32,%d0
 	add.l %d0,__ZL4temp
 	moveq #1,%d1
 	move.l %d1,__ZL9upperCase
@@ -579,7 +579,7 @@ __Z15writePlayerNamei:
 	jeq .L55
 	jra .L70
 .L74:
-	moveq #37,%d1
+	moveq #32,%d1
 	add.l %d1,__ZL4temp
 	clr.l __ZL9upperCase
 	move.l -8(%fp),%d2
