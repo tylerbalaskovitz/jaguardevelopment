@@ -20,7 +20,7 @@ tempName = ""
 
 FUNCTION registerPlayer(temp as INTEGER, tempName as STRING)
 	rapLocate 10, tempY
-	print "Write player ",selectedPlayer,"'s name"
+	print "Write player ",selectedPlayer+1,"'s name"
 	rapLocate 10, tempY+=yGrowth
 	print SPACE$(50)
 	print "Your name:",tempName

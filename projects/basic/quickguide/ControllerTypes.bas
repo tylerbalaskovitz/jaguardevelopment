@@ -58,26 +58,26 @@ FUNCTION writePlayerName(pad1 as INTEGER)
     ENDIF
 
     IF pad1 BAND JAGPAD_1 THEN   		' If left is pressed, move the sprite left
-    selectedPlayer = 1
+    selectedPlayer = 0 
     ENDIF
 
     IF pad1 BAND JAGPAD_2 THEN   		' If left is pressed, move the sprite left
-    selectedPlayer = 2 
+    selectedPlayer = 1 
     ENDIF
     
     IF pad1 BAND JAGPAD_3 THEN   		' If left is pressed, move the sprite left
-    selectedPlayer = 3 
+    selectedPlayer = 2 
     ENDIF
     IF pad1 BAND JAGPAD_4 THEN   		' If left is pressed, move the sprite left
-    selectedPlayer = 4 
+    selectedPlayer = 3 
     ENDIF
 
     IF pad1 BAND JAGPAD_5 THEN   		' If left is pressed, move the sprite left
-    selectedPlayer = 5 
+    selectedPlayer = 4 
     ENDIF
     
     IF pad1 BAND JAGPAD_6 THEN   		' If left is pressed, move the sprite left
-    selectedPlayer = 6 
+    selectedPlayer = 5 
     ENDIF
     IF pad1 BAND JAGPAD_7 THEN   		' If left is pressed, move the sprite left
     ENDIF
