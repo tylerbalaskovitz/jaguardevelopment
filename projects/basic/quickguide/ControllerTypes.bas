@@ -111,18 +111,18 @@ FUNCTION checkTemps()
 	endif
 	if upperCase = 1 then
 		if temp < upperCaseLow then
-		 temp = upperCaseLow 
+		 temp = upperCaseHigh 
 		endif
 		 if temp > upperCaseHigh then
-		 temp = upperCaseHigh 
+		 temp = upperCaseLow 
 		endif
 	endif
 	if upperCase = 0 then
 		if temp < lowerCaseLow then
-		 temp = lowerCaseLow 
+		 temp = lowerCaseHigh 
 		endif
 		 if temp > lowerCaseHigh then
-		 temp = lowerCaseHigh 
+		 temp = lowerCaseLow 
 		endif
 	endif
 END FUNCTION
