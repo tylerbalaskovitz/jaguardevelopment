@@ -286,8 +286,8 @@ int registerPlayer (int temp, char *tempName)
 {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 22] rapLocate 10, tempY
   rapLocate(10,tempY);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 23] print "Write player ",selectedPlayer,"'s name"
-  js_r_textbuffer=ee_printf("%s% d%s","Write player ",(int)selectedPlayer,"'s name");
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 23] print "Write player ",selectedPlayer+1,"'s name"
+  js_r_textbuffer=ee_printf("%s% d%s","Write player ",(int)selectedPlayer+1,"'s name");
   rapPrint();
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 24] rapLocate 10, tempY+=yGrowth
   rapLocate(10,tempY+=yGrowth);
@@ -335,8 +335,8 @@ int addLetter (char *tempName)
 {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 44] inputSpeed+=1
   inputSpeed+=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 45] if inputSpeed > 4 then
-  if(inputSpeed>4)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 45] if inputSpeed > 5 then
+  if(inputSpeed>5)
     {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 46] letterHolder=CHR$(temp)
       strcpy(letterHolder,chr(temp));
@@ -452,43 +452,43 @@ int writePlayerName (int pad1)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 60] IF pad1 BAND JAGPAD_1 THEN
   if(pad1 BAND JAGPAD_1)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 61] selectedPlayer = 1
-      selectedPlayer=1;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 61] selectedPlayer = 0
+      selectedPlayer=0;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 62] ENDIF
     }
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 64] IF pad1 BAND JAGPAD_2 THEN
   if(pad1 BAND JAGPAD_2)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 65] selectedPlayer = 2
-      selectedPlayer=2;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 65] selectedPlayer = 1
+      selectedPlayer=1;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 66] ENDIF
     }
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 68] IF pad1 BAND JAGPAD_3 THEN
   if(pad1 BAND JAGPAD_3)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 69] selectedPlayer = 3
-      selectedPlayer=3;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 69] selectedPlayer = 2
+      selectedPlayer=2;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 70] ENDIF
     }
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 71] IF pad1 BAND JAGPAD_4 THEN
   if(pad1 BAND JAGPAD_4)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 72] selectedPlayer = 4
-      selectedPlayer=4;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 72] selectedPlayer = 3
+      selectedPlayer=3;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 73] ENDIF
     }
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 75] IF pad1 BAND JAGPAD_5 THEN
   if(pad1 BAND JAGPAD_5)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 76] selectedPlayer = 5
-      selectedPlayer=5;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 76] selectedPlayer = 4
+      selectedPlayer=4;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 77] ENDIF
     }
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 79] IF pad1 BAND JAGPAD_6 THEN
   if(pad1 BAND JAGPAD_6)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 80] selectedPlayer = 6
-      selectedPlayer=6;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 80] selectedPlayer = 5
+      selectedPlayer=5;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 81] ENDIF
     }
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 82] IF pad1 BAND JAGPAD_7 THEN

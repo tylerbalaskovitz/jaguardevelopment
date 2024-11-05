@@ -78,7 +78,9 @@ __Z14registerPlayeriPc:
 	jsr (%a4)
 	addq.l #4,%sp
 	move.l #.LC0,(%sp)
-	move.l __ZL14selectedPlayer,-(%sp)
+	move.l __ZL14selectedPlayer,%d0
+	addq.l #1,%d0
+	move.l %d0,-(%sp)
 	pea .LC1
 	pea .LC2
 	lea ee_printf,%a3
@@ -197,7 +199,7 @@ __Z9addLetterPc:
 	move.l __ZL10inputSpeed,%d0
 	addq.l #1,%d0
 	move.l %d0,__ZL10inputSpeed
-	moveq #4,%d1
+	moveq #5,%d1
 	cmp.l %d0,%d1
 	jlt .L16
 	unlk %fp
@@ -350,37 +352,36 @@ __Z15writePlayerNamei:
 	move.l %d2,%d0
 	and.l JAGPAD_1,%d0
 	jeq .L50
-	moveq #1,%d1
-	move.l %d1,__ZL14selectedPlayer
+	clr.l __ZL14selectedPlayer
 .L50:
 	move.l %d2,%d0
 	and.l JAGPAD_2,%d0
 	jeq .L51
-	moveq #2,%d0
-	move.l %d0,__ZL14selectedPlayer
+	moveq #1,%d1
+	move.l %d1,__ZL14selectedPlayer
 .L51:
 	move.l %d2,%d0
 	and.l JAGPAD_3,%d0
 	jeq .L52
-	moveq #3,%d1
-	move.l %d1,__ZL14selectedPlayer
+	moveq #2,%d0
+	move.l %d0,__ZL14selectedPlayer
 .L52:
 	move.l %d2,%d0
 	and.l JAGPAD_4,%d0
 	jeq .L53
-	moveq #4,%d0
-	move.l %d0,__ZL14selectedPlayer
+	moveq #3,%d1
+	move.l %d1,__ZL14selectedPlayer
 .L53:
 	move.l %d2,%d0
 	and.l JAGPAD_5,%d0
 	jeq .L54
-	moveq #5,%d1
-	move.l %d1,__ZL14selectedPlayer
+	moveq #4,%d0
+	move.l %d0,__ZL14selectedPlayer
 .L54:
 	and.l JAGPAD_6,%d2
 	jeq .L56
-	moveq #6,%d0
-	move.l %d0,__ZL14selectedPlayer
+	moveq #5,%d1
+	move.l %d1,__ZL14selectedPlayer
 .L56:
 	move.l -8(%fp),%d2
 	move.l -4(%fp),%d3
@@ -407,7 +408,7 @@ __Z15writePlayerNamei:
 	move.l __ZL10inputSpeed,%d0
 	addq.l #1,%d0
 	move.l %d0,__ZL10inputSpeed
-	moveq #4,%d1
+	moveq #5,%d1
 	cmp.l %d0,%d1
 	jge .L48
 	clr.b _BCX_TmpStr_buffer+11
@@ -692,7 +693,9 @@ __Z9basicmainv:
 	jsr (%a5)
 	addq.l #4,%sp
 	move.l #.LC0,(%sp)
-	move.l __ZL14selectedPlayer,-(%sp)
+	move.l __ZL14selectedPlayer,%d0
+	addq.l #1,%d0
+	move.l %d0,-(%sp)
 	pea .LC1
 	pea .LC2
 	move.l %d3,%a0

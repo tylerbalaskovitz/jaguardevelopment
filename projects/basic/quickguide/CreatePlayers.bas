@@ -9,7 +9,7 @@ DIM tempName as String
 DIM playerLimit as INTEGER
 DIM selectedPlayer as INTEGER
 inputSpeed = 0
-selectedPlayer = 1
+selectedPlayer = 0 
 playerLimit = 6
 tempYStart =60
 tempY = 60
