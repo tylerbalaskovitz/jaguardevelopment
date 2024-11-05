@@ -21,8 +21,8 @@ FUNCTION registerPlayer(temp as INTEGER, tempName as STRING)
 	print "ASCII value as ", temp
 END FUNCTION
 
-FUNCTION clearName(tempName as String)
-	tempName = clear(tempName) 
+FUNCTION clearName()
+	CLEAR(tempName) 
 END FUNCTION
 
 FUNCTION addLetter(tempName as String)

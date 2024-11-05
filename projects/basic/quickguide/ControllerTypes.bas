@@ -45,7 +45,7 @@ FUNCTION writePlayerName(pad1 as INTEGER)
     ENDIF
 	
     IF pad1 BAND JAGPAD_A THEN   		' If left is pressed, move the sprite left
-    clearName(tempName)
+    clearName()
     ENDIF
     
     IF pad1 BAND JAGPAD_B THEN   		' If left is pressed, move the sprite left

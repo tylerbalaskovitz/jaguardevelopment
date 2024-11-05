@@ -37,11 +37,11 @@
 //               Standard Macros
 // *************************************************
 #define BAND &
+#define Clear(arg)memset(&arg,0,sizeof(arg))
 // *************************************************
 //               Standard Prototypes
 // *************************************************
 char*   BCX_TmpStr(size_t);
-char*   space (int a);
 
 // *************************************************
 //            User Defined Constants
@@ -76,6 +76,7 @@ static char    testPlayerName[2048];
 static char    players[6][2048];
 static char    winner[2048];
 
+char*   space (int a);
 char*   chr(int,int=0,int=0,int=0,int=0,int=0,int=0,int=0,int=0,int=0);
 
 // *************************************************
@@ -83,7 +84,7 @@ char*   chr(int,int=0,int=0,int=0,int=0,int=0,int=0,int=0,int=0,int=0);
 // *************************************************
 
 int     registerPlayer (int, char *);
-int     clearName (char *);
+int     clearName (void);
 int     addLetter (char *);
 int     selectWinnerKeypad (int);
 int     writePlayerName (int);
@@ -123,8 +124,8 @@ temp=0;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 11] tempName = ""
 *tempName=0;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 13] FUNCTION registerPlayer(temp as INTEGER, tempName as STRING)
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 24] FUNCTION clearName(tempName as String)
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 28] FUNCTION addLetter(tempName as String)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 24] FUNCTION clearName()
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 29] FUNCTION addLetter(tempName as String)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 9] $include "ControllerTypes.bas"
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 2] FUNCTION selectWinnerKeypad(pad1 as INTEGER)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 36] FUNCTION writePlayerName(pad1 as INTEGER)
@@ -289,30 +290,32 @@ int registerPlayer (int temp, char *tempName)
 }
 
 
-int clearName (char *tempName)
+int clearName (void)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 25] tempName = clear(tempName)
-  tempName=clear(tempName);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 26] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 25] CLEAR(tempName)
+  Clear (tempName);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 26] VSYNC
+  jsfVsync(0);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 27] END FUNCTION
 }
 
 
 int addLetter (char *tempName)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 29] speedTemp=10
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 30] speedTemp=10
   speedTemp=10;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 30] IF speedTemp = 10 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 31] IF speedTemp = 10 THEN
   if(speedTemp==10)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 31] letterHolder=CHR$(temp)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 32] letterHolder=CHR$(temp)
       strcpy(letterHolder,chr(temp));
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 32] tempName= CONCAT(tempName,letterHolder)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 33] tempName= CONCAT(tempName,letterHolder)
       tempName=strcat(tempName,letterHolder);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 33] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 34] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 34] speedTemp = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 35] speedTemp = 0
   speedTemp=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 35] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 36] END FUNCTION
 }
 
 
@@ -397,8 +400,8 @@ int writePlayerName (int pad1)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 47] IF pad1 BAND JAGPAD_A THEN
   if(pad1 BAND JAGPAD_A)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 48] clearName(tempName)
-      clearName(tempName);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 48] clearName()
+      clearName();
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 49] ENDIF
     }
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 51] IF pad1 BAND JAGPAD_B THEN
