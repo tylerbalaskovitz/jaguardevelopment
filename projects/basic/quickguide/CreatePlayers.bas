@@ -13,7 +13,7 @@ DIM tempYStart as INTEGER
 DIM yGrowth as INTEGER
 DIM letterHolder as String
 DIM tempName as String
-DIM playerLimit as INTEGER
+DIM maxPlayers as INTEGER
 DIM selectedPlayer as INTEGER
 
 upperCase = 1
@@ -23,7 +23,7 @@ lowerCaseLow = 97
 lowerCaseHigh = 122 
 inputSpeed = 0
 selectedPlayer = 0 
-playerLimit = 6
+maxPlayers = 6
 speedTemp = 0
 temp = 0
 tempName = ""

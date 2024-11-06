@@ -72,7 +72,7 @@ static int     xGrowth;
 static int     tempY;
 static int     tempYStart;
 static int     yGrowth;
-static int     playerLimit;
+static int     maxPlayers;
 static int     selectedPlayer;
 static int     scrolling;
 static int     spaces;
@@ -81,10 +81,12 @@ static int     tx;
 static int     ty;
 static int     screenNumber;
 static int     pad1;
+static int     playerNumber;
 static char    letterHolder[2048];
 static char    tempName[2048];
 static char    testPlayerName[2048];
 static char    players[6][2048];
+static int     playerScores[6];
 static char    winner[2048];
 
 char*   mid (char*, int, int=-1);
@@ -139,7 +141,7 @@ void basicmain()
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 13] DIM yGrowth as INTEGER
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 14] DIM letterHolder as String
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 15] DIM tempName as String
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 16] DIM playerLimit as INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 16] DIM maxPlayers as INTEGER
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 17] DIM selectedPlayer as INTEGER
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 19] upperCase = 1
 upperCase=1;
@@ -155,8 +157,8 @@ lowerCaseHigh=122;
 inputSpeed=0;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 25] selectedPlayer = 0
 selectedPlayer=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 26] playerLimit = 6
-playerLimit=6;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 26] maxPlayers = 6
+maxPlayers=6;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 27] speedTemp = 0
 speedTemp=0;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 28] temp = 0
@@ -185,40 +187,54 @@ scrolling=0;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 1] DIM intName as INTEGER
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 2] DIM testPlayerName as STRING
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 3] DIM players$[6]
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 4] DIM tx AS INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 5] DIM ty AS INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 6] DIM winner AS STRING
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 7] DIM screenNumber as INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 8] DIM pad1 AS INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 10] jsfSetFontIndx(0)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 4] DIM playerScores[6]
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 5] DIM tx AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 6] DIM ty AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 7] DIM winner AS STRING
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 8] DIM screenNumber as INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 9] DIM pad1 AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 11] jsfSetFontIndx(0)
 jsfSetFontIndx(0);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 11] jsfSetFontSize(1)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 12] jsfSetFontSize(1)
 jsfSetFontSize(1);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 13] tx = 38
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 14] tx = 38
 tx=38;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 14] ty = 182
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 15] ty = 182
 ty=182;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 15] winner = ""
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 16] winner = ""
 *winner=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 17] players$[0]="Tyler"
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 18] players$[0]="Tyler"
 strcpy(players[0],"Tyler");
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 18] players$[1] = "Loving"
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 19] players$[1] = "Loving"
 strcpy(players[1],"Loving");
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 19] players$[2] = "John"
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 20] players$[2] = "John"
 strcpy(players[2],"John");
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 20] players$[3] = "Navraj"
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 21] players$[3] = "Navraj"
 strcpy(players[3],"Navraj");
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 21] players$[4] = "Matt"
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 22] players$[4] = "Matt"
 strcpy(players[4],"Matt");
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 22] players$[5] = "Jarod"
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 23] players$[5] = "Jarod"
 strcpy(players[5],"Jarod");
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 23] intName = 2
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 24] playerScores[0] = 0
+playerScores[0]=0;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 25] playerScores[1] = 0
+playerScores[1]=0;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 26] playerScores[2] = 0
+playerScores[2]=0;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 27] playerScores[3] = 0
+playerScores[3]=0;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 28] playerScores[4] = 0
+playerScores[4]=0;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 29] playerScores[5] = 0
+playerScores[5]=0;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 30] intName = 2
 intName=2;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 24] screenNumber = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 31] screenNumber = 0
 screenNumber=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 27] FUNCTION writeName()
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 32] FUNCTION AssignWinner(inputString AS STRING)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 34] FUNCTION writeName()
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 39] FUNCTION AssignWinner(inputString AS STRING)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 12] $include "ScoreBoard.bas"
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 1] DIM playerNumber
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 3] FUNCTION drawScoreboard(maxPlayers AS INTEGER)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 13] const sprParticleLayer% = 0
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 14] const sprBug1% = 1
@@ -901,53 +917,61 @@ int ScrollString (int scrolling, int tx, int ty, int spaces, char *inputString)
 
 int writeName (void)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 28] screenNumber = 1
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 35] screenNumber = 1
   screenNumber=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 29] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 36] END FUNCTION
 }
 
 
 int AssignWinner (char *inputString)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 33] winner = inputString
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 40] winner = inputString
   strcpy(winner,inputString);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 34] scrolling = 1
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 41] scrolling = 1
   scrolling=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 35] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 42] END FUNCTION
 }
 
 
 int drawScoreboard (int maxPlayers)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 4] rapLocate 10, tempY
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 4] tempX = 10
+  tempX=10;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 5] tempY = 60
+  tempY=60;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 6] yGrowth = 20
+  yGrowth=20;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 7] tempYStart = 60
+  tempYStart=60;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 9] rapLocate 10, tempY
   rapLocate(10,tempY);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 5] print "# ",selectedPlayer+1,"'s name"
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 10] print "# ",selectedPlayer+1,"'s name"
   js_r_textbuffer=ee_printf("%s% d%s","# ",(int)selectedPlayer+1,"'s name");
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 6] rapLocate 10, tempY+=yGrowth
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 11] rapLocate 10, tempY+=yGrowth
   rapLocate(10,tempY+=yGrowth);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 7] print SPACE$(21)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 12] print SPACE$(21)
   js_r_textbuffer=ee_printf("%s",space(21));
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 8] print "Current Name: ",players$[selectedPlayer]
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 13] print "Current Name: ",players$[selectedPlayer]
   js_r_textbuffer=ee_printf("%s%s","Current Name: ",players[selectedPlayer]);
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 9] rapLocate 10, tempY+=yGrowth
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 14] rapLocate 10, tempY+=yGrowth
   rapLocate(10,tempY+=yGrowth);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 10] print SPACE$(21)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 15] print SPACE$(21)
   js_r_textbuffer=ee_printf("%s",space(21));
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 11] print "New name:",tempName
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 16] print "New name:",tempName
   js_r_textbuffer=ee_printf("%s%s","New name:",tempName);
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 12] rapLocate 10, tempY+=yGrowth
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 17] rapLocate 10, tempY+=yGrowth
   rapLocate(10,tempY+=yGrowth);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 13] print CHR$(temp)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 18] print CHR$(temp)
   js_r_textbuffer=ee_printf("%s",chr(temp));
   rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 14] tempY=tempYStart
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 19] tempY=tempYStart
   tempY=tempYStart;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 15] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 20] END FUNCTION
 }
 
 

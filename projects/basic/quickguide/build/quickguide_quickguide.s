@@ -1120,15 +1120,22 @@ __Z12AssignWinnerPc:
 __Z14drawScoreboardi:
 	link.w %fp,#0
 	movem.l #8252,-(%sp)
-	move.l __ZL5tempY,-(%sp)
+	moveq #10,%d0
+	move.l %d0,__ZL5tempX
+	moveq #60,%d1
+	move.l %d1,__ZL5tempY
+	move.b #20,%d0
+	move.l %d0,__ZL7yGrowth
+	move.l %d1,__ZL10tempYStart
+	pea 60.w
 	pea 10.w
 	lea rapLocate,%a4
 	jsr (%a4)
 	addq.l #4,%sp
 	move.l #.LC0,(%sp)
-	move.l __ZL14selectedPlayer,%d0
-	addq.l #1,%d0
-	move.l %d0,-(%sp)
+	move.l __ZL14selectedPlayer,%d1
+	addq.l #1,%d1
+	move.l %d1,-(%sp)
 	pea .LC11
 	pea .LC2
 	lea ee_printf,%a3
@@ -1243,7 +1250,7 @@ __Z9basicmainv:
 	clr.l __ZL10inputSpeed
 	clr.l __ZL14selectedPlayer
 	move.b #6,%d2
-	move.l %d2,__ZL11playerLimit
+	move.l %d2,__ZL10maxPlayers
 	clr.l __ZL9speedTemp
 	clr.l __ZL4temp
 	clr.b __ZL8tempName
@@ -1291,6 +1298,12 @@ __Z9basicmainv:
 	move.b #111,__ZL7players+10243
 	move.b #100,__ZL7players+10244
 	clr.b __ZL7players+10245
+	clr.l __ZL12playerScores
+	clr.l __ZL12playerScores+4
+	clr.l __ZL12playerScores+8
+	clr.l __ZL12playerScores+12
+	clr.l __ZL12playerScores+16
+	clr.l __ZL12playerScores+20
 	move.b #2,%d2
 	move.l %d2,__ZL7intName
 	clr.l __ZL12screenNumber
@@ -1590,7 +1603,7 @@ sprite:
 .lcomm __ZL13lowerCaseHigh,4
 .lcomm __ZL10inputSpeed,4
 .lcomm __ZL14selectedPlayer,4
-.lcomm __ZL11playerLimit,4
+.lcomm __ZL10maxPlayers,4
 .lcomm __ZL9speedTemp,4
 .lcomm __ZL4temp,4
 .lcomm __ZL8tempName,2048
@@ -1599,6 +1612,7 @@ sprite:
 .lcomm __ZL2ty,4
 .lcomm __ZL6winner,2048
 .lcomm __ZL7players,12288
+.lcomm __ZL12playerScores,24
 .lcomm __ZL7intName,4
 .lcomm __ZL12screenNumber,4
 .lcomm __ZL4pad1,4

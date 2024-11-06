@@ -1,6 +1,11 @@
-
+DIM playerNumber
 
 FUNCTION drawScoreboard(maxPlayers AS INTEGER)
+	tempX = 10
+	tempY = 60
+	yGrowth = 20
+	tempYStart = 60
+
 	rapLocate 10, tempY
 	print "# ",selectedPlayer+1,"'s name"
 	rapLocate 10, tempY+=yGrowth
