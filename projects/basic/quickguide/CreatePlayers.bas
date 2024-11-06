@@ -6,6 +6,8 @@ DIM lowerCaseHigh as INTEGER
 DIM speedTemp as INTEGER
 DIM inputSpeed as INTEGER
 DIM temp as INTEGER
+DIM tempX as INTEGER
+DIM xGrowth as INTEGER
 DIM tempY as INTEGER
 DIM tempYStart as INTEGER
 DIM yGrowth as INTEGER
@@ -13,6 +15,7 @@ DIM letterHolder as String
 DIM tempName as String
 DIM playerLimit as INTEGER
 DIM selectedPlayer as INTEGER
+
 upperCase = 1
 upperCaseLow = 65
 upperCaseHigh = 90
@@ -21,23 +24,29 @@ lowerCaseHigh = 122
 inputSpeed = 0
 selectedPlayer = 0 
 playerLimit = 6
-tempYStart =60
-tempY = 60
-yGrowth = 20
 speedTemp = 0
 temp = 0
 tempName = ""
 
+
+
+
+
 FUNCTION registerPlayer(temp as INTEGER, tempName as STRING)
-	rapLocate 10, tempY
+	tempX = 10
+	tempY = 60
+	yGrowth = 20
+	tempYStart = 60
+
+	rapLocate tempX, tempY
 	print "Write player ",selectedPlayer+1,"'s name"
-	rapLocate 10, tempY+=yGrowth
+	rapLocate tempX, tempY+=yGrowth
 	print SPACE$(21)
 	print "Current Name: ",players$[selectedPlayer] 
-	rapLocate 10, tempY+=yGrowth
+	rapLocate tempX, tempY+=yGrowth
 	print SPACE$(21)
 	print "New name:",tempName
-	rapLocate 10, tempY+=yGrowth
+	rapLocate tempX, tempY+=yGrowth
 	print CHR$(temp) 
 	tempY=tempYStart
 END FUNCTION

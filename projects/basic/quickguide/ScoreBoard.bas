@@ -1,6 +1,6 @@
 
 
-FUNCTION drawScoreboard(maxPlayers AS INTEGER, )
+FUNCTION drawScoreboard(maxPlayers AS INTEGER)
 	rapLocate 10, tempY
 	print "# ",selectedPlayer+1,"'s name"
 	rapLocate 10, tempY+=yGrowth
