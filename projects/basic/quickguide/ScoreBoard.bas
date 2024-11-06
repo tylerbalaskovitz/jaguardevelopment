@@ -1,4 +1,5 @@
-DIM playerNumber
+DIM playerNumber AS INTEGER
+playerNumber = 1
 
 FUNCTION drawScoreboard(maxPlayers AS INTEGER)
 	tempX = 10
