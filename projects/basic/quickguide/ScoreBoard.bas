@@ -11,7 +11,8 @@ FUNCTION drawScoreboard(maxPlayers AS INTEGER)
 	tempX = 10
 	tempY = 60
 	yGrowth = 20
-	tempYStart = 60
+	defaultY = 60
+	defaultX = 10
 
  FOR Counter = playerNumber TO maxPlayers STEP StepNumber
  IF Counter = 0 THEN
@@ -23,12 +24,13 @@ FUNCTION drawScoreboard(maxPlayers AS INTEGER)
 	print "Score"
 	rapLocate tempX+=xGrowth, tempY
 ENDIF
+IF COUNTER >= 1 THEN
 	rapLocate tempX, tempY
 	print playerNumber 
 	rapLocate tempX+=xGrowth, tempY
 	print players$[Counter] 
 	rapLocate tempX+=xGrowth, tempY
 	print playerScores[Counter] 
-
+ENDIF
  NEXT
 END FUNCTION

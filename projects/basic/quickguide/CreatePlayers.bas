@@ -7,9 +7,10 @@ DIM speedTemp as INTEGER
 DIM inputSpeed as INTEGER
 DIM temp as INTEGER
 DIM tempX as INTEGER
+DIM defaultX as INTEGER
 DIM xGrowth as INTEGER
 DIM tempY as INTEGER
-DIM tempYStart as INTEGER
+DIM defaultY as INTEGER
 DIM yGrowth as INTEGER
 DIM letterHolder as String
 DIM tempName as String
@@ -36,7 +37,7 @@ FUNCTION registerPlayer(temp as INTEGER, tempName as STRING)
 	tempX = 10
 	tempY = 60
 	yGrowth = 20
-	tempYStart = 60
+	defaultY = 60
 
 	rapLocate tempX, tempY
 	print "Write player ",selectedPlayer+1,"'s name"
@@ -48,7 +49,7 @@ FUNCTION registerPlayer(temp as INTEGER, tempName as STRING)
 	print "New name:",tempName
 	rapLocate tempX, tempY+=yGrowth
 	print CHR$(temp) 
-	tempY=tempYStart
+	tempY=defaultY
 END FUNCTION
 
 
