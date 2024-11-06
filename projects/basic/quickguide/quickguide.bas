@@ -31,7 +31,7 @@ IF screenNumber = 1 THEN
 ENDIF
 IF screenNumber = 2 THEN
 	keepScore(pad1)
-	registerPlayer(temp, tempName)
+	drawScoreboard(temp, tempName)
 ENDIF
 changeScreenKeypad(pad1)
 
