@@ -1,10 +1,8 @@
-DIM AS INTEGER Counter, StepNumber
+DIM Counter AS INTEGER
+DIM StepNumber AS INTEGER
 DIM playerNumber AS INTEGER
 playerNumber = 0 
-StartNumber = 1
-EndNumber = maxPlayers 
 StepNumber = 1
-
 
 
 FUNCTION drawScoreboard(maxPlayers AS INTEGER)
@@ -14,8 +12,8 @@ FUNCTION drawScoreboard(maxPlayers AS INTEGER)
 	defaultY = 60
 	defaultX = 10
 
- FOR Counter = playerNumber TO maxPlayers STEP StepNumber
- IF Counter = 0 THEN
+FOR Counter = playerNumber TO maxPlayers STEP StepNumber
+IF Counter = 0 THEN
 	rapLocate tempX, tempY
 	print "# "
 	rapLocate tempX+=xGrowth, tempY
@@ -24,7 +22,7 @@ FUNCTION drawScoreboard(maxPlayers AS INTEGER)
 	print "Score"
 	rapLocate tempX+=xGrowth, tempY
 ENDIF
-IF COUNTER >= 1 THEN
+IF Counter >= 1 THEN
 	rapLocate tempX, tempY
 	print playerNumber 
 	rapLocate tempX+=xGrowth, tempY
@@ -32,5 +30,5 @@ IF COUNTER >= 1 THEN
 	rapLocate tempX+=xGrowth, tempY
 	print playerScores[Counter] 
 ENDIF
- NEXT
+NEXT
 END FUNCTION

@@ -207,7 +207,8 @@ FUNCTION changeScreenKeypad(pad1 as INTEGER)
 		    screenNumber+=1 
 	    ENDIF
 	    inputSpeed = 0
-		'writeName()
+	    	cls
+		writeName()
 	ENDIF
 	IF pad1 BAND JAGPAD_B THEN   			' If B is pressed, play the sound effect
 		
