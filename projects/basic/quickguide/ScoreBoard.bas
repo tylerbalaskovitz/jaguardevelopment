@@ -9,10 +9,11 @@ FUNCTION drawScoreboard(maxPlayers AS INTEGER)
 	tempX = 10
 	tempY = 60
 	yGrowth = 20
+	xGrowth = 40
 	defaultY = 60
 	defaultX = 10
 
-FOR Counter = playerNumber TO maxPlayers STEP StepNumber
+FOR Counter = playerNumber TO maxPlayers-1 STEP StepNumber
 IF Counter = 0 THEN
 	rapLocate tempX, tempY
 	print "# "
@@ -20,15 +21,17 @@ IF Counter = 0 THEN
 	print "Name:"
 	rapLocate tempX+=xGrowth, tempY
 	print "Score"
-	rapLocate tempX+=xGrowth, tempY
+	rapLocate tempX+=(xGrowth*3), tempY
 ENDIF
-IF Counter >= 1 THEN
-	rapLocate tempX, tempY
+IF Counter >= 100 THEN
+	rapLocate tempX, tempY+=yGrowth
 	print playerNumber 
-	rapLocate tempX+=xGrowth, tempY
+	rapLocate tempX+=xGrowth, tempY+=yGrowth
 	print players$[Counter] 
-	rapLocate tempX+=xGrowth, tempY
+	rapLocate tempX+=xGrowth, tempY+=yGrowth
 	print playerScores[Counter] 
 ENDIF
+	tempX = defaultX
 NEXT
+	tempY = defaultY
 END FUNCTION

@@ -859,41 +859,45 @@ int changeScreenKeypad (int pad1)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 196] IF pad1 BAND JAGPAD_HASH THEN
   if(pad1 BAND JAGPAD_HASH)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 197] IF inputSpeed > 5 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 197] inputSpeed+=1
+      inputSpeed+=1;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 198] IF inputSpeed > 5 THEN
       if(inputSpeed>5)
         {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 198] cls
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 199] cls
           cls();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 199] screenNumber-=1
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 200] screenNumber-=1
           screenNumber-=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 200] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 201] ENDIF
         }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 201] inputSpeed = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 202] inputSpeed = 0
       inputSpeed=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 202] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 203] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 204] IF pad1 BAND JAGPAD_STAR THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 205] inputSpeed+=1
+  inputSpeed+=1;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 206] IF pad1 BAND JAGPAD_STAR THEN
   if(pad1 BAND JAGPAD_STAR)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 205] IF inputSpeed > 5 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 207] IF inputSpeed > 5 THEN
       if(inputSpeed>5)
         {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 206] cls
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 208] cls
           cls();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 207] screenNumber+=1
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 209] screenNumber+=1
           screenNumber+=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 208] ENDIF
-        }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 209] inputSpeed = 0
-      inputSpeed=0;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 210] ENDIF
+        }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 211] inputSpeed = 0
+      inputSpeed=0;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 212] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 211] IF pad1 BAND JAGPAD_B THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 213] IF pad1 BAND JAGPAD_B THEN
   if(pad1 BAND JAGPAD_B)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 213] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 215] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 214] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 216] END FUNCTION
 }
 
 
@@ -955,58 +959,64 @@ int drawScoreboard (int maxPlayers)
   tempY=60;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 11] yGrowth = 20
   yGrowth=20;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 12] defaultY = 60
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 12] xGrowth = 40
+  xGrowth=40;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 13] defaultY = 60
   defaultY=60;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 13] defaultX = 10
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 14] defaultX = 10
   defaultX=10;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 15] FOR Counter = playerNumber TO maxPlayers STEP StepNumber
-  for(Counter=playerNumber; StepNumber>=0 ? Counter<=maxPlayers : Counter>=maxPlayers; Counter+=StepNumber)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 16] FOR Counter = playerNumber TO maxPlayers-1 STEP StepNumber
+  for(Counter=playerNumber; StepNumber>=0 ? Counter<=maxPlayers-1 : Counter>=maxPlayers-1; Counter+=StepNumber)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 16] IF Counter = 0 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 17] IF Counter = 0 THEN
       if(Counter==0)
         {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 17] rapLocate tempX, tempY
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 18] rapLocate tempX, tempY
           rapLocate(tempX,tempY);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 18] print "# "
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 19] print "# "
           js_r_textbuffer=ee_printf("%s","# ");
           rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 19] rapLocate tempX+=xGrowth, tempY
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 20] rapLocate tempX+=xGrowth, tempY
           rapLocate(tempX+=xGrowth,tempY);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 20] print "Name:"
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 21] print "Name:"
           js_r_textbuffer=ee_printf("%s","Name:");
           rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 21] rapLocate tempX+=xGrowth, tempY
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 22] rapLocate tempX+=xGrowth, tempY
           rapLocate(tempX+=xGrowth,tempY);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 22] print "Score"
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 23] print "Score"
           js_r_textbuffer=ee_printf("%s","Score");
           rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 23] rapLocate tempX+=xGrowth, tempY
-          rapLocate(tempX+=xGrowth,tempY);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 24] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 24] rapLocate tempX+=(xGrowth*3), tempY
+          rapLocate(tempX+=(xGrowth*3),tempY);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 25] ENDIF
         }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 25] IF Counter >= 1 THEN
-      if(Counter>=1)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 26] IF Counter >= 100 THEN
+      if(Counter>=100)
         {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 26] rapLocate tempX, tempY
-          rapLocate(tempX,tempY);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 27] print playerNumber
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 27] rapLocate tempX, tempY+=yGrowth
+          rapLocate(tempX,tempY+=yGrowth);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 28] print playerNumber
           js_r_textbuffer=ee_printf("% d",(int)playerNumber);
           rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 28] rapLocate tempX+=xGrowth, tempY
-          rapLocate(tempX+=xGrowth,tempY);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 29] print players$[Counter]
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 29] rapLocate tempX+=xGrowth, tempY+=yGrowth
+          rapLocate(tempX+=xGrowth,tempY+=yGrowth);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 30] print players$[Counter]
           js_r_textbuffer=ee_printf("%s",players[Counter]);
           rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 30] rapLocate tempX+=xGrowth, tempY
-          rapLocate(tempX+=xGrowth,tempY);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 31] print playerScores[Counter]
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 31] rapLocate tempX+=xGrowth, tempY+=yGrowth
+          rapLocate(tempX+=xGrowth,tempY+=yGrowth);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 32] print playerScores[Counter]
           js_r_textbuffer=ee_printf("% d",(int)playerScores[Counter]);
           rapPrint();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 32] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 33] ENDIF
         }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 33] NEXT
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 34] tempX = defaultX
+      tempX=defaultX;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 35] NEXT
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 34] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 36] tempY = defaultY
+  tempY=defaultY;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 37] END FUNCTION
 }
 
 
