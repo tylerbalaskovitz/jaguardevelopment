@@ -1,5 +1,11 @@
+DIM AS INTEGER Counterr, StepNumber
 DIM playerNumber AS INTEGER
-playerNumber = 1
+playerNumber = 0 
+StartNumber = 1
+EndNumber = maxPlayers 
+StepNumber = 1
+
+
 
 FUNCTION drawScoreboard(maxPlayers AS INTEGER)
 	tempX = 10
@@ -7,15 +13,15 @@ FUNCTION drawScoreboard(maxPlayers AS INTEGER)
 	yGrowth = 20
 	tempYStart = 60
 
-	rapLocate 10, tempY
-	print "# ",selectedPlayer+1,"'s name"
-	rapLocate 10, tempY+=yGrowth
-	print SPACE$(21)
-	print "Current Name: ",players$[selectedPlayer] 
-	rapLocate 10, tempY+=yGrowth
-	print SPACE$(21)
-	print "New name:",tempName
-	rapLocate 10, tempY+=yGrowth
-	print CHR$(temp) 
-	tempY=tempYStart
+ FOR Counter = playerNumber TO maxPlayers STEP StepNumber
+ IF Counter = 0 THEN
+	rapLocate tempX, tempY
+	print "# "
+	rapLocate tempX+=xGrowth, tempY
+	print "Name:"
+	rapLocate tempX+=xGrowth, tempY
+	print "Score"
+	rapLocate tempX+=xGrowth, tempY
+
+ NEXT
 END FUNCTION
