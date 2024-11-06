@@ -196,7 +196,7 @@ FUNCTION changeScreenKeypad(pad1 as INTEGER)
     IF pad1 BAND JAGPAD_HASH THEN   		' If left is pressed, move the sprite left
 	    IF inputSpeed > 5 THEN
 		    cls
-		    screenNumber-=1 
+		    screenNumber=0 
 	    ENDIF
 	    inputSpeed = 0
     ENDIF
@@ -204,10 +204,9 @@ FUNCTION changeScreenKeypad(pad1 as INTEGER)
 	IF pad1 BAND JAGPAD_STAR THEN
 	    IF inputSpeed > 5 THEN
 		    cls
-		    screenNumber+=1 
+		   ' screenNumber+=1 
 	    ENDIF
 	    inputSpeed = 0
-	    	cls
 		writeName()
 	ENDIF
 	IF pad1 BAND JAGPAD_B THEN   			' If B is pressed, play the sound effect

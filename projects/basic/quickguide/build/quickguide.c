@@ -866,8 +866,8 @@ int changeScreenKeypad (int pad1)
         {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 198] cls
           cls();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 199] screenNumber-=1
-          screenNumber-=1;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 199] screenNumber=0
+          screenNumber=0;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 200] ENDIF
         }
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 201] inputSpeed = 0
@@ -882,24 +882,20 @@ int changeScreenKeypad (int pad1)
         {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 206] cls
           cls();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 207] screenNumber+=1
-          screenNumber+=1;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 208] ENDIF
         }
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 209] inputSpeed = 0
       inputSpeed=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 210] cls
-      cls();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 211] writeName()
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 210] writeName()
       writeName();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 212] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 211] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 213] IF pad1 BAND JAGPAD_B THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 212] IF pad1 BAND JAGPAD_B THEN
   if(pad1 BAND JAGPAD_B)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 215] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 214] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 216] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 215] END FUNCTION
 }
 
 

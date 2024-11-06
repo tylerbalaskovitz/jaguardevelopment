@@ -30,10 +30,6 @@ playerScores[5] = 0
 intName = 2
 screenNumber = 0 
 
-'Changes to the screen for writing a player's name
-FUNCTION writeName()
-	screenNumber = 1
-END FUNCTION
 
 'Assigns a player as the winner of the game
 FUNCTION AssignWinner(inputString AS STRING)
