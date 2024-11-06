@@ -112,7 +112,6 @@ int     checkTemps (void);
 int     keepScore (int);
 int     changeScreenKeypad (int);
 int     ScrollString (int, int, int, int, char *);
-int     writeName (void);
 int     AssignWinner (char *);
 int     drawScoreboard (int);
 
@@ -235,8 +234,7 @@ playerScores[5]=0;
 intName=2;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 31] screenNumber = 0
 screenNumber=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 34] FUNCTION writeName()
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 39] FUNCTION AssignWinner(inputString AS STRING)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 35] FUNCTION AssignWinner(inputString AS STRING)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 12] $include "ScoreBoard.bas"
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 1] DIM Counter AS INTEGER
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 2] DIM StepNumber AS INTEGER
@@ -866,8 +864,8 @@ int changeScreenKeypad (int pad1)
         {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 198] cls
           cls();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 199] screenNumber=0
-          screenNumber=0;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 199] screenNumber-=1
+          screenNumber-=1;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 200] ENDIF
         }
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 201] inputSpeed = 0
@@ -882,20 +880,20 @@ int changeScreenKeypad (int pad1)
         {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 206] cls
           cls();
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 207] screenNumber+=1
+          screenNumber+=1;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 208] ENDIF
         }
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 209] inputSpeed = 0
       inputSpeed=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 210] writeName()
-      writeName();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 211] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 210] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 212] IF pad1 BAND JAGPAD_B THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 211] IF pad1 BAND JAGPAD_B THEN
   if(pad1 BAND JAGPAD_B)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 214] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 213] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 215] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 214] END FUNCTION
 }
 
 
@@ -939,21 +937,13 @@ int ScrollString (int scrolling, int tx, int ty, int spaces, char *inputString)
 }
 
 
-int writeName (void)
-{
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 35] screenNumber = 1
-  screenNumber=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 36] END FUNCTION
-}
-
-
 int AssignWinner (char *inputString)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 40] winner = inputString
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 36] winner = inputString
   strcpy(winner,inputString);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 41] scrolling = 1
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 37] scrolling = 1
   scrolling=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 42] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/PlayerVariables.bas - 38] END FUNCTION
 }
 
 
