@@ -29,6 +29,10 @@ IF screenNumber = 1 THEN
 	writePlayerName(pad1)
 	registerPlayer(temp, tempName)
 ENDIF
+IF screenNumber = 2 THEN
+	keepScore(pad1)
+	registerPlayer(temp, tempName)
+ENDIF
 changeScreenKeypad(pad1)
 
 	'Updates images on screen

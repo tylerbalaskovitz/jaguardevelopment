@@ -127,6 +127,71 @@ FUNCTION checkTemps()
 	endif
 END FUNCTION
 
+FUNCTION keepScore(pad1 as INTEGER)
+    IF pad1 BAND JAGPAD_UP THEN   			' If up is pressed, move the sprite up
+    speedTemp+=1
+    checkTemps()
+    ENDIF
+
+    IF pad1 BAND JAGPAD_DOWN THEN   		' If left is pressed, move the sprite left
+    speedTemp-=1
+    checkTemps()
+    ENDIF
+	
+    IF pad1 BAND JAGPAD_OPTION THEN   		' If left is pressed, move the sprite left
+	    clearName()
+    ENDIF
+    IF pad1 BAND JAGPAD_A THEN   		' If left is pressed, move the sprite left
+   	removeLetter()
+    ENDIF
+    
+    IF pad1 BAND JAGPAD_B THEN   		' If left is pressed, move the sprite left
+	addLetter(tempName)
+    ENDIF
+
+    IF pad1 BAND JAGPAD_C THEN   		' If left is pressed, move the sprite left
+    confirmName(selectedPlayer)
+    ENDIF
+
+    IF pad1 BAND JAGPAD_1 THEN   		' If left is pressed, move the sprite left
+    selectedPlayer = 0 
+    ENDIF
+
+    IF pad1 BAND JAGPAD_2 THEN   		' If left is pressed, move the sprite left
+    selectedPlayer = 1 
+    ENDIF
+    
+    IF pad1 BAND JAGPAD_3 THEN   		' If left is pressed, move the sprite left
+    selectedPlayer = 2 
+    ENDIF
+    IF pad1 BAND JAGPAD_4 THEN   		' If left is pressed, move the sprite left
+    selectedPlayer = 3 
+    ENDIF
+
+    IF pad1 BAND JAGPAD_5 THEN   		' If left is pressed, move the sprite left
+    selectedPlayer = 4 
+    ENDIF
+    
+    IF pad1 BAND JAGPAD_6 THEN   		' If left is pressed, move the sprite left
+    selectedPlayer = 5 
+    ENDIF
+    IF pad1 BAND JAGPAD_7 THEN   		' If left is pressed, move the sprite left
+    ENDIF
+
+    IF pad1 BAND JAGPAD_8 THEN   		' If left is pressed, move the sprite left
+    ENDIF
+    
+    IF pad1 BAND JAGPAD_9 THEN   		' If left is pressed, move the sprite left
+    ENDIF
+
+    IF pad1 BAND JAGPAD_0 THEN   		' If left is pressed, move the sprite left
+	    inputSpeed+=1
+		    IF inputSpeed > 5 THEN
+		    changeCase()
+	    inputSpeed = 0
+	    ENDIF
+    ENDIF
+END FUNCTION
 FUNCTION changeScreenKeypad(pad1 as INTEGER)
     IF pad1 BAND JAGPAD_HASH THEN   		' If left is pressed, move the sprite left
 	    cls
