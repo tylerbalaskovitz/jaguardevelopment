@@ -967,16 +967,16 @@ int drawScoreboard (int maxPlayers)
   defaultX=10;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 15] Counter = 0
   Counter=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 17] FOR Counter = playerNumber TO maxPlayers-2 STEP StepNumber
-  for(Counter=playerNumber; StepNumber>=0 ? Counter<=maxPlayers-2 : Counter>=maxPlayers-2; Counter+=StepNumber)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 17] FOR Counter = playerNumber TO maxPlayers STEP StepNumber
+  for(Counter=playerNumber; StepNumber>=0 ? Counter<=maxPlayers : Counter>=maxPlayers; Counter+=StepNumber)
     {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 18] IF Counter = 0 THEN
       if(Counter==0)
         {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 19] rapLocate tempX, tempY
           rapLocate(tempX,tempY);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 20] print "# "
-          js_r_textbuffer=ee_printf("%s","# ");
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 20] print " #"
+          js_r_textbuffer=ee_printf("%s"," #");
           rapPrint();
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 21] rapLocate tempX+=xGrowth, tempY
           rapLocate(tempX+=xGrowth,tempY);
@@ -995,18 +995,18 @@ int drawScoreboard (int maxPlayers)
         {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 27] rapLocate tempX, tempY+=yGrowth
           rapLocate(tempX,tempY+=yGrowth);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 28] print playerNumber
-          js_r_textbuffer=ee_printf("% d",(int)playerNumber);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 28] print Counter
+          js_r_textbuffer=ee_printf("% d",(int)Counter);
           rapPrint();
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 29] rapLocate tempX+=xGrowth, tempY
           rapLocate(tempX+=xGrowth,tempY);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 30] print players$[Counter]
-          js_r_textbuffer=ee_printf("%s",players[Counter]);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 30] print players$[Counter-1]
+          js_r_textbuffer=ee_printf("%s",players[Counter-1]);
           rapPrint();
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 31] rapLocate tempX+=(xGrowth*4)+10, tempY
           rapLocate(tempX+=(xGrowth*4)+10,tempY);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 32] print playerScores[Counter]
-          js_r_textbuffer=ee_printf("% d",(int)playerScores[Counter]);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 32] print playerScores[Counter-1]
+          js_r_textbuffer=ee_printf("% d",(int)playerScores[Counter-1]);
           rapPrint();
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 33] ENDIF
         }

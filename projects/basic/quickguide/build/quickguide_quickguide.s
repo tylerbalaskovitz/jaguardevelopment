@@ -1120,7 +1120,7 @@ __Z12AssignWinnerPc:
 	unlk %fp
 	rts
 .LC11:
-	.ascii "# \0"
+	.ascii " #\0"
 .LC12:
 	.ascii "Name:\0"
 .LC13:
@@ -1131,7 +1131,7 @@ __Z12AssignWinnerPc:
 	.globl	__Z14drawScoreboardi
 __Z14drawScoreboardi:
 	link.w %fp,#0
-	movem.l #12348,-(%sp)
+	movem.l #8252,-(%sp)
 	move.l 8(%fp),%d2
 	moveq #10,%d0
 	move.l %d0,__ZL5tempX
@@ -1149,18 +1149,14 @@ __Z14drawScoreboardi:
 	move.l %d0,__ZL7Counter
 	move.l __ZL10StepNumber,%d1
 	move.w #10,%a0
-	move.l %d2,%d3
-	subq.l #2,%d3
-	subq.l #1,%d2
 	lea rapLocate,%a4
 	lea ee_printf,%a3
 	lea _rapPrint,%a2
 	lea __ZL12playerScores,%a5
-	tst.l %d1
 	jlt .L188
 .L194:
 	cmp.l %d2,%d0
-	slt %d1
+	sle %d1
 	neg.b %d1
 	jeq .L192
 .L190:
@@ -1176,7 +1172,7 @@ __Z14drawScoreboardi:
 	move.l __ZL5tempX,-(%sp)
 	jsr (%a4)
 	addq.l #4,%sp
-	move.l __ZL12playerNumber,(%sp)
+	move.l __ZL7Counter,(%sp)
 	pea .LC14
 	jsr (%a3)
 	move.l %d0,_js_r_textbuffer
@@ -1190,6 +1186,7 @@ __Z14drawScoreboardi:
 	jsr (%a4)
 	addq.l #8,%sp
 	move.l __ZL7Counter,%d0
+	subq.l #1,%d0
 	moveq #11,%d1
 	lsl.l %d1,%d0
 	add.l #__ZL7players,%d0
@@ -1209,6 +1206,7 @@ __Z14drawScoreboardi:
 	jsr (%a4)
 	addq.l #8,%sp
 	move.l __ZL7Counter,%d0
+	subq.l #1,%d0
 	add.l %d0,%d0
 	add.l %d0,%d0
 	move.l (%a5,%d0.l),-(%sp)
@@ -1227,13 +1225,13 @@ __Z14drawScoreboardi:
 	tst.l %d1
 	jge .L194
 .L188:
-	cmp.l %d3,%d0
+	cmp.l %d2,%d0
 	sge %d1
 	neg.b %d1
 	jne .L190
 .L192:
 	move.l __ZL8defaultY,__ZL5tempY
-	movem.l -24(%fp),#15372
+	movem.l -20(%fp),#15364
 	unlk %fp
 	rts
 .L193:
