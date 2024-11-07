@@ -1120,39 +1120,42 @@ __Z12AssignWinnerPc:
 	unlk %fp
 	rts
 .LC11:
-	.ascii " #\0"
+	.ascii "Point Manager\0"
 .LC12:
-	.ascii "Name:\0"
+	.ascii " #\0"
 .LC13:
-	.ascii "Score\0"
+	.ascii "Name:\0"
 .LC14:
+	.ascii "Score\0"
+.LC15:
 	.ascii "% d\0"
 	.even
 	.globl	__Z14drawScoreboardi
 __Z14drawScoreboardi:
 	link.w %fp,#0
-	movem.l #8252,-(%sp)
+	movem.l #12348,-(%sp)
 	move.l 8(%fp),%d2
 	moveq #10,%d0
 	move.l %d0,__ZL5tempX
-	moveq #60,%d1
+	moveq #75,%d1
 	move.l %d1,__ZL5tempY
 	move.b #20,%d0
 	move.l %d0,__ZL7yGrowth
 	move.b #40,%d1
 	move.l %d1,__ZL7xGrowth
-	move.b #60,%d0
+	move.b #75,%d0
 	move.l %d0,__ZL8defaultY
 	move.b #10,%d1
 	move.l %d1,__ZL8defaultX
 	move.l __ZL12playerNumber,%d0
 	move.l %d0,__ZL7Counter
 	move.l __ZL10StepNumber,%d1
-	move.w #10,%a0
+	moveq #10,%d3
 	lea rapLocate,%a4
 	lea ee_printf,%a3
 	lea _rapPrint,%a2
 	lea __ZL12playerScores,%a5
+	tst.l %d1
 	jlt .L188
 .L194:
 	cmp.l %d2,%d0
@@ -1173,7 +1176,7 @@ __Z14drawScoreboardi:
 	jsr (%a4)
 	addq.l #4,%sp
 	move.l __ZL7Counter,(%sp)
-	pea .LC14
+	pea .LC15
 	jsr (%a3)
 	move.l %d0,_js_r_textbuffer
 	addq.l #8,%sp
@@ -1210,15 +1213,15 @@ __Z14drawScoreboardi:
 	add.l %d0,%d0
 	add.l %d0,%d0
 	move.l (%a5,%d0.l),-(%sp)
-	pea .LC14
+	pea .LC15
 	jsr (%a3)
 	move.l %d0,_js_r_textbuffer
 	addq.l #8,%sp
 	jsr (%a2)
 	move.l __ZL7Counter,%d0
 .L187:
-	move.l __ZL8defaultX,%a0
-	move.l %a0,__ZL5tempX
+	move.l __ZL8defaultX,%d3
+	move.l %d3,__ZL5tempX
 	move.l __ZL10StepNumber,%d1
 	add.l %d1,%d0
 	move.l %d0,__ZL7Counter
@@ -1231,15 +1234,30 @@ __Z14drawScoreboardi:
 	jne .L190
 .L192:
 	move.l __ZL8defaultY,__ZL5tempY
-	movem.l -20(%fp),#15364
+	movem.l -24(%fp),#15372
 	unlk %fp
 	rts
 .L193:
-	move.l __ZL5tempY,-(%sp)
-	move.l %a0,-(%sp)
+	moveq #-15,%d0
+	add.l __ZL5tempY,%d0
+	move.l %d0,-(%sp)
+	move.l %d3,%d0
+	lsl.l #3,%d0
+	move.l %d0,%a0
+	pea (%a0,%d3.l)
 	jsr (%a4)
 	addq.l #4,%sp
 	move.l #.LC11,(%sp)
+	pea .LC3
+	jsr (%a3)
+	move.l %d0,_js_r_textbuffer
+	addq.l #8,%sp
+	jsr (%a2)
+	move.l __ZL5tempY,-(%sp)
+	move.l __ZL5tempX,-(%sp)
+	jsr (%a4)
+	addq.l #4,%sp
+	move.l #.LC12,(%sp)
 	pea .LC3
 	jsr (%a3)
 	move.l %d0,_js_r_textbuffer
@@ -1252,7 +1270,7 @@ __Z14drawScoreboardi:
 	move.l %d0,-(%sp)
 	jsr (%a4)
 	addq.l #4,%sp
-	move.l #.LC12,(%sp)
+	move.l #.LC13,(%sp)
 	pea .LC3
 	jsr (%a3)
 	move.l %d0,_js_r_textbuffer
@@ -1267,7 +1285,7 @@ __Z14drawScoreboardi:
 	move.l %a0,-(%sp)
 	jsr (%a4)
 	addq.l #4,%sp
-	move.l #.LC13,(%sp)
+	move.l #.LC14,(%sp)
 	pea .LC3
 	jsr (%a3)
 	move.l %d0,_js_r_textbuffer
