@@ -1,4 +1,7 @@
+DIM sorted AS INTEGER
 DIM Counter AS INTEGER
+DIM tempInt AS INTEGER
+DIM tempName AS STRING 
 DIM StepNumber AS INTEGER
 DIM playerNumber AS INTEGER
 playerNumber = 0 
@@ -17,6 +20,12 @@ FUNCTION drawRankings(maxPlayers AS INTEGER)
 	Counter = 0
 
 FOR Counter = playerNumber TO maxPlayers STEP StepNumber
+	rankPlayers$[Counter] = players$[Counter]
+	rankPlayerScores[Counter] = playerScores[Counter]
+NEXT
+
+Counter = 0
+FOR Counter = playerNumber TO maxPlayers STEP StepNumber
 IF Counter = 0 THEN
 	rapLocate (tempX*9), tempY-15
 	print "Player Ranks"
@@ -31,9 +40,9 @@ IF Counter >= 1 THEN
 	rapLocate tempX, tempY+=yGrowth
 	print Counter 
 	rapLocate tempX+=xGrowth, tempY
-	print players$[Counter-1] 
+	print rankPlayers$[Counter-1] 
 	rapLocate tempX+=(xGrowth*4)+10, tempY
-	print playerScores[Counter-1] 
+	print rankPlayerScores[Counter-1] 
 ENDIF
 	tempX = defaultX
 NEXT
