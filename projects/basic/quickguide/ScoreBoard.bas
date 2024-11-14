@@ -53,6 +53,7 @@ IF inputSpeed > buttonSensitivity THEN
 			AssignWinner(players$[pNumber])
 			scrolling = 1
 			screenNumber = 0
+			CLS
 		ENDIF
 	ENDIF 
 	IF addNumber = 0  THEN 
