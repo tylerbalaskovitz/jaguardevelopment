@@ -4,6 +4,8 @@ DIM playerNumber AS INTEGER
 playerNumber = 0 
 StepNumber = 1
 
+DIM rankPlayers$[6]
+DIM rankPlayerScores[6]
 
 FUNCTION drawRankings(maxPlayers AS INTEGER)
 	tempX = 10
