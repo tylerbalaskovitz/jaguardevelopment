@@ -1,6 +1,8 @@
 DIM Counter AS INTEGER
 DIM StepNumber AS INTEGER
 DIM playerNumber AS INTEGER
+DIM addNumber AS INTEGER
+addNumber = 1
 playerNumber = 0 
 StepNumber = 1
 
@@ -36,4 +38,29 @@ ENDIF
 	tempX = defaultX
 NEXT
 	tempY = defaultY
+END FUNCTION
+
+
+FUNCTION calculateScore(pNumber AS INTEGER)
+IF pNumber < maxPlayers THEN
+inputSpeed+=1
+IF inputSpeed > inputSensitivity THEN
+	IF addNumber = 1  THEN 
+		IF playerScores[pNumber] < 10 THEN
+			playerScores[pNumber]+=1
+		ENDIF
+		IF playerScores[pNumber] = 10 THEN
+			AssignWinner(players$[pNumber])
+			scrolling = 1
+			screenNumber = 0
+		ENDIF
+	ENDIF 
+	IF addNumber = 0  THEN 
+		IF playerScores[pNumber] > 0 THEN
+			playerScores[pNumber]-=1
+		ENDIF
+	ENDIF
+inputSpeed = 0
+ENDIF
+ENDIF
 END FUNCTION

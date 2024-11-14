@@ -7,6 +7,7 @@ DIM speedTemp as INTEGER
 DIM inputSpeed as INTEGER
 DIM temp as INTEGER
 DIM tempX as INTEGER
+DIM buttonSensitivity as INTEGER
 DIM defaultX as INTEGER
 DIM xGrowth as INTEGER
 DIM tempY as INTEGER
@@ -17,6 +18,7 @@ DIM tempName as String
 DIM maxPlayers as INTEGER
 DIM selectedPlayer as INTEGER
 
+buttonSensitivity = 6
 upperCase = 1
 upperCaseLow = 65
 upperCaseHigh = 90
@@ -65,7 +67,7 @@ END FUNCTION
 
 FUNCTION removeLetter()
 	inputSpeed+=1
-	IF inputSpeed > 5 THEN 
+	IF inputSpeed > buttonSensitivity THEN 
 	IF LEN(tempName) > 0 THEN 
 		tempName=MID$(tempName, 1, LEN(tempName)-1)
 	ENDIF	
@@ -77,7 +79,7 @@ END FUNCTIOn
 
 FUNCTION addLetter(tempName as String)
 	inputSpeed+=1
-	if inputSpeed > 5 then
+	if inputSpeed > buttonSensitivity then
 	IF LEN(tempName) < 11 THEN
 		letterHolder=CHR$(temp)
 		tempName= CONCAT(tempName,letterHolder)
