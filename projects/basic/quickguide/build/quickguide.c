@@ -1060,29 +1060,31 @@ int calculateScore (int pNumber)
                   scrolling=1;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 55] screenNumber = 0
                   screenNumber=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 56] ENDIF
-                }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 56] CLS
+                  cls();
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 57] ENDIF
+                }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 58] ENDIF
             }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 58] IF addNumber = 0  THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 59] IF addNumber = 0  THEN
           if(addNumber==0)
             {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 59] IF playerScores[pNumber] > 0 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 60] IF playerScores[pNumber] > 0 THEN
               if(playerScores[pNumber]>0)
                 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 60] playerScores[pNumber]-=1
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 61] playerScores[pNumber]-=1
                   playerScores[pNumber]-=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 61] ENDIF
-                }
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 62] ENDIF
+                }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 63] ENDIF
             }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 63] inputSpeed = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 64] inputSpeed = 0
           inputSpeed=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 64] ENDIF
-        }
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 65] ENDIF
+        }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 66] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 66] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 67] END FUNCTION
 }
 
 
