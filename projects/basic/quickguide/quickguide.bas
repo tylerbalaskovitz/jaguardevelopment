@@ -10,6 +10,7 @@ $include "ControllerTypes.bas"
 $include "MainMenu.bas" 
 $include "PlayerVariables.bas"
 $include "ScoreBoard.bas"
+$include "Rankings.bas"
 const sprParticleLayer% = 0
 const sprBug1% = 1
 
@@ -32,6 +33,10 @@ ENDIF
 IF screenNumber = 2 THEN
 	keepScore(pad1)
 	drawScoreboard(maxPlayers)
+ENDIF
+IF screenNumber = 3 THEN
+	keepScore(pad1)
+	drawRankings(maxPlayers)
 ENDIF
 changeScreenKeypad(pad1)
 

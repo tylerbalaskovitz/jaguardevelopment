@@ -114,6 +114,7 @@ int     changeScreenKeypad (int);
 int     ScrollString (int, int, int, int, char *);
 int     AssignWinner (char *);
 int     drawScoreboard (int);
+int     drawRankings (int);
 
 
 // *************************************************
@@ -244,52 +245,70 @@ playerNumber=0;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 5] StepNumber = 1
 StepNumber=1;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 8] FUNCTION drawScoreboard(maxPlayers AS INTEGER)
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 13] const sprParticleLayer% = 0
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 14] const sprBug1% = 1
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 18] Do
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 13] $include "Rankings.bas"
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 1] DIM Counter AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 2] DIM StepNumber AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 3] DIM playerNumber AS INTEGER
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 4] playerNumber = 0
+playerNumber=0;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 5] StepNumber = 1
+StepNumber=1;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 8] FUNCTION drawRankings(maxPlayers AS INTEGER)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 14] const sprParticleLayer% = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 15] const sprBug1% = 1
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 19] Do
 for(;;)
   {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 20] pad1 = jsfGetPad(LEFT_PAD)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 21] pad1 = jsfGetPad(LEFT_PAD)
     pad1=jsfGetPad(LEFT_PAD);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 21] IF screenNumber = 0 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 22] IF screenNumber = 0 THEN
     if(screenNumber==0)
       {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 22] ScrollString(scrolling, tx, ty, spaces, winner)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 23] ScrollString(scrolling, tx, ty, spaces, winner)
         ScrollString(scrolling,tx,ty,spaces,winner);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 23] if scrolling = 1 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 24] if scrolling = 1 THEN
         if(scrolling==1)
           {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 24] tx-=2
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 25] tx-=2
             tx-=2;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 25] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 26] ENDIF
           }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 26] selectWinnerKeypad(pad1)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 27] selectWinnerKeypad(pad1)
         selectWinnerKeypad(pad1);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 27] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 28] ENDIF
       }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 28] IF screenNumber = 1 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 29] IF screenNumber = 1 THEN
     if(screenNumber==1)
       {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 29] writePlayerName(pad1)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 30] writePlayerName(pad1)
         writePlayerName(pad1);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 30] registerPlayer(temp, tempName)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 31] registerPlayer(temp, tempName)
         registerPlayer(temp,tempName);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 31] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 32] ENDIF
       }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 32] IF screenNumber = 2 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 33] IF screenNumber = 2 THEN
     if(screenNumber==2)
       {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 33] keepScore(pad1)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 34] keepScore(pad1)
         keepScore(pad1);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 34] drawScoreboard(maxPlayers)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 35] drawScoreboard(maxPlayers)
         drawScoreboard(maxPlayers);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 35] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 36] ENDIF
       }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 36] changeScreenKeypad(pad1)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 37] IF screenNumber = 3 THEN
+    if(screenNumber==3)
+      {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 38] keepScore(pad1)
+        keepScore(pad1);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 39] drawRankings(maxPlayers)
+        drawRankings(maxPlayers);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 40] ENDIF
+      }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 41] changeScreenKeypad(pad1)
     changeScreenKeypad(pad1);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 39] VSYNC
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 44] VSYNC
     jsfVsync(0);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 40] LOOP
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 45] LOOP
   }
   while(1) {};   //  End of main program
 }
@@ -1022,6 +1041,80 @@ int drawScoreboard (int maxPlayers)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 38] tempY = defaultY
   tempY=defaultY;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 39] END FUNCTION
+}
+
+
+int drawRankings (int maxPlayers)
+{
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 9] tempX = 10
+  tempX=10;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 10] tempY = 75
+  tempY=75;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 11] yGrowth = 20
+  yGrowth=20;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 12] xGrowth = 40
+  xGrowth=40;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 13] defaultY = tempY
+  defaultY=tempY;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 14] defaultX = 10
+  defaultX=10;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 15] Counter = 0
+  Counter=0;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 17] FOR Counter = playerNumber TO maxPlayers STEP StepNumber
+  for(Counter=playerNumber; StepNumber>=0 ? Counter<=maxPlayers : Counter>=maxPlayers; Counter+=StepNumber)
+    {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 18] IF Counter = 0 THEN
+      if(Counter==0)
+        {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 19] rapLocate (tempX*9), tempY-15
+          rapLocate((tempX*9),tempY-15);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 20] print "Player Ranks"
+          js_r_textbuffer=ee_printf("%s","Player Ranks");
+          rapPrint();
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 21] rapLocate tempX, tempY
+          rapLocate(tempX,tempY);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 22] print " #"
+          js_r_textbuffer=ee_printf("%s"," #");
+          rapPrint();
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 23] rapLocate tempX+=xGrowth, tempY
+          rapLocate(tempX+=xGrowth,tempY);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 24] print "Name:"
+          js_r_textbuffer=ee_printf("%s","Name:");
+          rapPrint();
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 25] rapLocate tempX+=(xGrowth*4)+10, tempY
+          rapLocate(tempX+=(xGrowth*4)+10,tempY);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 26] print "Score"
+          js_r_textbuffer=ee_printf("%s","Score");
+          rapPrint();
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 27] ENDIF
+        }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 28] IF Counter >= 1 THEN
+      if(Counter>=1)
+        {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 29] rapLocate tempX, tempY+=yGrowth
+          rapLocate(tempX,tempY+=yGrowth);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 30] print Counter
+          js_r_textbuffer=ee_printf("% d",(int)Counter);
+          rapPrint();
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 31] rapLocate tempX+=xGrowth, tempY
+          rapLocate(tempX+=xGrowth,tempY);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 32] print players$[Counter-1]
+          js_r_textbuffer=ee_printf("%s",players[Counter-1]);
+          rapPrint();
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 33] rapLocate tempX+=(xGrowth*4)+10, tempY
+          rapLocate(tempX+=(xGrowth*4)+10,tempY);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 34] print playerScores[Counter-1]
+          js_r_textbuffer=ee_printf("% d",(int)playerScores[Counter-1]);
+          rapPrint();
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 35] ENDIF
+        }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 36] tempX = defaultX
+      tempX=defaultX;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 37] NEXT
+    }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 38] tempY = defaultY
+  tempY=defaultY;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 39] END FUNCTION
 }
 
 
