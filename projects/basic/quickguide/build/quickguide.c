@@ -151,8 +151,8 @@ void basicmain()
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 17] DIM tempName as String
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 18] DIM maxPlayers as INTEGER
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 19] DIM selectedPlayer as INTEGER
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 21] buttonSensitivity = 6
-buttonSensitivity=6;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 21] buttonSensitivity = 7
+buttonSensitivity=7;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 22] upperCase = 1
 upperCase=1;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/CreatePlayers.bas - 23] upperCaseLow = 65
@@ -186,7 +186,7 @@ temp=0;
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 37] FUNCTION writePlayerName(pad1 as INTEGER)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 103] FUNCTION checkTemps()
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 130] FUNCTION keepScore(pad1 as INTEGER)
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 175] FUNCTION changeScreenKeypad(pad1 as INTEGER)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 181] FUNCTION changeScreenKeypad(pad1 as INTEGER)
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/quickguide.bas - 10] $include "MainMenu.bas"
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/MainMenu.bas - 1] DIM scrolling AS INTEGER
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/MainMenu.bas - 2] DIM spaces as INTEGER
@@ -774,124 +774,136 @@ int keepScore (int pad1)
     {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 138] selectedPlayer = 1
       selectedPlayer=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 139] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 139] calculateScore(selectedPlayer)
+      calculateScore(selectedPlayer);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 140] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 141] IF pad1 BAND JAGPAD_3 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 142] IF pad1 BAND JAGPAD_3 THEN
   if(pad1 BAND JAGPAD_3)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 142] selectedPlayer = 2
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 143] selectedPlayer = 2
       selectedPlayer=2;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 143] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 144] calculateScore(selectedPlayer)
+      calculateScore(selectedPlayer);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 145] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 144] IF pad1 BAND JAGPAD_4 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 146] IF pad1 BAND JAGPAD_4 THEN
   if(pad1 BAND JAGPAD_4)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 145] selectedPlayer = 3
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 147] selectedPlayer = 3
       selectedPlayer=3;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 146] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 148] calculateScore(selectedPlayer)
+      calculateScore(selectedPlayer);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 149] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 148] IF pad1 BAND JAGPAD_5 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 151] IF pad1 BAND JAGPAD_5 THEN
   if(pad1 BAND JAGPAD_5)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 149] selectedPlayer = 4
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 152] selectedPlayer = 4
       selectedPlayer=4;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 150] ENDIF
-    }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 152] IF pad1 BAND JAGPAD_6 THEN
-  if(pad1 BAND JAGPAD_6)
-    {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 153] selectedPlayer = 5
-      selectedPlayer=5;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 153] calculateScore(selectedPlayer)
+      calculateScore(selectedPlayer);
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 154] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 155] IF pad1 BAND JAGPAD_7 THEN
-  if(pad1 BAND JAGPAD_7)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 156] IF pad1 BAND JAGPAD_6 THEN
+  if(pad1 BAND JAGPAD_6)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 156] ENDIF
-    }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 158] IF pad1 BAND JAGPAD_8 THEN
-  if(pad1 BAND JAGPAD_8)
-    {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 157] selectedPlayer = 5
+      selectedPlayer=5;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 158] calculateScore(selectedPlayer)
+      calculateScore(selectedPlayer);
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 159] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 161] IF pad1 BAND JAGPAD_9 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 160] IF pad1 BAND JAGPAD_7 THEN
+  if(pad1 BAND JAGPAD_7)
+    {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 161] ENDIF
+    }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 163] IF pad1 BAND JAGPAD_8 THEN
+  if(pad1 BAND JAGPAD_8)
+    {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 164] ENDIF
+    }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 166] IF pad1 BAND JAGPAD_9 THEN
   if(pad1 BAND JAGPAD_9)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 162] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 167] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 164] IF pad1 BAND JAGPAD_0 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 169] IF pad1 BAND JAGPAD_0 THEN
   if(pad1 BAND JAGPAD_0)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 165] inputSpeed+=1
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 170] inputSpeed+=1
       inputSpeed+=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 166] IF inputSpeed > buttonSensitivity THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 171] IF inputSpeed > buttonSensitivity THEN
       if(inputSpeed>buttonSensitivity)
         {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 167] IF addNumber = 1 THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 172] IF addNumber = 1 THEN
           if(addNumber==1)
             {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 168] addNumber = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 173] addNumber = 0
               addNumber=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 169] ELSE
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 174] ELSE
             }
           else
             {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 170] addNumber = 1
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 175] addNumber = 1
               addNumber=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 171] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 176] ENDIF
             }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 172] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 177] inputSpeed = 0
+          inputSpeed=0;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 178] ENDIF
         }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 173] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 179] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 174] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 180] END FUNCTION
 }
 
 
 int changeScreenKeypad (int pad1)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 176] IF pad1 BAND JAGPAD_HASH THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 182] IF pad1 BAND JAGPAD_HASH THEN
   if(pad1 BAND JAGPAD_HASH)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 177] inputSpeed+=1
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 183] inputSpeed+=1
       inputSpeed+=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 178] IF inputSpeed > 5 THEN
-      if(inputSpeed>5)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 184] IF inputSpeed > buttonSensitivity THEN
+      if(inputSpeed>buttonSensitivity)
         {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 179] cls
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 185] cls
           cls();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 180] screenNumber-=1
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 186] screenNumber-=1
           screenNumber-=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 181] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 187] ENDIF
         }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 182] inputSpeed = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 188] inputSpeed = 0
       inputSpeed=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 183] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 189] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 185] inputSpeed+=1
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 191] inputSpeed+=1
   inputSpeed+=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 186] IF pad1 BAND JAGPAD_STAR THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 192] IF pad1 BAND JAGPAD_STAR THEN
   if(pad1 BAND JAGPAD_STAR)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 187] IF inputSpeed > 5 THEN
-      if(inputSpeed>5)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 193] IF inputSpeed > buttonSensitivity THEN
+      if(inputSpeed>buttonSensitivity)
         {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 188] cls
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 194] cls
           cls();
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 189] screenNumber+=1
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 195] screenNumber+=1
           screenNumber+=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 190] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 196] ENDIF
         }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 191] inputSpeed = 0
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 197] inputSpeed = 0
       inputSpeed=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 192] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 198] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 193] IF pad1 BAND JAGPAD_B THEN
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 199] IF pad1 BAND JAGPAD_B THEN
   if(pad1 BAND JAGPAD_B)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 195] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 201] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 196] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ControllerTypes.bas - 202] END FUNCTION
 }
 
 
@@ -1021,42 +1033,56 @@ int drawScoreboard (int maxPlayers)
 
 int calculateScore (int pNumber)
 {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 45] IF addNumber = 1  THEN
-  if(addNumber==1)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 45] IF pNumber < maxPlayers THEN
+  if(pNumber<maxPlayers)
     {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 46] IF playerScores[pNumber] < 10 THEN
-      if(playerScores[pNumber]<10)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 46] inputSpeed+=1
+      inputSpeed+=1;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 47] IF inputSpeed > buttonSensitivity THEN
+      if(inputSpeed>buttonSensitivity)
         {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 47] playerScores[pNumber]+=1
-          playerScores[pNumber]+=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 48] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 48] IF addNumber = 1  THEN
+          if(addNumber==1)
+            {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 49] IF playerScores[pNumber] < 10 THEN
+              if(playerScores[pNumber]<10)
+                {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 50] playerScores[pNumber]+=1
+                  playerScores[pNumber]+=1;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 51] ENDIF
+                }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 52] IF playerScores[pNumber] = 10 THEN
+              if(playerScores[pNumber]==10)
+                {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 53] AssignWinner(players$[pNumber])
+                  AssignWinner(players[pNumber]);
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 54] scrolling = 1
+                  scrolling=1;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 55] screenNumber = 0
+                  screenNumber=0;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 56] ENDIF
+                }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 57] ENDIF
+            }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 58] IF addNumber = 0  THEN
+          if(addNumber==0)
+            {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 59] IF playerScores[pNumber] > 0 THEN
+              if(playerScores[pNumber]>0)
+                {
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 60] playerScores[pNumber]-=1
+                  playerScores[pNumber]-=1;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 61] ENDIF
+                }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 62] ENDIF
+            }
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 63] inputSpeed = 0
+          inputSpeed=0;
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 64] ENDIF
         }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 49] IF playerScores[pNumber] = 10 THEN
-      if(playerScores[pNumber]==10)
-        {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 50] AssignWinner(players$[pNumber])
-          AssignWinner(players[pNumber]);
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 51] scrolling = 1
-          scrolling=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 52] screenNumber = 0
-          screenNumber=0;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 53] ENDIF
-        }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 54] ENDIF
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 65] ENDIF
     }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 55] IF addNumber = 0  THEN
-  if(addNumber==0)
-    {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 56] IF playerScores[pNumber] > 0 THEN
-      if(playerScores[pNumber]>0)
-        {
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 57] playerScores[pNumber]-=1
-          playerScores[pNumber]-=1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 58] ENDIF
-        }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 59] ENDIF
-    }
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 61] END FUNCTION
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/ScoreBoard.bas - 66] END FUNCTION
 }
 
 

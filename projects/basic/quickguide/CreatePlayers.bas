@@ -18,7 +18,7 @@ DIM tempName as String
 DIM maxPlayers as INTEGER
 DIM selectedPlayer as INTEGER
 
-buttonSensitivity = 6
+buttonSensitivity = 7
 upperCase = 1
 upperCaseLow = 65
 upperCaseHigh = 90

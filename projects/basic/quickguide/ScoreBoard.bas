@@ -44,7 +44,7 @@ END FUNCTION
 FUNCTION calculateScore(pNumber AS INTEGER)
 IF pNumber < maxPlayers THEN
 inputSpeed+=1
-IF inputSpeed > inputSensitivity THEN
+IF inputSpeed > buttonSensitivity THEN
 	IF addNumber = 1  THEN 
 		IF playerScores[pNumber] < 10 THEN
 			playerScores[pNumber]+=1
