@@ -183,6 +183,7 @@ FUNCTION changeScreenKeypad(pad1 as INTEGER)
 	    inputSpeed+=1
 	    IF inputSpeed > buttonSensitivity THEN
 		    cls
+		    sorted = 0
 		    screenNumber-=1 
 	    ENDIF
 	    inputSpeed = 0
@@ -192,6 +193,7 @@ FUNCTION changeScreenKeypad(pad1 as INTEGER)
 	IF pad1 BAND JAGPAD_STAR THEN
 	    IF inputSpeed > buttonSensitivity THEN
 		    cls
+		   sorted = 0
 		   screenNumber+=1 
 	    ENDIF
 	    inputSpeed = 0
