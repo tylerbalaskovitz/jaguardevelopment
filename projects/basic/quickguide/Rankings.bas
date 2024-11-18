@@ -20,14 +20,13 @@ FUNCTION drawRankings(maxPlayers AS INTEGER)
 	defaultY = tempY 
 	defaultX = 10
 	Counter = 0
+
 IF sorted = 0 THEN
 	FOR Counter = playerNumber TO maxPlayers STEP StepNumber
 		rankPlayers$[Counter] = players$[Counter]
 		rankPlayerScores[Counter] = playerScores[Counter]
 	NEXT
-ENDIF
 
-IF sorted = 0 THEN
 	Counter = 1
 	FOR Counter = playerNumber TO maxPlayers-1 STEP StepNumber	
 	tempName = rankPlayers$[Counter]

@@ -1243,25 +1243,158 @@ __Z12drawRankingsi:
 	move.b #10,%d1
 	move.l %d1,__ZL8defaultX
 	tst.l __ZL6sorted
-	jeq .L184
-	move.l __ZL10StepNumber,%d4
+	jne .L184
+	move.l __ZL12playerNumber,%d4
+	move.l %d4,__ZL7Counter
+	move.l __ZL10StepNumber,%d6
+	move.l %d6,%a4
+	add.l %d6,%a4
+	move.l %a4,%d5
+	add.l %a4,%d5
+	move.l %d4,%d2
+	moveq #0,%d3
+	lea _strcpy,%a5
+	tst.l %d6
+	jlt .L185
+	move.l %d4,%d0
+	sub.l %d6,%d0
+	move.l %d0,%a2
+	add.l %d0,%a2
+	add.l %a2,%a2
+	move.l %a2,%a3
+	add.l #__ZL16rankPlayerScores,%a3
+	add.l #__ZL12playerScores,%a2
+	add.l %d5,%d3
+	cmp.l %d7,%d2
+	jgt .L187
+.L189:
+	move.l %d2,%d0
+	moveq #11,%d1
+	lsl.l %d1,%d0
+	move.l %d0,%d1
+	add.l #__ZL7players,%d1
+	move.l %d1,-(%sp)
+	add.l #__ZL11rankPlayers,%d0
+	move.l %d0,-(%sp)
+	jsr (%a5)
+	move.l (%a2,%d3.l),(%a3,%d3.l)
+	add.l %d6,%d2
+	move.l %d2,__ZL7Counter
+	addq.l #8,%sp
+	add.l %d5,%d3
+	cmp.l %d7,%d2
+	jle .L189
+.L187:
+	move.l %d4,__ZL7Counter
+	move.l %d4,%d5
+	subq.l #1,%d5
+	add.l %a4,%a4
+	move.l %a4,-4(%fp)
+	move.l %d4,%d0
+	add.l %d4,%d0
+	move.l %d0,%a5
+	add.l %d0,%a5
+	add.l #__ZL16rankPlayerScores,%a5
+	move.l %d7,%d1
+	subq.l #1,%d1
+	move.l %d1,-8(%fp)
+	lea _strcpy,%a4
+	tst.l %d6
+	jlt .L194
+.L205:
+	cmp.l %d7,%d4
+	slt %d0
+	neg.b %d0
+	jeq .L204
+.L196:
+	move.l %d4,%d0
+	moveq #11,%d1
+	lsl.l %d1,%d0
+	add.l #__ZL11rankPlayers,%d0
+	move.l %d0,-(%sp)
+	pea __ZL8tempName
+	jsr (%a4)
+	move.l (%a5),%d3
+	move.l %d3,__ZL9tempScore
+	move.l %d5,%d2
+	move.l %d5,__ZL1j
+	addq.l #8,%sp
+	jlt .L191
+	cmp.l -4(%a5),%d3
+	jle .L191
+	move.l %d4,%d0
+	lsl.l #2,%d0
+	move.l %d0,%a3
+	add.l #__ZL16rankPlayerScores+4,%a3
+	move.l %d5,%a2
+	add.l %d5,%a2
+	add.l %a2,%a2
+	add.l #__ZL16rankPlayerScores,%a2
+.L192:
+	move.l (%a2),-(%a3)
+	move.l %d2,%d0
+	moveq #11,%d1
+	lsl.l %d1,%d0
+	add.l #__ZL11rankPlayers,%d0
+	move.l %d0,-(%sp)
+	move.l %d2,%d0
+	lsl.l %d1,%d0
+	add.l #__ZL11rankPlayers+2048,%d0
+	move.l %d0,-(%sp)
+	jsr (%a4)
+	subq.l #1,%d2
+	move.l %d2,__ZL1j
+	addq.l #8,%sp
+	moveq #-1,%d0
+	cmp.l %d2,%d0
+	jeq .L191
+	cmp.l -(%a2),%d3
+	jgt .L192
+.L191:
+	addq.l #1,%d2
+	move.l %d2,%d0
+	add.l %d2,%d0
+	add.l %d0,%d0
+	lea __ZL16rankPlayerScores,%a0
+	move.l %d3,(%a0,%d0.l)
+	pea __ZL8tempName
+	moveq #11,%d0
+	lsl.l %d0,%d2
+	add.l #__ZL11rankPlayers,%d2
+	move.l %d2,-(%sp)
+	jsr (%a4)
+	add.l %d6,%d4
+	move.l %d4,__ZL7Counter
+	add.l %d6,%d5
+	add.l -4(%fp),%a5
+	addq.l #8,%sp
+	tst.l %d6
+	jge .L205
+.L194:
+	cmp.l -8(%fp),%d4
+	sge %d0
+	neg.b %d0
+	jne .L196
+.L204:
+	moveq #1,%d1
+	move.l %d1,__ZL6sorted
+.L184:
 	move.l __ZL12playerNumber,%d0
 	move.l %d0,__ZL7Counter
+	move.l __ZL10StepNumber,%d1
 	lea rapLocate,%a4
 	lea ee_printf,%a3
 	lea _rapPrint,%a2
 	lea __ZL16rankPlayerScores,%a5
-.L197:
-	tst.l %d4
 	jlt .L200
-.L207:
+.L208:
 	cmp.l %d7,%d0
 	sle %d1
 	neg.b %d1
-	jeq .L205
+	jeq .L206
 .L202:
 	tst.l %d0
-	jeq .L206
+	jeq .L207
 .L198:
 	tst.l %d0
 	jle .L199
@@ -1318,22 +1451,22 @@ __Z12drawRankingsi:
 	move.l __ZL7Counter,%d0
 .L199:
 	move.l __ZL8defaultX,__ZL5tempX
-	move.l __ZL10StepNumber,%d4
-	add.l %d4,%d0
+	move.l __ZL10StepNumber,%d1
+	add.l %d1,%d0
 	move.l %d0,__ZL7Counter
-	tst.l %d4
-	jge .L207
+	tst.l %d1
+	jge .L208
 .L200:
 	cmp.l %d7,%d0
 	sge %d1
 	neg.b %d1
 	jne .L202
-.L205:
+.L206:
 	move.l __ZL8defaultY,__ZL5tempY
 	movem.l -48(%fp),#15612
 	unlk %fp
 	rts
-.L206:
+.L207:
 	moveq #-15,%d0
 	add.l __ZL5tempY,%d0
 	move.l %d0,-(%sp)
@@ -1390,160 +1523,18 @@ __Z12drawRankingsi:
 	jsr (%a2)
 	move.l __ZL7Counter,%d0
 	jra .L198
-.L184:
-	move.l __ZL12playerNumber,%d5
-	move.l %d5,__ZL7Counter
-	move.l __ZL10StepNumber,%d4
-	move.l %d4,%a4
-	add.l %d4,%a4
-	move.l %a4,%d6
-	add.l %a4,%d6
-	move.l %d5,%d2
-	moveq #0,%d3
-	lea _strcpy,%a5
-	tst.l %d4
-	jlt .L186
-	move.l %d5,%d0
-	sub.l %d4,%d0
-	move.l %d0,%a2
-	add.l %d0,%a2
+.L185:
+	move.l %d4,%a2
+	sub.l %d6,%a2
+	add.l %a2,%a2
 	add.l %a2,%a2
 	move.l %a2,%a3
 	add.l #__ZL16rankPlayerScores,%a3
 	add.l #__ZL12playerScores,%a2
-	add.l %d6,%d3
-	cmp.l %d7,%d2
-	jgt .L188
-.L190:
-	move.l %d2,%d0
-	moveq #11,%d1
-	lsl.l %d1,%d0
-	move.l %d0,%d1
-	add.l #__ZL7players,%d1
-	move.l %d1,-(%sp)
-	add.l #__ZL11rankPlayers,%d0
-	move.l %d0,-(%sp)
-	jsr (%a5)
-	move.l (%a2,%d3.l),(%a3,%d3.l)
-	add.l %d4,%d2
-	move.l %d2,__ZL7Counter
-	addq.l #8,%sp
-	add.l %d6,%d3
-	cmp.l %d7,%d2
-	jle .L190
 .L188:
-	move.l %d5,__ZL7Counter
-	move.l %d5,%d6
-	subq.l #1,%d6
-	add.l %a4,%a4
-	move.l %a4,-4(%fp)
-	move.l %d5,%d0
-	add.l %d5,%d0
-	move.l %d0,%a5
-	add.l %d0,%a5
-	add.l #__ZL16rankPlayerScores,%a5
-	move.l %d7,%d1
-	subq.l #1,%d1
-	move.l %d1,-8(%fp)
-	lea _strcpy,%a4
-	tst.l %d4
-	jlt .L194
-.L209:
-	cmp.l %d7,%d5
-	slt %d0
-	neg.b %d0
-	jeq .L208
-.L196:
-	move.l %d5,%d0
-	moveq #11,%d1
-	lsl.l %d1,%d0
-	add.l #__ZL11rankPlayers,%d0
-	move.l %d0,-(%sp)
-	pea __ZL8tempName
-	jsr (%a4)
-	move.l (%a5),%d3
-	move.l %d3,__ZL9tempScore
-	move.l %d6,%d2
-	move.l %d6,__ZL1j
-	addq.l #8,%sp
-	jlt .L191
-	cmp.l -4(%a5),%d3
-	jle .L191
-	move.l %d5,%d0
-	lsl.l #2,%d0
-	move.l %d0,%a3
-	add.l #__ZL16rankPlayerScores+4,%a3
-	move.l %d6,%a2
-	add.l %d6,%a2
-	add.l %a2,%a2
-	add.l #__ZL16rankPlayerScores,%a2
-.L192:
-	move.l (%a2),-(%a3)
-	move.l %d2,%d0
-	moveq #11,%d1
-	lsl.l %d1,%d0
-	add.l #__ZL11rankPlayers,%d0
-	move.l %d0,-(%sp)
-	move.l %d2,%d0
-	lsl.l %d1,%d0
-	add.l #__ZL11rankPlayers+2048,%d0
-	move.l %d0,-(%sp)
-	jsr (%a4)
-	subq.l #1,%d2
-	move.l %d2,__ZL1j
-	addq.l #8,%sp
-	moveq #-1,%d0
-	cmp.l %d2,%d0
-	jeq .L191
-	cmp.l -(%a2),%d3
-	jgt .L192
-.L191:
-	addq.l #1,%d2
-	move.l %d2,%d0
-	add.l %d2,%d0
-	add.l %d0,%d0
-	lea __ZL16rankPlayerScores,%a0
-	move.l %d3,(%a0,%d0.l)
-	pea __ZL8tempName
-	moveq #11,%d0
-	lsl.l %d0,%d2
-	add.l #__ZL11rankPlayers,%d2
-	move.l %d2,-(%sp)
-	jsr (%a4)
-	add.l %d4,%d5
-	move.l %d5,__ZL7Counter
-	add.l %d4,%d6
-	add.l -4(%fp),%a5
-	addq.l #8,%sp
-	tst.l %d4
-	jge .L209
-.L194:
-	cmp.l -8(%fp),%d5
-	sge %d0
-	neg.b %d0
-	jne .L196
-.L208:
-	moveq #1,%d1
-	move.l %d1,__ZL6sorted
-	move.l __ZL12playerNumber,%d0
-	move.l %d0,__ZL7Counter
-	lea rapLocate,%a4
-	lea ee_printf,%a3
-	lea _rapPrint,%a2
-	lea __ZL16rankPlayerScores,%a5
-	jra .L197
-.L186:
-	move.l %d5,%a2
-	sub.l %d4,%a2
-	add.l %a2,%a2
-	add.l %a2,%a2
-	move.l %a2,%a3
-	add.l #__ZL16rankPlayerScores,%a3
-	add.l #__ZL12playerScores,%a2
-.L189:
-	add.l %d6,%d3
+	add.l %d5,%d3
 	cmp.l %d7,%d2
-	jlt .L188
+	jlt .L187
 	move.l %d2,%d0
 	moveq #11,%d1
 	lsl.l %d1,%d0
@@ -1554,10 +1545,10 @@ __Z12drawRankingsi:
 	move.l %d0,-(%sp)
 	jsr (%a5)
 	move.l (%a2,%d3.l),(%a3,%d3.l)
-	add.l %d4,%d2
+	add.l %d6,%d2
 	move.l %d2,__ZL7Counter
 	addq.l #8,%sp
-	jra .L189
+	jra .L188
 	.even
 	.globl	__Z9basicmainv
 __Z9basicmainv:
@@ -1654,34 +1645,34 @@ __Z9basicmainv:
 	move.l %d0,__ZL4pad1
 	move.l __ZL12screenNumber,%d0
 	addq.l #4,%sp
-	jeq .L228
-.L212:
+	jeq .L227
+.L211:
 	moveq #1,%d1
+	cmp.l %d0,%d1
+	jeq .L228
+.L216:
+	moveq #2,%d1
 	cmp.l %d0,%d1
 	jeq .L229
 .L217:
-	moveq #2,%d1
+	moveq #3,%d1
 	cmp.l %d0,%d1
 	jeq .L230
 .L218:
-	moveq #3,%d1
-	cmp.l %d0,%d1
-	jeq .L231
-.L219:
 	move.l %d2,%d0
 	and.l JAGPAD_HASH,%d0
-	jne .L220
-.L235:
+	jne .L219
+.L234:
 	move.l __ZL10inputSpeed,%d0
 	addq.l #1,%d0
-.L221:
+.L220:
 	move.l %d0,__ZL10inputSpeed
 	and.l JAGPAD_STAR,%d2
-	jeq .L223
+	jeq .L222
 	cmp.l __ZL17buttonSensitivity.l,%d0
-	jgt .L232
+	jgt .L231
 	clr.l __ZL10inputSpeed
-.L223:
+.L222:
 	clr.l -(%sp)
 	jsr (%a3)
 	addq.l #4,%sp
@@ -1691,13 +1682,13 @@ __Z9basicmainv:
 	move.l %d0,__ZL4pad1
 	move.l __ZL12screenNumber,%d0
 	addq.l #4,%sp
-	jne .L212
-.L228:
+	jne .L211
+.L227:
 	move.l __ZL2ty,%d1
 	move.l __ZL2tx,%d0
 	moveq #1,%d2
 	cmp.l __ZL9scrolling.l,%d2
-	jeq .L233
+	jeq .L232
 	move.l %d1,-(%sp)
 	move.l %d0,-(%sp)
 	move.l %d3,%a0
@@ -1707,27 +1698,27 @@ __Z9basicmainv:
 	jsr (%a2)
 	moveq #1,%d0
 	cmp.l __ZL9scrolling.l,%d0
-	jeq .L234
-.L216:
+	jeq .L233
+.L215:
 	move.l __ZL4pad1,%d2
 	move.l %d2,-(%sp)
 	move.l %d5,%a0
 	jsr (%a0)
 	move.l __ZL12screenNumber,%d0
 	addq.l #4,%sp
-.L237:
+.L236:
 	moveq #1,%d1
 	cmp.l %d0,%d1
-	jne .L217
-	jra .L229
-.L232:
+	jne .L216
+	jra .L228
+.L231:
 	move.l %d4,%a0
 	jsr (%a0)
 	clr.l __ZL6sorted
 	addq.l #1,__ZL12screenNumber
 	clr.l __ZL10inputSpeed
-	jra .L223
-.L229:
+	jra .L222
+.L228:
 	move.l %d2,-(%sp)
 	jsr __Z15writePlayerNamei
 	move.l __ZL4temp,%d2
@@ -1843,9 +1834,9 @@ __Z9basicmainv:
 	move.l __ZL4pad1,%d2
 	moveq #2,%d1
 	cmp.l %d0,%d1
-	jne .L218
-	jra .L230
-.L231:
+	jne .L217
+	jra .L229
+.L230:
 	move.l %d2,-(%sp)
 	move.l %d6,%a0
 	jsr (%a0)
@@ -1855,16 +1846,16 @@ __Z9basicmainv:
 	addq.l #4,%sp
 	move.l %d2,%d0
 	and.l JAGPAD_HASH,%d0
-	jeq .L235
-.L220:
+	jeq .L234
+.L219:
 	move.l __ZL10inputSpeed,%d0
 	addq.l #1,%d0
 	move.l %d0,__ZL10inputSpeed
 	cmp.l __ZL17buttonSensitivity.l,%d0
-	jgt .L236
+	jgt .L235
 	moveq #1,%d0
-	jra .L221
-.L230:
+	jra .L220
+.L229:
 	move.l %d2,-(%sp)
 	move.l %d6,%a0
 	jsr (%a0)
@@ -1875,9 +1866,9 @@ __Z9basicmainv:
 	addq.l #4,%sp
 	moveq #3,%d1
 	cmp.l %d0,%d1
-	jne .L219
-	jra .L231
-.L234:
+	jne .L218
+	jra .L230
+.L233:
 	subq.l #2,__ZL2tx
 	move.l __ZL4pad1,%d2
 	move.l %d2,-(%sp)
@@ -1885,15 +1876,15 @@ __Z9basicmainv:
 	jsr (%a0)
 	move.l __ZL12screenNumber,%d0
 	addq.l #4,%sp
-	jra .L237
-.L236:
+	jra .L236
+.L235:
 	move.l %d4,%a0
 	jsr (%a0)
 	clr.l __ZL6sorted
 	subq.l #1,__ZL12screenNumber
 	moveq #1,%d0
-	jra .L221
-.L233:
+	jra .L220
+.L232:
 	move.l %d1,-(%sp)
 	move.l %d0,-(%sp)
 	move.l %d3,%a0
@@ -1903,7 +1894,7 @@ __Z9basicmainv:
 	lea (12,%sp),%sp
 	moveq #8,%d1
 	cmp.l %d0,%d1
-	jcs .L238
+	jcs .L237
 	clr.b _BCX_TmpStr_buffer+2
 	move.b #32,_BCX_TmpStr_buffer
 	move.l -4(%fp),%a0
@@ -1921,12 +1912,12 @@ __Z9basicmainv:
 	clr.l -(%sp)
 	jsr (%a3)
 	addq.l #4,%sp
-.L239:
+.L238:
 	moveq #1,%d0
 	cmp.l __ZL9scrolling.l,%d0
-	jne .L216
-	jra .L234
-.L238:
+	jne .L215
+	jra .L233
+.L237:
 	clr.b _BCX_TmpStr_buffer+1
 	pea _BCX_TmpStr_buffer
 	pea .LC7
@@ -1940,7 +1931,7 @@ __Z9basicmainv:
 	clr.l -(%sp)
 	jsr (%a3)
 	addq.l #4,%sp
-	jra .L239
+	jra .L238
 	.globl	_BCX_TmpStr_buffer
 	.bss
 _BCX_TmpStr_buffer:
