@@ -1149,8 +1149,8 @@ int drawRankings (int maxPlayers)
           tempScore=rankPlayerScores[Counter];
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 35] j = Counter-1
           j=Counter-1;
-// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 36] WHILE j >= 0 && rankPlayerScores[j] > tempScore
-          while(j>=0&&rankPlayerScores[j]>tempScore)
+// [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 36] WHILE j >= 0 && rankPlayerScores[j] < tempScore
+          while(j>=0&&rankPlayerScores[j]<tempScore)
             {
 // [/home/tbone/Programming/jagstudio/projects/basic/quickguide/Rankings.bas - 37] rankPlayerScores[j+1] = rankPlayerScores[j]
               rankPlayerScores[j+1]=rankPlayerScores[j];

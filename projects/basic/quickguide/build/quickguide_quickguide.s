@@ -1468,7 +1468,7 @@ __Z12drawRankingsi:
 	addq.l #8,%sp
 	jlt .L191
 	cmp.l -4(%a5),%d3
-	jge .L191
+	jle .L191
 	move.l %d5,%d0
 	lsl.l #2,%d0
 	move.l %d0,%a3
@@ -1496,7 +1496,7 @@ __Z12drawRankingsi:
 	cmp.l %d2,%d0
 	jeq .L191
 	cmp.l -(%a2),%d3
-	jlt .L192
+	jgt .L192
 .L191:
 	addq.l #1,%d2
 	move.l %d2,%d0
