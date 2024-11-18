@@ -1,9 +1,11 @@
 DIM sorted AS INTEGER
 DIM Counter AS INTEGER
-DIM tempInt AS INTEGER
+DIM tempScore AS INTEGER
 DIM tempName AS STRING 
 DIM StepNumber AS INTEGER
 DIM playerNumber AS INTEGER
+DIM k AS INTEGER
+DIM j AS INTEGER
 playerNumber = 0 
 StepNumber = 1
 
@@ -18,11 +20,29 @@ FUNCTION drawRankings(maxPlayers AS INTEGER)
 	defaultY = tempY 
 	defaultX = 10
 	Counter = 0
+IF sorted = 0 THEN
+	FOR Counter = playerNumber TO maxPlayers STEP StepNumber
+		rankPlayers$[Counter] = players$[Counter]
+		rankPlayerScores[Counter] = playerScores[Counter]
+	NEXT
+ENDIF
 
-FOR Counter = playerNumber TO maxPlayers STEP StepNumber
-	rankPlayers$[Counter] = players$[Counter]
-	rankPlayerScores[Counter] = playerScores[Counter]
-NEXT
+IF sorted = 0 THEN
+	Counter = 1
+	FOR Counter = playerNumber TO maxPlayers-1 STEP StepNumber	
+	tempName = rankPlayers$[Counter]
+	tempScore = rankPlayerScores[Counter]
+	j = Counter-1
+	WHILE j >= 0 && rankPlayerScores[j] > tempScore
+		rankPlayerScores[j+1] = rankPlayerScores[j]
+		rankPlayers$[j+1] = rankPlayers$[j]	
+		j-=1
+	WEND
+	rankPlayerScores[j+1] = tempScore
+	rankPlayers$[j+1] = tempName
+	NEXT
+sorted = 1
+ENDIF
 
 Counter = 0
 FOR Counter = playerNumber TO maxPlayers STEP StepNumber
