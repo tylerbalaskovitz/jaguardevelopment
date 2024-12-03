@@ -33,7 +33,6 @@ IF screenNumber = 0 THEN
 	if scrolling = 1 THEN 
 	tx-=2
 	ENDIF
-	selectWinnerKeypad(pad1)
 ENDIF
 IF screenNumber = 1 THEN
 	writePlayerName(pad1)
