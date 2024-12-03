@@ -19,14 +19,15 @@ const sprBug1% = 1
 
 ' Main Loop
 Do
+	'Gets the LEFT controller port
+	pad1 = jsfGetPad(LEFT_PAD)
+
 IF screenNumber = -999 THEN
 	drawTitleScreen()
 ENDIF
 IF screenNumber = -998 THEN
 	drawSelectPlayers()
 ENDIF
-	'Gets the LEFT controller port
-	pad1 = jsfGetPad(LEFT_PAD)
 IF screenNumber = 0 THEN
 	ScrollString(scrolling, tx, ty, spaces, winner)
 	if scrolling = 1 THEN 
