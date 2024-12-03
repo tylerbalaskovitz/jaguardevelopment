@@ -35,7 +35,6 @@ IF screenNumber = 2 THEN
 	drawScoreboard(maxPlayers)
 ENDIF
 IF screenNumber = 3 THEN
-	keepScore(pad1)
 	drawRankings(maxPlayers)
 ENDIF
 changeScreenKeypad(pad1)
