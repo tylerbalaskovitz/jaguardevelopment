@@ -10,13 +10,21 @@ $include "ControllerTypes.bas"
 $include "MainMenu.bas" 
 $include "PlayerVariables.bas"
 $include "ScoreBoard.bas"
+$include "SelectPlayers.bas"
 $include "Rankings.bas"
+$include "Credits.bas"
 const sprParticleLayer% = 0
 const sprBug1% = 1
 
 
 ' Main Loop
 Do
+IF screenNumber = -999 THEN
+
+ENDIF
+IF screenNumber = -998 THEN
+	drawSelectPlayers()
+ENDIF
 	'Gets the LEFT controller port
 	pad1 = jsfGetPad(LEFT_PAD)
 IF screenNumber = 0 THEN
@@ -36,6 +44,9 @@ IF screenNumber = 2 THEN
 ENDIF
 IF screenNumber = 3 THEN
 	drawRankings(maxPlayers)
+ENDIF
+IF screenNumber = 4 THEN
+	drawCredits()
 ENDIF
 changeScreenKeypad(pad1)
 
