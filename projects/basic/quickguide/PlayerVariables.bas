@@ -6,6 +6,8 @@ DIM tx AS INTEGER
 DIM ty AS INTEGER
 DIM winner AS STRING
 DIM screenNumber as INTEGER
+DIM minScreen as INTEGER
+DIM maxScreen as INTEGER
 DIM pad1 AS INTEGER
 'Sets text for how the names will be writte
 jsfSetFontIndx(0)
@@ -28,6 +30,8 @@ playerScores[3] = 0
 playerScores[4] = 0 
 playerScores[5] = 0 
 intName = 2
+minScreen = 1
+maxScreen = 4
 screenNumber = 0 
 
 
