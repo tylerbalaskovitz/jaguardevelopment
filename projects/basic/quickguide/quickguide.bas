@@ -20,7 +20,7 @@ const sprBug1% = 1
 ' Main Loop
 Do
 IF screenNumber = -999 THEN
-
+	drawTitleScreen()
 ENDIF
 IF screenNumber = -998 THEN
 	drawSelectPlayers()
